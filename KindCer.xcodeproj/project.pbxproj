@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F677AFDA2354157A000B39E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677AFD92354157A000B39E4 /* AppDelegate.swift */; };
+		F677AFDC2354157A000B39E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677AFDB2354157A000B39E4 /* SceneDelegate.swift */; };
+		F677AFDF2354157A000B39E4 /* KindCer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F677AFDD2354157A000B39E4 /* KindCer.xcdatamodeld */; };
+		F677AFE12354157A000B39E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677AFE02354157A000B39E4 /* ContentView.swift */; };
+		F677AFE32354157D000B39E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F677AFE22354157D000B39E4 /* Assets.xcassets */; };
+		F677AFE62354157D000B39E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F677AFE52354157D000B39E4 /* Preview Assets.xcassets */; };
+		F677AFE92354157D000B39E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F677AFE72354157D000B39E4 /* LaunchScreen.storyboard */; };
+		F677AFF42354157D000B39E4 /* KindCerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677AFF32354157D000B39E4 /* KindCerTests.swift */; };
+		F677AFFF2354157D000B39E4 /* KindCerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677AFFE2354157D000B39E4 /* KindCerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F677AFF02354157D000B39E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F677AFCE2354157A000B39E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F677AFD52354157A000B39E4;
+			remoteInfo = KindCer;
+		};
+		F677AFFB2354157D000B39E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F677AFCE2354157A000B39E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F677AFD52354157A000B39E4;
+			remoteInfo = KindCer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F677AFD62354157A000B39E4 /* KindCer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KindCer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F677AFD92354157A000B39E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F677AFDB2354157A000B39E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F677AFDE2354157A000B39E4 /* KindCer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KindCer.xcdatamodel; sourceTree = "<group>"; };
+		F677AFE02354157A000B39E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F677AFE22354157D000B39E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F677AFE52354157D000B39E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F677AFE82354157D000B39E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F677AFEA2354157D000B39E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F677AFEF2354157D000B39E4 /* KindCerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KindCerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F677AFF32354157D000B39E4 /* KindCerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindCerTests.swift; sourceTree = "<group>"; };
+		F677AFF52354157D000B39E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F677AFFA2354157D000B39E4 /* KindCerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KindCerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F677AFFE2354157D000B39E4 /* KindCerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindCerUITests.swift; sourceTree = "<group>"; };
+		F677B0002354157D000B39E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F677AFD32354157A000B39E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F677AFEC2354157D000B39E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F677AFF72354157D000B39E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F677AFCD2354157A000B39E4 = {
+			isa = PBXGroup;
+			children = (
+				F677AFD82354157A000B39E4 /* KindCer */,
+				F677AFF22354157D000B39E4 /* KindCerTests */,
+				F677AFFD2354157D000B39E4 /* KindCerUITests */,
+				F677AFD72354157A000B39E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F677AFD72354157A000B39E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F677AFD62354157A000B39E4 /* KindCer.app */,
+				F677AFEF2354157D000B39E4 /* KindCerTests.xctest */,
+				F677AFFA2354157D000B39E4 /* KindCerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F677AFD82354157A000B39E4 /* KindCer */ = {
+			isa = PBXGroup;
+			children = (
+				F677AFD92354157A000B39E4 /* AppDelegate.swift */,
+				F677AFDB2354157A000B39E4 /* SceneDelegate.swift */,
+				F677AFE02354157A000B39E4 /* ContentView.swift */,
+				F677AFE22354157D000B39E4 /* Assets.xcassets */,
+				F677AFE72354157D000B39E4 /* LaunchScreen.storyboard */,
+				F677AFEA2354157D000B39E4 /* Info.plist */,
+				F677AFDD2354157A000B39E4 /* KindCer.xcdatamodeld */,
+				F677AFE42354157D000B39E4 /* Preview Content */,
+			);
+			path = KindCer;
+			sourceTree = "<group>";
+		};
+		F677AFE42354157D000B39E4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F677AFE52354157D000B39E4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F677AFF22354157D000B39E4 /* KindCerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F677AFF32354157D000B39E4 /* KindCerTests.swift */,
+				F677AFF52354157D000B39E4 /* Info.plist */,
+			);
+			path = KindCerTests;
+			sourceTree = "<group>";
+		};
+		F677AFFD2354157D000B39E4 /* KindCerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F677AFFE2354157D000B39E4 /* KindCerUITests.swift */,
+				F677B0002354157D000B39E4 /* Info.plist */,
+			);
+			path = KindCerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F677AFD52354157A000B39E4 /* KindCer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F677B0032354157D000B39E4 /* Build configuration list for PBXNativeTarget "KindCer" */;
+			buildPhases = (
+				F677AFD22354157A000B39E4 /* Sources */,
+				F677AFD32354157A000B39E4 /* Frameworks */,
+				F677AFD42354157A000B39E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KindCer;
+			productName = KindCer;
+			productReference = F677AFD62354157A000B39E4 /* KindCer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F677AFEE2354157D000B39E4 /* KindCerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F677B0062354157D000B39E4 /* Build configuration list for PBXNativeTarget "KindCerTests" */;
+			buildPhases = (
+				F677AFEB2354157D000B39E4 /* Sources */,
+				F677AFEC2354157D000B39E4 /* Frameworks */,
+				F677AFED2354157D000B39E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F677AFF12354157D000B39E4 /* PBXTargetDependency */,
+			);
+			name = KindCerTests;
+			productName = KindCerTests;
+			productReference = F677AFEF2354157D000B39E4 /* KindCerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F677AFF92354157D000B39E4 /* KindCerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F677B0092354157D000B39E4 /* Build configuration list for PBXNativeTarget "KindCerUITests" */;
+			buildPhases = (
+				F677AFF62354157D000B39E4 /* Sources */,
+				F677AFF72354157D000B39E4 /* Frameworks */,
+				F677AFF82354157D000B39E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F677AFFC2354157D000B39E4 /* PBXTargetDependency */,
+			);
+			name = KindCerUITests;
+			productName = KindCerUITests;
+			productReference = F677AFFA2354157D000B39E4 /* KindCerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F677AFCE2354157A000B39E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Muhammad Tafani Rabbani";
+				TargetAttributes = {
+					F677AFD52354157A000B39E4 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					F677AFEE2354157D000B39E4 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = F677AFD52354157A000B39E4;
+					};
+					F677AFF92354157D000B39E4 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = F677AFD52354157A000B39E4;
+					};
+				};
+			};
+			buildConfigurationList = F677AFD12354157A000B39E4 /* Build configuration list for PBXProject "KindCer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F677AFCD2354157A000B39E4;
+			productRefGroup = F677AFD72354157A000B39E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F677AFD52354157A000B39E4 /* KindCer */,
+				F677AFEE2354157D000B39E4 /* KindCerTests */,
+				F677AFF92354157D000B39E4 /* KindCerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F677AFD42354157A000B39E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F677AFE92354157D000B39E4 /* LaunchScreen.storyboard in Resources */,
+				F677AFE62354157D000B39E4 /* Preview Assets.xcassets in Resources */,
+				F677AFE32354157D000B39E4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F677AFED2354157D000B39E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F677AFF82354157D000B39E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F677AFD22354157A000B39E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F677AFDA2354157A000B39E4 /* AppDelegate.swift in Sources */,
+				F677AFDF2354157A000B39E4 /* KindCer.xcdatamodeld in Sources */,
+				F677AFE12354157A000B39E4 /* ContentView.swift in Sources */,
+				F677AFDC2354157A000B39E4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F677AFEB2354157D000B39E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F677AFF42354157D000B39E4 /* KindCerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F677AFF62354157D000B39E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F677AFFF2354157D000B39E4 /* KindCerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F677AFF12354157D000B39E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F677AFD52354157A000B39E4 /* KindCer */;
+			targetProxy = F677AFF02354157D000B39E4 /* PBXContainerItemProxy */;
+		};
+		F677AFFC2354157D000B39E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F677AFD52354157A000B39E4 /* KindCer */;
+			targetProxy = F677AFFB2354157D000B39E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F677AFE72354157D000B39E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F677AFE82354157D000B39E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F677B0012354157D000B39E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F677B0022354157D000B39E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F677B0042354157D000B39E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
+				DEVELOPMENT_TEAM = 52RX5R54N7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KindCer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ada.KindCer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F677B0052354157D000B39E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
+				DEVELOPMENT_TEAM = 52RX5R54N7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KindCer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ada.KindCer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F677B0072354157D000B39E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52RX5R54N7;
+				INFOPLIST_FILE = KindCerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ada.KindCerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KindCer.app/KindCer";
+			};
+			name = Debug;
+		};
+		F677B0082354157D000B39E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52RX5R54N7;
+				INFOPLIST_FILE = KindCerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ada.KindCerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KindCer.app/KindCer";
+			};
+			name = Release;
+		};
+		F677B00A2354157D000B39E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52RX5R54N7;
+				INFOPLIST_FILE = KindCerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ada.KindCerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KindCer;
+			};
+			name = Debug;
+		};
+		F677B00B2354157D000B39E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52RX5R54N7;
+				INFOPLIST_FILE = KindCerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ada.KindCerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KindCer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F677AFD12354157A000B39E4 /* Build configuration list for PBXProject "KindCer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F677B0012354157D000B39E4 /* Debug */,
+				F677B0022354157D000B39E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F677B0032354157D000B39E4 /* Build configuration list for PBXNativeTarget "KindCer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F677B0042354157D000B39E4 /* Debug */,
+				F677B0052354157D000B39E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F677B0062354157D000B39E4 /* Build configuration list for PBXNativeTarget "KindCerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F677B0072354157D000B39E4 /* Debug */,
+				F677B0082354157D000B39E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F677B0092354157D000B39E4 /* Build configuration list for PBXNativeTarget "KindCerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F677B00A2354157D000B39E4 /* Debug */,
+				F677B00B2354157D000B39E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F677AFDD2354157A000B39E4 /* KindCer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F677AFDE2354157A000B39E4 /* KindCer.xcdatamodel */,
+			);
+			currentVersion = F677AFDE2354157A000B39E4 /* KindCer.xcdatamodel */;
+			path = KindCer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F677AFCE2354157A000B39E4 /* Project object */;
+}
