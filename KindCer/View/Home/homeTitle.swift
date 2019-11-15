@@ -18,12 +18,9 @@ struct homeTitle: View {
                 Text(subtitle).font(.title).bold()
             }
             Spacer()
-            Button(action: {
-                
-            }) {
-                Text("FAQ").foregroundColor(.purple).bold()
-            }
-        }.padding(.horizontal,20)
+            Image("photo").resizable().frame(width: 60, height: 60).scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 10)
+            
+        }.padding(.horizontal,20).background(Color.clear)
     }
 }
 

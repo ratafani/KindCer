@@ -9,36 +9,96 @@
 import SwiftUI
 
 struct recordCard: View {
+    
+    @State var record : RecordType = RecordType(id: StaticModel.id, type: "", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(),penjelasan: "")
+    @State var theColor : Color = .red
+    var a = ["alergi","demam","diare","gatal","lemas","mual","muntah","otot","sembelit","lainnya"]
+    
+    @State var isSheet = false
     var body: some View {
-        ZStack {
+        let theimg = cariIcon()
+        return ZStack {
             Rectangle().foregroundColor(.white)
             HStack{
-                Rectangle().foregroundColor(.purple).frame(width: 5)
+                Rectangle().foregroundColor(theColor).frame(width: 4)
                 Spacer()
             }
             HStack{
-                VStack{
-                    Text("15").bold().font(.title)
-                    Text("Oct").foregroundColor(.gray)
-                    Text("2019").font(.footnote)
-                }.padding(.horizontal,20)
+                Image(theimg).frame(width: 50, height: 50).padding(.horizontal,20)
                 VStack(alignment: .leading){
-                    Text("Biopsi").bold().font(.headline).padding(.vertical,5)
-                    Text("RS bunda| Jakarta").foregroundColor(.gray)
-                    Text("Dr.Ivan").foregroundColor(.purple).padding(.vertical,5)
+                    Text(record.type).bold().font(.headline).padding(.vertical,5)
+                    Text(record.penjelasan).foregroundColor(.gray)
+                    Text(record.obat).foregroundColor(Color("Primary")).padding(.vertical,5)
                 }
                 Spacer()
                 ZStack{
-                    Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.5478902459, green: 0.9007973075, blue: 0.3127832413, alpha: 0.6632598459))).frame(width: 70, height: 20).cornerRadius(15)
-                    Text("Good").foregroundColor(Color.init(#colorLiteral(red: 0, green: 0.6248083711, blue: 0, alpha: 1))).font(.footnote)
+                    Rectangle().foregroundColor(theColor).frame(width: 70, height: 20).cornerRadius(15)
+                    Text(record.kondisi).foregroundColor(.white).font(.footnote)
                 }.padding()
             }
-        }.padding(.vertical,3)
+        }.padding(.vertical,3).onAppear{
+            let a = self.record.kondisi
+//            print(a)
+            if a == "Sedang"{
+                self.theColor = Color.init(#colorLiteral(red: 0.8745098039, green: 0.6588235294, blue: 0.1764705882, alpha: 1))
+            }else if a == "Ringan"{
+                self.theColor = .blue
+            }else if a == "Bahaya"{
+                self.theColor = .red
+            }else{
+                
+            }
+        }.onTapGesture {
+            print(self.record.kondisi)
+            self.isSheet = true
+        }.sheet(isPresented: $isSheet) {
+            SymptompsView(record: self.record)
+        }
+    }
+    
+    func cariIcon()->String{
+        switch record.type {
+        case "Alergi":
+            return "alergi"
+        case "Diare":
+            return "diare"
+        case "Bengkak":
+            return "diare"
+        case "Demam":
+            return "demam"
+        case "Gatal / iritasi":
+            return "gatal"
+        case "Nafsu Makan":
+            return "mual"
+        case "Lemas":
+            return "lemas"
+        case "Mual / Enek":
+            return "mual"
+        case "Mati Rasa / Kesemutan":
+            return "demam"
+        case "Mulut":
+            return "lemas"
+        case "Muntah":
+            return "muntah"
+        case "Otot / Persendian":
+            return "otot"
+        case "Buang Air Besar":
+            return "sembelit"
+        case "Bernafas":
+            return "otot"
+        case "Saat Menelan":
+            return "lemas"
+        case "Lainnya":
+            return "lainnya"
+        
+        default:
+            return "alergi"
+        }
     }
 }
 
 struct recordCard_Previews: PreviewProvider {
     static var previews: some View {
-        recordCard()
+        recordCard(record: RecordType(id: StaticModel.id, type: "", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(),penjelasan: ""))
     }
 }
