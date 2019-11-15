@@ -36,11 +36,11 @@ class SymptompModel {
     init(type: SymptompsType) {
         switch type {
         case .alergi:
-            question(aman: "", ringan: "Ruam, tidak demam", sedang: "Ruam, demam < 38°C", parah: "Gatal - gatal, demam 38°C")
+            question(aman: "", ringan: "bintil-bintil merah pada kulit, tidak demam", sedang: "bintil-bintil merah pada kulit, demam < 38°C", parah: "Gatal - gatal, demam lebih 38°C")
         case .bengkak:
             question(aman: "", ringan: "Bengkak di tangan atau kaki", sedang: "Bengkak di bagian atas lengan atau kaki", parah: "Bengkak sampai sakit atau susah bernafas")
         case .diare:
-            question(aman: "", ringan: "Tahi berpencar", sedang: "Tahi berair, lebih banyak dari biasanya", parah: "Konstan atau berdarah, atau sampai membuat pusing")
+            question(aman: "", ringan: "Tahi berpencar", sedang: "Tahi berair, lebih banyak dari biasanya", parah: "berdarah, atau sampai membuat pusing")
         case .demam:
             question(aman: "Suhu badan 37°C", ringan: "Suhu badan 37°C - 38°C", sedang: "Suhu badan 37°C - 40°C", parah: "Suhu badan > 40°C")
         case .gatal:

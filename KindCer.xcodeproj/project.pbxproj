@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516B61237E73100035E8E4 /* SchedulePage.swift */; };
 		F66D1C5B23791A1600E864C5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5A23791A1600E864C5 /* CalendarView.swift */; };
 		F66D1C5E2379527D00E864C5 /* dateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5D2379527D00E864C5 /* dateModel.swift */; };
 		F66D1C7C237A5B6A00E864C5 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C76237A5B6A00E864C5 /* ProfileList.swift */; };
@@ -80,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F6516B61237E73100035E8E4 /* SchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePage.swift; sourceTree = "<group>"; };
 		F66D1C5A23791A1600E864C5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F66D1C5D2379527D00E864C5 /* dateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateModel.swift; sourceTree = "<group>"; };
 		F66D1C76237A5B6A00E864C5 /* ProfileList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6516B60237E72F00035E8E4 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				F6516B61237E73100035E8E4 /* SchedulePage.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
 		F66D1C5C2379527000E864C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				F677AFE02354157A000B39E4 /* ContentView.swift */,
+				F6516B60237E72F00035E8E4 /* Schedule */,
 				F66D1C88237A924400E864C5 /* Syntesis */,
 				F66D1C5C2379527000E864C5 /* Model */,
 				F6D9793623602ED100DC6673 /* Boarding */,
@@ -479,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D9791E235EAD6F00DC6673 /* HomeView.swift in Sources */,
+				F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */,
 				F6D9794D2361418C00DC6673 /* QuizCategoryCard.swift in Sources */,
 				F66D1CB3237BE36000E864C5 /* mPicker.swift in Sources */,
 				F6D9794323607BBA00DC6673 /* OnboardingCardView.swift in Sources */,

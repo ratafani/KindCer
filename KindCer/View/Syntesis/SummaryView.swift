@@ -19,7 +19,7 @@ struct SummaryView: View {
     @State var picked = "Diare"
     @State var graphValue = [graphModel]()
     @State var data = [0,32,32,64,96,32,32,64,96]
-    @State var date = ["11 Nov","12 Nov","13 Nov","14 Nov","15 Nov","16 Nov","17 Nov","18 Nov","19 Nov"]
+    @State var date = ["11 Nov","12 Nov","1m3 Nov","14 Nov","15 Nov","16 Nov","17 Nov","18 Nov","19 Nov"]
     let a = RecordModel()
     
     var body: some View {
