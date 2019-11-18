@@ -27,17 +27,24 @@ struct PageView<Page:View>: View {
             
             if currentPage == 2
                         {
-                        Button (action: {
-                            self.isOnboardingDone.toggle()
-                                }, label: {
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .frame(width: 360, height: 60, alignment: .center)
-                                        .foregroundColor(Color.purple)
-                                    .overlay(
-                                    Text("Get Started")
-                                    .foregroundColor(Color.white))
-                                        
-                            })
+                        
+                               
+                                
+                                Button (action: {
+                                    let userdef = UserDefaults.standard
+                                    userdef.set(true, forKey: "isBoarding")
+                                                          self.isOnboardingDone.toggle()
+                                                              }, label: {
+                                                                  RoundedRectangle(cornerRadius: 15)
+                                                                      .frame(width: 360, height: 60, alignment: .center)
+                                                                      .foregroundColor(Color.purple)
+                                                                  .overlay(
+                                                                  Text("Mulai")
+                                                                  .foregroundColor(Color.white))
+                                                        
+                                                          })
+        
+                      
                             
                     
                         }

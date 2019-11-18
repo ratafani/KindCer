@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE759E237E78D800B415A7 /* JadwalModel.swift */; };
 		F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516B61237E73100035E8E4 /* SchedulePage.swift */; };
+		F6516BB823822F120035E8E4 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB223822F110035E8E4 /* BoardingView.swift */; };
+		F6516BB923822F120035E8E4 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB323822F110035E8E4 /* PageController.swift */; };
+		F6516BBA23822F120035E8E4 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB423822F110035E8E4 /* OnboardingCardView.swift */; };
+		F6516BBB23822F120035E8E4 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB523822F120035E8E4 /* PageView.swift */; };
+		F6516BBC23822F120035E8E4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB623822F120035E8E4 /* PageViewController.swift */; };
+		F6516BBD23822F120035E8E4 /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB723822F120035E8E4 /* OnboardingCard.swift */; };
 		F66D1C5B23791A1600E864C5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5A23791A1600E864C5 /* CalendarView.swift */; };
 		F66D1C5E2379527D00E864C5 /* dateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5D2379527D00E864C5 /* dateModel.swift */; };
 		F66D1C7C237A5B6A00E864C5 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C76237A5B6A00E864C5 /* ProfileList.swift */; };
@@ -53,13 +59,6 @@
 		F6D97920235EB03D00DC6673 /* homeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9791F235EB03D00DC6673 /* homeTitle.swift */; };
 		F6D97924235F355D00DC6673 /* recordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D97923235F355D00DC6673 /* recordCard.swift */; };
 		F6D97926235FDE3B00DC6673 /* record_empty_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D97925235FDE3B00DC6673 /* record_empty_view.swift */; };
-		F6D9793823607B2300DC6673 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9793723607B2300DC6673 /* LoginView.swift */; };
-		F6D9794123607BBA00DC6673 /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9793C23607BBA00DC6673 /* OnboardingCard.swift */; };
-		F6D9794223607BBA00DC6673 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9793D23607BBA00DC6673 /* PageViewController.swift */; };
-		F6D9794323607BBA00DC6673 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9793E23607BBA00DC6673 /* OnboardingCardView.swift */; };
-		F6D9794423607BBA00DC6673 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9793F23607BBA00DC6673 /* PageView.swift */; };
-		F6D9794523607BBA00DC6673 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9794023607BBA00DC6673 /* PageController.swift */; };
-		F6D9794723607BCF00DC6673 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9794623607BCF00DC6673 /* BoardingView.swift */; };
 		F6D9794B23613F5900DC6673 /* QuizCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9794A23613F5900DC6673 /* QuizCategoryView.swift */; };
 		F6D9794D2361418C00DC6673 /* QuizCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9794C2361418C00DC6673 /* QuizCategoryCard.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +83,12 @@
 /* Begin PBXFileReference section */
 		8BEE759E237E78D800B415A7 /* JadwalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JadwalModel.swift; sourceTree = "<group>"; };
 		F6516B61237E73100035E8E4 /* SchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePage.swift; sourceTree = "<group>"; };
+		F6516BB223822F110035E8E4 /* BoardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
+		F6516BB323822F110035E8E4 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		F6516BB423822F110035E8E4 /* OnboardingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
+		F6516BB523822F120035E8E4 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		F6516BB623822F120035E8E4 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		F6516BB723822F120035E8E4 /* OnboardingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
 		F66D1C5A23791A1600E864C5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F66D1C5D2379527D00E864C5 /* dateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateModel.swift; sourceTree = "<group>"; };
 		F66D1C76237A5B6A00E864C5 /* ProfileList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
@@ -134,13 +139,6 @@
 		F6D9791F235EB03D00DC6673 /* homeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeTitle.swift; sourceTree = "<group>"; };
 		F6D97923235F355D00DC6673 /* recordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordCard.swift; sourceTree = "<group>"; };
 		F6D97925235FDE3B00DC6673 /* record_empty_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = record_empty_view.swift; sourceTree = "<group>"; };
-		F6D9793723607B2300DC6673 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		F6D9793C23607BBA00DC6673 /* OnboardingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
-		F6D9793D23607BBA00DC6673 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		F6D9793E23607BBA00DC6673 /* OnboardingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
-		F6D9793F23607BBA00DC6673 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
-		F6D9794023607BBA00DC6673 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
-		F6D9794623607BCF00DC6673 /* BoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
 		F6D9794A23613F5900DC6673 /* QuizCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategoryView.swift; sourceTree = "<group>"; };
 		F6D9794C2361418C00DC6673 /* QuizCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategoryCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -346,13 +344,12 @@
 		F6D9793623602ED100DC6673 /* Boarding */ = {
 			isa = PBXGroup;
 			children = (
-				F6D9793C23607BBA00DC6673 /* OnboardingCard.swift */,
-				F6D9793E23607BBA00DC6673 /* OnboardingCardView.swift */,
-				F6D9794023607BBA00DC6673 /* PageController.swift */,
-				F6D9793F23607BBA00DC6673 /* PageView.swift */,
-				F6D9793D23607BBA00DC6673 /* PageViewController.swift */,
-				F6D9794623607BCF00DC6673 /* BoardingView.swift */,
-				F6D9793723607B2300DC6673 /* LoginView.swift */,
+				F6516BB223822F110035E8E4 /* BoardingView.swift */,
+				F6516BB723822F120035E8E4 /* OnboardingCard.swift */,
+				F6516BB423822F110035E8E4 /* OnboardingCardView.swift */,
+				F6516BB323822F110035E8E4 /* PageController.swift */,
+				F6516BB523822F120035E8E4 /* PageView.swift */,
+				F6516BB623822F120035E8E4 /* PageViewController.swift */,
 			);
 			path = Boarding;
 			sourceTree = "<group>";
@@ -497,7 +494,7 @@
 				8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */,
 				F6D9794D2361418C00DC6673 /* QuizCategoryCard.swift in Sources */,
 				F66D1CB3237BE36000E864C5 /* mPicker.swift in Sources */,
-				F6D9794323607BBA00DC6673 /* OnboardingCardView.swift in Sources */,
+				F6516BBA23822F120035E8E4 /* OnboardingCardView.swift in Sources */,
 				F66D1CAB237BE33100E864C5 /* SymptompsAdd.swift in Sources */,
 				F66D1CC0237D4D8B00E864C5 /* SymptompsView.swift in Sources */,
 				F66D1CAA237BE33100E864C5 /* SymptompsPage.swift in Sources */,
@@ -505,42 +502,41 @@
 				F66D1CB2237BE36000E864C5 /* mFormSet.swift in Sources */,
 				F677AFDA2354157A000B39E4 /* AppDelegate.swift in Sources */,
 				F677AFDF2354157A000B39E4 /* KindCer.xcdatamodeld in Sources */,
+				F6516BBD23822F120035E8E4 /* OnboardingCard.swift in Sources */,
 				F6D97924235F355D00DC6673 /* recordCard.swift in Sources */,
-				F6D9794223607BBA00DC6673 /* PageViewController.swift in Sources */,
 				F66D1CA3237BDEEF00E864C5 /* UserModel.swift in Sources */,
+				F6516BBC23822F120035E8E4 /* PageViewController.swift in Sources */,
 				F66D1C93237ABED400E864C5 /* CustomLegends.swift in Sources */,
 				F6D97918235D9A7200DC6673 /* QuizCard.swift in Sources */,
-				F6D9794123607BBA00DC6673 /* OnboardingCard.swift in Sources */,
 				F66D1C7C237A5B6A00E864C5 /* ProfileList.swift in Sources */,
 				F66D1CB6237C5BD100E864C5 /* SymptompsModel.swift in Sources */,
 				F66D1C81237A5B6A00E864C5 /* ProfileConditionDetail.swift in Sources */,
 				F66D1C5B23791A1600E864C5 /* CalendarView.swift in Sources */,
 				F66D1CBF237D4D8B00E864C5 /* CardKondisi.swift in Sources */,
 				F6D9791A235E6FDF00DC6673 /* infoBtn.swift in Sources */,
-				F6D9794723607BCF00DC6673 /* BoardingView.swift in Sources */,
+				F6516BB823822F120035E8E4 /* BoardingView.swift in Sources */,
 				F66D1C7E237A5B6A00E864C5 /* ProfileCard.swift in Sources */,
 				F66D1CAC237BE33100E864C5 /* TambahCatatanView.swift in Sources */,
 				F677AFE12354157A000B39E4 /* ContentView.swift in Sources */,
 				F66D1C8A237A925400E864C5 /* SummaryView.swift in Sources */,
 				F66D1CB8237CC8E700E864C5 /* addSymtompsDetail.swift in Sources */,
 				F66D1CAD237BE33100E864C5 /* TambahCatatanPengobatan.swift in Sources */,
+				F6516BB923822F120035E8E4 /* PageController.swift in Sources */,
 				F66D1C95237ABF1500E864C5 /* Line.swift in Sources */,
 				F6D9791C235EA0EA00DC6673 /* quizView.swift in Sources */,
 				F6D97920235EB03D00DC6673 /* homeTitle.swift in Sources */,
-				F6D9794523607BBA00DC6673 /* PageController.swift in Sources */,
 				F677AFDC2354157A000B39E4 /* SceneDelegate.swift in Sources */,
 				F66D1C5E2379527D00E864C5 /* dateModel.swift in Sources */,
 				F66D1C8F237ABE6500E864C5 /* customLineView.swift in Sources */,
+				F6516BBB23822F120035E8E4 /* PageView.swift in Sources */,
 				F66D1CB4237BE36000E864C5 /* mButton.swift in Sources */,
 				F6D9794B23613F5900DC6673 /* QuizCategoryView.swift in Sources */,
 				F66D1CBC237D4AE800E864C5 /* Static.swift in Sources */,
 				F66D1C7F237A5B6A00E864C5 /* ProfileBio.swift in Sources */,
 				F66D1CBA237CEB7800E864C5 /* RecordModel.swift in Sources */,
-				F6D9794423607BBA00DC6673 /* PageView.swift in Sources */,
 				F66D1C91237ABEB100E864C5 /* Helpers.swift in Sources */,
 				F6D97916235D99A400DC6673 /* buttonlist.swift in Sources */,
 				F66D1C7D237A5B6A00E864C5 /* ProfilePage.swift in Sources */,
-				F6D9793823607B2300DC6673 /* LoginView.swift in Sources */,
 				F6D97926235FDE3B00DC6673 /* record_empty_view.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,41 +14,66 @@ struct OnboardingCardView: View {
     
     var body: some View {
         VStack
-            {
-                Image("kindcerlogowelcome") .resizable()
-                    .frame(width: 231, height: 113, alignment: .center)
+            {   if card.title == "login"{
+                NewLoginView()
+            }else{
                 
-
-            
+                Image("logokindceronboard") .resizable()
+                    .frame(width: 231, height: 66, alignment: .center)
                 
                 Image(card.image)
-                .resizable()
+                    .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 300, height: 300, alignment: .center)
                     .padding(40)
                 
                 Text(card.title)
                     .fontWeight(.bold)
-                .foregroundColor(.primary)
-                .font(.system(size: 23))
-                .lineLimit(5)
+                    .foregroundColor(.primary)
+                    .font(.system(size: 23))
+                    .lineLimit(5)
                     .multilineTextAlignment(.center)
-                    
-                    
+                    .padding(10)
+                
+                
                 
                 Text(card.description)
                     .font(.system(size: 16))
                     .fontWeight(.light)
                     .foregroundColor(.secondary)
-                .lineLimit(10)
+                    .lineLimit(10)
                     .multilineTextAlignment(.center)
-                    .padding(.top, 10)
-                    
+                    .padding(10)
                 
                 
-            } .padding()
+                
+                }
+        } .padding()
     }
 }
+
+struct NewLoginView : View {
+    var body: some View{
+        VStack
+            {
+                Image("logokindceronboard") .resizable()
+                    .frame(width: 231, height: 66, alignment: .center) .padding(.bottom, 20)
+                
+                 Image("onboard3text") .resizable() .frame(width: 300, height: 21, alignment: .center)
+                .padding(.bottom, 20)
+                
+                Text("KindCer membantu kamu menghadapi\n efek samping kemoterapi!") .font(.system(size: 18)) .foregroundColor(.gray) .multilineTextAlignment(.center)
+                .padding(.bottom, 40)
+                
+                Image("onboard3") .resizable() .frame(width: 330, height: 341, alignment: .center)
+                .padding(.bottom, 40)
+                Text("Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan KindCer.") .font(.system(size: 11)) .foregroundColor(.gray) .multilineTextAlignment(.center)
+                
+        }
+        
+    }
+}
+
 
 struct OnboardingCardView_Previews: PreviewProvider {
     static var previews: some View {
