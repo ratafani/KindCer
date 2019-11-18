@@ -11,6 +11,15 @@ import CoreData
 import SwiftUI
 import Combine
 
+struct UserType {
+    var user_name : String
+    var jenis_kanker : String
+    var kondisi : String
+    var kontak_penting : String
+    var posisi_kanker : String
+    var tgl_diagnosis : Date
+}
+
 class UserModel : NSObject,ObservableObject {
     
     
@@ -109,14 +118,3 @@ class UserModel : NSObject,ObservableObject {
     }
     
 }
-
-struct UserType {
-    
-    var user_name : String
-    var jenis_kanker : String
-    var kondisi : String
-    var kontak_penting : String
-    var posisi_kanker : String
-    var tgl_diagnosis : Date
-}
-

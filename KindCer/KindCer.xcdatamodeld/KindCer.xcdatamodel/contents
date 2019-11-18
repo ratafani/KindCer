@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Jadwal" representedClassName="Jadwal" syncable="YES" codeGenerationType="class">
+        <attribute name="catatan" optional="YES" attributeType="String"/>
+        <attribute name="dokter" optional="YES" attributeType="String"/>
+        <attribute name="tanggal" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tempat" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Record" representedClassName="Record" syncable="YES" codeGenerationType="class">
         <attribute name="catatan_obat" optional="YES" attributeType="String"/>
         <attribute name="catatan_record" optional="YES" attributeType="String"/>
@@ -18,7 +24,8 @@
         <attribute name="user_name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="User" positionX="-45" positionY="0" width="128" height="133"/>
         <element name="Record" positionX="-81.30078125" positionY="176.48828125" width="128" height="148"/>
+        <element name="User" positionX="-45" positionY="0" width="128" height="133"/>
+        <element name="Jadwal" positionX="-63" positionY="144" width="128" height="28"/>
     </elements>
 </model>

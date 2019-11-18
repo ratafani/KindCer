@@ -8,24 +8,19 @@
 
 import SwiftUI
 
-
-struct SchedulePage_Previews: PreviewProvider {
-    static var previews: some View {
-        SchedulePage()
-    }
-}
-
-import SwiftUI
-
 struct SchedulePage: View {
     
     @State var tempatPengobatan : String = ""
     @State var dokter : String = ""
     @State var kemoSchedule : Date = Date()
+    @State var catatan : String = ""
+    @Binding var isSheet : Bool
+    
+    @ObservedObject var jadwal : JadwalModel
     
     var dateClosedRange: ClosedRange<Date> {
-        let min = Calendar.current.date(byAdding: .year, value: -1, to: Date())!
-        let max = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
+        let min = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
+        let max = Calendar.current.date(byAdding: .year, value: 2, to: Date())!
         return min...max
     }
     
@@ -64,23 +59,27 @@ struct SchedulePage: View {
                 Image("condition").resizable().frame(width: 20, height: 20)
                 Text("Catatan").font(.headline)
             }) {
-                catatanBox()
+                TextField("", text: self.$catatan)
             }
             
             
             Button("Done")
             {
-                
+                self.addToCD()
+                self.isSheet =  false
             } .padding(.leading, 5)
 
         }.edgesIgnoringSafeArea(.all)
+    }
+    func addToCD(){
+        let newJadwal = JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
+        jadwal.saveData(jadwal: newJadwal)
     }
 }
 
 
 
 struct catatanBox: View{
-    
     
     var body: some View{
         VStack {

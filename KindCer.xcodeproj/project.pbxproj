@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE759E237E78D800B415A7 /* JadwalModel.swift */; };
 		F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516B61237E73100035E8E4 /* SchedulePage.swift */; };
 		F66D1C5B23791A1600E864C5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5A23791A1600E864C5 /* CalendarView.swift */; };
 		F66D1C5E2379527D00E864C5 /* dateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5D2379527D00E864C5 /* dateModel.swift */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8BEE759E237E78D800B415A7 /* JadwalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JadwalModel.swift; sourceTree = "<group>"; };
 		F6516B61237E73100035E8E4 /* SchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePage.swift; sourceTree = "<group>"; };
 		F66D1C5A23791A1600E864C5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F66D1C5D2379527D00E864C5 /* dateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateModel.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				F66D1CB5237C5BD100E864C5 /* SymptompsModel.swift */,
 				F66D1CB9237CEB7800E864C5 /* RecordModel.swift */,
 				F66D1CBB237D4AE800E864C5 /* Static.swift */,
+				8BEE759E237E78D800B415A7 /* JadwalModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 			files = (
 				F6D9791E235EAD6F00DC6673 /* HomeView.swift in Sources */,
 				F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */,
+				8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */,
 				F6D9794D2361418C00DC6673 /* QuizCategoryCard.swift in Sources */,
 				F66D1CB3237BE36000E864C5 /* mPicker.swift in Sources */,
 				F6D9794323607BBA00DC6673 /* OnboardingCardView.swift in Sources */,
@@ -704,7 +708,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = 52RX5R54N7;
+				DEVELOPMENT_TEAM = MW3338A45T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -724,7 +728,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = 52RX5R54N7;
+				DEVELOPMENT_TEAM = MW3338A45T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

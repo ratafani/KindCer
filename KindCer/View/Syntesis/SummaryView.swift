@@ -112,7 +112,7 @@ struct SummaryView: View {
                                 print(num)
                                 data2.append(num)
                                 let dateFormatter = DateFormatter()
-                                dateFormatter.dateFormat = "MMM dd"
+                                dateFormatter.dateFormat = "dd MMM YYYY"
                                 date2.append("\(dateFormatter.string(from: arr.tanggal))")
                             }
                         }

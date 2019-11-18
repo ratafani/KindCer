@@ -33,7 +33,7 @@ struct HomeView: View {
                     Text(UserModel().user_name.isEmpty ? " ":UserModel().user_name).font(.title).bold()
                 }
                 Spacer()
-                Image("photo").resizable().frame(width: 60, height: 60).scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
+                Image("photo1").resizable().frame(width: 60, height: 60).scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
                     self.isSheet = true
                     self.homeSheet = HomeSheet.Profile
                 }
@@ -83,7 +83,7 @@ struct HomeView: View {
             .sheet(isPresented: $isSheet) {
                 
                 if self.homeSheet == HomeSheet.Profile{
-                    ProfilePage(userModel: UserModel())
+                    ProfilePage(userModel: UserModel(), jadwal: JadwalModel())
                 }else if self.homeSheet == HomeSheet.Summary{
                     SummaryView()
                 }else{

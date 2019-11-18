@@ -31,14 +31,14 @@ struct ProfileBioAdd: View {
                 Text("Jenis Kanker").font(.headline)
             }) {
                 
-                TextField("", text: self.$jenisKanker)
+                TextField("Tulis jenis kanker anda", text: self.$jenisKanker)
             }
             Section(header: HStack {
                 Image("cancersite").resizable().frame(width: 10, height: 20)
                 Text("Posisi Kanker").font(.headline)
             }) {
                 
-                TextField("", text: self.$lokasiKanker)
+                TextField("Tulis letak kanker anda", text: self.$lokasiKanker)
             }
             Section(header: HStack {
                 Image("diagnosis").resizable().frame(width: 20, height: 20)
@@ -55,7 +55,7 @@ struct ProfileBioAdd: View {
                 Image("Contact").resizable().frame(width: 20, height: 20)
                 Text("Kontak Penting").font(.headline)
             }) {
-                TextField("", text: self.$kontakPenting)
+                TextField("Tulis kontak penting anda disini", text: self.$kontakPenting)
             }
             Section(header: HStack {
                 Image("circle").resizable().frame(width: 20, height: 20)
@@ -63,9 +63,8 @@ struct ProfileBioAdd: View {
             }) {
                 MultilineTextView(text: self.$kondisi).frame(height: 200)
             }
-            Button("Done"){
-                
-                
+            Button("Done")
+            {
                 let jenis = !self.jenisKanker.isEmpty ? self.jenisKanker:""
                 let lokasi = !self.lokasiKanker.isEmpty ? self.lokasiKanker:""
                 let kontak = !self.kontakPenting.isEmpty ? self.kontakPenting:""
