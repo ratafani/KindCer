@@ -74,7 +74,7 @@ struct addSymtompsDetail: View {
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9450980392, green: 0.937254902, blue: 0.9490196078, alpha: 1))).edgesIgnoringSafeArea(.all))
             .sheet(isPresented: $isSheet) {
                 if self.sheetId == 0{
-                    PickerForm(penjelasanAman: self.sympthoms.aman, penjelasanRingan: self.sympthoms.ringan, penjelasanSedang: self.sympthoms.sedang, penjelasanParah: self.sympthoms.parah,kondisi: self.$kondisi,isSheet: self.$isSheet)
+                    PickerForm(title: self.title, penjelasanAman: self.sympthoms.aman, penjelasanRingan: self.sympthoms.ringan, penjelasanSedang: self.sympthoms.sedang, penjelasanParah: self.sympthoms.parah,kondisi: self.$kondisi,isSheet: self.$isSheet)
                 }else if self.sheetId == 1{
                     TambahCatatanView(catatan: self.$catatan,isSheet: self.$isSheet)
                 }else{

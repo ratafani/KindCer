@@ -26,50 +26,58 @@ struct SchedulePage: View {
     
     var body: some View {
         
-        return Form {
-            
-            Section(header:  HStack {
-                Image("diagnosis").resizable().frame(width: 20, height: 20)
-                Text("Tanggal Kemoterapi").font(.headline)
-            }) {
-                DatePicker(
-                    selection: $kemoSchedule,
-                    in: dateClosedRange,
-                    displayedComponents: .date,
-                    label: { Text("Tanggal Kemoterapi") .font(.system(size: 15)) .opacity(0.5) }
-                )
-            }
-            
-            Section(header: HStack {
-                Image("hospitalDarkerPurple").resizable().frame(width: 20, height: 20)
-                Text("Tempat").font(.headline)
-            }) {
+        VStack{
+            ZStack(alignment: .center) {
+                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
+                Text("Tambah Jadwal Kemoterapi").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+            }.padding(.bottom,40)
+            Form{
                 
-                TextField("", text: self.$tempatPengobatan)
-            }
-            
-            Section(header: HStack {
-                Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
-                Text("Doctor").font(.headline)
-            }) {
-                TextField("", text: self.$dokter)
-            }
-            
-            Section(header: HStack {
-                Image("condition").resizable().frame(width: 20, height: 20)
-                Text("Catatan").font(.headline)
-            }) {
-                TextField("", text: self.$catatan)
-            }
-            
-            
-            Button("Done")
-            {
-                self.addToCD()
-                self.isSheet =  false
-            } .padding(.leading, 5)
+                Section(header:  HStack {
+                    Image("diagnosis").resizable().frame(width: 20, height: 20)
+                    Text("Tanggal Kemoterapi").font(.headline)
+                }) {
+                    DatePicker(
+                        selection: $kemoSchedule,
+                        in: dateClosedRange,
+                        displayedComponents: .date,
+                        label: { Text("Tanggal Kemoterapi") .font(.system(size: 15)) .opacity(0.5) }
+                    )
+                }
+                
+                Section(header: HStack {
+                    Image("hospitalDarkerPurple").resizable().frame(width: 20, height: 20)
+                    Text("Tempat").font(.headline)
+                }) {
+                    
+                    TextField("", text: self.$tempatPengobatan)
+                }
+                
+                Section(header: HStack {
+                    Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
+                    Text("Doctor").font(.headline)
+                }) {
+                    TextField("", text: self.$dokter)
+                }
+                
+                Section(header: HStack {
+                    Image("condition").resizable().frame(width: 20, height: 20)
+                    Text("Catatan").font(.headline)
+                }) {
+                    TextField("", text: self.$catatan)
+                }
+                
+                
+                Button("Done")
+                {
+                    self.addToCD()
+                    self.isSheet =  false
+                } .padding(.leading, 5)
 
-        }.edgesIgnoringSafeArea(.all)
+            }.edgesIgnoringSafeArea(.all)
+        }
+        
+        
     }
     func addToCD(){
         let newJadwal = JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)

@@ -13,11 +13,15 @@ struct TambahCatatanPengobatan: View {
     @Binding var catatan_obat : String
     @Binding var isSheet : Bool
     
+    @State var title = "Tambah Obat"
     @State var mObat = ""
     @State var catatan = ""
     var body: some View {
         VStack{
-            
+            ZStack(alignment: .center) {
+                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
+                Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+            }.padding(.bottom,40)
             formLargeSizeTextField(title: "Nama Obat", icon: "obat", width: 24, height: 24, textField: $mObat) .frame(height: 200)
             
             formLargeSizeTextField(title: "Tambah Catatan Pengobatan", icon: "pensil", width: 24, height: 24, textField: $catatan) .frame(height: 200)
