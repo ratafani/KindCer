@@ -20,22 +20,27 @@ struct OnboardingCardView: View {
                 }else{
                     
                     Image("logokindceronboard") .resizable()
-                        .frame(width: geometry.frame(in: .global).width/1.5, height: 66, alignment: .center)
+
+                        .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).height/8)
+                        .padding(.top, 50)
+
                     
                     Image(self.card.image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).width/1.3, alignment: .center)
-                        
-                    
+
+                        .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).width/1.5)
+ 
                     Text(self.card.title)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                         .font(.system(size: 23))
                         .lineLimit(5)
                         .multilineTextAlignment(.center)
-                        
-                        .frame(width: geometry.frame(in: .global).width, height: 100)
+
+                        .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/8)
+                    
+
                     
                     
                     
@@ -45,35 +50,41 @@ struct OnboardingCardView: View {
                         .foregroundColor(.secondary)
                         .lineLimit(10)
                         .multilineTextAlignment(.center)
-                        .frame(width: geometry.frame(in: .global).width, height: 100)
-                        
+
+                        .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/6.5)
+
                     
                     
                     
                     }
-            } .padding()
+
+            }
+
+
         }
     }
 }
 
 struct NewLoginView : View {
     var body: some View{
-        VStack
-            {
-                Image("logokindceronboard") .resizable()
-                    .frame(width: 231, height: 66, alignment: .center) .padding(.bottom, 20)
-                
-                Image("onboard3text") .resizable() .frame(width: 300, height: 21, alignment: .center)
-                    .padding(.bottom, 20)
-                
-                Text("KindCer membantu kamu menghadapi\n efek samping kemoterapi!") .font(.system(size: 18)) .foregroundColor(.gray) .multilineTextAlignment(.center)
-                    .padding(.bottom, 40)
-                
-                Image("onboard3") .resizable() .frame(width: 330, height: 341, alignment: .center)
-                    .padding(.bottom, 40)
-                Text("Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan KindCer.") .font(.system(size: 11)) .foregroundColor(.gray) .multilineTextAlignment(.center)
-                
-        }
+
+ GeometryReader { geometry in
+       VStack
+               {
+                   Image("logokindceronboard") .resizable()
+                    .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).height/8)
+                     .padding(.bottom, 8)
+                   
+                 Image("onboard3text") .resizable() .frame(width: geometry.frame(in: .global).width/1.8, height: geometry.frame(in: .global).height/32)
+                   
+                   Text("KindCer membantu kamu menghadapi\n efek samping kemoterapi!") .font(.system(size: 18)) .foregroundColor(.gray) .multilineTextAlignment(.center)
+                     .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/9)
+                   
+                 Image("onboard3") .resizable() .frame(width: geometry.frame(in: .global).width/1.2, height: geometry.frame(in: .global).height/2.0)
+                                    
+           }
+   }
+
         
     }
 }

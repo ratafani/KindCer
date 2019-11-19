@@ -9,7 +9,7 @@
 import SwiftUI
 
 
-var cards: [OnboardingCard] = [OnboardingCard(image: "onboard1", title: "Pahami\n efek samping kemoterapi", description: "Kelola pencegahan kanker serviks dan\n lacak hasil tes anda untuk mendapatkan\n proses pencegahan yang efektif"), OnboardingCard(image: "onboard2", title: "Pantau dan Catat\n Efek Samping Kemoterapi", description: "Pemahaman yang tepat tentang kanker\n serviks dapat membantu anda\n menurunkan resiko kanker serviks."), OnboardingCard(image: "", title: "login", description: "")]
+var cards: [OnboardingCard] = [OnboardingCard(image: "onboard1", title: "Pahami\n Efek Samping Kemoterapi", description: "Ketahui semua efek samping dari\n kemoterapi dan berkonsultasi dengan\n mudah ke dokter Anda."), OnboardingCard(image: "onboard2", title: "Pantau dan Catat\n Efek Samping Kemoterapi", description: "KindCer dapat memudahkan anda untuk\n memantau dan mencatat efek samping\n dari kemoterapi yang sedang Anda\n jalani."), OnboardingCard(image: "", title: "login", description: "")]
 
 struct BoardingView: View {
     
