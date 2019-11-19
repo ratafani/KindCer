@@ -16,7 +16,7 @@ struct ProfileBioAdd: View {
     @State var kontakPenting : String = ""
     @State var kondisi : String = ""
     @State var diagnose : Date = Date()
-   
+    @State var userName : String = ""
     var dateClosedRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .year, value: -1, to: Date())!
         let max = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -26,6 +26,13 @@ struct ProfileBioAdd: View {
     var body: some View {
 //        print(mUser)
         return Form {
+            Section(header: HStack {
+                Image("cancertype").resizable().frame(width: 20, height: 20)
+                Text("Nama Pengguna").font(.headline)
+            }) {
+                
+                TextField("Tulis jenis kanker anda", text: self.$userName)
+            }
             Section(header: HStack {
                 Image("cancertype").resizable().frame(width: 20, height: 20)
                 Text("Jenis Kanker").font(.headline)
@@ -71,7 +78,7 @@ struct ProfileBioAdd: View {
                 let kondisi = !self.kondisi.isEmpty ? self.kondisi:""
                 let tgl = self.diagnose
                 
-                let user = UserType(user_name: self.mUser.user_name, jenis_kanker: jenis, kondisi: kondisi, kontak_penting: kontak, posisi_kanker: lokasi, tgl_diagnosis: tgl)
+                let user = UserType(user_name: !self.userName.isEmpty ? self.userName:" ", jenis_kanker: jenis, kondisi: kondisi, kontak_penting: kontak, posisi_kanker: lokasi, tgl_diagnosis: tgl,photo: self.mUser.photo)
                 self.mUser.updateData(user: user)
 //
                  self.showingModal = false 
@@ -81,6 +88,7 @@ struct ProfileBioAdd: View {
                 self.kontakPenting = self.mUser.kontak_penting
                 self.kondisi = self.mUser.kondisi
                 self.diagnose = self.mUser.tgl_diagnosis
+                self.userName = self.mUser.user_name
             }
         }.edgesIgnoringSafeArea(.all)
         

@@ -15,6 +15,8 @@
 		F6516BBB23822F120035E8E4 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB523822F120035E8E4 /* PageView.swift */; };
 		F6516BBC23822F120035E8E4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB623822F120035E8E4 /* PageViewController.swift */; };
 		F6516BBD23822F120035E8E4 /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB723822F120035E8E4 /* OnboardingCard.swift */; };
+		F6516BBF23824F180035E8E4 /* SummaryEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BBE23824F180035E8E4 /* SummaryEmpty.swift */; };
+		F6516BC12383807D0035E8E4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BC02383807D0035E8E4 /* ImagePicker.swift */; };
 		F66D1C5B23791A1600E864C5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5A23791A1600E864C5 /* CalendarView.swift */; };
 		F66D1C5E2379527D00E864C5 /* dateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5D2379527D00E864C5 /* dateModel.swift */; };
 		F66D1C7C237A5B6A00E864C5 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C76237A5B6A00E864C5 /* ProfileList.swift */; };
@@ -89,6 +91,8 @@
 		F6516BB523822F120035E8E4 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		F6516BB623822F120035E8E4 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		F6516BB723822F120035E8E4 /* OnboardingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
+		F6516BBE23824F180035E8E4 /* SummaryEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryEmpty.swift; sourceTree = "<group>"; };
+		F6516BC02383807D0035E8E4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F66D1C5A23791A1600E864C5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F66D1C5D2379527D00E864C5 /* dateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateModel.swift; sourceTree = "<group>"; };
 		F66D1C76237A5B6A00E864C5 /* ProfileList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				F66D1C90237ABEB100E864C5 /* Helpers.swift */,
 				F66D1C92237ABED400E864C5 /* CustomLegends.swift */,
 				F66D1C94237ABF1500E864C5 /* Line.swift */,
+				F6516BBE23824F180035E8E4 /* SummaryEmpty.swift */,
 			);
 			path = Syntesis;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				F66D1CB1237BE36000E864C5 /* mButton.swift */,
 				F66D1CAF237BE36000E864C5 /* mFormSet.swift */,
 				F66D1CB0237BE36000E864C5 /* mPicker.swift */,
+				F6516BC02383807D0035E8E4 /* ImagePicker.swift */,
 			);
 			path = Aditional;
 			sourceTree = "<group>";
@@ -492,6 +498,7 @@
 				F6D9791E235EAD6F00DC6673 /* HomeView.swift in Sources */,
 				F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */,
 				8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */,
+				F6516BC12383807D0035E8E4 /* ImagePicker.swift in Sources */,
 				F6D9794D2361418C00DC6673 /* QuizCategoryCard.swift in Sources */,
 				F66D1CB3237BE36000E864C5 /* mPicker.swift in Sources */,
 				F6516BBA23822F120035E8E4 /* OnboardingCardView.swift in Sources */,
@@ -505,6 +512,7 @@
 				F6516BBD23822F120035E8E4 /* OnboardingCard.swift in Sources */,
 				F6D97924235F355D00DC6673 /* recordCard.swift in Sources */,
 				F66D1CA3237BDEEF00E864C5 /* UserModel.swift in Sources */,
+				F6516BBF23824F180035E8E4 /* SummaryEmpty.swift in Sources */,
 				F6516BBC23822F120035E8E4 /* PageViewController.swift in Sources */,
 				F66D1C93237ABED400E864C5 /* CustomLegends.swift in Sources */,
 				F6D97918235D9A7200DC6673 /* QuizCard.swift in Sources */,
@@ -704,7 +712,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = MW3338A45T;
+				DEVELOPMENT_TEAM = 52RX5R54N7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -722,17 +730,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = MW3338A45T;
+				DEVELOPMENT_TEAM = 52RX5R54N7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ada.KindCer;
+				PRODUCT_BUNDLE_IDENTIFIER = ada.Kindcer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

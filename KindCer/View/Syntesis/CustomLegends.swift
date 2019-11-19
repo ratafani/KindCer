@@ -13,7 +13,8 @@ struct CustomLegend: View {
     @Binding var frame: CGRect
     @Binding var hideHorizontalLines: Bool
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-
+    
+    @State var maxIdx = 0
     var stepWidth: CGFloat {
         return frame.size.width / CGFloat(data.points.count-1)
     }
@@ -28,9 +29,9 @@ struct CustomLegend: View {
             ForEach((0...3), id: \.self) { height in
                 HStack(alignment: .center){
                     ZStack {
-                        Rectangle().foregroundColor(self.arrColor[height]).frame(width: 50, height: 25).cornerRadius(20)
+                        Rectangle().foregroundColor(self.data.maxIdx >= height ? self.arrColor[height]:.clear).frame(width: 50, height: 25).cornerRadius(20)
                         Text(self.arrCategory[height])
-                            .foregroundColor(.white)
+                            .foregroundColor(self.data.maxIdx >= height ? .white:.clear)
                             .font(.caption)
                     }.offset(x: 0, y: (self.frame.height-CGFloat(self.getYLegend()![height])*self.stepHeight)-(self.frame.height/2))
                      self.line(atHeight: CGFloat(self.getYLegend()![height]), width: self.frame.width)
@@ -45,7 +46,7 @@ struct CustomLegend: View {
             }
             
         }.onAppear{
-            
+           
         }
     }
     

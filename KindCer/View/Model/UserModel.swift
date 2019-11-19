@@ -18,6 +18,7 @@ struct UserType {
     var kontak_penting : String
     var posisi_kanker : String
     var tgl_diagnosis : Date
+    var photo : Data
 }
 
 class UserModel : NSObject,ObservableObject {
@@ -31,6 +32,7 @@ class UserModel : NSObject,ObservableObject {
     var kontak_penting : String = ""
     var posisi_kanker : String = ""
     var tgl_diagnosis : Date = Date()
+    var photo : Data = Data()
     
     override init() {
         super.init()
@@ -62,6 +64,8 @@ class UserModel : NSObject,ObservableObject {
         entity.setValue(user.kontak_penting, forKey: "kontak_penting")
         entity.setValue(user.posisi_kanker, forKey: "posisi_kanker")
         entity.setValue(user.tgl_diagnosis, forKey: "tgl_diagnosis")
+        entity.setValue(user.photo, forKey: "photo")
+        
         fetchUser(user: user)
     }
     
@@ -80,6 +84,7 @@ class UserModel : NSObject,ObservableObject {
                 up.setValue(user.kontak_penting, forKey: "kontak_penting")
                 up.setValue(user.posisi_kanker, forKey: "posisi_kanker")
                 up.setValue(user.tgl_diagnosis, forKey: "tgl_diagnosis")
+                up.setValue(user.photo, forKey: "photo")
                 try context.save()
                 fetchUser(user: user)
             }else{
@@ -101,12 +106,13 @@ class UserModel : NSObject,ObservableObject {
             let res = try context.fetch(fetchRequest)
             if res.count > 0{
                 let a = res[0] as! NSManagedObject
-                self.user_name = a.value(forKey: "user_name") as! String
+                self.user_name = a.value(forKey: "user_name") as! String 
                 self.jenis_kanker = a.value(forKey: "jenis_kanker") as! String
                 self.kondisi = a.value(forKey: "kondisi") as! String
                 self.kontak_penting = a.value(forKey: "kontak_penting") as! String
                 self.posisi_kanker = a.value(forKey: "posisi_kanker") as! String
                 self.tgl_diagnosis = a.value(forKey: "tgl_diagnosis") as! Date
+                self.photo = a.value(forKey: "photo") as! Data
             }else{
                 
             }
@@ -117,4 +123,32 @@ class UserModel : NSObject,ObservableObject {
         }
     }
     
+    
+    func updatePhoto(photo:Data){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let context = app.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        do{
+            let res = try context.fetch(fetchRequest)
+            if res.count > 0{
+                let up = res[0] as! NSManagedObject
+                up.setValue(photo, forKey: "photo")
+                
+                try context.save()
+                self.photo = photo
+                fetchData()
+            }else{
+                let entity = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
+                
+                entity.setValue(photo, forKey: "photo")
+                self.photo = photo
+                fetchData()
+            }
+            
+        }
+        catch{
+            
+        }
+    }
 }

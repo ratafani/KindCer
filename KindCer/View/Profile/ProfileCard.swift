@@ -19,41 +19,50 @@ struct ProfileCardHeader: View {
     @State var width: CGFloat = 150
     @State var height: CGFloat = 150
     @State var isTapped: Bool = false
-    @Binding var name : String
+    @Binding var isSheet : Bool
+    @Binding var sheetType :Int
+    @Binding var image : UIImage?
+    @ObservedObject var userModel : UserModel
     var body: some View {
         VStack {
             ZStack{
                 Rectangle().foregroundColor(Color("Primary"))
-                                    .frame(width: 414, height: 289)
+                    .frame( height: 289)
                 HStack{
                     Spacer()
                     VStack{
-                        
-                        profilePic(width: width, height: height)
-                        Text(name).foregroundColor(.white).bold().font(.system(size: 24))
+                        if(userModel.photo.isEmpty){
+
+                            Image("photo1")
+                                .resizable()
+                                .frame(width: width, height: height)
+                                .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
+                        }else{
+
+                            Image(uiImage: image ?? UIImage())
+                                .resizable()
+                                .frame(width: width, height: height)
+                                .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
+                        }
+                        Text(userModel.user_name ?? "User").foregroundColor(.white).bold().font(.system(size: 24))
                         
                     }.offset(y:30)
                     Spacer()
                 }
-                HStack {
-                    Spacer()
-                    VStack {
-                        Button(action: {
-                            
-                        }) {
-                            Image("edit").renderingMode(.original).offset(y:-50).padding()
-                        }
-                    }
-                }
+                
             }
         }//.edgesIgnoringSafeArea(.all)
+            
+            .onAppear{
+                self.image = UIImage(data: self.userModel.photo) ?? UIImage()
+        }
     }
 }
 
 struct ProfileCardStatusEmpty: View{
     var body: some View{
         ZStack{
-            Rectangle().frame(width: 382, height: 217).foregroundColor(.white).cornerRadius(10)
+            Rectangle().frame( height: 217).foregroundColor(.white).cornerRadius(10)
             VStack{
                 
                 Image("EmptyRecord").resizable().frame(width: 103.75, height: 102)
@@ -81,7 +90,7 @@ struct ProfileCardStatus: View {
     
     var body: some View {
         ZStack{
-            Rectangle().frame(width: 382, height: 200).foregroundColor(.white).cornerRadius(10)
+            Rectangle().frame( height: 200).foregroundColor(.white).cornerRadius(10)
             VStack{
                 
                 ZStack{
@@ -97,7 +106,7 @@ struct ProfileCardStatus: View {
                     VStack {
                         HStack {
                             Text("Next treatment:").font(.system(size: 15))
-//                            Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
+                            //                            Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
                             Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
                             Spacer().font(.system(size: 15))
                             Text("52 hari lagi").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1)))
@@ -135,10 +144,9 @@ struct profilePic: View {
     
     var body: some View{
         Image("photo1")
-            .resizable().scaledToFill()
+            .resizable()
             .frame(width: width, height: height)
-            .overlay(Circle().stroke(Color.white, lineWidth: 5))
-            .clipShape(Ellipse())
+            .scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
     }
 }
 

@@ -117,9 +117,22 @@ class ChartData: ObservableObject {
     @Published var points: [Int] = [Int]()
     @Published var currentPoint: Int? = nil
     @Published var date: [String] = [String]()
+    @Published var maxIdx: Int  = 0
+    
     init(points:[Int],date:[String]) {
         self.points = points
         self.date = date
+        
+        let maxVal = self.points.max() ?? 0
+        if maxVal > 95 {
+            self.maxIdx = 3
+        }else if maxVal > 63{
+            self.maxIdx = 2
+        }else if maxVal > 31{
+            self.maxIdx = 1
+        }else{
+            self.maxIdx = 0
+        }
     }
 }
 

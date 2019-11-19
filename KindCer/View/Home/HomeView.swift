@@ -20,9 +20,11 @@ struct HomeView: View {
     @State var mSymptoms : [String] = []
     @ObservedObject var dateModel: DateModel
     @ObservedObject var recordModel: RecordModel
+    @ObservedObject var profileModel : UserModel = UserModel()
     @State var isSheet : Bool = false
     @State var title = "Welcome,"
     @State var homeSheet : HomeSheet = .Profile
+    
     
     var body: some View {
         
@@ -33,10 +35,18 @@ struct HomeView: View {
                     Text(UserModel().user_name.isEmpty ? " ":UserModel().user_name).font(.title).bold()
                 }
                 Spacer()
-                Image("photo1").resizable().frame(width: 60, height: 60).scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
-                    self.isSheet = true
-                    self.homeSheet = HomeSheet.Profile
+                if (!profileModel.photo.isEmpty){
+                    Image(uiImage: UIImage(data: profileModel.photo)!).resizable().frame(width: 60, height: 60).scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
+                        self.isSheet = true
+                        self.homeSheet = HomeSheet.Profile
+                    }
+                }else{
+                    Image("photo1").resizable().frame(width: 60, height: 60).scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
+                        self.isSheet = true
+                        self.homeSheet = HomeSheet.Profile
+                    }
                 }
+                
                 
             }.padding(.horizontal,20).background(Color.clear)
             Button(action: {
@@ -83,9 +93,14 @@ struct HomeView: View {
             .sheet(isPresented: $isSheet) {
                 
                 if self.homeSheet == HomeSheet.Profile{
-                    ProfilePage(userModel: UserModel(), jadwal: JadwalModel())
+                    ProfilePage(userModel: self.profileModel, jadwal: JadwalModel())
                 }else if self.homeSheet == HomeSheet.Summary{
-                    SummaryView()
+                    if self.recordModel.mData.isEmpty{
+                        SummaryEmpty()
+                    }else{
+                        SummaryView()
+                    }
+                    
                 }else{
                     SymptompsAdd( recordModel: self.recordModel,homeSheet : self.$isSheet,now: self.dateModel.currentDate)
                 }

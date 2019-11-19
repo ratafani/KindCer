@@ -79,57 +79,59 @@ struct SummaryView: View {
             
             Spacer()
         }.edgesIgnoringSafeArea(.all).onAppear{
+            self.picked = self.a.mData[0].type
             self.update(type: self.picked)
         }
     }
     
     func update(type:String){
         self.date = [" "," "]
-                    self.data = [0,0]
-                    var date2 = [String]()
-                    var data2 = [Int]()
-                    self.sType = []
-                    self.a.readAllData()
-                    var mType = [String:Bool]()
-                    if self.a.mData.count > 0{
-                        
-                        for arr in self.a.mData{
-                            mType[arr.type] = true
-        //                    print(self.a.mData)
-                            if arr.type == self.picked{
-                                
-                                var num = 0
-                                switch arr.kondisi {
-                                case "Ringan":
-                                    num = 32
-                                case "Sedang":
-                                    num = 64
-                                case "Bahaya":
-                                    num = 96
-                                default:
-                                    num = 0
-                                }
-                                print(num)
-                                data2.append(num)
-                                let dateFormatter = DateFormatter()
-                                dateFormatter.dateFormat = "dd MMM YYYY"
-                                date2.append("\(dateFormatter.string(from: arr.tanggal))")
-                            }
-                        }
-                        for t in mType{
-                            if t.value{
-                                self.sType.append(t.key)
-                            }
-                        }
-                        print(data2)
-                        if data2.count<2{
-                            data2.append(data2[0])
-                            date2.append(date2[0])
-                        }
-                        self.date = date2
-                        self.data = data2
-                        
+        self.data = [0,0]
+        var date2 = [String]()
+        var data2 = [Int]()
+        self.sType = []
+        self.a.readAllData()
+        var mType = [String:Bool]()
+        if self.a.mData.count > 0{
+            
+
+            for arr in self.a.mData{
+                mType[arr.type] = true
+                                //                    print(self.a.mData)
+                if arr.type == self.picked{
+                    
+                    var num = 0
+                    switch arr.kondisi {
+                    case "Ringan":
+                        num = 32
+                    case "Sedang":
+                        num = 64
+                    case "Bahaya":
+                        num = 96
+                    default:
+                        num = 0
                     }
+                    print(num)
+                    data2.append(num)
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd MMM YYYY"
+                    date2.append("\(dateFormatter.string(from: arr.tanggal))")
+                }
+            }
+            for t in mType{
+                if t.value{
+                    self.sType.append(t.key)
+                }
+            }
+            print(data2)
+            if data2.count<2{
+                data2.append(data2[0])
+                date2.append(date2[0])
+            }
+            self.date = date2
+            self.data = data2
+            
+        }
     }
 }
 
