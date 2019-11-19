@@ -55,18 +55,21 @@ struct formObat: View{
                     HStack{
                         setImage(icon: icon, width: width, height: height, alignment: .leading).padding(.horizontal, 20)
                         VStack(alignment: .leading){
+                            
+                            
                             Text(title)
                                 .bold()
                                 .font(.system(size: 18))
                             
                             if !obat.isEmpty{
                                 
-                                ZStack
-                                    {
-                                        Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.5221666694, green: 0.3157750666, blue: 0.8402488828, alpha: 1))).frame(width: 90, height: 30).cornerRadius(10)
-                                        Text(obat).font(.system(size: 13)).foregroundColor(Color.init(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).font(.footnote)
-                                }
+                                
+                                Text(obat).font(.system(size: 13)).foregroundColor(Color.init(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).font(.footnote).background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.5221666694, green: 0.3157750666, blue: 0.8402488828, alpha: 1))).frame(height: 30).cornerRadius(10)).padding(.vertical)
+                                
                             }
+                            
+                            
+                            
                             
                             Text(status.isEmpty ? "Tidak ada catatan obat":status)
                                 .opacity(0.5)
