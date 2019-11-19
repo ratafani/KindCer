@@ -20,22 +20,27 @@ struct OnboardingCardView: View {
                 }else{
                     
                     Image("logokindceronboard") .resizable()
+
                         .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).height/8)
                         .padding(.top, 50)
+
                     
                     Image(self.card.image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+
                         .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).width/1.5)
-                    
+ 
                     Text(self.card.title)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                         .font(.system(size: 23))
                         .lineLimit(5)
                         .multilineTextAlignment(.center)
+
                         .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/8)
                     
+
                     
                     
                     
@@ -45,12 +50,16 @@ struct OnboardingCardView: View {
                         .foregroundColor(.secondary)
                         .lineLimit(10)
                         .multilineTextAlignment(.center)
+
                         .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/6.5)
+
                     
                     
                     
                     }
+
             }
+
 
         }
     }
@@ -58,6 +67,7 @@ struct OnboardingCardView: View {
 
 struct NewLoginView : View {
     var body: some View{
+
  GeometryReader { geometry in
        VStack
                {
@@ -74,7 +84,7 @@ struct NewLoginView : View {
                                     
            }
    }
-    
+
         
     }
 }

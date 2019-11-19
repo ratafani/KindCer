@@ -36,10 +36,10 @@ struct ProfileCardHeader: View {
                             Image("photo1")
                                 .resizable()
                                 .frame(width: width, height: height)
-                                .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
+                            .scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
                         }else{
 
-                            Image(uiImage: image ?? UIImage())
+                            Image(uiImage: UIImage(data: self.userModel.photo) ?? UIImage())
                                 .resizable()
                                 .frame(width: width, height: height)
                                 .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)

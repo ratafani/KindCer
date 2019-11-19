@@ -31,11 +31,11 @@ struct ImagePicker: UIViewControllerRepresentable {
                                    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             
-            let imageData = uiImage!.jpegData(compressionQuality: 1.0)
+            let imageData = imagePicked.jpegData(compressionQuality: 1.0)
             if !(imageData==nil) {
                userModel.updatePhoto(photo: imageData!)
             }
-            uiImage = imagePicked
+//            uiImage = imagePicked
             isShown = false
             
             
