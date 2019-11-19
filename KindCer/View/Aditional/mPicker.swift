@@ -27,10 +27,12 @@ struct PickerForm: View {
     
     var body: some View{
         VStack{
-            ZStack(alignment: .center) {
-                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
-                Text("Kondisi \(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
-            }.padding(.bottom,40)
+            headerModalPicker(title: title)
+//            ZStack(alignment: .center) {
+//                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
+//                Text("Kondisi \(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+//            }//.padding(.bottom,40)
+            Spacer()
             Form{
                 Section(header: Text("Pilih salah satu"), content: {
                     HStack {
