@@ -10,13 +10,17 @@ import SwiftUI
 
 struct TambahCatatanView: View {
     
+    @State var title = "Tambah Catatan"
     @Binding var catatan : String
     @Binding var isSheet : Bool
     @State var tambah = ""
     var body: some View {
         
         VStack{
-            
+            ZStack(alignment: .center) {
+                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
+                Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+            }.padding(.bottom,40)
             formLargeSizeTextField(title: "Tambah Catatan", icon: "pensil", width: 24, height: 24, textField: $tambah) .frame(height: 200)
             
             Spacer()
