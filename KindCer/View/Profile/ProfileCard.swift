@@ -48,7 +48,7 @@ struct ProfileCardHeader: View {
                                 .frame(width: width, height: height)
                                 .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
                         }
-                        Text(userModel.user_name ?? "User").foregroundColor(.white).bold().font(.system(size: 24)).padding(.bottom, 30)
+                        Text(userModel.user_name.isEmpty ? "User":userModel.user_name).foregroundColor(.white).bold().font(.system(size: 24)).padding(.bottom, 30)
                         
                     }.offset(y:30)
                     Spacer()
