@@ -22,9 +22,10 @@ struct HomeView: View {
     @ObservedObject var recordModel: RecordModel
     @ObservedObject var profileModel : UserModel = UserModel()
     @State var isSheet : Bool = false
+    @State var isAlarm : Bool = false
     @State var title = "Welcome,"
     @State var homeSheet : HomeSheet = .Profile
-//    @State var a : RecordModel = RecordModel()
+    //    @State var a : RecordModel = RecordModel()
     
     var body: some View {
         
@@ -67,8 +68,13 @@ struct HomeView: View {
                 Text("Symptomps (\(recordModel.mData.count))").padding(.horizontal)
                 Spacer()
                 Button(action: {
-                    self.isSheet = true
-                    self.homeSheet = HomeSheet.Record
+                    if self.dateModel.currentDate.timeIntervalSince1970 <= Date().timeIntervalSince1970{
+                        self.isSheet = true
+                        self.homeSheet = HomeSheet.Record
+                        
+                    }else{
+                        self.isAlarm = true
+                    }
                 }) {
                     Text("Tambah").foregroundColor(Color("Primary"))
                 }.padding(.horizontal)
@@ -95,9 +101,9 @@ struct HomeView: View {
                 if self.homeSheet == HomeSheet.Profile{
                     ProfilePage(userModel: self.profileModel, jadwal: JadwalModel())
                 }else if self.homeSheet == HomeSheet.Summary{
-//                    self.a = self.recordModel
-//                    self.a.readAllData()
-//                    self.recordModel.readAllData()
+                    //                    self.a = self.recordModel
+                    //                    self.a.readAllData()
+                    //                    self.recordModel.readAllData()
                     if self.isSummary(){
                         SummaryEmpty()
                     }else{
@@ -107,7 +113,9 @@ struct HomeView: View {
                 }else{
                     SymptompsAdd( recordModel: self.recordModel,homeSheet : self.$isSheet,now: self.dateModel.currentDate)
                 }
-        }.onAppear{
+        }.alert(isPresented: $isAlarm, content: {
+            Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
+        }).onAppear{
             
             //            self.recordModel.readData(date: self.dateModel.currentDate)
         }
