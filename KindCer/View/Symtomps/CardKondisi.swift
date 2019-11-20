@@ -36,7 +36,7 @@ struct CardKondisi: View {
                                 
                         }.padding()
                         
-                        Image("ringancondition") .resizable()
+                        Image(kondisi) .resizable()
                             .frame(width: 181, height: 171, alignment: .center)
                 }.onAppear{
                     self.gantiWarna()

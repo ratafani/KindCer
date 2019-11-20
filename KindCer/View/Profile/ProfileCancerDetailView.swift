@@ -11,7 +11,11 @@ import SwiftUI
 struct ProfileCancerDetailView: View {
     
     @ObservedObject var userModel:UserModel
-    
+    var dateFormatter: DateFormatter {
+          let formatter = DateFormatter()
+          formatter.dateStyle = .long
+          return formatter
+      }
     var body: some View {
         
         VStack(alignment: .center, spacing: 2){
@@ -56,7 +60,7 @@ struct ProfileCancerDetailView: View {
                         VStack(alignment:.leading){
                             Text("Diagnosis")
                                 .font(.system(size: 14)).foregroundColor(.gray)
-                            Text("\(userModel.tgl_diagnosis)") .font(.system(size: 15))
+                            Text("\(userModel.tgl_diagnosis, formatter: dateFormatter)") .font(.system(size: 15))
                         }.padding(4)
                         Spacer()
                     }

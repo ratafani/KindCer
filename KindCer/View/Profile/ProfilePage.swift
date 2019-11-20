@@ -39,7 +39,7 @@ struct ProfilePage: View {
                 }
                 //            ProfileCardStatus()
                 HStack{
-                    Text("Jadwal Kemoterapi").bold().font(.system(size: 20)).padding(.horizontal)
+                    Text("Jadwal Kemoterapi (\(jadwal.data.count))").bold().font(.system(size: 20)).padding(.horizontal)
                     Spacer()
                     Button("Tambah"){
                         self.isSheet = true

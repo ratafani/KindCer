@@ -81,24 +81,17 @@ struct ProfileCardStatusEmpty: View{
 struct ProfileCardStatus: View {
     
     @State var statusTitle = "Chemotherapy"
-    @State var mStatus : CGFloat = 250.0
+    @State var mStatus : CGFloat = 350.0
     @State var days : Int = 225
     
     @State var jadwal = JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
+        formatter.dateStyle = .medium
         return formatter
     }
-    
-    var dateFormatter1: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.dateFormat = "d"
-        return formatter
-    }
-    
+ 
     var body: some View {
         ZStack{
             Rectangle().frame( height: 200).foregroundColor(.white).cornerRadius(10)
@@ -120,12 +113,21 @@ struct ProfileCardStatus: View {
                             //                            Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
                             Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
                             Spacer().font(.system(size: 15))
-                            Text("\(jadwal.tanggal, formatter: dateFormatter1) hari lagi").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1)))
+                            Text("\(days) hari lagi").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).onAppear{
+                                let calendar = Calendar.current
+
+                                let components = calendar.dateComponents([.day], from: Date(), to: self.jadwal.tanggal)
+                                self.days = components.day ?? 0
+                            }
                         }.padding(.horizontal,25).padding(.top,10).font(.system(size: 15))
                         VStack{
                             ZStack(alignment: .leading){
                                 Rectangle().frame(width: 350, height: 15).foregroundColor(.init(#colorLiteral(red: 0.9316993356, green: 0.9261607528, blue: 0.9359568357, alpha: 1))).cornerRadius(10)
-                                Rectangle().frame(width: mStatus, height: 15).foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).cornerRadius(10)
+                                Rectangle().frame(width: mStatus, height: 15).foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).cornerRadius(10).onAppear{
+                                    for _ in 0...(30-self.days){
+                                        self.mStatus -= 350/30
+                                    }
+                                }
                             }//.padding(.bottom)
                         }
                         //                    Spacer()
