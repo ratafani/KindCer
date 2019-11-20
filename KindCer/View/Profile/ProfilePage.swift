@@ -69,7 +69,7 @@ struct ProfilePage: View {
                 }.padding(.init(top: 10, leading: 0, bottom: 5, trailing: 0))
                 ProfileCancerDetailView(userModel: userModel)
                 
-                ProfileConditionDetail(userModel: userModel)
+//                ProfileConditionDetail(userModel: userModel)
                 Spacer()
                 //            ProfileListEmpty().offset(y:-30)
             }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all)).sheet( isPresented: $isSheet) {
