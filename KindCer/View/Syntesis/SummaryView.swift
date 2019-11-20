@@ -24,10 +24,7 @@ struct SummaryView: View {
     
     var body: some View {
         VStack {
-            ZStack(alignment: .center) {
-                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
-                Text("Summary").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
-            }.padding(.bottom,40)
+            headerModal(title: "Summary").padding(.init(top: 0, leading: 0, bottom: 40, trailing: 0))
             
             CustomLineView(data: data, date: date , title: picked, legend: "in last 23 days").frame(width: 370, height: 300).padding().offset(x: 0, y: -60)
             ScrollView(.horizontal, showsIndicators: false) {

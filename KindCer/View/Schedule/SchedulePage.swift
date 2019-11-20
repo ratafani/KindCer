@@ -25,16 +25,11 @@ struct SchedulePage: View {
     }
     
     var body: some View {
-        
         VStack{
-            ZStack(alignment: .center) {
-                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
-                Text("Tambah Jadwal Kemoterapi").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
-            }.padding(.bottom,40)
+            headerModal(title: "Tambah Jadwal Kemoterapi")
             Form{
-                
                 Section(header:  HStack {
-                    Image("diagnosis").resizable().frame(width: 20, height: 20)
+                Image("diagnosis").resizable().frame(width: 20, height: 20)
                     Text("Tanggal Kemoterapi").font(.headline)
                 }) {
                     DatePicker(
@@ -50,21 +45,21 @@ struct SchedulePage: View {
                     Text("Tempat").font(.headline)
                 }) {
                     
-                    TextField("", text: self.$tempatPengobatan)
+                    TextField("Tulis tempat anda berobat", text: self.$tempatPengobatan)
                 }
                 
                 Section(header: HStack {
                     Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
                     Text("Doctor").font(.headline)
                 }) {
-                    TextField("", text: self.$dokter)
+                    TextField("Tulis dokter yang akan menangani anda", text: self.$dokter)
                 }
                 
                 Section(header: HStack {
                     Image("condition").resizable().frame(width: 20, height: 20)
                     Text("Catatan").font(.headline)
                 }) {
-                    TextField("", text: self.$catatan)
+                    TextField("Tulis catatan anda", text: self.$catatan)
                 }
                 
                 
