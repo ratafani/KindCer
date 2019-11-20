@@ -20,9 +20,9 @@ struct OnboardingCardView: View {
                 }else{
                     
                     Image("logokindceronboard") .resizable()
-
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).height/8)
-                        .padding(.top, 50)
+                        .padding(.top, 80)
 
                     
                     Image(self.card.image)
@@ -72,15 +72,17 @@ struct NewLoginView : View {
        VStack
                {
                    Image("logokindceronboard") .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).height/8)
                      .padding(.bottom, 8)
                    
-                 Image("onboard3text") .resizable() .frame(width: geometry.frame(in: .global).width/1.8, height: geometry.frame(in: .global).height/32)
+                 Image("onboard3text") .resizable() .aspectRatio(contentMode: .fit)
+                    .frame(width: geometry.frame(in: .global).width/1.8, height: geometry.frame(in: .global).height/32)
                    
                    Text("KindCer membantu kamu menghadapi\n efek samping kemoterapi!") .font(.system(size: 18)) .foregroundColor(.gray) .multilineTextAlignment(.center)
                      .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/9)
                    
-                 Image("onboard3") .resizable() .frame(width: geometry.frame(in: .global).width/1.2, height: geometry.frame(in: .global).height/2.0)
+                 Image("onboard3") .resizable() .aspectRatio(contentMode: .fit) .frame(width: geometry.frame(in: .global).width/1.2, height: geometry.frame(in: .global).height/2.0)
                                     
            }
    }
