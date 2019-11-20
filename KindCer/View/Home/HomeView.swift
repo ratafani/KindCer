@@ -35,8 +35,8 @@ struct HomeView: View {
                     Text(UserModel().user_name.isEmpty ? " ":UserModel().user_name).font(.title).bold()
                 }
                 Spacer()
-                if (!profileModel.photo.isEmpty){
-                    Image(uiImage: UIImage(data: profileModel.photo)!).resizable().frame(width: 60, height: 60).scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
+                if (!UserModel().photo.isEmpty){
+                    Image(uiImage: UIImage(data: UserModel().photo)!).resizable().frame(width: 60, height: 60).scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
                         self.isSheet = true
                         self.homeSheet = HomeSheet.Profile
                     }

@@ -22,56 +22,60 @@ struct PageView<Page:View>: View {
     }
     
     var body: some View {
-        VStack{
-             PageViewController(controllers: viewControllers,currentPage: $currentPage)
-            
-            if currentPage == 2
-                        {
-                        
-                               
-                                
-                                Button (action: {
-                                    let userdef = UserDefaults.standard
-                                    userdef.set(true, forKey: "isBoarding")
-                                                          self.isOnboardingDone.toggle()
-                                                              }, label: {
-                                                                  RoundedRectangle(cornerRadius: 15)
-                                                                      .frame(width: 360, height: 60, alignment: .center)
-                                                                      .foregroundColor(Color.purple)
-                                                                  .overlay(
-                                                                  Text("Mulai")
-                                                                  .foregroundColor(Color.white))
-                                                        
-                                                          })
-        
-                      
-                            
+        GeometryReader { geometry in
+            VStack{
+                PageViewController(controllers: self.viewControllers,currentPage: self.$currentPage)
+                
+                if self.currentPage == 2
+                {
                     
-                        }
-            else
-            {
-                Button (action: {
+                    Text("Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan KindCer.") .font(.system(size: 11)) .foregroundColor(.gray) .multilineTextAlignment(.center) .frame(width: geometry.frame(in: .global).width/1.2, height: geometry.frame(in: .global).height/12.0)
+                    
+                    
+                    Button (action: {
+                        let userdef = UserDefaults.standard
+                        userdef.set(true, forKey: "isBoarding")
+                        self.isOnboardingDone.toggle()
+                    }, label: {
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: geometry.frame(in: .global).width/1.2, height: geometry.frame(in: .global).width/7.2)
+                            .foregroundColor(Color.purple)
+                            .overlay(
+                                Text("Mulai")
+                                    .foregroundColor(Color.white))
+                        
+                    })
+                    
+                    
+                    
+                    
+                }
+                else
+                {
+                    Button (action: {
                     }, label: {
                         RoundedRectangle(cornerRadius: 15)
                             .frame(width: 360, height: 60, alignment: .center)
                             .foregroundColor(Color.purple)
-                        .opacity(0)
-                        .overlay(
-                        Text("Get Started")
-                        .foregroundColor(Color.white))
-                            
-                })
-            }
+                            .opacity(0)
+                            .overlay(
+                                Text("Get Started")
+                                    .foregroundColor(Color.white))
                         
-            
-            PageController(numberOfPages: viewControllers.count, currentPage: $currentPage)
-            
-        
-
+                    })
+                }
+                
+                
+                PageController(numberOfPages: self.viewControllers.count, currentPage: self.$currentPage)
+                
+                
+                
+            }
         }
-        }
-       
     }
+    
+    
+}
 
 
 struct PageView_Previews: PreviewProvider {
