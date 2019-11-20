@@ -23,7 +23,7 @@ struct HomeView: View {
     @ObservedObject var profileModel : UserModel = UserModel()
     @State var isSheet : Bool = false
     @State var isAlarm : Bool = false
-    @State var title = "Welcome,"
+    @State var title = "Halo,"
     @State var homeSheet : HomeSheet = .Profile
     //    @State var a : RecordModel = RecordModel()
     
@@ -58,14 +58,14 @@ struct HomeView: View {
                     Rectangle().foregroundColor(Color("Primary")).frame( height: 50)
                     HStack {
                         Image("summaryIcon").resizable().foregroundColor(.white).frame(width: 30, height: 30)
-                        Text("Lihat Summary Saya").foregroundColor(.white)
+                        Text("Lihat Rangkuman Saya").foregroundColor(.white)
                         Spacer()
                     }.padding(.horizontal)
                 }
             }
             CalendarView(dateModel: dateModel,recordModel: recordModel)
             HStack{
-                Text("Symptomps (\(recordModel.mData.count))").padding(.horizontal)
+                Text("Gejala (\(recordModel.mData.count))").padding(.horizontal)
                 Spacer()
                 Button(action: {
                     if self.dateModel.currentDate.timeIntervalSince1970 <= Date().timeIntervalSince1970{

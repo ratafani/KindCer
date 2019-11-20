@@ -109,7 +109,7 @@ struct ProfileCardStatus: View {
                 ZStack{
                     VStack {
                         HStack {
-                            Text("Next treatment:").font(.system(size: 15))
+                            Text("Pengoabatan Berikutnya:").font(.system(size: 15))
                             //                            Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
                             Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
                             Spacer().font(.system(size: 15))

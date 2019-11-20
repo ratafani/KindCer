@@ -50,7 +50,7 @@ struct SchedulePage: View {
                 
                 Section(header: HStack {
                     Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
-                    Text("Doctor").font(.headline)
+                    Text("Dokter").font(.headline)
                 }) {
                     TextField("Tulis dokter yang akan menangani anda", text: self.$dokter)
                 }
@@ -63,7 +63,7 @@ struct SchedulePage: View {
                 }
                 
                 
-                Button("Done")
+                Button("Simpan")
                 {
                     self.addToCD()
                     self.isSheet =  false
