@@ -26,7 +26,7 @@ struct ProfileCancerDetailView: View {
                         Image("cancertype") .resizable()
                             .frame(width: 23, height: 23, alignment: .center).padding(.horizontal,10)
                         VStack(alignment:.leading){
-                            Text("Cancer Type")
+                            Text("Tipe Kanker")
                                 .font(.system(size: 14)).foregroundColor(.gray)
                             Text(userModel.jenis_kanker)
                                 .font(.system(size: 15))
@@ -42,7 +42,7 @@ struct ProfileCancerDetailView: View {
                         Image("cancersite") .resizable()
                             .frame(width: 15, height: 35, alignment: .center).padding(.horizontal,10)
                         VStack(alignment:.leading){
-                            Text("Cancer Site")
+                            Text("Posisi Kanker")
                                 .font(.system(size: 14)).foregroundColor(.gray)
                             Text(userModel.posisi_kanker) .font(.system(size: 15))
                         }.padding(4)

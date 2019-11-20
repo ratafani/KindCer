@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,24 +15,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreenimg" translatesAutoresizingMaskIntoConstraints="NO" id="QDE-7S-pbp">
-                                <rect key="frame" x="0.0" y="386" width="414" height="510"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreenlogo" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-n4-hp9">
+                                <rect key="frame" x="75" y="88" width="264" height="183"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="510" id="3Rx-oy-kg5"/>
+                                    <constraint firstAttribute="height" constant="183" id="a0z-Hv-3uv"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreenlogo" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-n4-hp9">
-                                <rect key="frame" x="87" y="132" width="240" height="165"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreenimg" translatesAutoresizingMaskIntoConstraints="NO" id="QDE-7S-pbp">
+                                <rect key="frame" x="0.0" y="324" width="414" height="572"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.59607843137254901" green="0.39215686274509803" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QDE-7S-pbp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0xA-kN-29N"/>
-                            <constraint firstItem="QDE-7S-pbp" firstAttribute="top" secondItem="oyp-n4-hp9" secondAttribute="bottom" constant="89" id="Bnv-0E-Sla"/>
-                            <constraint firstItem="QDE-7S-pbp" firstAttribute="centerX" secondItem="oyp-n4-hp9" secondAttribute="centerX" id="CV1-am-kVa"/>
-                            <constraint firstItem="oyp-n4-hp9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="88" id="ccn-vk-pff"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="QDE-7S-pbp" secondAttribute="bottom" constant="-34" id="d6a-Sc-Z7l"/>
-                            <constraint firstItem="oyp-n4-hp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="kna-cU-FXm"/>
+                            <constraint firstItem="QDE-7S-pbp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2S4-pu-Qxt"/>
+                            <constraint firstItem="oyp-n4-hp9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="2d2-KT-RwH"/>
+                            <constraint firstItem="QDE-7S-pbp" firstAttribute="top" secondItem="oyp-n4-hp9" secondAttribute="bottom" constant="53" id="GYZ-1U-6Bj"/>
+                            <constraint firstAttribute="bottom" secondItem="QDE-7S-pbp" secondAttribute="bottom" id="ZEX-vQ-7y4"/>
+                            <constraint firstItem="oyp-n4-hp9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="en1-ze-o8G"/>
+                            <constraint firstItem="QDE-7S-pbp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mk9-Gg-2Q0"/>
+                            <constraint firstItem="oyp-n4-hp9" firstAttribute="centerX" secondItem="QDE-7S-pbp" secondAttribute="centerX" id="q31-B4-3y0"/>
+                            <constraint firstItem="oyp-n4-hp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="vGI-xC-S68"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -43,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splashscreenimg" width="414" height="490"/>
+        <image name="splashscreenimg" width="414" height="572"/>
         <image name="splashscreenlogo" width="612" height="482"/>
     </resources>
 </document>

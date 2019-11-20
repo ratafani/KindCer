@@ -53,6 +53,7 @@ struct ProfileBioAdd: View {
                                 self.userName = self.mUser.user_name
                             }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
                         }
+
                     }
                 }
             }
@@ -104,6 +105,7 @@ struct ProfileBioAdd: View {
             }.edgesIgnoringSafeArea(.all)
         }.onTapGesture {
             self.endEditing(true)
+
         }
     }
     func endEditing(_ force: Bool){
