@@ -37,8 +37,8 @@ struct PageView<Page:View>: View {
                         userdef.set(true, forKey: "isBoarding")
                         self.isOnboardingDone.toggle()
                     }, label: {
-                        RoundedRectangle(cornerRadius: 15)
-                            .frame(width: geometry.frame(in: .global).width/1.2, height: geometry.frame(in: .global).width/7.2)
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: geometry.frame(in: .global).width/1.3, height: geometry.frame(in: .global).height/15.3)
                             .foregroundColor(Color.purple)
                             .overlay(
                                 Text("Mulai")

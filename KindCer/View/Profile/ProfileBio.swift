@@ -71,7 +71,7 @@ struct ProfileBioAdd: View {
                         }) {
                             MultilineTextView(text: self.$kondisi).frame(height: 200)
                         }
-                        Button("Done")
+                        Button("Simpan")
                         {
                             let jenis = !self.jenisKanker.isEmpty ? self.jenisKanker:""
                             let lokasi = !self.lokasiKanker.isEmpty ? self.lokasiKanker:""
