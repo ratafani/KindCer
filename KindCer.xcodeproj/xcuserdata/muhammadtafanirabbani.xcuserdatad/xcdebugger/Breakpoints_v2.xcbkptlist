@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "719DDC82-60EC-4A8D-84E5-62C52F1750F3"
+            uuid = "D2FF9B44-9A7B-4F84-9E93-AA10F43654F6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KindCer/View/Model/UserModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "updatePhoto(photo:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -50,6 +50,7 @@ class UserModel : NSObject,ObservableObject {
         self.kontak_penting = user.kontak_penting
         self.posisi_kanker = user.posisi_kanker
         self.tgl_diagnosis = user.tgl_diagnosis
+        self.photo = user.photo
         fetchData()
     }
     
@@ -128,22 +129,24 @@ class UserModel : NSObject,ObservableObject {
         let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        
+        let user = UserType(user_name: user_name, jenis_kanker: jenis_kanker, kondisi: kondisi, kontak_penting: kontak_penting, posisi_kanker: posisi_kanker, tgl_diagnosis: tgl_diagnosis, photo: photo)
         do{
             let res = try context.fetch(fetchRequest)
             if res.count > 0{
                 let up = res[0] as! NSManagedObject
                 up.setValue(photo, forKey: "photo")
-                
+                up.setValue(user_name, forKey: "user_name")
+                up.setValue(jenis_kanker, forKey: "jenis_kanker")
+                up.setValue(kondisi, forKey: "kondisi")
+                up.setValue(kontak_penting, forKey: "kontak_penting")
+                up.setValue(posisi_kanker, forKey: "posisi_kanker")
+                up.setValue(tgl_diagnosis, forKey: "tgl_diagnosis")
                 try context.save()
-                self.photo = photo
-                fetchData()
-            }else{
-                let entity = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
                 
-                entity.setValue(photo, forKey: "photo")
-                self.photo = photo
-                fetchData()
+                fetchUser(user: user)
+            }else{
+                
+                saveData(user: user)
             }
             
         }
