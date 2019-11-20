@@ -16,8 +16,8 @@ struct RecordIsEmptView: View {
             Rectangle().foregroundColor(.white)
             VStack {
                 Image("EmptyRecord").resizable().foregroundColor(Color("Primary")).frame(width: 168, height: 157).padding(.top)
-                Text("No Record On This Day").foregroundColor(Color.init(#colorLiteral(red: 0.5215227604, green: 0.3181272149, blue: 0.8401996493, alpha: 1))).bold().padding(.bottom,10)
-                Text("Kumpulkan catatan tindakan symptomps sehari-hari anda disini.").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
+                Text("Belum ada catatan hari ini").foregroundColor(Color.init(#colorLiteral(red: 0.5215227604, green: 0.3181272149, blue: 0.8401996493, alpha: 1))).bold().padding(.bottom,10)
+                Text("Kumpulkan catatan tindakan gejala sehari-hari anda disini.").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
                 Button(action: {
                     self.isSheet = true
                     self.homeSheet = HomeSheet.Record

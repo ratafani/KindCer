@@ -24,7 +24,7 @@ struct SummaryView: View {
     
     var body: some View {
         VStack {
-            headerModal(title: "Summary").padding(.init(top: 0, leading: 0, bottom: 40, trailing: 0))
+            headerModal(title: "Rangkuman").padding(.init(top: 0, leading: 0, bottom: 40, trailing: 0))
             
             CustomLineView(data: data, date: date , title: picked, legend: "in last 23 days").frame(width: 370, height: 300).padding().offset(x: 0, y: -60)
             ScrollView(.horizontal, showsIndicators: false) {
@@ -52,7 +52,7 @@ struct SummaryView: View {
                     VStack {
                         Text("Aman").font(.system(size: 26, design: .default)).bold().foregroundColor(Color("Primary")).padding(.top)
                         
-                        Text("The best condition").font(.system(size: 10, design: .default)).foregroundColor(.gray)
+                        Text("Kondisimu baik").font(.system(size: 10, design: .default)).foregroundColor(.gray)
                     }
                 }.padding(5)
                 ZStack{
@@ -60,7 +60,7 @@ struct SummaryView: View {
                     VStack {
                         Text("Normal").font(.system(size: 30, design: .default)).bold().foregroundColor(.white).padding(.top)
                         
-                        Text("Average condition").font(.system(size: 12, design: .default)).foregroundColor(.white)
+                        Text("Kondisimu normal").font(.system(size: 12, design: .default)).foregroundColor(.white)
                     }
                 }
                 ZStack{
@@ -68,7 +68,7 @@ struct SummaryView: View {
                     VStack {
                         Text("Bahaya").font(.system(size: 26, design: .default)).bold().foregroundColor(Color("Primary")).padding(.top)
                         
-                        Text("The worst condition").font(.system(size: 10, design: .default)).foregroundColor(.gray)
+                        Text("Kondisimu\n perlu penindakan").font(.system(size: 10, design: .default)).foregroundColor(.gray) .multilineTextAlignment(.center)
                     }
                 }.padding(5)
             }
