@@ -1,14 +1,14 @@
 //
-//  SchedulePage.swift
+//  SchedulePageEdit.swift
 //  KindCer
 //
-//  Created by Muhammad Tafani Rabbani on 15/11/19.
+//  Created by Mauldy Putra on 20/11/19.
 //  Copyright © 2019 Muhammad Tafani Rabbani. All rights reserved.
 //
 
 import SwiftUI
 
-struct SchedulePage: View {
+struct SchedulePageEdit: View {
     
     @State var tempatPengobatan : String = ""
     @State var dokter : String = ""
@@ -65,7 +65,7 @@ struct SchedulePage: View {
                 
                 Section(header: HStack {
                     Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
-                    Text("Dokter").font(.headline)
+                    Text("Doctor").font(.headline)
                 }) {
                     TextField("Tulis dokter yang akan menangani anda", text: self.$dokter)
                 }
@@ -76,6 +76,12 @@ struct SchedulePage: View {
                 }) {
                     TextField("Tulis catatan anda", text: self.$catatan)
                 }
+                
+                
+                Button("Hapus")
+                {
+                    
+                }.padding(.leading, 5).foregroundColor(.red)
 
             }.edgesIgnoringSafeArea(.all)
         }
@@ -88,24 +94,8 @@ struct SchedulePage: View {
     }
 }
 
-struct catatanBox: View{
-    
-    var body: some View{
-        VStack {
-            ZStack{
-                Rectangle()
-                    .foregroundColor(.white)
-                HStack{
-                    Text("Belum ada catatan") .opacity(0.5) .font(.system(size: 14))
-                    Spacer()
-                    Image("Path").padding(.trailing)
-                }
-            }
-        }
-    }
-}
-
-
-
-
-
+//struct SchedulePageEdit_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SchedulePageEdit()
+//    }
+//}
