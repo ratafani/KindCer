@@ -24,7 +24,7 @@ struct HomeView: View {
     @State var isSheet : Bool = false
     @State var title = "Welcome,"
     @State var homeSheet : HomeSheet = .Profile
-    
+//    @State var a : RecordModel = RecordModel()
     
     var body: some View {
         
@@ -36,7 +36,7 @@ struct HomeView: View {
                 }
                 Spacer()
                 if (!UserModel().photo.isEmpty){
-                    Image(uiImage: UIImage(data: UserModel().photo)!).resizable().frame(width: 60, height: 60).scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
+                    Image(uiImage: UIImage(data: UserModel().photo)!).resizable().frame(width: 60, height: 60).scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
                         self.isSheet = true
                         self.homeSheet = HomeSheet.Profile
                     }
@@ -95,10 +95,13 @@ struct HomeView: View {
                 if self.homeSheet == HomeSheet.Profile{
                     ProfilePage(userModel: self.profileModel, jadwal: JadwalModel())
                 }else if self.homeSheet == HomeSheet.Summary{
-                    if self.recordModel.mData.isEmpty{
+//                    self.a = self.recordModel
+//                    self.a.readAllData()
+//                    self.recordModel.readAllData()
+                    if self.isSummary(){
                         SummaryEmpty()
                     }else{
-                        SummaryView()
+                        SummaryView(a: self.prepareSummary())
                     }
                     
                 }else{
@@ -108,6 +111,19 @@ struct HomeView: View {
             
             //            self.recordModel.readData(date: self.dateModel.currentDate)
         }
+    }
+    
+    func isSummary()->Bool{
+        
+        let a = RecordModel()
+        a.readAllData()
+        return a.mData.isEmpty
+    }
+    func prepareSummary()->RecordModel{
+        
+        let a = RecordModel()
+        a.readAllData()
+        return a
     }
 }
 

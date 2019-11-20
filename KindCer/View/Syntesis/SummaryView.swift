@@ -20,7 +20,7 @@ struct SummaryView: View {
     @State var graphValue = [graphModel]()
     @State var data = [0,32,32,64,96,32,32,64,96]
     @State var date = ["11 Nov","12 Nov","1m3 Nov","14 Nov","15 Nov","16 Nov","17 Nov","18 Nov","19 Nov"]
-    let a = RecordModel()
+    @ObservedObject var a : RecordModel
     
     var body: some View {
         VStack {
@@ -90,9 +90,10 @@ struct SummaryView: View {
         var date2 = [String]()
         var data2 = [Int]()
         self.sType = []
-        self.a.readAllData()
+        let a2 = RecordModel()
+        a2.readAllData()
         var mType = [String:Bool]()
-        if self.a.mData.count > 0{
+        if a2.mData.count > 0{
             
 
             for arr in self.a.mData{
@@ -114,7 +115,7 @@ struct SummaryView: View {
                     print(num)
                     data2.append(num)
                     let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dd MMM YYYY"
+                    dateFormatter.dateFormat = "dd MMM"
                     date2.append("\(dateFormatter.string(from: arr.tanggal))")
                 }
             }
@@ -142,6 +143,6 @@ struct SummaryView: View {
 
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryView()
+        SummaryView(a:RecordModel())
     }
 }

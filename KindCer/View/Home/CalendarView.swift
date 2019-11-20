@@ -15,10 +15,7 @@ struct CalendarView: View {
     // get the user's calendar
     var body: some View {
         VStack {
-            HStack {
-               
-                Text("\(dateModel.date), \(dateModel.month) \(dateModel.year)").bold()
-            }.padding()
+            
             DateView(weekDay: dateModel.dayWeek,mDate: dateModel.currentDate,dateModel: dateModel,recordModel: recordModel)
             
         }.background(Color.white)
@@ -36,73 +33,89 @@ struct DateView:View {
     @State var arrPicked:[Bool] = [false,false,false,false,false,false,false]
     @State var arrday:[Int] = [0,0,0,0,0,0,0]
     var body: some View{
-        HStack {
-//            Text("<").foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).padding(.leading,15).onTapGesture {
-//                self.prevWeek()
-//            }
-            Spacer()
+        VStack {
             HStack {
-                DayView(date: $arrday[0], isPicked: $arrPicked[0]).padding(.horizontal,4).onTapGesture {
-                    self.taped(index: 0)
-                }
-                DayView(day:"Tue", date: $arrday[1],isPicked: $arrPicked[1]).padding(.horizontal,4).onTapGesture {
-                    //                self.mDate = self.arrDate[1]
-                    //                print("tap")
-                    self.taped(index: 1)
-                }
-                DayView(day:"Wed", date: $arrday[2],isPicked: $arrPicked[2]).padding(.horizontal,4).onTapGesture {
-                    //                self.mDate = self.arrDate[2]
-                    //                print("tap")
-                    self.taped(index: 2)
-                }
-                DayView(day:"Thu", date: $arrday[3],isPicked: $arrPicked[3]).padding(.horizontal,4).onTapGesture {
-                    //                self.mDate = self.arrDate[3]
-                    self.taped(index: 3)
-                }
-                DayView(day:"Fri", date: $arrday[4],isPicked: $arrPicked[4]).padding(.horizontal,4).onTapGesture {
-                    //                self.mDate = self.arrDate[4]
-                    self.taped(index: 4)
-                }
-                DayView(day:"Sat", date: $arrday[5],isPicked: $arrPicked[5]).padding(.horizontal,4).onTapGesture {
-                    //                self.mDate = self.arrDate[5]
-                    self.taped(index: 5)
-                }
-                DayView(day:"Sun", date: $arrday[6],isPicked: $arrPicked[6]).padding(.horizontal,4).onTapGesture {
-                    //                self.mDate = self.arrDate[6]
-                    self.taped(index: 6)
+                Button(action: {
+                    self.prevWeek()
+                }) {
+                    Image("prevWeek")
+                }.buttonStyle(PlainButtonStyle())
+                
+                Text("\(dateModel.date), \(dateModel.month) \(dateModel.year)").bold()
+                Button(action: {
+                    self.nextWeek()
+                }) {
+                    Image("nextWeek")
+                }.buttonStyle(PlainButtonStyle())
+            }.padding()
+            HStack {
+    //            Text("<").foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).padding(.leading,15).onTapGesture {
+    //                self.prevWeek()
+    //            }
+                Spacer()
+                HStack {
+                    DayView(date: $arrday[0], isPicked: $arrPicked[0]).padding(.horizontal,4).onTapGesture {
+                        self.taped(index: 0)
+                    }
+                    DayView(day:"Tue", date: $arrday[1],isPicked: $arrPicked[1]).padding(.horizontal,4).onTapGesture {
+                        //                self.mDate = self.arrDate[1]
+                        //                print("tap")
+                        self.taped(index: 1)
+                    }
+                    DayView(day:"Wed", date: $arrday[2],isPicked: $arrPicked[2]).padding(.horizontal,4).onTapGesture {
+                        //                self.mDate = self.arrDate[2]
+                        //                print("tap")
+                        self.taped(index: 2)
+                    }
+                    DayView(day:"Thu", date: $arrday[3],isPicked: $arrPicked[3]).padding(.horizontal,4).onTapGesture {
+                        //                self.mDate = self.arrDate[3]
+                        self.taped(index: 3)
+                    }
+                    DayView(day:"Fri", date: $arrday[4],isPicked: $arrPicked[4]).padding(.horizontal,4).onTapGesture {
+                        //                self.mDate = self.arrDate[4]
+                        self.taped(index: 4)
+                    }
+                    DayView(day:"Sat", date: $arrday[5],isPicked: $arrPicked[5]).padding(.horizontal,4).onTapGesture {
+                        //                self.mDate = self.arrDate[5]
+                        self.taped(index: 5)
+                    }
+                    DayView(day:"Sun", date: $arrday[6],isPicked: $arrPicked[6]).padding(.horizontal,4).onTapGesture {
+                        //                self.mDate = self.arrDate[6]
+                        self.taped(index: 6)
+                    }
+                    
+                }.onAppear{
+                    self.setDate()
                 }
                 
-            }.onAppear{
-                self.setDate()
+                Spacer()
+    //            Text(">").foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).padding(.trailing,15).onTapGesture {
+    //                self.nextWeek()
+    //            }
             }
-            
-            Spacer()
-//            Text(">").foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).padding(.trailing,15).onTapGesture {
-//                self.nextWeek()
-//            }
-        }
-        .offset(x: viewState.width)
-        .animation(.easeOut)
-        .opacity(1 - Double(abs(viewState.width)/200))
-        .gesture(
-            DragGesture()
-                .onChanged{ value in
-                    self.viewState.width = value.translation.width
-                    
-                }
-            .onEnded{ value in
-                withAnimation {
-                    if self.viewState.width > 100{
-                        self.prevWeek()
-                    }else if self.viewState.width < -100{
-                        
-                        self.nextWeek()
+            .offset(x: viewState.width)
+            .animation(.easeOut)
+            .opacity(1 - Double(abs(viewState.width)/200))
+            .gesture(
+                DragGesture()
+                    .onChanged{ value in
+                        self.viewState.width = value.translation.width
                         
                     }
-                    self.viewState = CGSize.zero
+                .onEnded{ value in
+                    withAnimation {
+                        if self.viewState.width > 100{
+                            self.prevWeek()
+                        }else if self.viewState.width < -100{
+                            
+                            self.nextWeek()
+                            
+                        }
+                        self.viewState = CGSize.zero
+                    }
                 }
-            }
-        )
+            )
+        }
     }
     
     func nextWeek(){
