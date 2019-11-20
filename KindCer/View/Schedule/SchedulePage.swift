@@ -29,7 +29,7 @@ struct SchedulePage: View {
             headerModal(title: "Tambah Jadwal Kemoterapi")
             Form{
                 Section(header:  HStack {
-                    Image("diagnosis").resizable().frame(width: 20, height: 20)
+                Image("diagnosis").resizable().frame(width: 20, height: 20)
                     Text("Tanggal Kemoterapi").font(.headline)
                 }) {
                     DatePicker(

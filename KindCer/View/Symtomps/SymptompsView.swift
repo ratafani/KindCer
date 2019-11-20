@@ -20,6 +20,7 @@ struct SymptompsView: View {
         
         return VStack
             {
+                headerModal(title: "Detail Symptom")
                 CardKondisi(kondisi: $record.kondisi, penjelasan: $record.penjelasan,theColor: theColor)
                 
                 formLargeSize(title: "Catatan", status: record.catatan_record, icon: "pensil", width: 25, height: 25) .frame(height: 200)
