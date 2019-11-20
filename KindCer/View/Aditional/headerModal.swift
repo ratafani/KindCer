@@ -16,10 +16,10 @@ struct headerModal: View {
         ZStack{
             Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
             VStack{
-                Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 100, height: 8).cornerRadius(10)
+                Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
                 Text(title).font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
             }
-        }.padding(.init(top: 0, leading: 0, bottom: 40, trailing: 0))
+        }//.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
 }
 
@@ -31,17 +31,10 @@ struct headerModalPicker: View {
         ZStack{
             Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
             VStack{
-                Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 100, height: 8).cornerRadius(10)
+                Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
                 Text("Kondisi \(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
             }
         }
-//        ZStack(alignment: .center) {
-//            VStack{
-//                Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 10, height: 10)
-//                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
-//                Text("Kondisi \(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
-//            }
-//        }
     }
 }
 
@@ -53,7 +46,7 @@ struct headerModalWithButton: View {
         ZStack{
             Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
             VStack{
-                Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 100, height: 8).cornerRadius(10)
+                Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
                 Text(title).font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
                 ZStack{
                     HStack {

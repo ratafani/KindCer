@@ -32,7 +32,7 @@ struct ProfileCardHeader: View {
                 HStack{
                     Spacer()
                     VStack{
-                        Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 100, height: 8).cornerRadius(10).padding(.init(top: 10, leading: 0, bottom: 20, trailing: 0))
+                        Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10).padding(.init(top: 10, leading: 0, bottom: 20, trailing: 0))
                         if(userModel.photo.isEmpty){
 
                             Image("photo1")
