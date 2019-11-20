@@ -47,7 +47,7 @@ struct headerModalWithButton: View {
             Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
             VStack{
                 Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
-                Text(title).font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+                Text(title).font(.system(size: 20, design: .default)).bold().foregroundColor(.white)
                 ZStack{
                     HStack {
                         Spacer()
@@ -63,6 +63,6 @@ struct headerModalWithButton: View {
 
 struct headerModal_Previews: PreviewProvider {
     static var previews: some View {
-        headerModal()
+        headerModalWithButton()
     }
 }
