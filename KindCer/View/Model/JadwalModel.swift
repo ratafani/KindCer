@@ -79,4 +79,30 @@ class JadwalModel : NSObject, ObservableObject{
             
         }
     }
+    
+    func updateItem(id:NSManagedObjectID, key: String, value: Any){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let context = app.persistentContainer.viewContext
+        
+        do{
+            let obj =  try context.existingObject(with: id)
+            obj.setValue(value, forKey: key)
+            fetchData()
+        }catch{
+            
+        }
+        
+    }
+    
+    func deleteItem(id:NSManagedObjectID){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let context = app.persistentContainer.viewContext
+        do{
+            let obj =  try context.existingObject(with: id)
+            context.delete(obj)
+            fetchData()
+        }catch{
+            
+        }
+    }
 }

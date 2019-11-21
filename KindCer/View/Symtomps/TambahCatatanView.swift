@@ -20,16 +20,23 @@ struct TambahCatatanView: View {
             ZStack(alignment: .center) {
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
                 Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+                HStack{
+                    Spacer()
+                    Button(action: {
+
+//                        self.catatan = self.tambah
+                        self.isSheet = false
+                    }) {
+                        Text("Simpan").foregroundColor(.white)
+                    }
+                    
+                }.padding(.horizontal)
             }.padding(.bottom,40)
-            formLargeSizeTextField(title: "Tambah Catatan", icon: "pensil", width: 24, height: 24, textField: $tambah) .frame(height: 200)
+            formLargeSizeTextField(title: "Tambah Catatan", icon: "pensil", width: 24, height: 24, textField: $catatan) .frame(height: 200)
             
             Spacer()
             
-            ButtonDefault(buttonContent: "Tambah Catatan").onTapGesture {
-//                print("Tambah Catatan")
-                self.catatan = self.tambah
-                self.isSheet = false
-            }
+            
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
         
         

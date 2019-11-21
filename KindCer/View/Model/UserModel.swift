@@ -75,8 +75,10 @@ class UserModel : NSObject,ObservableObject {
         let context = app.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         
+        
         do{
             let res = try context.fetch(fetchRequest)
+        
             if res.count > 0{
                 let up = res[0] as! NSManagedObject
                 up.setValue(user.user_name, forKey: "user_name")
@@ -107,6 +109,7 @@ class UserModel : NSObject,ObservableObject {
             let res = try context.fetch(fetchRequest)
             if res.count > 0{
                 let a = res[0] as! NSManagedObject
+                
                 self.user_name = a.value(forKey: "user_name") as! String 
                 self.jenis_kanker = a.value(forKey: "jenis_kanker") as! String
                 self.kondisi = a.value(forKey: "kondisi") as! String
@@ -123,6 +126,8 @@ class UserModel : NSObject,ObservableObject {
             
         }
     }
+    
+    
     
     
     func updatePhoto(photo:Data){

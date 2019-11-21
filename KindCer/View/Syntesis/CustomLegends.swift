@@ -22,7 +22,7 @@ struct CustomLegend: View {
         return frame.size.height / CGFloat(data.points.max()! + data.points.min()!)
     }
     @State var arrCategory : [String] = ["Aman","Ringan","Sedang","Bahaya"]
-    var arrColor : [Color] = [.green,.blue,.yellow,.red]
+    var arrColor : [Color] = [.green,.blue,Color.init(#colorLiteral(red: 0.8745098039, green: 0.6588235294, blue: 0.1764705882, alpha: 1)),.red]
     var body: some View {
         
         return ZStack(alignment: .topLeading){
@@ -33,9 +33,10 @@ struct CustomLegend: View {
                         Text(self.arrCategory[height])
                             .foregroundColor(self.data.maxIdx >= height ? .white:.clear)
                             .font(.caption)
-                    }.offset(x: 0, y: (self.frame.height-CGFloat(self.getYLegend()![height])*self.stepHeight)-(self.frame.height/2))
+                    }.offset(x: -10, y: (self.frame.height-CGFloat(self.getYLegend()![height])*self.stepHeight)-(self.frame.height/2))
                      self.line(atHeight: CGFloat(self.getYLegend()![height]), width: self.frame.width)
                         .stroke(self.colorScheme == .dark ? Colors.LegendDarkColor : Colors.LegendColor, style: StrokeStyle(lineWidth: 1.5, lineCap: .round, dash: [5,height == 0 ? 0 : 10]))
+                    .offset(x: -10)
                         .opacity((self.hideHorizontalLines && height != 0) ? 0 : 1)
                         .rotationEffect(.degrees(180), anchor: .center)
                         .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))

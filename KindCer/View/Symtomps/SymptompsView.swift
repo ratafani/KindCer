@@ -9,28 +9,39 @@
 import SwiftUI
 
 struct SymptompsView: View {
-    @State var catatan: String = "Hari ini suhu badan mencapai 38°C.Terjadi pada jam 7 malam WIB."
-    @State var statusObat: String = "Paracetamol 500mg @3x sehari. Diminum setiap 30 menit setelah makan."
     
-    
+    @State var navBtn = "Edit"
+    @ObservedObject var recordModel : RecordModel = RecordModel()
     @State var record : RecordType = RecordType(id: StaticModel.id, type: "", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(), penjelasan: "")
-    
+    @State var isSheet : Bool = false
     @State var theColor : Color = .red
     var body: some View {
         
         return VStack
             {
-                headerModal(title: "Detail Symptom")
+                ZStack {
+                    headerModal(title: "Detail \(record.type)")
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            self.isSheet = true
+                        }) {
+                            Text(navBtn).foregroundColor(.white)
+                        }
+                    }.padding()
+                }
                 CardKondisi(kondisi: $record.kondisi, penjelasan: $record.penjelasan,theColor: theColor)
                 
-                formLargeSize(title: "Catatan", status: record.catatan_record, icon: "pensil", width: 25, height: 25) .frame(height: 200)
+                formLargeSize(title: "Catatan", status: $record.catatan_record, icon: "pensil", width: 25, height: 25) .frame(height: 200)
                 
-                formObat(title: "Obat", status: record.catatan_obat, icon: "obat", width: 25, height: 25,obat: record.obat)
+                formObat(title: "Obat", status: $record.catatan_obat, icon: "obat", width: 25, height: 25,obat: $record.obat)
                 
                 Spacer(minLength: 150)
                 
                 
-        }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
+        }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all)).sheet(isPresented: $isSheet) {
+            EditSymtompDetail(sympthoms: SymptompModel(type: self.record.type), recordModel: self.recordModel, recordDetail: self.$record, homeSheet: self.$isSheet)
+        }
         
     }
     
@@ -41,11 +52,11 @@ struct SymptompsView: View {
 struct formObat: View{
     
     @State var title = "1213"
-    @State var status = "12412"
+    @Binding var status :String
     @State var icon = "124121"
     @State var width: CGFloat = 0
     @State var height: CGFloat = 0
-    @State var obat = ""
+    @Binding var obat :String
     
     var body: some View{
         VStack {

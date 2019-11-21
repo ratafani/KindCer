@@ -79,7 +79,7 @@ struct SymptompsAdd: View {
                             NavigationLink(destination: addSymtompsDetail(title: "Mulut", status: "Pilih kondisi", sympthoms: SymptompModel(type: .mulut),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
                                 mulut
                             }
-                            .navigationBarTitle("\(self.now, formatter: self.dateFormatter)").font(.system(size: 23)).buttonStyle(PlainButtonStyle())
+                            .navigationBarTitle("\(self.now, formatter: self.dateFormatter)",displayMode: .inline).font(.system(size: 23)).buttonStyle(PlainButtonStyle())
                             .background(NavigationConfigurator { nc in
                                 nc.navigationBar.barTintColor = .blue
                                 nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]

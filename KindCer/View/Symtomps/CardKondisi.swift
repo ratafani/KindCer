@@ -27,42 +27,43 @@ struct CardKondisi: View {
                                 Text(kondisi)
                                     .fontWeight(.semibold)
                                     .font(.system(size: 27))
-                                    .foregroundColor(theColor)
+                                    .foregroundColor(gantiWarna())
                                 
                                 Text(penjelasan)
                                     .fontWeight(.semibold)
                                     .font(.system(size: 15))
                                     .padding(.top)
+                                    .multilineTextAlignment(.center)
                                 
                         }.padding()
                         
                         Image(kondisi) .resizable()
                             .frame(width: 181, height: 171, alignment: .center)
-                }.onAppear{
-                    self.gantiWarna()
                 }
         }
     }
     
     
-    func gantiWarna(){
+    func gantiWarna() -> Color{
         let a = self.kondisi
         //            print(a)
+        var mColor = Color.red
         if a == "Sedang"{
-            self.theColor = Color.init(#colorLiteral(red: 0.8745098039, green: 0.6588235294, blue: 0.1764705882, alpha: 1))
+            mColor = Color.init(#colorLiteral(red: 0.8745098039, green: 0.6588235294, blue: 0.1764705882, alpha: 1))
         }else if a == "Ringan"{
-            self.theColor = .blue
+            mColor = .blue
         }else if a == "Bahaya"{
-            self.theColor = .red
+            mColor = .red
         }else{
             
         }
+        return mColor
     }
 }
 
 struct CardKondisi_Previews: PreviewProvider {
     static var previews: some View {
-//        CardKondisi()
+        //        CardKondisi()
         Text("")
     }
 }

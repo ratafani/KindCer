@@ -24,7 +24,7 @@ struct buttonlist: View {
     func button(for icon: String) -> some View {
         Button(action: {}) {
             Image(icon)
-                .renderingMode(.original)
+                
         }
     }
 }

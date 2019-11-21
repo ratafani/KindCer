@@ -83,14 +83,14 @@ struct HomeView: View {
                 
                 if recordModel.mData.isEmpty{
                     
-                    RecordIsEmptView(isSheet: $isSheet, homeSheet: $homeSheet)
+                    RecordIsEmptView(isSheet: $isSheet,isAlarm: $isAlarm, homeSheet: $homeSheet,tanggal: dateModel.currentDate).disabled(dateModel.currentDate.timeIntervalSince1970<=Date().timeIntervalSince1970)
                     
                     
                 }else{
                     VStack{
                         ForEach(recordModel.mData,id:\.id){ m in
                             
-                            recordCard(record: m)
+                            recordCard(record: m,recordModel : self.recordModel)
                         }
                     }
                 }

@@ -48,7 +48,7 @@ struct ProfileCardHeader: View {
                                 .frame(width: width, height: height)
                                 .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
                         }
-                        Text(userModel.user_name ?? "User").foregroundColor(.white).bold().font(.system(size: 24)).padding(.bottom, 30)
+                        Text(userModel.user_name.isEmpty ? "User":userModel.user_name).foregroundColor(.white).bold().font(.system(size: 24)).padding(.bottom, 30)
                         
                     }.offset(y:30)
                     Spacer()
@@ -124,8 +124,10 @@ struct ProfileCardStatus: View {
                             ZStack(alignment: .leading){
                                 Rectangle().frame(width: 350, height: 15).foregroundColor(.init(#colorLiteral(red: 0.9316993356, green: 0.9261607528, blue: 0.9359568357, alpha: 1))).cornerRadius(10)
                                 Rectangle().frame(width: mStatus, height: 15).foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).cornerRadius(10).onAppear{
-                                    for _ in 0...(30-self.days){
-                                        self.mStatus -= 350/30
+                                    if self.days < 30{
+                                        for _ in 0...(30-self.days){
+                                            self.mStatus -= 350/30
+                                        }
                                     }
                                 }
                             }//.padding(.bottom)
@@ -158,7 +160,7 @@ struct profilePic: View {
     var body: some View{
         Image("photo1")
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(contentMode:.fill)
             .frame(width: width, height: height)
             .overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
     }

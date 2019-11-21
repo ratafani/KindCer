@@ -10,11 +10,6 @@ import SwiftUI
 
 struct ProfileCancerDetailView: View {
     
-    @State var profileCancerType: String = "Breast Cancer"
-    @State var profileCcancerSite: String = "Left Site"
-    @State var profileCancerDiagnosis: String = "17 Januari 2019"
-    @State var profileCancerPathology: String = "-"
-    
     @ObservedObject var userModel:UserModel
     var dateFormatter: DateFormatter {
           let formatter = DateFormatter()
@@ -88,6 +83,22 @@ struct ProfileCancerDetailView: View {
                         Spacer()
                     }
                 }
+            }
+            ZStack{
+                Rectangle().foregroundColor(.white)
+                VStack(alignment: .leading){
+                    HStack{
+                        Image("circle")
+                            .resizable()
+                            .frame(width: 24, height: 24, alignment: .center)
+                        
+                        Text("Kondisi Saya").font(.system(size: 18)) .fontWeight(.bold)
+                        Spacer()
+                    }.padding(6)
+                    Text(userModel.kondisi).padding(.horizontal,6)
+                        .font(.system(size: 13))
+                    Spacer()
+                }.padding(.horizontal).padding(.bottom).frame(height:200)
             }
         }.onAppear{
             //            let mData = self.mUser

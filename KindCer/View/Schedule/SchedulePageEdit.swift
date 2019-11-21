@@ -1,21 +1,21 @@
 //
-//  SchedulePage.swift
+//  SchedulePageEdit.swift
 //  KindCer
 //
-//  Created by Muhammad Tafani Rabbani on 15/11/19.
+//  Created by Mauldy Putra on 20/11/19.
 //  Copyright © 2019 Muhammad Tafani Rabbani. All rights reserved.
 //
 
 import SwiftUI
 
-struct SchedulePage: View {
+struct SchedulePageEdit: View {
     
     @State var tempatPengobatan : String = ""
     @State var dokter : String = ""
     @State var kemoSchedule : Date = Date()
     @State var catatan : String = ""
     @Binding var isSheet : Bool
-    
+    @State var jItem : JadwalType
     @ObservedObject var jadwal : JadwalModel
     
     var dateClosedRange: ClosedRange<Date> {
@@ -35,7 +35,11 @@ struct SchedulePage: View {
                         HStack {
                             Spacer()
                             Button("Done"){
-                                self.addToCD()
+                                self.jadwal.updateItem(id: self.jItem.id, key: "tanggal", value: self.kemoSchedule)
+                                self.jadwal.updateItem(id: self.jItem.id, key: "tempat", value: self.tempatPengobatan)
+                                self.jadwal.updateItem(id: self.jItem.id, key: "catatan", value: self.catatan)
+                                self.jadwal.updateItem(id: self.jItem.id, key: "dokter", value: self.dokter)
+                                
                                 self.isSheet =  false
                             }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
                         }
@@ -52,7 +56,9 @@ struct SchedulePage: View {
                         in: dateClosedRange,
                         displayedComponents: .date,
                         label: { Text("Tanggal Kemoterapi") .font(.system(size: 15)) .opacity(0.5) }
-                    )
+                    ).onAppear{
+                        self.kemoSchedule = self.jItem.tanggal
+                    }
                 }
                 
                 Section(header: HStack {
@@ -60,52 +66,46 @@ struct SchedulePage: View {
                     Text("Tempat").font(.headline)
                 }) {
                     
-                    TextField("Tulis tempat anda berobat", text: self.$tempatPengobatan)
+                    TextField("Tulis tempat anda berobat", text: self.$tempatPengobatan).onAppear{
+                        self.tempatPengobatan = self.jItem.tempat
+                    }
                 }
                 
                 Section(header: HStack {
                     Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
-                    Text("Dokter").font(.headline)
+                    Text("Doctor").font(.headline)
                 }) {
-                    TextField("Tulis dokter yang akan menangani anda", text: self.$dokter)
+                    TextField("Tulis dokter yang akan menangani anda", text: self.$dokter).onAppear{
+                        self.dokter = self.jItem.dokter
+                    }
                 }
                 
                 Section(header: HStack {
                     Image("condition").resizable().frame(width: 20, height: 20)
                     Text("Catatan").font(.headline)
                 }) {
-                    TextField("Tulis catatan anda", text: self.$catatan)
+                    TextField("Tulis catatan anda", text: self.$catatan).onTapGesture {
+                        self.catatan = self.jItem.catatan
+                    }
                 }
+                
+                
+                Button("Hapus")
+                {
+                    self.jadwal.deleteItem(id: self.jItem.id)
+                    self.isSheet = false
+                }.padding(.leading, 5).foregroundColor(.red)
 
             }.edgesIgnoringSafeArea(.all)
         }
         
         
     }
-    func addToCD(){
-        let newJadwal = JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
-        jadwal.saveData(jadwal: newJadwal)
-    }
-}
-
-struct catatanBox: View{
     
-    var body: some View{
-        VStack {
-            ZStack{
-                Rectangle()
-                    .foregroundColor(.white)
-                HStack{
-                    Text("Belum ada catatan") .opacity(0.5) .font(.system(size: 14))
-                    Spacer()
-                    Image("Path").padding(.trailing)
-                }
-            }
-        }
-    }
 }
 
-
-
-
-
+//struct SchedulePageEdit_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SchedulePageEdit()
+//    }
+//}

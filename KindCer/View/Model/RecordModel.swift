@@ -128,4 +128,17 @@ class RecordModel : NSObject,ObservableObject{
         readData(date: record.tanggal)
     }
     
+    
+    func updateInId(id: NSManagedObjectID, key:String, value:Any){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let context = app.persistentContainer.viewContext
+        
+        do{
+            let obj =  try context.existingObject(with: id)
+            obj.setValue(value, forKey: key)
+            fetchData()
+        }catch{
+            
+        }
+    }
 }

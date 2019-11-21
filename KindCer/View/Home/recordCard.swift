@@ -12,6 +12,8 @@ struct recordCard: View {
     
     @State var record : RecordType = RecordType(id: StaticModel.id, type: "", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(),penjelasan: "")
     @State var theColor : Color = .red
+    @ObservedObject var recordModel : RecordModel
+    
     var a = ["alergi","demam","diare","gatal","lemas","mual","muntah","otot","sembelit","lainnya"]
     
     @State var isSheet = false
@@ -52,7 +54,7 @@ struct recordCard: View {
             print(self.record.kondisi)
             self.isSheet = true
         }.sheet(isPresented: $isSheet) {
-            SymptompsView(record: self.record)
+            SymptompsView(recordModel: self.recordModel, record: self.record)
         }
     }
     
@@ -99,6 +101,6 @@ struct recordCard: View {
 
 struct recordCard_Previews: PreviewProvider {
     static var previews: some View {
-        recordCard(record: RecordType(id: StaticModel.id, type: "", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(),penjelasan: ""))
+        recordCard(record: RecordType(id: StaticModel.id, type: "", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(),penjelasan: ""), recordModel: RecordModel())
     }
 }

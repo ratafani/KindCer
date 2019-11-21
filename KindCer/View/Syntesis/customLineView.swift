@@ -53,7 +53,7 @@ public struct CustomLineView: View {
                         if(self.showLegend){
                             CustomLegend(data: self.data, frame: .constant(CGRect(x: 0, y: 0, width: reader.frame(in: .local).width + 30, height: reader.frame(in: .local).height)), hideHorizontalLines: self.$hideHorizontalLines)
                                 .transition(.opacity)
-                                .animation(Animation.easeOut(duration: 1).delay(1))
+                                .animation(Animation.easeOut(duration: 0.4).delay(0.4))
                         }
                     }.frame(width: geometry.frame(in: .local).size.width, height: 240).offset(x: 0, y: 40 )
                     MagnifierRect(currentNumber: self.$currentDataNumber)
@@ -114,7 +114,7 @@ struct MagnifierRect: View {
                 .font(.system(size: 14, weight: .bold))
                 .offset(x: 0, y:-110)
                 .animation(.spring())
-                .foregroundColor(self.colorScheme == .dark ? Color.white : Color.black)
+                .foregroundColor(self.colorScheme == .dark ? Color("Primary") : Color.black)
             if (self.colorScheme == .dark ){
                  RoundedRectangle(cornerRadius: 16)
                     .stroke(Color.white, lineWidth: self.colorScheme == .dark ? 2 : 0)
@@ -124,7 +124,7 @@ struct MagnifierRect: View {
                  RoundedRectangle(cornerRadius: 16)
                     .frame(width: 60, height: 280)
                     .foregroundColor(Color.white)
-                    .shadow(color: Colors.LegendText, radius: 12, x: 0, y: 6 )
+                    .shadow(color: Color("Primary"), radius: 12, x: 0, y: 6 )
                     .blendMode(.multiply)
             }
            
