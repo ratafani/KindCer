@@ -110,7 +110,7 @@ struct ProfileCardStatus: View {
 //                jadwalDetailBtm(jadwal: $jadwal)
             }
         }.sheet(isPresented: $isSheet) {
-            SchedulePageEdit(isSheet: self.$homeSheet, jItem: self.$jadwal, jadwal: self.jadwalModel)
+            SchedulePageEdit(isSheet: self.$isSheet, jItem: self.$jadwal, jadwal: self.jadwalModel)
         }.onTapGesture {
             self.isSheet = true
         }

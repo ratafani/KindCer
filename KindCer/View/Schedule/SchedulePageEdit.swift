@@ -48,8 +48,7 @@ struct SchedulePageEdit: View {
                                 self.jItem.catatan = self.catatan
                                 self.jItem.dokter = self.dokter
                                 
-                                
-                                self.isSheet =  false
+                                self.dismiss()
                             }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
                         }
                     }
@@ -99,19 +98,27 @@ struct SchedulePageEdit: View {
                 }
                 
                 
-                Button("Hapus")
-                {
+                Button(action: {
+                    self.dismiss()
                     self.jadwal.deleteItem(id: self.jItem.id)
-                    self.isSheet = false
-                    self.presentationMode.wrappedValue.dismiss()
-                }.padding(.leading, 5).foregroundColor(.red)
+                }) {
+                    Text("Hapus").foregroundColor(.red)
+                }
+                
 
             }.edgesIgnoringSafeArea(.all)
         }
         
         
+        
+        
     }
     
+    func dismiss(){
+        isSheet = false
+        
+        print(isSheet)
+    }
 }
 
 //struct SchedulePageEdit_Previews: PreviewProvider {

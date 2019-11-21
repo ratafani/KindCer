@@ -13,6 +13,7 @@ struct RecordIsEmptView: View {
     @Binding var isAlarm : Bool
     @Binding var homeSheet : HomeSheet
     @State var tanggal : Date = Date()
+    @ObservedObject var dateModel : DateModel
     var body: some View {
         ZStack {
             Rectangle().foregroundColor(.white)
@@ -22,7 +23,8 @@ struct RecordIsEmptView: View {
                 Text("Kumpulkan catatan tindakan gejala sehari-hari anda disini.").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
                 Button(action: {
 //                    print(self.tanggal)
-                    if self.tanggal.timeIntervalSince1970 <= Date().timeIntervalSince1970{
+                    print(self.dateModel.currentDate)
+                    if self.dateModel.currentDate.timeIntervalSince1970 <= Date().timeIntervalSince1970{
                         
                         self.isSheet = true
                         self.homeSheet = HomeSheet.Record
