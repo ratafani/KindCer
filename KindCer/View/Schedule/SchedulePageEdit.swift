@@ -14,9 +14,12 @@ struct SchedulePageEdit: View {
     @State var dokter : String = ""
     @State var kemoSchedule : Date = Date()
     @State var catatan : String = ""
+    
     @Binding var isSheet : Bool
     @Binding var jItem : JadwalType
     @ObservedObject var jadwal : JadwalModel
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var dateClosedRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -100,6 +103,7 @@ struct SchedulePageEdit: View {
                 {
                     self.jadwal.deleteItem(id: self.jItem.id)
                     self.isSheet = false
+                    self.presentationMode.wrappedValue.dismiss()
                 }.padding(.leading, 5).foregroundColor(.red)
 
             }.edgesIgnoringSafeArea(.all)

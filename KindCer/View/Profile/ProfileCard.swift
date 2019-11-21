@@ -8,11 +8,11 @@
 
 import SwiftUI
 
-struct ProfileCard: View {
-    var body: some View {
-        ProfileCardStatus(jadwalModel: JadwalModel())
-    }
-}
+//struct ProfileCard: View {
+//    var body: some View {
+//        ProfileCardStatus(jadwalModel: JadwalModel())
+//    }
+//}
 
 struct ProfileCardHeader: View {
     
@@ -86,6 +86,7 @@ struct ProfileCardStatus: View {
     @ObservedObject var jadwalModel : JadwalModel
     @State var jadwal = JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
     @State var isSheet = false
+    @Binding var homeSheet : Bool
    
  
     var body: some View {
@@ -109,7 +110,7 @@ struct ProfileCardStatus: View {
 //                jadwalDetailBtm(jadwal: $jadwal)
             }
         }.sheet(isPresented: $isSheet) {
-            SchedulePageEdit(isSheet: self.$isSheet, jItem: self.$jadwal, jadwal: self.jadwalModel)
+            SchedulePageEdit(isSheet: self.$homeSheet, jItem: self.$jadwal, jadwal: self.jadwalModel)
         }.onTapGesture {
             self.isSheet = true
         }
@@ -193,8 +194,8 @@ struct profilePic: View {
     }
 }
 
-struct ProfileCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileCardStatus(jadwalModel: JadwalModel())
-    }
-}
+//struct ProfileCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileCardStatus(jadwalModel: JadwalModel())
+//    }
+//}

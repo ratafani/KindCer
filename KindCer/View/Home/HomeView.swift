@@ -85,7 +85,8 @@ struct HomeView: View {
                 
                 if recordModel.mData.isEmpty{
                     
-                    RecordIsEmptView(isSheet: $isSheet,isAlarm: $isAlarm, homeSheet: $homeSheet,tanggal: dateModel.currentDate).disabled(dateModel.currentDate.timeIntervalSince1970>Date().timeIntervalSince1970)
+                    RecordIsEmptView(isSheet: $isSheet,isAlarm: $isAlarm, homeSheet: $homeSheet,tanggal: dateModel.currentDate)
+//                        .disabled(dateModel.currentDate.timeIntervalSince1970>Date().timeIntervalSince1970)
                     
                     
                 }else{

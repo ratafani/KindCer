@@ -55,7 +55,7 @@ struct ProfilePage: View {
                     ScrollView(.horizontal){
                         HStack{
                             ForEach(jadwal.data, id: \.id){ theData in
-                                ProfileCardStatus(jadwalModel: self.jadwal,jadwal: theData)
+                                ProfileCardStatus(jadwalModel: self.jadwal,jadwal: theData,homeSheet: self.$isSheet)
 //                                    .onTapGesture {
 //                                    self.isSheet = true
 //                                    self.sheetType = 3
