@@ -27,9 +27,10 @@ struct ProfileCancerDetailView: View {
                             .frame(width: 23, height: 23, alignment: .center).padding(.horizontal,10)
                         VStack(alignment:.leading){
                             Text("Tipe Kanker")
-                                .font(.system(size: 14)).foregroundColor(.gray)
+                                .font(.system(size: 14)).foregroundColor(.gray) .padding(.top, 6)
+
                             Text(userModel.jenis_kanker)
-                                .font(.system(size: 15))
+                                .font(.system(size: 15))  .padding(.vertical, 6)
                             
                         }.padding(4)
                         Spacer()
@@ -43,8 +44,9 @@ struct ProfileCancerDetailView: View {
                             .frame(width: 15, height: 35, alignment: .center).padding(.horizontal,10)
                         VStack(alignment:.leading){
                             Text("Posisi Kanker")
-                                .font(.system(size: 14)).foregroundColor(.gray)
-                            Text(userModel.posisi_kanker) .font(.system(size: 15))
+                                .font(.system(size: 14)).foregroundColor(.gray).padding(.top, 6)
+
+                            Text(userModel.posisi_kanker) .font(.system(size: 15)) .padding(.vertical, 6)
                         }.padding(4)
                         Spacer()
                     }
@@ -59,8 +61,9 @@ struct ProfileCancerDetailView: View {
                             .frame(width: 30, height: 30, alignment: .center).padding(.horizontal,10)
                         VStack(alignment:.leading){
                             Text("Diagnosis")
-                                .font(.system(size: 14)).foregroundColor(.gray)
-                            Text("\(userModel.tgl_diagnosis, formatter: dateFormatter)") .font(.system(size: 15))
+                                .font(.system(size: 14)).foregroundColor(.gray) .padding(.top, 2)
+
+                            Text("\(userModel.tgl_diagnosis, formatter: dateFormatter)") .font(.system(size: 14)).padding(.vertical, 6)
                         }.padding(4)
                         Spacer()
                     }
@@ -70,11 +73,13 @@ struct ProfileCancerDetailView: View {
                     HStack{
                         Image("Contact") .resizable()
                             .frame(width: 23, height: 23, alignment: .center).padding(.horizontal,10)
+
                         VStack(alignment:.leading){
                             Text("Kontak Penting")
-                                .font(.system(size: 14)).foregroundColor(.gray)
-                            Text(userModel.kontak_penting) .font(.system(size: 15))
-                        }
+                                .font(.system(size: 14)).foregroundColor(.gray).padding(.top, 6)
+                            
+                            Text(userModel.kontak_penting) .font(.system(size: 15)).padding(.vertical, 6)
+                        }.padding(4)
                         Spacer()
                     }
                 }
