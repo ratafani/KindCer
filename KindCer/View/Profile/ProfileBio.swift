@@ -34,7 +34,7 @@ struct ProfileBioAdd: View {
                     ZStack{
                         HStack {
                             Spacer()
-                            Button("Done"){
+                            Button("Simpan"){
                                 print("kondisi",self.kondisi)
                                 let jenis = !self.jenisKanker.isEmpty ? self.jenisKanker:""
                                 let lokasi = !self.lokasiKanker.isEmpty ? self.lokasiKanker:""

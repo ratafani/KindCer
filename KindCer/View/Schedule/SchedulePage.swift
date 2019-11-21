@@ -34,7 +34,7 @@ struct SchedulePage: View {
                     ZStack{
                         HStack {
                             Spacer()
-                            Button("Done"){
+                            Button("Simpan"){
                                 self.addToCD()
                                 self.isSheet =  false
                             }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))

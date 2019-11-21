@@ -129,16 +129,26 @@ class RecordModel : NSObject,ObservableObject{
     }
     
     
-    func updateInId(id: NSManagedObjectID, key:String, value:Any){
+    func updateInId(id: NSManagedObjectID, key:String, value:Any, tgl: Date){
         let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.persistentContainer.viewContext
         
         do{
             let obj =  try context.existingObject(with: id)
             obj.setValue(value, forKey: key)
-            fetchData()
+            readData(date: tgl)
         }catch{
             
         }
+    }
+    
+    func recordAtIndex(id: NSManagedObjectID)->RecordType{
+        var a = RecordType(id: StaticModel.id, type: "String", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(), penjelasan: "")
+        for r in mData{
+            if r.id == id{
+                a = r
+            }
+        }
+        return a
     }
 }

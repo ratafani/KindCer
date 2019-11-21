@@ -55,11 +55,12 @@ struct ProfilePage: View {
                     ScrollView(.horizontal){
                         HStack{
                             ForEach(jadwal.data, id: \.id){ theData in
-                                ProfileCardStatus(jadwal: theData).onTapGesture {
-                                    self.isSheet = true
-                                    self.sheetType = 3
-                                    self.jItem = theData
-                                }
+                                ProfileCardStatus(jadwalModel: self.jadwal,jadwal: theData)
+//                                    .onTapGesture {
+//                                    self.isSheet = true
+//                                    self.sheetType = 3
+//                                    self.jItem = theData
+//                                }
                                 
                             }
                         }
@@ -86,12 +87,12 @@ struct ProfilePage: View {
                 }else if self.sheetType == 2 {
                     ImagePicker(isShown: self.$isSheet, uiImage: self.$image,userModel: self.userModel)
                 }else{
-                    SchedulePageEdit(isSheet: self.$isSheet, jItem: self.jItem, jadwal: self.jadwal)
+                    SchedulePageEdit(isSheet: self.$isSheet, jItem: self.$jItem, jadwal: self.jadwal)
                 }
                 //            ProfileBioAdd(mUser: self.userModel, showingModal: self.$isSheet)
             }
         }.onAppear{
-            print(self.userModel.kondisi)
+            
             //            self.userName = self.mUser.isEmpty ? "" : self.mUser[0].user_name ?? ""
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9468348622, green: 0.936796844, blue: 0.9499147534, alpha: 1)))).edgesIgnoringSafeArea(.all)
         //        }

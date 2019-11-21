@@ -24,7 +24,7 @@ class JadwalModel : NSObject, ObservableObject{
     
     let objectWillChange = PassthroughSubject<JadwalModel,Never>()
     
-//    var id : NSManagedObjectID
+    //    var id : NSManagedObjectID
     var tempat : String = ""
     var tanggal : Date = Date()
     var dokter : String = ""
@@ -72,7 +72,9 @@ class JadwalModel : NSObject, ObservableObject{
                 
                 let newJadwal = JadwalType(id: r.objectID, tempat: tempat, tanggal: tanggal, dokter: dokter, catatan: catatan)
                 
-                data.append(newJadwal)
+                if tanggal.timeIntervalSince1970 >= Date().timeIntervalSince1970{
+                    data.append(newJadwal)
+                }
             }
             fetchData()
         } catch {
@@ -87,7 +89,7 @@ class JadwalModel : NSObject, ObservableObject{
         do{
             let obj =  try context.existingObject(with: id)
             obj.setValue(value, forKey: key)
-            fetchData()
+            readData()
         }catch{
             
         }
@@ -100,7 +102,7 @@ class JadwalModel : NSObject, ObservableObject{
         do{
             let obj =  try context.existingObject(with: id)
             context.delete(obj)
-            fetchData()
+            readData()
         }catch{
             
         }

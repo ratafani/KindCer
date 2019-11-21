@@ -15,7 +15,7 @@ struct SchedulePageEdit: View {
     @State var kemoSchedule : Date = Date()
     @State var catatan : String = ""
     @Binding var isSheet : Bool
-    @State var jItem : JadwalType
+    @Binding var jItem : JadwalType
     @ObservedObject var jadwal : JadwalModel
     
     var dateClosedRange: ClosedRange<Date> {
@@ -34,11 +34,17 @@ struct SchedulePageEdit: View {
                     ZStack{
                         HStack {
                             Spacer()
-                            Button("Done"){
+                            Button("Simpan"){
                                 self.jadwal.updateItem(id: self.jItem.id, key: "tanggal", value: self.kemoSchedule)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "tempat", value: self.tempatPengobatan)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "catatan", value: self.catatan)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "dokter", value: self.dokter)
+                                
+                                self.jItem.tanggal = self.kemoSchedule
+                                self.jItem.tempat = self.tempatPengobatan
+                                self.jItem.catatan = self.catatan
+                                self.jItem.dokter = self.dokter
+                                
                                 
                                 self.isSheet =  false
                             }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))

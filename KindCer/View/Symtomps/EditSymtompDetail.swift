@@ -24,8 +24,11 @@ struct EditSymtompDetail: View {
     
     @ObservedObject var recordModel : RecordModel
     @Binding var recordDetail : RecordType
+    
     @Binding var homeSheet : Bool
     @State var cDate : Date = Date()
+    
+    
     var body: some View{
         
         VStack {
@@ -58,18 +61,19 @@ struct EditSymtompDetail: View {
             
             Spacer()
             Button(action: {
-                                print(self.title)
-                self.recordModel.updateInId(id: self.recordDetail.id, key: "kondisi", value: self.kondisi)
-                self.recordModel.updateInId(id: self.recordDetail.id, key: "catatan_record", value: self.catatan)
-                self.recordModel.updateInId(id: self.recordDetail.id, key: "obat", value: self.obat)
-                self.recordModel.updateInId(id: self.recordDetail.id, key: "catatan_obat", value: self.catatan_obat)
+                                
+                self.recordModel.updateInId(id: self.recordDetail.id, key: "kondisi", value: self.kondisi, tgl: self.recordDetail.tanggal)
+                self.recordModel.updateInId(id: self.recordDetail.id, key: "catatan_record", value: self.catatan, tgl: self.recordDetail.tanggal)
+                self.recordModel.updateInId(id: self.recordDetail.id, key: "obat", value: self.obat, tgl: self.recordDetail.tanggal)
+                self.recordModel.updateInId(id: self.recordDetail.id, key: "catatan_obat", value: self.catatan_obat, tgl: self.recordDetail.tanggal)
                 
                 self.recordDetail.kondisi = self.kondisi
                 self.recordDetail.catatan_record = self.catatan
                 self.recordDetail.obat = self.obat
                 self.recordDetail.catatan_obat = self.catatan_obat
+//                self.recordModel.readData(date: self.recordDetail.tanggal)
                 self.homeSheet = false
-                
+//                print(self.recordModel.recordAtIndex(id: self.recordDetail.id))
             }) {
                 ZStack{
                     Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9137254902, green: 0.262745098, blue: 0.4901960784, alpha: 1))).frame(width: 360, height: 60).cornerRadius(15)

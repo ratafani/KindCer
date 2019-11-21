@@ -121,11 +121,13 @@ struct DateView:View {
     func nextWeek(){
         let mDate = self.dateModel.currentDate.addingTimeInterval(7 * 60 * 60 * 24)
         self.dateModel.updateCalendar(newDate: mDate)
+        recordModel.readData(date: dateModel.currentDate)
         self.setDate()
     }
     func prevWeek(){
         let mDate = self.dateModel.currentDate.addingTimeInterval(-7 * 60 * 60 * 24)
         self.dateModel.updateCalendar(newDate: mDate)
+        recordModel.readData(date: dateModel.currentDate)
         self.setDate()
     }
     func taped(index:Int){
