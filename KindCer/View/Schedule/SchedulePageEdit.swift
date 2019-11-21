@@ -15,7 +15,7 @@ struct SchedulePageEdit: View {
     @State var kemoSchedule : Date = Date()
     @State var catatan : String = ""
     @Binding var isSheet : Bool
-    
+    @State var jItem : JadwalType
     @ObservedObject var jadwal : JadwalModel
     
     var dateClosedRange: ClosedRange<Date> {

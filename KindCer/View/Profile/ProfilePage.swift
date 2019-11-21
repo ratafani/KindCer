@@ -19,6 +19,7 @@ struct ProfilePage: View {
     @State var userName = ""
     @State var sheetType = 0
     @State var image : UIImage? = UIImage()
+    @State var jItem : JadwalType = JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
     
     var body: some View {
         ScrollView{
@@ -54,7 +55,12 @@ struct ProfilePage: View {
                     ScrollView(.horizontal){
                         HStack{
                             ForEach(jadwal.data, id: \.id){ theData in
-                                ProfileCardStatus(jadwal: theData)
+                                ProfileCardStatus(jadwal: theData).onTapGesture {
+                                    self.isSheet = true
+                                    self.sheetType = 3
+                                    self.jItem = theData
+                                }
+                                
                             }
                         }
                     }.padding(.leading)
@@ -77,15 +83,17 @@ struct ProfilePage: View {
                     ProfileBioAdd(mUser: self.userModel, showingModal: self.$isSheet)
                 } else if self.sheetType == 1{
                     SchedulePage(isSheet: self.$isSheet, jadwal: self.jadwal)
-                }else {
+                }else if self.sheetType == 2 {
                     ImagePicker(isShown: self.$isSheet, uiImage: self.$image,userModel: self.userModel)
+                }else{
+                    SchedulePageEdit(isSheet: self.$isSheet, jItem: self.jItem, jadwal: self.jadwal)
                 }
                 //            ProfileBioAdd(mUser: self.userModel, showingModal: self.$isSheet)
             }
         }.onAppear{
             print(self.userModel.kondisi)
             //            self.userName = self.mUser.isEmpty ? "" : self.mUser[0].user_name ?? ""
-        }
+        }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9468348622, green: 0.936796844, blue: 0.9499147534, alpha: 1)))).edgesIgnoringSafeArea(.all)
         //        }
     }
 }

@@ -19,6 +19,8 @@
 		F6516BBD23822F120035E8E4 /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB723822F120035E8E4 /* OnboardingCard.swift */; };
 		F6516BBF23824F180035E8E4 /* SummaryEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BBE23824F180035E8E4 /* SummaryEmpty.swift */; };
 		F6516BC12383807D0035E8E4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BC02383807D0035E8E4 /* ImagePicker.swift */; };
+		F6516BC32385FBEE0035E8E4 /* KeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BC22385FBED0035E8E4 /* KeyboardModel.swift */; };
+		F6516BC5238635750035E8E4 /* EditSymtompDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BC4238635750035E8E4 /* EditSymtompDetail.swift */; };
 		F66D1C5B23791A1600E864C5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5A23791A1600E864C5 /* CalendarView.swift */; };
 		F66D1C5E2379527D00E864C5 /* dateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5D2379527D00E864C5 /* dateModel.swift */; };
 		F66D1C7C237A5B6A00E864C5 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C76237A5B6A00E864C5 /* ProfileList.swift */; };
@@ -97,6 +99,8 @@
 		F6516BB723822F120035E8E4 /* OnboardingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
 		F6516BBE23824F180035E8E4 /* SummaryEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryEmpty.swift; sourceTree = "<group>"; };
 		F6516BC02383807D0035E8E4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F6516BC22385FBED0035E8E4 /* KeyboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardModel.swift; sourceTree = "<group>"; };
+		F6516BC4238635750035E8E4 /* EditSymtompDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSymtompDetail.swift; sourceTree = "<group>"; };
 		F66D1C5A23791A1600E864C5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F66D1C5D2379527D00E864C5 /* dateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateModel.swift; sourceTree = "<group>"; };
 		F66D1C76237A5B6A00E864C5 /* ProfileList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				F66D1CB9237CEB7800E864C5 /* RecordModel.swift */,
 				F66D1CBB237D4AE800E864C5 /* Static.swift */,
 				8BEE759E237E78D800B415A7 /* JadwalModel.swift */,
+				F6516BC22385FBED0035E8E4 /* KeyboardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				F66D1CA9237BE33100E864C5 /* TambahCatatanPengobatan.swift */,
 				F66D1CA8237BE33100E864C5 /* TambahCatatanView.swift */,
 				F66D1CB7237CC8E700E864C5 /* addSymtompsDetail.swift */,
+				F6516BC4238635750035E8E4 /* EditSymtompDetail.swift */,
 			);
 			path = Symtomps;
 			sourceTree = "<group>";
@@ -509,6 +515,7 @@
 				F66D1CB3237BE36000E864C5 /* mPicker.swift in Sources */,
 				F6516BBA23822F120035E8E4 /* OnboardingCardView.swift in Sources */,
 				F66D1CAB237BE33100E864C5 /* SymptompsAdd.swift in Sources */,
+				F6516BC32385FBEE0035E8E4 /* KeyboardModel.swift in Sources */,
 				F66D1CC0237D4D8B00E864C5 /* SymptompsView.swift in Sources */,
 				F66D1CAA237BE33100E864C5 /* SymptompsPage.swift in Sources */,
 				F66D1C80237A5B6A00E864C5 /* ProfileCancerDetailView.swift in Sources */,
@@ -547,6 +554,7 @@
 				F66D1CB4237BE36000E864C5 /* mButton.swift in Sources */,
 				F6D9794B23613F5900DC6673 /* QuizCategoryView.swift in Sources */,
 				F66D1CBC237D4AE800E864C5 /* Static.swift in Sources */,
+				F6516BC5238635750035E8E4 /* EditSymtompDetail.swift in Sources */,
 				F66D1C7F237A5B6A00E864C5 /* ProfileBio.swift in Sources */,
 				8B48E4B82383B4E000014BBB /* headerModal.swift in Sources */,
 				F66D1CBA237CEB7800E864C5 /* RecordModel.swift in Sources */,

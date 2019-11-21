@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProfileBioAdd: View {
     @ObservedObject var mUser : UserModel
+    @ObservedObject private var keyboard = KeyboardResponder()
     @Binding var showingModal:Bool
     @State var jenisKanker : String = ""
     @State var lokasiKanker : String = ""
@@ -18,7 +19,7 @@ struct ProfileBioAdd: View {
     @State var diagnose : Date = Date()
     @State var userName : String = ""
     var dateClosedRange: ClosedRange<Date> {
-        let min = Calendar.current.date(byAdding: .year, value: -1, to: Date())!
+        let min = Calendar.current.date(byAdding: .year, value: -5, to: Date())!
         let max = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
         return min...max
     }
@@ -34,6 +35,7 @@ struct ProfileBioAdd: View {
                         HStack {
                             Spacer()
                             Button("Done"){
+                                print("kondisi",self.kondisi)
                                 let jenis = !self.jenisKanker.isEmpty ? self.jenisKanker:""
                                 let lokasi = !self.lokasiKanker.isEmpty ? self.lokasiKanker:""
                                 let kontak = !self.kontakPenting.isEmpty ? self.kontakPenting:""
@@ -83,12 +85,7 @@ struct ProfileBioAdd: View {
                     Image("diagnosis").resizable().frame(width: 20, height: 20)
                     Text("Tanggal Diagnosis").font(.headline)
                 }) {
-                    DatePicker(
-                        selection: $diagnose,
-                        in: dateClosedRange,
-                        displayedComponents: .date,
-                        label: { Text("Tanggal Diagnosis") }
-                    )
+                    DatePicker("Kapan terdiagnosa",selection: $diagnose,in: dateClosedRange, displayedComponents: .date)
                 }
                 Section(header: HStack {
                     Image("Contact").resizable().frame(width: 20, height: 20)
@@ -103,9 +100,8 @@ struct ProfileBioAdd: View {
                     MultilineTextView(text: self.$kondisi).frame(height: 200)
                 }
             }.edgesIgnoringSafeArea(.all)
-        }.onTapGesture {
-            self.endEditing(true)
-
+                .padding(.bottom, keyboard.currentHeight)
+//            .background(GeometryGetter(rect: $kGuardian.rects[0]))
         }
     }
     func endEditing(_ force: Bool){
@@ -115,17 +111,45 @@ struct ProfileBioAdd: View {
 
 struct MultilineTextView: UIViewRepresentable {
     @Binding var text: String
-    
-    func makeUIView(context: Context) -> UITextView {
-        let view = UITextView()
-        view.isScrollEnabled = true
-        view.isEditable = true
-        view.isUserInteractionEnabled = true
-        return view
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
     }
-    
+
+    func makeUIView(context: Context) -> UITextView {
+
+        let myTextView = UITextView()
+        myTextView.delegate = context.coordinator
+
+        myTextView.font = UIFont(name: "HelveticaNeue", size: 15)
+        myTextView.isScrollEnabled = true
+        myTextView.isEditable = true
+        myTextView.isUserInteractionEnabled = true
+        myTextView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+
+        return myTextView
+    }
+
     func updateUIView(_ uiView: UITextView, context: Context) {
         uiView.text = text
+    }
+
+    class Coordinator : NSObject, UITextViewDelegate {
+
+        var parent: MultilineTextView
+
+        init(_ uiTextView: MultilineTextView) {
+            self.parent = uiTextView
+        }
+
+        func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+            return true
+        }
+
+        func textViewDidChange(_ textView: UITextView) {
+            
+            self.parent.text = textView.text
+        }
     }
 }
 

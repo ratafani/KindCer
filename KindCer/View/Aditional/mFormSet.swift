@@ -12,7 +12,7 @@ import SwiftUI
 struct formLargeSize: View{
     
     @State var title = ""
-    @State var status = ""
+    @Binding var status : String
     @State var icon = ""
     @State var width: CGFloat = 0
     @State var height: CGFloat = 0
@@ -154,14 +154,14 @@ struct formLargeSizeTextField: View{
                                 .bold()
                                 .padding(.bottom, 10)
                                 .font(.system(size: 18))
-                            TextField("Tulis di sini", text: $textField) .font(.system(size: 15))
+                            MultilineTextView(text: $textField) .font(.system(size: 15))
                         }
                         Spacer()
                         //Image("Path").padding(.trailing)
                     }
                 }.offset(y: -40)
             }
-        }
+        }.padding(.vertical)
     }
 }
 

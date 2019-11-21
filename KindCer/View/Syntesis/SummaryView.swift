@@ -27,7 +27,7 @@ struct SummaryView: View {
             VStack {
                 headerModal(title: "Rangkuman").padding(.init(top: 0, leading: 0, bottom: 40, trailing: 0))
                 
-                CustomLineView(data: self.data, date: self.date , title: self.picked, legend: "in last 23 days").frame(width: geometry.frame(in: .global).width - 100, height: geometry.frame(in: .global).height / 3).padding().offset(x: 0, y: -60)
+                CustomLineView(data: self.data, date: self.date , title: self.picked, legend: "in last 23 days").frame(width: geometry.frame(in: .global).width - 50, height: geometry.frame(in: .global).height / 3).padding().offset(x: 0, y: -60)
                 ScrollView(.horizontal, showsIndicators: false) {
                     
                     HStack {

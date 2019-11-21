@@ -158,7 +158,7 @@ struct profilePic: View {
     var body: some View{
         Image("photo1")
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(contentMode:.fill)
             .frame(width: width, height: height)
             .overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
     }

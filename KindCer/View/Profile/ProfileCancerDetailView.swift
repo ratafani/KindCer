@@ -92,7 +92,8 @@ struct ProfileCancerDetailView: View {
                     }.padding(6)
                     Text(userModel.kondisi).padding(.horizontal,6)
                         .font(.system(size: 13))
-                }.padding(.horizontal).padding(.bottom)
+                    Spacer()
+                }.padding(.horizontal).padding(.bottom).frame(height:200)
             }
         }.onAppear{
             //            let mData = self.mUser
