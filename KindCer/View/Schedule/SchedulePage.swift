@@ -17,6 +17,7 @@ struct SchedulePage: View {
     @Binding var isSheet : Bool
     
     @ObservedObject var jadwal : JadwalModel
+    @ObservedObject private var keyboard = KeyboardResponder()
     
     var dateClosedRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -34,7 +35,7 @@ struct SchedulePage: View {
                     ZStack{
                         HStack {
                             Spacer()
-                            Button("Done"){
+                            Button("Simpan"){
                                 self.addToCD()
                                 self.isSheet =  false
                             }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
@@ -65,7 +66,7 @@ struct SchedulePage: View {
                 
                 Section(header: HStack {
                     Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
-                    Text("Doctor").font(.headline)
+                    Text("Dokter").font(.headline)
                 }) {
                     TextField("Tulis dokter yang akan menangani anda", text: self.$dokter)
                 }
@@ -76,6 +77,7 @@ struct SchedulePage: View {
                 }) {
                     TextField("Tulis catatan anda", text: self.$catatan)
                 }
+
             }.edgesIgnoringSafeArea(.all)
         }.onAppear(){
             self.endEditing(true)

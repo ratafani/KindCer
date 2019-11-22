@@ -14,9 +14,13 @@ struct SchedulePageEdit: View {
     @State var dokter : String = ""
     @State var kemoSchedule : Date = Date()
     @State var catatan : String = ""
-    @Binding var isSheet : Bool
     
+    @Binding var isSheet : Bool
+    @Binding var jItem : JadwalType
     @ObservedObject var jadwal : JadwalModel
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject private var keyboard = KeyboardResponder()
     
     var dateClosedRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -34,9 +38,18 @@ struct SchedulePageEdit: View {
                     ZStack{
                         HStack {
                             Spacer()
-                            Button("Done"){
-                                self.addToCD()
-                                self.isSheet =  false
+                            Button("Simpan"){
+                                self.jadwal.updateItem(id: self.jItem.id, key: "tanggal", value: self.kemoSchedule)
+                                self.jadwal.updateItem(id: self.jItem.id, key: "tempat", value: self.tempatPengobatan)
+                                self.jadwal.updateItem(id: self.jItem.id, key: "catatan", value: self.catatan)
+                                self.jadwal.updateItem(id: self.jItem.id, key: "dokter", value: self.dokter)
+                                
+                                self.jItem.tanggal = self.kemoSchedule
+                                self.jItem.tempat = self.tempatPengobatan
+                                self.jItem.catatan = self.catatan
+                                self.jItem.dokter = self.dokter
+                                
+                                self.dismiss()
                             }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
                         }
                     }
@@ -52,7 +65,9 @@ struct SchedulePageEdit: View {
                         in: dateClosedRange,
                         displayedComponents: .date,
                         label: { Text("Tanggal Kemoterapi") .font(.system(size: 15)) .opacity(0.5) }
-                    )
+                    ).onAppear{
+                        self.kemoSchedule = self.jItem.tanggal
+                    }
                 }
                 
                 Section(header: HStack {
@@ -60,37 +75,50 @@ struct SchedulePageEdit: View {
                     Text("Tempat").font(.headline)
                 }) {
                     
-                    TextField("Tulis tempat anda berobat", text: self.$tempatPengobatan)
+                    TextField("Tulis tempat anda berobat", text: self.$tempatPengobatan).onAppear{
+                        self.tempatPengobatan = self.jItem.tempat
+                    }
                 }
                 
                 Section(header: HStack {
                     Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
                     Text("Doctor").font(.headline)
                 }) {
-                    TextField("Tulis dokter yang akan menangani anda", text: self.$dokter)
+                    TextField("Tulis dokter yang akan menangani anda", text: self.$dokter).onAppear{
+                        self.dokter = self.jItem.dokter
+                    }
                 }
                 
                 Section(header: HStack {
                     Image("condition").resizable().frame(width: 20, height: 20)
                     Text("Catatan").font(.headline)
                 }) {
-                    TextField("Tulis catatan anda", text: self.$catatan)
+                    TextField("Tulis catatan anda", text: self.$catatan).onTapGesture {
+                        self.catatan = self.jItem.catatan
+                    }
                 }
                 
                 
-                Button("Hapus")
-                {
-                    
-                }.padding(.leading, 5).foregroundColor(.red)
+                Button(action: {
+                    self.dismiss()
+                    self.jadwal.deleteItem(id: self.jItem.id)
+                }) {
+                    Text("Hapus").foregroundColor(.red)
+                }
+                
 
             }.edgesIgnoringSafeArea(.all)
-        }
+        }.padding(.bottom, keyboard.currentHeight)
+        
+        
         
         
     }
-    func addToCD(){
-        let newJadwal = JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
-        jadwal.saveData(jadwal: newJadwal)
+    
+    func dismiss(){
+        isSheet = false
+        
+        print(isSheet)
     }
 }
 

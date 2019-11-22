@@ -13,6 +13,7 @@ enum HomeSheet{
     case Profile
     case Summary
     case Record
+    case rDetail
 }
 struct HomeView: View {
     
@@ -20,10 +21,11 @@ struct HomeView: View {
     @State var mSymptoms : [String] = []
     @ObservedObject var dateModel: DateModel
     @ObservedObject var recordModel: RecordModel
+    @State var record : RecordType = RecordType(id: StaticModel.id, type: "", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(), penjelasan: "")
     @ObservedObject var profileModel : UserModel = UserModel()
     @State var isSheet : Bool = false
     @State var isAlarm : Bool = false
-    @State var title = "Welcome,"
+    @State var title = "Halo,"
     @State var homeSheet : HomeSheet = .Profile
     //    @State var a : RecordModel = RecordModel()
     
@@ -58,14 +60,14 @@ struct HomeView: View {
                     Rectangle().foregroundColor(Color("Primary")).frame( height: 50)
                     HStack {
                         Image("summaryIcon").resizable().foregroundColor(.white).frame(width: 30, height: 30)
-                        Text("Lihat Summary Saya").foregroundColor(.white)
+                        Text("Lihat Rangkuman Saya").foregroundColor(.white)
                         Spacer()
                     }.padding(.horizontal)
                 }
             }
             CalendarView(dateModel: dateModel,recordModel: recordModel)
             HStack{
-                Text("Symptomps (\(recordModel.mData.count))").padding(.horizontal)
+                Text("Gejala (\(recordModel.mData.count))").padding(.horizontal)
                 Spacer()
                 Button(action: {
                     if self.dateModel.currentDate.timeIntervalSince1970 <= Date().timeIntervalSince1970{
@@ -83,14 +85,15 @@ struct HomeView: View {
                 
                 if recordModel.mData.isEmpty{
                     
-                    RecordIsEmptView(isSheet: $isSheet, homeSheet: $homeSheet)
+                    RecordIsEmptView(isSheet: $isSheet,isAlarm: $isAlarm, homeSheet: $homeSheet,tanggal: dateModel.currentDate,dateModel: dateModel)
+//                        .disabled(dateModel.currentDate.timeIntervalSince1970>Date().timeIntervalSince1970)
                     
                     
                 }else{
                     VStack{
                         ForEach(recordModel.mData,id:\.id){ m in
                             
-                            recordCard(record: m)
+                            recordCard(record: m, recordModel: self.recordModel, isSheet: self.$isSheet, homeSheet: self.$homeSheet, theRecord: self.$record)
                         }
                     }
                 }
@@ -110,8 +113,10 @@ struct HomeView: View {
                         SummaryView(a: self.prepareSummary())
                     }
                     
-                }else{
+                }else if self.homeSheet == HomeSheet.Record{
                     SymptompsAdd( recordModel: self.recordModel,homeSheet : self.$isSheet,now: self.dateModel.currentDate)
+                }else{
+//                    SymtompsDetail2( recordModel: self.recordModel, record: self.record)
                 }
         }.alert(isPresented: $isAlarm, content: {
             Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
@@ -127,6 +132,8 @@ struct HomeView: View {
         a.readAllData()
         return a.mData.isEmpty
     }
+    
+    
     func prepareSummary()->RecordModel{
         
         let a = RecordModel()
