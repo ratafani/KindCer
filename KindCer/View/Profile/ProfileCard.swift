@@ -66,7 +66,7 @@ struct ProfileCardHeader: View {
 struct ProfileCardStatusEmpty: View{
     var body: some View{
         ZStack{
-            Rectangle().frame( height: 217).foregroundColor(.white).cornerRadius(10)
+            Rectangle().frame( width:400,height: 217).foregroundColor(.white).cornerRadius(10)
             VStack{
                 
                 Image("EmptyRecord").resizable().frame(width: 103.75, height: 102)
@@ -131,7 +131,7 @@ struct jadwalBar: View{
         ZStack{
             VStack {
                 HStack {
-                    Text("Pengoabatan Berikutnya:").font(.system(size: 15))
+                    Text("Pengobatan Berikutnya:").font(.system(size: 15))
                     //                            Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
                     Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
                     Spacer().font(.system(size: 15))

@@ -17,6 +17,7 @@ struct SchedulePage: View {
     @Binding var isSheet : Bool
     
     @ObservedObject var jadwal : JadwalModel
+    @ObservedObject private var keyboard = KeyboardResponder()
     
     var dateClosedRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -78,7 +79,7 @@ struct SchedulePage: View {
                 }
 
             }.edgesIgnoringSafeArea(.all)
-        }
+        }.padding(.bottom, keyboard.currentHeight)
         
         
     }

@@ -21,7 +21,7 @@ struct SymtompsDetail2: View {
         return VStack
             {
                 ZStack {
-                    headerModal(title: "Detail2 \(record.type)")
+                    headerModal(title: "Detail \(record.type)")
                     HStack {
                         Spacer()
                         Button(action: {

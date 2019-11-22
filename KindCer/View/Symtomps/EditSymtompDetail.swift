@@ -34,7 +34,7 @@ struct EditSymtompDetail: View {
         VStack {
             headerModal(title: "Edit Symtomp")
             if !(title == "Lainnya"){
-                formLargeSizePath(title1: "Kondisi", title2: recordDetail.type, status: $kondisi, icon: "termometer", width: 15, height: 28).frame(width: 414, height: 89).onTapGesture {
+                formLargeSizePath(title1: "Kondisi", title2: recordDetail.type, status: $kondisi, icon: "termometer", width: 15, height: 28).frame( height: 89).onTapGesture {
                     self.isSheet = true
                     self.sheetId = 0
                 }.onAppear{
@@ -43,7 +43,7 @@ struct EditSymtompDetail: View {
                 
             }
             
-            formLargeSizePath(title1: "Catatan", title2: "", status: $catatan, icon: "pensil", width: 25, height: 25).frame(width: 414, height: 89).onTapGesture {
+            formLargeSizePath(title1: "Catatan", title2: "", status: $catatan, icon: "pensil", width: 25, height: 25).frame( height: 89).onTapGesture {
                 self.isSheet = true
                 self.sheetId = 1
             }.onAppear{
@@ -51,7 +51,7 @@ struct EditSymtompDetail: View {
             }
             
             
-            formLargeSizePath(title1: "Obat", title2: "", status: $obat, icon: "obat", width: 26, height: 26).frame(width: 414, height: 89).onTapGesture {
+            formLargeSizePath(title1: "Obat", title2: "", status: $obat, icon: "obat", width: 26, height: 26).frame(  height: 89).onTapGesture {
                 self.isSheet = true
                 self.sheetId = 2
             }.onAppear{

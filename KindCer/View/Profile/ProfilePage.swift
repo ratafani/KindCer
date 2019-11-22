@@ -48,24 +48,26 @@ struct ProfilePage: View {
                     }.foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).padding(.horizontal)
                 }
                 
-                if jadwal.data.isEmpty {
-                    ProfileCardStatusEmpty()
-                    
-                }else{
+                
                     ScrollView(.horizontal){
                         HStack{
-                            ForEach(jadwal.data, id: \.id){ theData in
-                                ProfileCardStatus(jadwalModel: self.jadwal,jadwal: theData,homeSheet: self.$isSheet)
-//                                    .onTapGesture {
-//                                    self.isSheet = true
-//                                    self.sheetType = 3
-//                                    self.jItem = theData
-//                                }
-                                
+                            if jadwal.data.isEmpty{
+                                ProfileCardStatusEmpty()
+                            }else{
+                                ForEach(jadwal.data, id: \.id){ theData in
+                                                                ProfileCardStatus(jadwalModel: self.jadwal,jadwal: theData,homeSheet: self.$isSheet)
+                                //                                    .onTapGesture {
+                                //                                    self.isSheet = true
+                                //                                    self.sheetType = 3
+                                //                                    self.jItem = theData
+                                //                                }
+                                                                
+                                                            }
                             }
+                            
                         }
                     }.padding(.leading)
-                }
+                
                 HStack{
                     Text("Bio saya").bold().font(.system(size: 20)).padding(.horizontal)
                     Spacer()
