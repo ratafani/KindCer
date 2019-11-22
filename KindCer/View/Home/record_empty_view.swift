@@ -20,7 +20,7 @@ struct RecordIsEmptView: View {
             VStack {
                 Image("EmptyRecord").resizable().foregroundColor(Color("Primary")).frame(width: 168, height: 157).padding(.top)
                 Text("Belum ada catatan hari ini").foregroundColor(Color.init(#colorLiteral(red: 0.5215227604, green: 0.3181272149, blue: 0.8401996493, alpha: 1))).bold().padding(.bottom,10)
-                Text("Kumpulkan catatan tindakan gejala sehari-hari anda disini.").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
+                Text("Kumpulkan catatan tindakan gejala sehari-hari kamu disini.").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
                 Button(action: {
 //                    print(self.tanggal)
                     print(self.dateModel.currentDate)

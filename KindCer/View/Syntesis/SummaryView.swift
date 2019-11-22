@@ -46,7 +46,7 @@ struct SummaryView: View {
                     }.padding(.horizontal,10)
                     
                 }.padding(.horizontal)
-                Text("Kondisi Anda").font(.system(size: 24, design: .default)).bold().padding(.top)
+                Text("Kondisi Kamu").font(.system(size: 24, design: .default)).bold().padding(.top)
                 HStack(alignment: .center){
                     ZStack{
                         Rectangle().foregroundColor(.white).cornerRadius(20).shadow(radius: 10).frame(width:100,height: 100)

@@ -26,61 +26,63 @@ struct SchedulePage: View {
     }
     
     var body: some View {
-        VStack{
-            ZStack{
-                Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
-                VStack{
-                    Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
-                    Text("Tambah Jadwal Kemoterapi").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
-                    ZStack{
-                        HStack {
-                            Spacer()
-                            Button("Simpan"){
-                                self.addToCD()
-                                self.isSheet =  false
-                            }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
+        GeometryReader { geometry in
+            VStack{
+                ZStack{
+                    Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
+                    VStack{
+                        Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
+                        Text("Tambah Jadwal").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
+                        ZStack{
+                            HStack {
+                                Spacer()
+                                Button("Simpan"){
+                                    self.addToCD()
+                                    self.isSheet =  false
+                                }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
+                            }
                         }
                     }
                 }
-            }
-            Form{
-                Section(header:  HStack {
-                Image("diagnosis").resizable().frame(width: 20, height: 20)
-                    Text("Tanggal Kemoterapi").font(.headline)
-                }) {
-                    DatePicker(
-                        selection: $kemoSchedule,
-                        in: dateClosedRange,
-                        displayedComponents: .date,
-                        label: { Text("Tanggal Kemoterapi") .font(.system(size: 15)) .opacity(0.5) }
-                    )
-                }
-                
-                Section(header: HStack {
-                    Image("hospitalDarkerPurple").resizable().frame(width: 20, height: 20)
-                    Text("Tempat").font(.headline)
-                }) {
+                Form{
+                    Section(header:  HStack {
+                    Image("diagnosis").resizable().frame(width: 20, height: 20)
+                        Text("Tanggal Kemoterapi").font(.headline)
+                    }) {
+                        DatePicker(
+                            selection: self.$kemoSchedule,
+                            in: self.dateClosedRange,
+                            displayedComponents: .date,
+                            label: { Text("Tanggal Kemoterapi") .font(.system(size: 15)) .opacity(0.5) }
+                        )
+                    }
                     
-                    TextField("Tulis tempat anda berobat", text: self.$tempatPengobatan)
-                }
-                
-                Section(header: HStack {
-                    Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
-                    Text("Dokter").font(.headline)
-                }) {
-                    TextField("Tulis dokter yang akan menangani anda", text: self.$dokter)
-                }
-                
-                Section(header: HStack {
-                    Image("condition").resizable().frame(width: 20, height: 20)
-                    Text("Catatan").font(.headline)
-                }) {
-                    TextField("Tulis catatan anda", text: self.$catatan)
-                }
+                    Section(header: HStack {
+                        Image("hospitalDarkerPurple").resizable().frame(width: 20, height: 20)
+                        Text("Tempat").font(.headline)
+                    }) {
+                        
+                        TextField("Tulis tempat kamu berobat", text: self.$tempatPengobatan)
+                    }
+                    
+                    Section(header: HStack {
+                        Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
+                        Text("Dokter").font(.headline)
+                    }) {
+                        TextField("Tulis dokter yang akan menangani kamu", text: self.$dokter)
+                    }
+                    
+                    Section(header: HStack {
+                        Image("condition").resizable().frame(width: 20, height: 20)
+                        Text("Catatan").font(.headline)
+                    }) {
+                        TextField("Tulis catatan kamu", text: self.$catatan)
+                    }
 
-            }.edgesIgnoringSafeArea(.all)
-        }.onAppear(){
-            self.endEditing(true)
+                }.edgesIgnoringSafeArea(.all)
+            }.onAppear(){
+                self.endEditing(true)
+            }
         }
     }
     func addToCD(){

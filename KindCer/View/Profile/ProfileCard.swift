@@ -32,7 +32,7 @@ struct ProfileCardHeader: View {
                 HStack{
                     Spacer()
                     VStack{
-                        Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10).padding(.init(top: 10, leading: 0, bottom: 20, trailing: 0))
+//                        Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10).padding(.init(top: 10, leading: 0, bottom: 20, trailing: 0))
                         if(userModel.photo.isEmpty){
 
                             Image("photo1")
@@ -48,7 +48,7 @@ struct ProfileCardHeader: View {
                                 .frame(width: width, height: height)
                                 .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
                         }
-                        Text(userModel.user_name.isEmpty ? "User":userModel.user_name).foregroundColor(.white).bold().font(.system(size: 24)).padding(.bottom, 30)
+                        Text(userModel.user_name.isEmpty ? "User":userModel.user_name).foregroundColor(.white).bold().font(.system(size: 24)).padding(.bottom, 10).offset(y: 5)
                         
                     }.offset(y:30)
                     Spacer()
@@ -71,7 +71,7 @@ struct ProfileCardStatusEmpty: View{
                 
                 Image("EmptyRecord").resizable().frame(width: 103.75, height: 102)
                 Text("Tambahkan Treatment").bold().font(.system(size: 16)).padding(.horizontal)
-                Text("Kumpulkan jadwal kemoterapi anda disini.").multilineTextAlignment(.center).lineLimit(2).font(.system(size: 13)).padding(.bottom)
+                Text("Kumpulkan jadwal kemoterapi kamu disini.").multilineTextAlignment(.center).lineLimit(2).font(.system(size: 13)).padding(.bottom)
                 //                Spacer()
             }
         }

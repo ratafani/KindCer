@@ -65,21 +65,21 @@ struct ProfileBioAdd: View {
                     Text("Nama Pengguna").font(.headline)
                 }) {
                     
-                    TextField("Tulis nama anda", text: self.$userName)
+                    TextField("Tulis nama kamu", text: self.$userName)
                 }
                 Section(header: HStack {
                     Image("cancertype").resizable().frame(width: 20, height: 20)
                     Text("Jenis Kanker").font(.headline)
                 }) {
                     
-                    TextField("Tulis jenis kanker anda", text: self.$jenisKanker)
+                    TextField("Tulis jenis kanker kamu", text: self.$jenisKanker)
                 }
                 Section(header: HStack {
                     Image("cancersite").resizable().frame(width: 10, height: 20)
                     Text("Posisi Kanker").font(.headline)
                 }) {
                     
-                    TextField("Tulis letak kanker anda", text: self.$lokasiKanker)
+                    TextField("Tulis letak kanker kamu", text: self.$lokasiKanker)
                 }
                 Section(header: HStack {
                     Image("diagnosis").resizable().frame(width: 20, height: 20)
@@ -91,7 +91,7 @@ struct ProfileBioAdd: View {
                     Image("Contact").resizable().frame(width: 20, height: 20)
                     Text("Kontak Penting").font(.headline)
                 }) {
-                    TextField("Tulis kontak penting anda disini", text: self.$kontakPenting)
+                    TextField("Tulis kontak penting kamu disini", text: self.$kontakPenting)
                 }
                 Section(header: HStack {
                     Image("circle").resizable().frame(width: 20, height: 20)
