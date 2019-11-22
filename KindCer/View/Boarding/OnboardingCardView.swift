@@ -30,6 +30,7 @@ struct OnboardingCardView: View {
                         .aspectRatio(contentMode: .fit)
 
                         .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).width/1.5)
+                    
  
                     Text(self.card.title)
                         .fontWeight(.bold)
@@ -40,9 +41,6 @@ struct OnboardingCardView: View {
 
                         .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/8)
                     
-
-                    
-                    
                     
                     Text(self.card.description)
                         .font(.system(size: 16))
@@ -50,11 +48,9 @@ struct OnboardingCardView: View {
                         .foregroundColor(.secondary)
                         .lineLimit(10)
                         .multilineTextAlignment(.center)
-
                         .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/6.5)
+                        .offset(y: -5)
 
-                    
-                    
                     
                     }
 
