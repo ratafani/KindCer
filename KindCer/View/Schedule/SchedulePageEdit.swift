@@ -30,7 +30,7 @@ struct SchedulePageEdit: View {
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
                 VStack{
                     Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
-                    Text("Tambah Jadwal Kemoterapi").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
+                    Text("Edit Jadwal Kemoterapi").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
                     ZStack{
                         HStack {
                             Spacer()

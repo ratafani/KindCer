@@ -77,13 +77,17 @@ struct SchedulePage: View {
                     TextField("Tulis catatan anda", text: self.$catatan)
                 }
             }.edgesIgnoringSafeArea(.all)
+        }.onAppear(){
+            self.endEditing(true)
         }
-        
-        
     }
     func addToCD(){
         let newJadwal = JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
         jadwal.saveData(jadwal: newJadwal)
+    }
+    
+    private func endEditing(_ force: Bool){
+        UIApplication.shared.endEditing()
     }
 }
 
