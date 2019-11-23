@@ -29,7 +29,7 @@ struct ProfileBioAdd: View {
             ZStack{
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
                 VStack{
-                    Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
+                    Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
                     Text("Bio Saya").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
                     ZStack{
                         HStack {
@@ -53,7 +53,7 @@ struct ProfileBioAdd: View {
                                 self.kondisi = self.mUser.kondisi
                                 self.diagnose = self.mUser.tgl_diagnosis
                                 self.userName = self.mUser.user_name
-                            }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
+                            }.foregroundColor(.white).padding(.init(top: -21, leading: 0, bottom: 0, trailing: 15))
                         }
 
                     }

@@ -56,7 +56,6 @@ struct ProfileCardHeader: View {
                 
             }
         }//.edgesIgnoringSafeArea(.all)
-            
             .onAppear{
                 self.image = UIImage(data: self.userModel.photo) ?? UIImage()
         }

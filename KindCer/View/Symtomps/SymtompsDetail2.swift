@@ -31,13 +31,14 @@ struct SymtompsDetail2: View {
                         }
                     }.padding()
                 }
-                CardKondisi(kondisi: $record.kondisi, penjelasan: $record.penjelasan,theColor: theColor)
-                
-                formLargeSize(title: "Catatan", status: $record.catatan_record, icon: "pensil", width: 25, height: 25) .frame(height: 200)
-                
-                formObat(title: "Obat", status: $record.catatan_obat, icon: "obat", width: 25, height: 25,obat: $record.obat)
-                
-                Spacer(minLength: 150)
+                ScrollView{
+                    CardKondisi(kondisi: $record.kondisi, penjelasan: $record.penjelasan,theColor: theColor)
+                    
+                    formLargeSize(title: "Catatan", status: $record.catatan_record, icon: "pensil", width: 25, height: 25) .frame(height: 200)
+                    
+                    formObat(title: "Obat", status: $record.catatan_obat, icon: "obat", width: 25, height: 25,obat: $record.obat).frame(height: 200)
+                }
+//                Spacer(minLength: 150)
                 
                 
         }

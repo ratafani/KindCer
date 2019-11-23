@@ -31,7 +31,7 @@ struct SchedulePage: View {
                 ZStack{
                     Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
                     VStack{
-                        Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
+                        Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
                         Text("Tambah Jadwal").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
                         ZStack{
                             HStack {
@@ -39,7 +39,7 @@ struct SchedulePage: View {
                                 Button("Simpan"){
                                     self.addToCD()
                                     self.isSheet =  false
-                                }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
+                                }.foregroundColor(.white).padding(.init(top: -21, leading: 0, bottom: 0, trailing: 15))
                             }
                         }
                     }

@@ -150,7 +150,7 @@ struct SymptompsList: View {
     
     var body: some View {
         ZStack{
-            Rectangle().frame(width: 414, height: 65).foregroundColor(.white)
+            Rectangle().frame(height: 65).foregroundColor(.white)
             HStack{
                 profileIc(icon: icon, width: width, height: height, alignment: .leading).padding()
                 Text(title).bold().font(.system(size: 18))

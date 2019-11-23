@@ -10,16 +10,19 @@ import SwiftUI
 
 struct TambahCatatanView: View {
     
+    @ObservedObject private var keyboard = KeyboardResponder()
     @State var title = "Tambah Catatan"
     @Binding var catatan : String
     @Binding var isSheet : Bool
     @State var tambah = ""
     var body: some View {
-        
         VStack{
             ZStack(alignment: .center) {
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
-                Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+                VStack {
+                    Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
+                    Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+                }
                 HStack{
                     Spacer()
                     Button(action: {
@@ -28,20 +31,19 @@ struct TambahCatatanView: View {
                         self.isSheet = false
                     }) {
                         Text("Simpan").foregroundColor(.white)
-                    }
-                    
+                    }.padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
                 }.padding(.horizontal)
             }.padding(.bottom,40)
             formLargeSizeTextField(title: "Tambah Catatan", icon: "pensil", width: 24, height: 24, textField: $catatan) .frame(height: 200)
             
             Spacer()
             
-            ButtonDefault(buttonContent: "Tambah Catatan").onTapGesture {
-//                print("Tambah Catatan")
-                self.catatan = self.tambah
-                self.isSheet = false
-            }
-        }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all)).onTapGesture {
+//            ButtonDefault(buttonContent: "Tambah Catatan").onTapGesture {
+////                print("Tambah Catatan")
+//                self.catatan = self.tambah
+//                self.isSheet = false
+//            }
+        }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all)).padding(.bottom, keyboard.currentHeight).onTapGesture {
             self.endEditing(true)
         }
     }

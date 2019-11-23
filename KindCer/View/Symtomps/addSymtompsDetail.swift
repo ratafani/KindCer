@@ -29,20 +29,20 @@ struct addSymtompsDetail: View {
         
         VStack {
             if !(title == "Lainnya"){
-            formLargeSizePath(title1: "Kondisi", title2: title, status: $kondisi, icon: "termometer", width: 15, height: 28).frame(width: 414, height: 89).onTapGesture {
+            formLargeSizePath(title1: "Kondisi", title2: title, status: $kondisi, icon: "termometer", width: 15, height: 28).frame(height: 89).onTapGesture {
                 self.isSheet = true
                 self.sheetId = 0
                 }
                 
             }
             
-            formLargeSizePath(title1: "Catatan", title2: "", status: $catatan, icon: "pensil", width: 25, height: 25).frame(width: 414, height: 89).onTapGesture {
+            formLargeSizePath(title1: "Catatan", title2: "", status: $catatan, icon: "pensil", width: 25, height: 25).frame(height: 89).onTapGesture {
                 self.isSheet = true
                 self.sheetId = 1
             }
             
             
-            formLargeSizePath(title1: "Obat", title2: "", status: $obat, icon: "obat", width: 26, height: 26).frame(width: 414, height: 89).onTapGesture {
+            formLargeSizePath(title1: "Obat", title2: "", status: $obat, icon: "obat", width: 26, height: 26).frame(height: 89).onTapGesture {
                 self.isSheet = true
                 self.sheetId = 2
             }

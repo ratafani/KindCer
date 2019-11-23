@@ -12,6 +12,7 @@ struct TambahCatatanPengobatan: View {
     @Binding var obat : String
     @Binding var catatan_obat : String
     @Binding var isSheet : Bool
+    @ObservedObject private var keyboard = KeyboardResponder()
     
     @State var title = "Tambah Obat"
     @State var mObat = ""
@@ -20,8 +21,11 @@ struct TambahCatatanPengobatan: View {
         VStack{
             ZStack(alignment: .center) {
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
-                Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
-                HStack {
+                VStack {
+                    Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
+                    Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+                }
+                HStack{
                     Spacer()
                     Button(action: {
                         //                print("Ketik tambah catatan")
@@ -31,19 +35,15 @@ struct TambahCatatanPengobatan: View {
                         self.isSheet = false
                     }) {
                         Text("Simpan").foregroundColor(.white)
-                    }
+                    }.padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
                 }.padding(.horizontal)
             }.padding(.bottom,40)
-            formLargeSizeTextField(title: "Nama Obat", icon: "obat", width: 24, height: 24, textField: $obat) .frame(height: 200).padding()
+            formLargeSizeTextField(title: "Nama Obat", icon: "obat", width: 24, height: 24, textField: $obat) .frame(height: 200)
             
-            formLargeSizeTextField(title: "Tambah Catatan Pengobatan", icon: "pensil", width: 24, height: 24, textField: $catatan_obat) .frame(height: 200).padding()
+            formLargeSizeTextField(title: "Tambah Catatan Pengobatan", icon: "pensil", width: 24, height: 24, textField: $catatan_obat) .frame(height: 200)
             
             Spacer()
-            
-            
-            
-            
-        }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all)).onTapGesture {
+        }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all)).padding(.bottom, keyboard.currentHeight).onTapGesture {
             self.endEditing(true)
         }
     }
