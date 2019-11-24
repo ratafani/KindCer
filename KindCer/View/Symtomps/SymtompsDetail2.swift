@@ -35,9 +35,9 @@ struct SymtompsDetail2: View {
                 
                 formLargeSize(title: "Catatan", status: $record.catatan_record, icon: "pensil", width: 25, height: 25) .frame(height: 200)
                 
-                formObat(title: "Obat", status: $record.catatan_obat, icon: "obat", width: 25, height: 25,obat: $record.obat)
+                formObat(title: "Obat", status: $record.catatan_obat, icon: "obat", width: 25, height: 25,obat: $record.obat) .frame(height: 200)
                 
-                Spacer(minLength: 150)
+                Spacer()
                 
                 
         }
