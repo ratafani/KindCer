@@ -91,7 +91,7 @@ struct ProfileBioAdd: View {
                     Image("Contact").resizable().frame(width: 20, height: 20)
                     Text("Kontak Penting").font(.headline)
                 }) {
-                    TextField("Tulis kontak penting anda disini", text: self.$kontakPenting)
+                    TextField("Tulis kontak penting anda disini", text: self.$kontakPenting) .keyboardType(.phonePad)
                 }
                 Section(header: HStack {
                     Image("circle").resizable().frame(width: 20, height: 20)

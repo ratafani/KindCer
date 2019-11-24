@@ -25,8 +25,8 @@ struct HomeView: View {
     @ObservedObject var profileModel : UserModel = UserModel()
     @State var isSheet : Bool = false
     @State var isAlarm : Bool = false
-    @State var title = "Halo,"
     @State var homeSheet : HomeSheet = .Profile
+    let hour = Calendar.current.component(.hour, from: Date())
     //    @State var a : RecordModel = RecordModel()
     
     var body: some View {
@@ -34,7 +34,28 @@ struct HomeView: View {
         return VStack {
             HStack{
                 VStack(alignment: .leading) {
-                    Text(title).font(.title).bold()
+                
+                    if hour > 4 && hour <= 10
+                    {
+                        Text("Selamat Pagi,") .font(.title).bold()
+                    }
+                    else if hour > 10 && hour <= 14
+                    {
+                        Text("Selamat Siang,") .font(.title).bold()
+                    }
+                    else if hour > 14 && hour <= 18
+                    {
+                        Text("Selamat Sore,") .font(.title).bold()
+                    }
+                    else if hour > 18 && hour <= 24
+                    {
+                        Text("Selamat Malam,") .font(.title).bold()
+                    }
+                    else
+                    {
+                        Text("Selamat Tidur") .font(.title).bold()
+                    }
+                    
                     Text(UserModel().user_name.isEmpty ? " ":UserModel().user_name).font(.title).bold()
                 }
                 Spacer()
@@ -86,7 +107,7 @@ struct HomeView: View {
                 if recordModel.mData.isEmpty{
                     
                     RecordIsEmptView(isSheet: $isSheet,isAlarm: $isAlarm, homeSheet: $homeSheet,tanggal: dateModel.currentDate,dateModel: dateModel)
-//                        .disabled(dateModel.currentDate.timeIntervalSince1970>Date().timeIntervalSince1970)
+                    //                        .disabled(dateModel.currentDate.timeIntervalSince1970>Date().timeIntervalSince1970)
                     
                     
                 }else{
@@ -116,7 +137,7 @@ struct HomeView: View {
                 }else if self.homeSheet == HomeSheet.Record{
                     SymptompsAdd( recordModel: self.recordModel,homeSheet : self.$isSheet,now: self.dateModel.currentDate)
                 }else{
-//                    SymtompsDetail2( recordModel: self.recordModel, record: self.record)
+                    //                    SymtompsDetail2( recordModel: self.recordModel, record: self.record)
                 }
         }.alert(isPresented: $isAlarm, content: {
             Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
@@ -141,6 +162,7 @@ struct HomeView: View {
         return a
     }
 }
+
 
 
 
