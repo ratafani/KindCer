@@ -55,7 +55,7 @@ struct PageView<Page:View>: View {
                     Button (action: {
                     }, label: {
                         RoundedRectangle(cornerRadius: 15)
-                            .frame(width: 360, height: 60, alignment: .center)
+                            .frame(width: 360, height: 10, alignment: .center)
                             .foregroundColor(Color.purple)
                             .opacity(0)
                             .overlay(

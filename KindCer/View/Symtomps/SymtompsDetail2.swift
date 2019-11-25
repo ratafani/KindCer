@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SymtompsDetail2: View {
     
-    @State var navBtn = "Edit"
+    @State var navBtn = "Ubah"
     @ObservedObject var recordModel : RecordModel
     @Binding var record : RecordType
     @State var isSheet : Bool = false
@@ -31,6 +31,7 @@ struct SymtompsDetail2: View {
                         }
                     }.padding()
                 }
+
                 ScrollView{
                     CardKondisi(kondisi: $record.kondisi, penjelasan: $record.penjelasan,theColor: theColor)
                     

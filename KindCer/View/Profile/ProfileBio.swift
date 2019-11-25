@@ -29,7 +29,7 @@ struct ProfileBioAdd: View {
             ZStack{
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
                 VStack{
-                    Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
+                    Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
                     Text("Bio Saya").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
                     ZStack{
                         HStack {
@@ -53,7 +53,7 @@ struct ProfileBioAdd: View {
                                 self.kondisi = self.mUser.kondisi
                                 self.diagnose = self.mUser.tgl_diagnosis
                                 self.userName = self.mUser.user_name
-                            }.foregroundColor(.white).padding(.init(top: -20, leading: 0, bottom: 0, trailing: 15))
+                            }.foregroundColor(.white).padding(.init(top: -21, leading: 0, bottom: 0, trailing: 15))
                         }
 
                     }
@@ -65,21 +65,21 @@ struct ProfileBioAdd: View {
                     Text("Nama Pengguna").font(.headline)
                 }) {
                     
-                    TextField("Tulis nama anda", text: self.$userName)
+                    TextField("Tulis nama kamu", text: self.$userName)
                 }
                 Section(header: HStack {
                     Image("cancertype").resizable().frame(width: 20, height: 20)
                     Text("Jenis Kanker").font(.headline)
                 }) {
                     
-                    TextField("Tulis jenis kanker anda", text: self.$jenisKanker)
+                    TextField("Tulis jenis kanker kamu", text: self.$jenisKanker)
                 }
                 Section(header: HStack {
                     Image("cancersite").resizable().frame(width: 10, height: 20)
                     Text("Posisi Kanker").font(.headline)
                 }) {
                     
-                    TextField("Tulis letak kanker anda", text: self.$lokasiKanker)
+                    TextField("Tulis letak kanker kamu", text: self.$lokasiKanker)
                 }
                 Section(header: HStack {
                     Image("diagnosis").resizable().frame(width: 20, height: 20)
@@ -91,7 +91,9 @@ struct ProfileBioAdd: View {
                     Image("Contact").resizable().frame(width: 20, height: 20)
                     Text("Kontak Penting").font(.headline)
                 }) {
-                    TextField("Tulis kontak penting anda disini", text: self.$kontakPenting)
+
+                    TextField("Tulis kontak penting anda disini", text: self.$kontakPenting) .keyboardType(.phonePad)
+
                 }
                 Section(header: HStack {
                     Image("circle").resizable().frame(width: 20, height: 20)
