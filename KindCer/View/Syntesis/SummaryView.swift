@@ -25,57 +25,58 @@ struct SummaryView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                headerModal(title: "Rangkuman").padding(.init(top: 0, leading: 0, bottom: 40, trailing: 0))
+                headerModal(title: "Rangkuman").padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
-                CustomLineView(data: self.data, date: self.date , title: self.picked, legend: "in last 23 days").frame(width: geometry.frame(in: .global).width - 50, height: geometry.frame(in: .global).height / 3).padding().offset(x: 0, y: -60)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    
-                    HStack {
-                        ForEach(self.sType,id: \.self){ m in
-                            ZStack
-                                {
-                                    Button(action: {
-                                        self.picked = m
-                                        self.update(type: m)
-                                        
-                                    }) {
-                                        Text(m).foregroundColor(.white).padding().background(Rectangle().foregroundColor(Color("Primary")).frame( height: 35).cornerRadius(5).opacity(m==self.picked ? 1:0.4))
-                                    }
+                ScrollView{
+                    CustomLineView(data: self.data, date: self.date , title: self.picked, legend: "in last 23 days").frame(width: geometry.frame(in: .global).width - 50, height: geometry.frame(in: .global).height / 3).padding(.top,20).offset(y: 20)
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        
+                        HStack {
+                            ForEach(self.sType,id: \.self){ m in
+                                ZStack
+                                    {
+                                        Button(action: {
+                                            self.picked = m
+                                            self.update(type: m)
+                                            
+                                        }) {
+                                            Text(m).foregroundColor(.white).padding().background(Rectangle().foregroundColor(Color("Primary")).frame( height: 35).cornerRadius(5).opacity(m==self.picked ? 1:0.4))
+                                        }
+                                }
+                            }
+                        }.padding(.horizontal,10)
+                        
+                    }.padding(.horizontal).offset(y: 120)
+                    Text("Kondisi Kamu").font(.system(size: 24, design: .default)).bold().padding(.top).offset(y: 120)
+                    HStack(alignment: .center){
+                        ZStack{
+                            Rectangle().foregroundColor(.white).cornerRadius(20).shadow(radius: 10).frame(width:100,height: 100)
+                            VStack {
+                                Text("Aman").font(.system(size: 26, design: .default)).bold().foregroundColor(Color("Primary")).padding(.top)
+                                
+                                Text("Kondisimu baik").font(.system(size: 10, design: .default)).foregroundColor(.gray)
+                            }
+                        }.padding(5)
+                        ZStack{
+                            Rectangle().foregroundColor(Color("Primary")).cornerRadius(20).shadow(radius: 10).frame(width:130,height: 120)
+                            VStack {
+                                Text("Normal").font(.system(size: 30, design: .default)).bold().foregroundColor(.white).padding(.top)
+                                
+                                Text("Kondisimu normal").font(.system(size: 12, design: .default)).foregroundColor(.white)
                             }
                         }
-                    }.padding(.horizontal,10)
-                    
-                }.padding(.horizontal)
-                Text("Kondisi Kamu").font(.system(size: 24, design: .default)).bold().padding(.top)
-                HStack(alignment: .center){
-                    ZStack{
-                        Rectangle().foregroundColor(.white).cornerRadius(20).shadow(radius: 10).frame(width:100,height: 100)
-                        VStack {
-                            Text("Aman").font(.system(size: 26, design: .default)).bold().foregroundColor(Color("Primary")).padding(.top)
-                            
-                            Text("Kondisimu baik").font(.system(size: 10, design: .default)).foregroundColor(.gray)
-                        }
-                    }.padding(5)
-                    ZStack{
-                        Rectangle().foregroundColor(Color("Primary")).cornerRadius(20).shadow(radius: 10).frame(width:130,height: 120)
-                        VStack {
-                            Text("Normal").font(.system(size: 30, design: .default)).bold().foregroundColor(.white).padding(.top)
-                            
-                            Text("Kondisimu normal").font(.system(size: 12, design: .default)).foregroundColor(.white)
-                        }
-                    }
-                    ZStack{
-                        Rectangle().foregroundColor(.white).cornerRadius(20).shadow(radius: 10).frame(width:100,height: 100)
-                        VStack {
-                            Text("Bahaya").font(.system(size: 26, design: .default)).bold().foregroundColor(Color("Primary")).padding(.top)
-                            
-                            Text("Kondisimu\n perlu penindakan").font(.system(size: 10, design: .default)).foregroundColor(.gray) .multilineTextAlignment(.center)
-                        }
-                    }.padding(5)
+                        ZStack{
+                            Rectangle().foregroundColor(.white).cornerRadius(20).shadow(radius: 10).frame(width:100,height: 100)
+                            VStack {
+                                Text("Bahaya").font(.system(size: 26, design: .default)).bold().foregroundColor(Color("Primary")).padding(.top)
+                                
+                                Text("Kondisimu\n perlu penindakan").font(.system(size: 10, design: .default)).foregroundColor(.gray) .multilineTextAlignment(.center)
+                            }
+                        }.padding(5)
+                    }.offset(y: 120)
                 }
                 
-                
-                Spacer()
             }.edgesIgnoringSafeArea(.all).onAppear{
                 self.picked = self.a.mData[0].type
                 self.update(type: self.picked)
@@ -84,6 +85,7 @@ struct SummaryView: View {
     }
     
     func update(type:String){
+        
         self.date = [" "," "]
         self.data = [0,0]
         var date2 = [String]()
@@ -97,7 +99,6 @@ struct SummaryView: View {
 
             for arr in self.a.mData{
                 mType[arr.type] = true
-                                //                    print(self.a.mData)
                 if arr.type == self.picked{
                     
                     var num = 0
