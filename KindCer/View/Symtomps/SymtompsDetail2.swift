@@ -31,6 +31,7 @@ struct SymtompsDetail2: View {
                         }
                     }.padding()
                 }
+
                 ScrollView{
                     CardKondisi(kondisi: $record.kondisi, penjelasan: $record.penjelasan,theColor: theColor)
                     
@@ -39,6 +40,7 @@ struct SymtompsDetail2: View {
                     formObat(title: "Obat", status: $record.catatan_obat, icon: "obat", width: 25, height: 25,obat: $record.obat).frame(height: 200)
                 }
 //                Spacer(minLength: 150)
+
                 
                 
         }
