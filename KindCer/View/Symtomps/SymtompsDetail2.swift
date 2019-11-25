@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SymtompsDetail2: View {
     
-    @State var navBtn = "Edit"
+    @State var navBtn = "Ubah"
     @ObservedObject var recordModel : RecordModel
     @Binding var record : RecordType
     @State var isSheet : Bool = false
@@ -31,13 +31,16 @@ struct SymtompsDetail2: View {
                         }
                     }.padding()
                 }
-                CardKondisi(kondisi: $record.kondisi, penjelasan: $record.penjelasan,theColor: theColor)
+
+                ScrollView{
+                    CardKondisi(kondisi: $record.kondisi, penjelasan: $record.penjelasan,theColor: theColor)
+                    
+                    formLargeSize(title: "Catatan", status: $record.catatan_record, icon: "pensil", width: 25, height: 25) .frame(height: 200)
+                    
+                    formObat(title: "Obat", status: $record.catatan_obat, icon: "obat", width: 25, height: 25,obat: $record.obat).frame(height: 200)
+                }
                 
-                formLargeSize(title: "Catatan", status: $record.catatan_record, icon: "pensil", width: 25, height: 25) .frame(height: 200)
                 
-                formObat(title: "Obat", status: $record.catatan_obat, icon: "obat", width: 25, height: 25,obat: $record.obat) .frame(height: 200)
-                
-                Spacer()
                 
                 
         }

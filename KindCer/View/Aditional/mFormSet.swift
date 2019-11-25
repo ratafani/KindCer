@@ -99,8 +99,7 @@ struct formLargeSizePathFixedTop: View{
     var body: some View{
         VStack {
             ZStack{
-                Rectangle()
-                    .foregroundColor(.white)
+                Rectangle().foregroundColor(.white)
                 VStack {
                     HStack{
                         setImage(icon: icon, width: width, height: height, alignment: .leading).padding(.horizontal, 20)
@@ -143,25 +142,19 @@ struct formLargeSizeTextField: View{
     
     var body: some View{
         VStack {
-            ZStack{
-                Rectangle()
-                    .foregroundColor(.white)
-                VStack {
-                    HStack{
-                        setImage(icon: icon, width: width, height: height, alignment: .leading).padding(.horizontal, 20)
-                        VStack(alignment: .leading){
-                            Text(title)
-                                .bold()
-                                .padding(.bottom, 10)
-                                .font(.system(size: 18))
-                            MultilineTextView(text: $textField) .font(.system(size: 15))
-                        }
-                        Spacer()
-                        //Image("Path").padding(.trailing)
-                    }
-                }.offset(y: -40)
+            HStack{
+                setImage(icon: icon, width: width, height: height, alignment: .leading).padding(.horizontal, 20)
+                Text(title)
+                .bold()
+                .padding(.bottom, 10)
+                .font(.system(size: 18))
+                Spacer()
             }
-        }.padding(.vertical)
+            ZStack{
+                Rectangle().foregroundColor(.white)
+                MultilineTextView(text: $textField) .font(.system(size: 15))
+            }
+        }.padding()
     }
 }
 
