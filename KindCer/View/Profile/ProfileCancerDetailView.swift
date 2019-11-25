@@ -13,7 +13,7 @@ struct ProfileCancerDetailView: View {
     @ObservedObject var userModel:UserModel
     var dateFormatter: DateFormatter {
           let formatter = DateFormatter()
-          formatter.dateStyle = .long
+        formatter.dateStyle = .medium
           return formatter
       }
     var body: some View {
