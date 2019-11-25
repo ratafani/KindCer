@@ -30,6 +30,7 @@ struct EditSymtompDetail: View {
     
     
     var body: some View{
+
         GeometryReader { geometry in
              VStack {
                         headerModal(title: "Edit Symtomp")
@@ -92,6 +93,7 @@ struct EditSymtompDetail: View {
                             }else{
                                 TambahCatatanPengobatan(obat: self.$obat, catatan_obat: self.$catatan_obat,isSheet: self.$isSheet)
                             }
+
                     }
                     
                 }

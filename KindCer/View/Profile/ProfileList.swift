@@ -24,7 +24,7 @@ struct ProfileListEmpty: View{
                 Spacer()
                 Image("kuat")
                 Text("Tambahkan Treatment").bold().font(.system(size: 22))
-                Text("Kumpulkan catatan tindakan treatment kanker anda sekarang disini.").multilineTextAlignment(.center).lineLimit(2).padding()
+                Text("Kumpulkan catatan tindakan treatment kanker kamu sekarang disini.").multilineTextAlignment(.center).lineLimit(2).padding()
                 Spacer()
                 Button(action: {
                     
@@ -164,7 +164,7 @@ struct ProfileListNotEmptyLargeDone: View{
                             .font(.system(size: 18))
                             Text("Kondisi").bold().font(.system(size: 15)).padding(.bottom, 10)
                             Text("ngambil dari sebelumnya").padding(.init(top: 0, leading: 0, bottom: 20, trailing: 0)).font(.system(size: 13))
-                            Text("Symptomps").bold()
+                            Text("Gejala").bold()
                                 .padding(.bottom, 10)
                             .font(.system(size: 18))
                             HStack{

@@ -34,7 +34,7 @@ struct SchedulePageEdit: View {
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
                 VStack{
                     Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
-                    Text("Tambah Jadwal Kemoterapi").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
+                    Text("Ubah Jadwal Kemoterapi").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
                     ZStack{
                         HStack {
                             Spacer()
@@ -75,7 +75,7 @@ struct SchedulePageEdit: View {
                     Text("Tempat").font(.headline)
                 }) {
                     
-                    TextField("Tulis tempat anda berobat", text: self.$tempatPengobatan).onAppear{
+                    TextField("Tulis tempat kamu berobat", text: self.$tempatPengobatan).onAppear{
                         self.tempatPengobatan = self.jItem.tempat
                     }
                 }
@@ -84,7 +84,7 @@ struct SchedulePageEdit: View {
                     Image("doctorDarkerPurple").resizable().frame(width: 20, height: 20)
                     Text("Doctor").font(.headline)
                 }) {
-                    TextField("Tulis dokter yang akan menangani anda", text: self.$dokter).onAppear{
+                    TextField("Tulis dokter yang akan menangani kamu", text: self.$dokter).onAppear{
                         self.dokter = self.jItem.dokter
                     }
                 }
@@ -93,7 +93,7 @@ struct SchedulePageEdit: View {
                     Image("condition").resizable().frame(width: 20, height: 20)
                     Text("Catatan").font(.headline)
                 }) {
-                    TextField("Tulis catatan anda", text: self.$catatan).onTapGesture {
+                    TextField("Tulis catatan kamu", text: self.$catatan).onTapGesture {
                         self.catatan = self.jItem.catatan
                     }
                 }
