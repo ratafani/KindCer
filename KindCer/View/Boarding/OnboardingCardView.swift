@@ -15,7 +15,8 @@ struct OnboardingCardView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack
-                {   if self.card.title == "login"{
+                {
+                    if self.card.title == "login"{
                     NewLoginView()
                 }else{
                     

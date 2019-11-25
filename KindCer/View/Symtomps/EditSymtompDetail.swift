@@ -32,7 +32,7 @@ struct EditSymtompDetail: View {
     var body: some View{
         
         VStack {
-            headerModal(title: "Edit Symtomp")
+            headerModal(title: "Ubah Symtomp")
             if !(title == "Lainnya"){
                 formLargeSizePath(title1: "Kondisi", title2: recordDetail.type, status: $kondisi, icon: "termometer", width: 15, height: 28).frame( height: 89).onTapGesture {
                     self.isSheet = true

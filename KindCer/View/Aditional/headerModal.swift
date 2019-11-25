@@ -46,7 +46,7 @@ struct headerModalWithButton: View {
         ZStack{
             Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
             VStack{
-                Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
+                Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
                 Text(title).font(.system(size: 20, design: .default)).bold().foregroundColor(.white)
                 ZStack{
                     HStack {
