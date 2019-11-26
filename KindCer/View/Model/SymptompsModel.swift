@@ -40,7 +40,7 @@ class SymptompModel {
         case .bengkak:
             question(aman: "", ringan: "Bengkak di tangan atau kaki", sedang: "Bengkak di bagian atas lengan atau kaki", parah: "Bengkak sampai sakit atau susah bernafas")
         case .diare:
-            question(aman: "", ringan: "Tahi berpencar", sedang: "Tahi berair, lebih banyak dari biasanya", parah: "berdarah, atau sampai membuat pusing")
+            question(aman: "", ringan: "Tinja berpencar", sedang: "Tinja berair, lebih banyak dari biasanya", parah: "berdarah, atau sampai membuat pusing")
         case .demam:
             question(aman: "Suhu badan 37°C", ringan: "Suhu badan 37°C - 38°C", sedang: "Suhu badan 37°C - 40°C", parah: "Suhu badan > 40°C")
         case .gatal:
@@ -77,7 +77,7 @@ class SymptompModel {
         case "Bengkak":
             question(aman: "", ringan: "Bengkak di tangan atau kaki", sedang: "Bengkak di bagian atas lengan atau kaki", parah: "Bengkak sampai sakit atau susah bernafas")
         case "Diare":
-            question(aman: "", ringan: "Tahi berpencar", sedang: "Tahi berair, lebih banyak dari biasanya", parah: "berdarah, atau sampai membuat pusing")
+            question(aman: "", ringan: "Tinja berpencar", sedang: "Tinja berair, lebih banyak dari biasanya", parah: "berdarah, atau sampai membuat pusing")
         case "Demam":
             question(aman: "Suhu badan 37°C", ringan: "Suhu badan 37°C - 38°C", sedang: "Suhu badan 37°C - 40°C", parah: "Suhu badan > 40°C")
         case "Gatal / iritasi":

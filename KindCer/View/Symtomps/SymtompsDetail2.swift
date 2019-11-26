@@ -15,13 +15,28 @@ struct SymtompsDetail2: View {
     @Binding var record : RecordType
     @State var isSheet : Bool = false
     @State var theColor : Color = .red
+    @State var title : String
     
     var body: some View {
         
         return VStack
             {
                 ZStack {
-                    headerModal(title: "Detail \(record.type)")
+                    headerModal(title: "Detail \(title)").onAppear{
+                        print(self.record.type)
+                        self.title = self.record.type
+                        if self.title == "Otot / Persendian"{
+                            self.title = "Otot"
+                        } else if self.title == "Gatal / iritasi" {
+                            self.title = "Gatal"
+                        } else if self.title == "Mati Rasa / Kesemutan" {
+                            self.title = "Mati Rasa"
+                        } else if self.title == "Mual / enek " {
+                            self.title = "Mual"
+                        } else if self.title == "Susah Menelan" {
+                            self.title = "Menelan"
+                        }
+                    }
                     HStack {
                         Spacer()
                         Button(action: {

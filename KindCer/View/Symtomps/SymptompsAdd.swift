@@ -79,11 +79,7 @@ struct SymptompsAdd: View {
                             NavigationLink(destination: addSymtompsDetail(title: "Mulut", status: "Pilih kondisi", sympthoms: SymptompModel(type: .mulut),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
                                 mulut
                             }
-                            .navigationBarTitle("\(self.now, formatter: self.dateFormatter)",displayMode: .inline).font(.system(size: 23)).buttonStyle(PlainButtonStyle())
-                            .background(NavigationConfigurator { nc in
-                                nc.navigationBar.barTintColor = .blue
-                                nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-                            })
+                            
                         }
                         Group{
                             NavigationLink(destination: addSymtompsDetail(title: "Muntah", status: "Pilih kondisi", sympthoms: SymptompModel(type: .muntah),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
@@ -106,7 +102,11 @@ struct SymptompsAdd: View {
                             }.buttonStyle(PlainButtonStyle())
                         }
                     }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
-                }
+                } .navigationBarTitle("\(self.now, formatter: self.dateFormatter)",displayMode: .inline).font(.system(size: 23)).buttonStyle(PlainButtonStyle())
+                    .background(NavigationConfigurator { nc in
+                        nc.navigationBar.barTintColor = #colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1)
+                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+                    })
             }
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
     }
@@ -114,7 +114,7 @@ struct SymptompsAdd: View {
 
 struct NavigationConfigurator: UIViewControllerRepresentable {
     var configure: (UINavigationController) -> Void = { _ in }
-
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
         UIViewController()
     }
@@ -123,7 +123,7 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
             self.configure(nc)
         }
     }
-
+    
 }
 
 struct DateCard: View {
@@ -155,7 +155,7 @@ struct SymptompsList: View {
                 profileIc(icon: icon, width: width, height: height, alignment: .leading).padding()
                 Text(title).bold().font(.system(size: 18))
                 Spacer()
-//                Image("plus").padding(.trailing)
+                //                Image("plus").padding(.trailing)
             }
         }
     }

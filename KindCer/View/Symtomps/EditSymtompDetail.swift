@@ -33,7 +33,7 @@ struct EditSymtompDetail: View {
 
         GeometryReader { geometry in
              VStack {
-                        headerModal(title: "Edit Symtomp")
+                        headerModal(title: "Ubah Gejala")
                 if !(self.title == "Lainnya"){
                     formLargeSizePath(title1: "Kondisi", title2: self.recordDetail.type, status: self.$kondisi, icon: "termometer", width: 15, height: 28).frame( height: 89).onTapGesture {
                                 self.isSheet = true

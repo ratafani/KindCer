@@ -112,7 +112,7 @@ struct recordCard: View {
             //            self.homeSheet = HomeSheet.rDetail
             //            self.theRecord = self.record
         }.sheet(isPresented: $isSheet2) {
-            SymtompsDetail2(recordModel: self.recordModel, record: self.$record)
+            SymtompsDetail2(recordModel: self.recordModel, record: self.$record, title: self.record.type)
         }
     }
     

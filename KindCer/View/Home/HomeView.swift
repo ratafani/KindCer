@@ -34,7 +34,6 @@ struct HomeView: View {
         return VStack {
             HStack{
                 VStack(alignment: .leading) {
-                
                     if hour > 4 && hour <= 10
                     {
                         Text("Selamat Pagi,") .font(.title).bold()
@@ -55,7 +54,6 @@ struct HomeView: View {
                     {
                         Text("Selamat Tidur") .font(.title).bold()
                     }
-                    
                     Text(UserModel().user_name.isEmpty ? " ":UserModel().user_name).font(.title).bold()
                 }
                 Spacer()
