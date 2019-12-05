@@ -23,6 +23,8 @@
 		F6516BC5238635750035E8E4 /* EditSymtompDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BC4238635750035E8E4 /* EditSymtompDetail.swift */; };
 		F6516BC82386B5C00035E8E4 /* FormObat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BC72386B5C00035E8E4 /* FormObat.swift */; };
 		F6516BCA2386B6300035E8E4 /* SymtompsDetail2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BC92386B6300035E8E4 /* SymtompsDetail2.swift */; };
+		F6516BD0239611100035E8E4 /* TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BCF239611100035E8E4 /* TextFieldAlert.swift */; };
+		F6516BD223961F980035E8E4 /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BD123961F980035E8E4 /* ProfileEdit.swift */; };
 		F66D1C5B23791A1600E864C5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5A23791A1600E864C5 /* CalendarView.swift */; };
 		F66D1C5E2379527D00E864C5 /* dateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5D2379527D00E864C5 /* dateModel.swift */; };
 		F66D1C7C237A5B6A00E864C5 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C76237A5B6A00E864C5 /* ProfileList.swift */; };
@@ -105,6 +107,8 @@
 		F6516BC4238635750035E8E4 /* EditSymtompDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSymtompDetail.swift; sourceTree = "<group>"; };
 		F6516BC72386B5C00035E8E4 /* FormObat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormObat.swift; sourceTree = "<group>"; };
 		F6516BC92386B6300035E8E4 /* SymtompsDetail2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymtompsDetail2.swift; sourceTree = "<group>"; };
+		F6516BCF239611100035E8E4 /* TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlert.swift; sourceTree = "<group>"; };
+		F6516BD123961F980035E8E4 /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
 		F66D1C5A23791A1600E864C5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F66D1C5D2379527D00E864C5 /* dateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateModel.swift; sourceTree = "<group>"; };
 		F66D1C76237A5B6A00E864C5 /* ProfileList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				F66D1C7B237A5B6A00E864C5 /* ProfileConditionDetail.swift */,
 				F66D1C76237A5B6A00E864C5 /* ProfileList.swift */,
 				F66D1C77237A5B6A00E864C5 /* ProfilePage.swift */,
+				F6516BD123961F980035E8E4 /* ProfileEdit.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			children = (
 				F677AFD92354157A000B39E4 /* AppDelegate.swift */,
 				F677AFDB2354157A000B39E4 /* SceneDelegate.swift */,
+				F66D1C5C2379527000E864C5 /* Model */,
 				F677B00C235416BC000B39E4 /* View */,
 				F677AFE22354157D000B39E4 /* Assets.xcassets */,
 				F677AFE72354157D000B39E4 /* LaunchScreen.storyboard */,
@@ -329,13 +335,13 @@
 				F677AFE02354157A000B39E4 /* ContentView.swift */,
 				F6516B60237E72F00035E8E4 /* Schedule */,
 				F66D1C88237A924400E864C5 /* Syntesis */,
-				F66D1C5C2379527000E864C5 /* Model */,
 				F6D9793623602ED100DC6673 /* Boarding */,
 				F66D1C75237A5B4B00E864C5 /* Profile */,
 				F6D9793523601C6200DC6673 /* Quiz */,
 				F6D9793423601C5D00DC6673 /* Home */,
 				F66D1CA5237BE32800E864C5 /* Symtomps */,
 				F66D1CAE237BE34800E864C5 /* Aditional */,
+				F6516BCF239611100035E8E4 /* TextFieldAlert.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				F6D9791A235E6FDF00DC6673 /* infoBtn.swift in Sources */,
 				F6516BB823822F120035E8E4 /* BoardingView.swift in Sources */,
 				F66D1C7E237A5B6A00E864C5 /* ProfileCard.swift in Sources */,
+				F6516BD223961F980035E8E4 /* ProfileEdit.swift in Sources */,
 				F66D1CAC237BE33100E864C5 /* TambahCatatanView.swift in Sources */,
 				F677AFE12354157A000B39E4 /* ContentView.swift in Sources */,
 				F66D1C8A237A925400E864C5 /* SummaryView.swift in Sources */,
@@ -567,6 +574,7 @@
 				F66D1CBA237CEB7800E864C5 /* RecordModel.swift in Sources */,
 				F66D1C91237ABEB100E864C5 /* Helpers.swift in Sources */,
 				F6516BCA2386B6300035E8E4 /* SymtompsDetail2.swift in Sources */,
+				F6516BD0239611100035E8E4 /* TextFieldAlert.swift in Sources */,
 				F6D97916235D99A400DC6673 /* buttonlist.swift in Sources */,
 				F66D1C7D237A5B6A00E864C5 /* ProfilePage.swift in Sources */,
 				F6D97926235FDE3B00DC6673 /* record_empty_view.swift in Sources */,
@@ -735,9 +743,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = MW3338A45T;
+				DEVELOPMENT_TEAM = 52RX5R54N7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -758,9 +766,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = MW3338A45T;
+				DEVELOPMENT_TEAM = 52RX5R54N7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

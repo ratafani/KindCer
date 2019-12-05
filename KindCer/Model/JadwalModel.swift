@@ -35,7 +35,7 @@ class JadwalModel : NSObject, ObservableObject{
     override init() {
         super.init()
         self.readData()
-        self.fetchData()
+        
     }
     func fetchData(){
         objectWillChange.send(self)

@@ -20,92 +20,83 @@ struct ProfilePage: View {
     @State var sheetType = 0
     @State var image : UIImage? = UIImage()
     @State var jItem : JadwalType = JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
-    
+    @State var arr : [String] = ["as"]
     var body: some View {
         VStack{
             ZStack{
                 Rectangle().frame(height: 50).foregroundColor(Color("Primary"))
                 Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10).padding(.init(top: 10, leading: 0, bottom: 20, trailing: 0))
             }.padding(.init(top: 0, leading: 0, bottom: -30, trailing: 0))
-            ScrollView{
-                        VStack{
-                            ZStack {
-                                ProfileCardHeader(isSheet: $isSheet, sheetType: $sheetType, image: $image, userModel: userModel).padding(.init(top: -43.8, leading: 0, bottom: 0, trailing: 0))
-                                HStack {
-                                    
-                                    VStack {
-                                        Button(action: {
-                                            self.isSheet = true
-                                            self.sheetType = 2
-                                        }) {
-                                            Image("edit").renderingMode(.original).offset(x:50,y:50).padding(40)
-                                        }
-                                    }
-                                }
-                            }
-                            //            ProfileCardStatus()
-                            HStack{
-                                Text("Jadwal Kemoterapi (\(jadwal.data.count))").bold().font(.system(size: 20)).padding(.horizontal)
-                                Spacer()
-                                Button("Tambah"){
-                                    self.isSheet = true
-                                    self.sheetType = 1
-                                }.foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).padding(.horizontal)
-                            }
-                            
-                            
-                                ScrollView(.horizontal){
-                                    HStack{
-                                        if jadwal.data.isEmpty{
-                                            ProfileCardStatusEmpty()
-                                        }else{
-                                            ForEach(jadwal.data, id: \.id){ theData in
-                                                                            ProfileCardStatus(jadwalModel: self.jadwal,jadwal: theData,homeSheet: self.$isSheet)
-                                            //                                    .onTapGesture {
-                                            //                                    self.isSheet = true
-                                            //                                    self.sheetType = 3
-                                            //                                    self.jItem = theData
-                                            //                                }
-                                                                            
-                                                                        }
-                                        }
-                                        
-                                    }
-                                }.padding(.leading)
-                            
-                            HStack{
-                                Text("Bio saya").bold().font(.system(size: 20)).padding(.horizontal)
-                                Spacer()
-                                Button("Ubah"){
-                                    self.isSheet = true
-                                    self.sheetType = 0
-                                }.foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).padding(.horizontal)
-                            }.padding(.init(top: 10, leading: 0, bottom: 5, trailing: 0))
-                            ProfileCancerDetailView(userModel: userModel)
-                            
-            //                ProfileConditionDetail(userModel: userModel)
-                            Spacer()
-                            //            ProfileListEmpty().offset(y:-30)
-                        }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all)).sheet( isPresented: $isSheet) {
-                            if self.sheetType == 0{
-                                ProfileBioAdd(mUser: self.userModel, showingModal: self.$isSheet)
-                            } else if self.sheetType == 1{
-                                SchedulePage(isSheet: self.$isSheet, jadwal: self.jadwal)
-                            }else if self.sheetType == 2 {
-                                ImagePicker(isShown: self.$isSheet, uiImage: self.$image,userModel: self.userModel)
-                            }else{
-                                SchedulePageEdit(isSheet: self.$isSheet, jItem: self.$jItem, jadwal: self.jadwal)
-                            }
-                            //            ProfileBioAdd(mUser: self.userModel, showingModal: self.$isSheet)
-                        }
-                    }.onAppear{
+            
+                VStack{
+                    ZStack {
+                        Rectangle().foregroundColor(Color("Primary"))
                         
-                        //            self.userName = self.mUser.isEmpty ? "" : self.mUser[0].user_name ?? ""
-                    }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9468348622, green: 0.936796844, blue: 0.9499147534, alpha: 1)))).edgesIgnoringSafeArea(.all)
-                    //        }
+                        HStack {
+                            Spacer()
+                            VStack {
+                                Button(action: {
+                                    self.isSheet = true
+//                                    self.sheetType = 2
+                                    
+                                }) {
+                                    Text("Ubah").foregroundColor(.white).padding(4)
+                                        .background(Rectangle().stroke(Color.white, lineWidth: 4).cornerRadius(5))
+                                }.padding(16)
+                                Spacer()
+                            }
+                        }
+                        VStack{
+                            if(userModel.photo.isEmpty){
+
+                                Image("photo1")
+                                    .resizable()
+                                    .frame(width: 112, height: 112)
+                                    .scaledToFill()
+                                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
+
+                            }else{
+
+                                Image(uiImage: UIImage(data: self.userModel.photo) ?? UIImage())
+                                    .resizable()
+                                    .frame(width: 112, height: 112)
+                                    .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
+                            }
+                            Text(userModel.user_name == "" ? "Belum ada nama":userModel.user_name).font(.headline).foregroundColor(.white).bold()
+                        }
+                    }.frame(height: 216)
+                    
+                    HStack{
+                        Text("Tambahkan Jenis Kanker").font(.headline).bold().padding(16)
+                        Spacer()
+                        Button(action: {
+                            
+                        }) {
+                            Text("Tambah").foregroundColor(Color("Primary"))
+                                
+                        }.padding(16)
+                    }
+                    if arr.isEmpty{
+                        Spacer()
+                        Image("EmptyRecord").padding(.bottom)
+                        Text("Masih Kosong").bold().font(.headline).padding(.bottom)
+                        Text("Summary baru bisa dilihat jika kamu sudah menambahkan catatan symptomps kamu.").multilineTextAlignment(.center).font(.subheadline).frame(width: 200)
+                        Spacer()
+                    }else{
+                        List{
+                            Text("asdas")
+                            Text("asdas")
+                            Text("asdas")
+                        }
+                    }
                 }
+            
+            //        }
+        }.sheet(isPresented: $isSheet) {
+            ProfileEdit(userModel: self.userModel, theName: self.userModel.user_name, img: UIImage(data: self.userModel.photo) ?? UIImage(), goback: self.$isSheet)
         }
-        
+    }
+    
 }
 
 struct profilePage_Previews: PreviewProvider {

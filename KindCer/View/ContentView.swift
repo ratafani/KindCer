@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showSplash = true
+    
     @Environment(\.managedObjectContext) var moc 
 //    @FetchRequest(fetchRequest: User.fetchRequest()) var mUser : FetchedResults<User>
     var body: some View {
         
-        return HomeView(dateModel: DateModel(),recordModel: RecordModel())
+        return HomeView(dateModel: DateModel(),recordModel: RecordModel(),profileModel: UserModel())
     }
     
     

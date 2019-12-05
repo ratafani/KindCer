@@ -50,6 +50,9 @@ class RecordModel : NSObject,ObservableObject{
         let context = app.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
         let aDate = date.addingTimeInterval(-24*60*60)
+        
+        let sorting = NSSortDescriptor(key: "tanggal",ascending: true)
+        fetchRequest.sortDescriptors = [sorting]
         //        let datePredicate = NSPredicate(format: "tanggal > %@", aDate as NSDate)
         //
         //        fetchRequest.predicate = datePredicate
@@ -87,6 +90,8 @@ class RecordModel : NSObject,ObservableObject{
         let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
+        let sorting = NSSortDescriptor(key: "tanggal",ascending: true)
+        fetchRequest.sortDescriptors = [sorting]
         
         mData = []
         do{
@@ -150,5 +155,41 @@ class RecordModel : NSObject,ObservableObject{
             }
         }
         return a
+    }
+    
+    func allType()->[String]{
+        
+        var s = [String]()
+        for a in mData{
+            s.append(a.type)
+        }
+        
+        return s.uniques
+    }
+    
+    func allDate(type:String)->[Date]{
+        var d = [Date]()
+        
+        for a in mData{
+            if a.type == type{
+            d.append(a.tanggal)
+            }
+        }
+        
+        return d.uniques
+    }
+}
+
+extension Array where Element: Hashable {
+    var uniques: Array {
+        var buffer = Array()
+        var added = Set<Element>()
+        for elem in self {
+            if !added.contains(elem) {
+                buffer.append(elem)
+                added.insert(elem)
+            }
+        }
+        return buffer
     }
 }

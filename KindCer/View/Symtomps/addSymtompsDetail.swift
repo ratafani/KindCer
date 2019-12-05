@@ -12,7 +12,7 @@ struct addSymtompsDetail: View {
     
     @State var title = "demam"
     @State var status = "Pilih suhu badan"
-   
+    
     @State var isSheet : Bool = false
     @State var sheetId = 0
     @State var sympthoms : SymptompModel = SymptompModel(type: .lainnya)
@@ -25,13 +25,26 @@ struct addSymtompsDetail: View {
     @ObservedObject var recordModel : RecordModel
     @Binding var homeSheet : Bool
     @State var cDate : Date = Date()
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var btnBack : some View { Button(action: {
+        self.presentationMode.wrappedValue.dismiss()
+    }) {
+        HStack {
+            
+            Text("< Back").foregroundColor(.white).font(.body)
+        }
+        }
+    }
+    
     var body: some View{
         
         VStack {
             if !(title == "Lainnya"){
-            formLargeSizePath(title1: "Kondisi", title2: title, status: $kondisi, icon: "termometer", width: 15, height: 28).frame(height: 89).onTapGesture {
-                self.isSheet = true
-                self.sheetId = 0
+                formLargeSizePath(title1: "Kondisi", title2: title, status: $kondisi, icon: "termometer", width: 15, height: 28).frame(height: 89).onTapGesture {
+                    self.isSheet = true
+                    self.sheetId = 0
                 }
                 
             }
@@ -50,7 +63,7 @@ struct addSymtompsDetail: View {
             
             Spacer()
             Button(action: {
-//                print(self.title)
+                //                print(self.title)
                 var a = self.sympthoms.ringan
                 if self.kondisi == "Ringan"{
                     a = self.sympthoms.ringan
@@ -81,6 +94,8 @@ struct addSymtompsDetail: View {
                     TambahCatatanPengobatan(obat: self.$obat, catatan_obat: self.$catatan_obat,isSheet: self.$isSheet)
                 }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
         
     }
 }
