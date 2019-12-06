@@ -91,7 +91,7 @@ struct addSymtompsDetail: View {
                 }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarTitle("\(title)")
+        .navigationBarTitle("\(title)").font(.system(size: 18))
         .navigationBarItems(leading: btnBack, trailing: btnDone)
         
     }
