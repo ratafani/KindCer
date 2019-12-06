@@ -13,29 +13,26 @@ struct ImagePicker: UIViewControllerRepresentable {
 
     @Binding var isShown: Bool
     @Binding var uiImage: UIImage?
-    @ObservedObject var userModel : UserModel
+    
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
         @Binding var isShown: Bool
         @Binding var uiImage: UIImage?
-        @ObservedObject var userModel : UserModel
         
-        init(isShown: Binding<Bool>, uiImage: Binding<UIImage?>,userModel:UserModel) {
+        
+        init(isShown: Binding<Bool>, uiImage: Binding<UIImage?>) {
             
             _isShown = isShown
             _uiImage = uiImage
-            self.userModel = userModel
+            
         }
 
         func imagePickerController(_ picker: UIImagePickerController,
                                    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             let imagePicked = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             
-            let imageData = imagePicked.jpegData(compressionQuality: 1.0)
-            if !(imageData==nil) {
-               userModel.updatePhoto(photo: imageData!)
-            }
-//            uiImage = imagePicked
+           
+            uiImage = imagePicked
             isShown = false
             
             
@@ -50,7 +47,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(isShown: $isShown, uiImage: $uiImage,userModel: userModel)
+        return Coordinator(isShown: $isShown, uiImage: $uiImage)
     }
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {

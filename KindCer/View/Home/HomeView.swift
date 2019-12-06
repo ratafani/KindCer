@@ -33,33 +33,33 @@ struct HomeView: View {
         
         return VStack {
             HStack{
-                VStack(alignment: .leading) {
-                
-                    if hour > 4 && hour <= 10
-                    {
-                        Text("Selamat Pagi,") .font(.title).bold()
-                    }
-                    else if hour > 10 && hour <= 14
-                    {
-                        Text("Selamat Siang,") .font(.title).bold()
-                    }
-                    else if hour > 14 && hour <= 18
-                    {
-                        Text("Selamat Sore,") .font(.title).bold()
-                    }
-                    else if hour > 18 && hour <= 24
-                    {
-                        Text("Selamat Malam,") .font(.title).bold()
-                    }
-                    else
-                    {
-                        Text("Selamat Tidur") .font(.title).bold()
-                    }
-                    
-                    Text(UserModel().user_name.isEmpty ? " ":UserModel().user_name).font(.title).bold()
-                }
+//                VStack(alignment: .leading) {
+//
+//                    if hour > 4 && hour <= 10
+//                    {
+//                        Text("Selamat Pagi,") .font(.title).bold()
+//                    }
+//                    else if hour > 10 && hour <= 14
+//                    {
+//                        Text("Selamat Siang,") .font(.title).bold()
+//                    }
+//                    else if hour > 14 && hour <= 18
+//                    {
+//                        Text("Selamat Sore,") .font(.title).bold()
+//                    }
+//                    else if hour > 18 && hour <= 24
+//                    {
+//                        Text("Selamat Malam,") .font(.title).bold()
+//                    }
+//                    else
+//                    {
+//                        Text("Selamat Tidur") .font(.title).bold()
+//                    }
+//
+//                    Text(UserModel().user_name.isEmpty ? " ":UserModel().user_name).font(.title).bold()
+//                }
                 Spacer()
-                if (!UserModel().photo.isEmpty){
+                if (!profileModel.photo.isEmpty){
                     Image(uiImage: UIImage(data: UserModel().photo)!).resizable().frame(width: 60, height: 60).scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
                         self.isSheet = true
                         self.homeSheet = HomeSheet.Profile
@@ -121,7 +121,7 @@ struct HomeView: View {
             }
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9466523528, green: 0.9410246611, blue: 0.9509779811, alpha: 1))).edgesIgnoringSafeArea(.all))
             .sheet(isPresented: $isSheet) {
-                
+                 
                 if self.homeSheet == HomeSheet.Profile{
                     ProfilePage(userModel: self.profileModel, jadwal: JadwalModel())
                 }else if self.homeSheet == HomeSheet.Summary{
@@ -142,7 +142,7 @@ struct HomeView: View {
         }.alert(isPresented: $isAlarm, content: {
             Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
         }).onAppear{
-            
+       
             //            self.recordModel.readData(date: self.dateModel.currentDate)
         }
     }

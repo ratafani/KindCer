@@ -28,7 +28,7 @@ struct ProfileCardHeader: View {
         VStack {
             ZStack{
                 Rectangle().foregroundColor(Color("Primary"))
-                    .frame( height: 300)
+                    .frame( height: 250)
                 HStack{
                     Spacer()
                     VStack{
@@ -48,9 +48,9 @@ struct ProfileCardHeader: View {
                                 .frame(width: width, height: height)
                                 .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
                         }
-                        Text(userModel.user_name.isEmpty ? "User":userModel.user_name).foregroundColor(.white).bold().font(.system(size: 24)).padding(.bottom, 10).offset(y: 5)
+                        Text(userModel.user_name.isEmpty ? "Belum ada nama":userModel.user_name).foregroundColor(.white).bold().font(.system(size: 24)).padding(.bottom, 10).offset(y: 5)
                         
-                    }.offset(y:30)
+                    }.offset(y:0)
                     Spacer()
                 }
                 
@@ -153,13 +153,14 @@ struct jadwalBar: View{
         let calendar = Calendar.current
 
         let components = calendar.dateComponents([.day], from: Date(), to: self.jadwal.tanggal)
+        
         return components.day ?? 0
     }
     func calBar()->CGFloat{
-        let days = countingDays()
+        let days = countingDays() + 1
         var mStatus:CGFloat = 350.0
         if days < 30{
-            for _ in 0...(30-days){
+            for _ in 0...(29-days){
                 mStatus -= 350/30
             }
         }

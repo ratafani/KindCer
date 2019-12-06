@@ -44,12 +44,12 @@ struct TambahCatatanView: View {
 //                self.isSheet = false
 //            }
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all)).padding(.bottom, keyboard.currentHeight).onTapGesture {
-            self.endEditing(true)
+//            self.endEditing(true)
         }
     }
-    private func endEditing(_ force: Bool){
-        UIApplication.shared.endEditing()
-    }
+//    private func endEditing(_ force: Bool){
+//        UIApplication.shared.endEditing()
+//    }
 }
 
 //struct TambahCatatanView_Previews: PreviewProvider {

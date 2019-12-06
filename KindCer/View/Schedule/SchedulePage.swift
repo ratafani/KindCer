@@ -81,7 +81,7 @@ struct SchedulePage: View {
 
                 }.edgesIgnoringSafeArea(.all)
             }.onAppear(){
-                self.endEditing(true)
+//                self.endEditing(true)
             }
         }
     }
@@ -90,9 +90,9 @@ struct SchedulePage: View {
         jadwal.saveData(jadwal: newJadwal)
     }
     
-    private func endEditing(_ force: Bool){
-        UIApplication.shared.endEditing()
-    }
+//    private func endEditing(_ force: Bool){
+//        UIApplication.shared.endEditing()
+//    }
 }
 
 struct catatanBox: View{

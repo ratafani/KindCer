@@ -45,7 +45,7 @@ struct Line: View {
                 .shadow(radius: 10)
                 .rotationEffect(.degrees(180), anchor: .center)
                 .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                .animation(.easeOut(duration: 0.6))
+                .animation(.easeOut(duration: 1))
                 
                 .onAppear(){
                     self.showFull.toggle()

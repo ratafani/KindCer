@@ -29,6 +29,13 @@ struct SymptompsAdd: View {
     @State var telan = SymptompsList(title: "Susah / sakit saat menelan", icon: "muntah", width: 23, height: 23)
     @State var lainnya = SymptompsList(title: "Lainnya", icon: "lainnya", width: 23, height: 23)
     
+    @State var listSymptomps : [String] = ["Alergi","Bengkak di area tangan/ kaki","Diare","Demam","Gatal / iritasi","Lemas","Mati rasa / kesemutan","Mulut sakit","Muntah - muntah","Mual / enek","Sembelit","Sakit otot / persendian","Sulit bernafas","Hilang nafsu makan","Susah / sakit saat menelan","Lainnya"]
+   
+    @State var listIcon : [String:String] = ["Alergi":"alergi","Bengkak di area tangan/ kaki":"diare","Diare":"diare","Demam":"demam","Gatal / iritasi":"gatal","Lemas":"lemas","Mati rasa / kesemutan":"demam","Mulut sakit":"lemas","Muntah - muntah":"muntah","Mual / enek":"mual","Sembelit":"sembelit","Sakit otot / persendian":"otot","Sulit bernafas":"otot","Hilang nafsu makan":"mual","Susah / sakit saat menelan":"muntah","Lainnya":"lainnya"]
+    
+    @State var listModel : [String:SymptompsType] = ["Alergi":SymptompsType.alergi,"Bengkak di area tangan/ kaki":SymptompsType.bengkak,"Diare":SymptompsType.diare,"Demam":SymptompsType.demam,"Gatal / iritasi":SymptompsType.gatal,"Lemas":SymptompsType.lemas,"Mati rasa / kesemutan":SymptompsType.matiRasa,"Mulut sakit":SymptompsType.mulut,"Muntah - muntah":SymptompsType.muntah,"Mual / enek":SymptompsType.mual,"Sembelit":SymptompsType.sembelit,"Sakit otot / persendian":SymptompsType.otot,"Sulit bernafas":SymptompsType.nafas,"Hilang nafsu makan":SymptompsType.makan,"Susah / sakit saat menelan":SymptompsType.telan,"Lainnya":SymptompsType.lainnya]
+       
+    @State var listTitle : [String:String] = ["Alergi":"Alergi","Bengkak di area tangan/ kaki":"Bengkak","Diare":"Diare","Demam":"Demam","Gatal / iritasi":"Gatal / iritasi","Lemas":"Lemas","Mati rasa / kesemutan":"Mati Rasa / Kesemutan","Mulut sakit":"Mulut","Muntah - muntah":"Muntah","Mual / enek":"Mual / Enek","Sembelit":"Buang Air Besar","Sakit otot / persendian":"Otot / Persendian","Sulit bernafas":"Bernafas","Hilang nafsu makan":"Nafsu Makan","Susah / sakit saat menelan":"Susah Menelan","Lainnya":"lainnya"]
     @ObservedObject var recordModel : RecordModel
     
     @Binding var homeSheet : Bool
@@ -46,67 +53,20 @@ struct SymptompsAdd: View {
         VStack {
             //            DateCard()
             NavigationView{
-                ScrollView{
-                    VStack{
-                        Group{
-                            NavigationLink(destination: addSymtompsDetail(title: "Alergi", status: "Pilih Kondisi", sympthoms: SymptompModel(type: .alergi), recordModel: recordModel, homeSheet: $homeSheet,cDate: now)){
-                                alergi
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Bengkak", status: "Pilih kondisi", sympthoms: SymptompModel(type: .bengkak),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                bengkak
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Demam", status: "Pilih suhu badan", sympthoms: SymptompModel(type: .demam),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                demam
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Diare", status: "Pilih kondisi", sympthoms: SymptompModel(type: .diare),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                diare
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Gatal / iritasi", status: "Pilih kondisi", sympthoms: SymptompModel(type: .gatal),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                gatal
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Nafsu Makan", status: "Pilih kondisi", sympthoms: SymptompModel(type: .makan),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                makan
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Lemas", status: "Pilih kondisi", sympthoms: SymptompModel(type: .lemas),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                lemas
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Mati Rasa / Kesemutan", status: "Pilih kondisi", sympthoms: SymptompModel(type: .matiRasa),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                matiRasa
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Mual / Enek", status: "Pilih kondisi", sympthoms: SymptompModel(type: .mual),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                mual
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Mulut", status: "Pilih kondisi", sympthoms: SymptompModel(type: .mulut),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                mulut
-                            }
-                            .navigationBarTitle("\(self.now, formatter: self.dateFormatter)",displayMode: .inline).font(.system(size: 23)).buttonStyle(PlainButtonStyle())
-                            .background(NavigationConfigurator { nc in
-                                nc.navigationBar.barTintColor = .blue
-                                nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-                            })
-                        }
-                        Group{
-                            NavigationLink(destination: addSymtompsDetail(title: "Muntah", status: "Pilih kondisi", sympthoms: SymptompModel(type: .muntah),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                muntah
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Otot / Persendian", status: "Pilih kondisi", sympthoms: SymptompModel(type: .otot),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                otot
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Buang Air Besar", status: "Pilih kondisi", sympthoms: SymptompModel(type: .sembelit),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                sembelit
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Bernafas", status: "Pilih kondisi", sympthoms: SymptompModel(type: .nafas),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                nafas
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Susah Menelan", status: "Pilih kondisi", sympthoms: SymptompModel(type: .telan),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                telan
-                            }.buttonStyle(PlainButtonStyle())
-                            NavigationLink(destination: addSymtompsDetail(title: "Lainnya", status: "Pilih kondisi", sympthoms: SymptompModel(type: .lainnya),recordModel: recordModel,homeSheet: $homeSheet,cDate: now)){
-                                lainnya
-                            }.buttonStyle(PlainButtonStyle())
-                        }
-                    }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
-                }
+                List{
+                    ForEach(listSymptomps,id:\.self) { s in
+                        NavigationLink(destination: addSymtompsDetail(title: self.listTitle[s] ?? "", status: "Pilih Kondisi", sympthoms: SymptompModel(type: self.listModel[s] ?? .lainnya), recordModel: self.recordModel, homeSheet: self.$homeSheet,cDate: self.now)){
+                            SymptompsList(title: s, icon: self.listIcon[s] ?? "", width: 23, height: 23)
+                        }.buttonStyle(PlainButtonStyle())
+                        
+                    }
+                }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
+                    .navigationBarTitle("\(self.now, formatter: self.dateFormatter)",displayMode: .inline).font(.system(size: 23)).buttonStyle(PlainButtonStyle())
+                    .background(NavigationConfigurator { nc in
+                        nc.navigationBar.barTintColor = #colorLiteral(red: 0.5960784314, green: 0.3921568627, blue: 0.8862745098, alpha: 1)
+                        nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+                    })
+                
             }
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
     }
@@ -114,7 +74,7 @@ struct SymptompsAdd: View {
 
 struct NavigationConfigurator: UIViewControllerRepresentable {
     var configure: (UINavigationController) -> Void = { _ in }
-
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
         UIViewController()
     }
@@ -123,7 +83,7 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
             self.configure(nc)
         }
     }
-
+    
 }
 
 struct DateCard: View {
@@ -155,7 +115,7 @@ struct SymptompsList: View {
                 profileIc(icon: icon, width: width, height: height, alignment: .leading).padding()
                 Text(title).bold().font(.system(size: 18))
                 Spacer()
-//                Image("plus").padding(.trailing)
+                //                Image("plus").padding(.trailing)
             }
         }
     }
