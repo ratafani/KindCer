@@ -59,7 +59,7 @@ struct SymptompsAdd: View {
                                              "Muntah - muntah":"muntah",
                                              "Sakit otot / persendian":"otot",
                                              "Sembelit":"sembelit",
-                                             "Sulit bernafas":"otot",
+                                             "Sulit bernafas":"nafas",
                                              "Sakit saat menelan":"nelan",
                                              "Lainnya":"lainnya"]
     
