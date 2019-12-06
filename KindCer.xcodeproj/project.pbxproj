@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B48E4B82383B4E000014BBB /* headerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B48E4B72383B4E000014BBB /* headerModal.swift */; };
+		8B63EA052399ED5B00605140 /* ScheduleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63EA042399ED5B00605140 /* ScheduleDetail.swift */; };
 		8B7DCB942384EC8D00C733C5 /* SchedulePageEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */; };
 		8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE759E237E78D800B415A7 /* JadwalModel.swift */; };
 		F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516B61237E73100035E8E4 /* SchedulePage.swift */; };
@@ -92,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		8B48E4B72383B4E000014BBB /* headerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerModal.swift; sourceTree = "<group>"; };
+		8B63EA042399ED5B00605140 /* ScheduleDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleDetail.swift; path = ../../../../../../Desktop/kindcer/ScheduleDetail.swift; sourceTree = "<group>"; };
 		8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePageEdit.swift; sourceTree = "<group>"; };
 		8BEE759E237E78D800B415A7 /* JadwalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JadwalModel.swift; sourceTree = "<group>"; };
 		F6516B61237E73100035E8E4 /* SchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePage.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				F6516B61237E73100035E8E4 /* SchedulePage.swift */,
 				8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */,
+				8B63EA042399ED5B00605140 /* ScheduleDetail.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				F6516BD223961F980035E8E4 /* ProfileEdit.swift in Sources */,
 				F66D1CAC237BE33100E864C5 /* TambahCatatanView.swift in Sources */,
 				F677AFE12354157A000B39E4 /* ContentView.swift in Sources */,
+				8B63EA052399ED5B00605140 /* ScheduleDetail.swift in Sources */,
 				F66D1C8A237A925400E864C5 /* SummaryView.swift in Sources */,
 				F66D1CB8237CC8E700E864C5 /* addSymtompsDetail.swift in Sources */,
 				F66D1CAD237BE33100E864C5 /* TambahCatatanPengobatan.swift in Sources */,
@@ -745,7 +749,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = 52RX5R54N7;
+				DEVELOPMENT_TEAM = MW3338A45T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -768,7 +772,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = 52RX5R54N7;
+				DEVELOPMENT_TEAM = MW3338A45T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

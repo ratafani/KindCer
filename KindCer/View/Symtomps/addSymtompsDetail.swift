@@ -33,9 +33,29 @@ struct addSymtompsDetail: View {
     }) {
         HStack {
             
-            Text("< Back").foregroundColor(.white).font(.body)
+            Text("Kembali").foregroundColor(.white).font(.body)
         }
         }
+    }
+    
+    var btnDone : some View{
+        Button(action: {
+            var a = self.sympthoms.ringan
+            if self.kondisi == "Ringan"{
+                a = self.sympthoms.ringan
+            }else if self.kondisi == "Sedang"{
+                a = self.sympthoms.sedang
+            }else if self.kondisi == "Bahaya"{
+                a = self.sympthoms.parah
+            }
+            let rec = RecordType(id: StaticModel.id, type: self.title, kondisi: self.kondisi, catatan_record: self.catatan, obat: self.obat, catatan_obat: self.catatan_obat, tanggal: self.cDate,penjelasan: a)
+            self.recordModel.saveData(record: rec)
+            self.homeSheet = false
+        }) {
+            HStack {
+                Text("Simpan").foregroundColor(.white).font(.body)
+            }
+        }.disabled(kondisi.isEmpty).opacity(kondisi.isEmpty ? 0.4:1)
     }
     
     var body: some View{
@@ -59,31 +79,7 @@ struct addSymtompsDetail: View {
                 self.isSheet = true
                 self.sheetId = 2
             }
-            
-            
             Spacer()
-            Button(action: {
-                //                print(self.title)
-                var a = self.sympthoms.ringan
-                if self.kondisi == "Ringan"{
-                    a = self.sympthoms.ringan
-                }else if self.kondisi == "Sedang"{
-                    a = self.sympthoms.sedang
-                }else if self.kondisi == "Bahaya"{
-                    a = self.sympthoms.parah
-                }
-                let rec = RecordType(id: StaticModel.id, type: self.title, kondisi: self.kondisi, catatan_record: self.catatan, obat: self.obat, catatan_obat: self.catatan_obat, tanggal: self.cDate,penjelasan: a)
-                self.recordModel.saveData(record: rec)
-                self.homeSheet = false
-            }) {
-                ZStack{
-                    Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9137254902, green: 0.262745098, blue: 0.4901960784, alpha: 1))).frame(width: 360, height: 60).cornerRadius(15)
-                    HStack {
-                        Text("Catat").foregroundColor(.white)
-                    }
-                }
-            }.disabled(kondisi.isEmpty).opacity(kondisi.isEmpty ? 0.4:1)
-            
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9450980392, green: 0.937254902, blue: 0.9490196078, alpha: 1))).edgesIgnoringSafeArea(.all))
             .sheet(isPresented: $isSheet) {
                 if self.sheetId == 0{
@@ -95,7 +91,8 @@ struct addSymtompsDetail: View {
                 }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
+        .navigationBarTitle("\(title)")
+        .navigationBarItems(leading: btnBack, trailing: btnDone)
         
     }
 }

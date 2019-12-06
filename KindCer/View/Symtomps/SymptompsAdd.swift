@@ -29,9 +29,39 @@ struct SymptompsAdd: View {
     @State var telan = SymptompsList(title: "Susah / sakit saat menelan", icon: "muntah", width: 23, height: 23)
     @State var lainnya = SymptompsList(title: "Lainnya", icon: "lainnya", width: 23, height: 23)
     
-    @State var listSymptomps : [String] = ["Alergi","Bengkak di area tangan/ kaki","Diare","Demam","Gatal / iritasi","Lemas","Mati rasa / kesemutan","Mulut sakit","Muntah - muntah","Mual / enek","Sembelit","Sakit otot / persendian","Sulit bernafas","Hilang nafsu makan","Susah / sakit saat menelan","Lainnya"]
+    @State var listSymptomps : [String] = ["Alergi",
+                                           "Bengkak di area tangan/ kaki",
+                                           "Demam",
+                                           "Diare",
+                                           "Gatal / iritasi",
+                                           "Hilang nafsu makan",
+                                           "Lemas",
+                                           "Mati rasa / kesemutan",
+                                           "Mual - mual",
+                                           "Mulut terasa sakit",
+                                           "Muntah - muntah",
+                                           "Sakit otot / persendian",
+                                           "Sembelit",
+                                           "Sulit bernafas",
+                                           "Sakit saat menelan",
+                                           "Lainnya"]
    
-    @State var listIcon : [String:String] = ["Alergi":"alergi","Bengkak di area tangan/ kaki":"diare","Diare":"diare","Demam":"demam","Gatal / iritasi":"gatal","Lemas":"lemas","Mati rasa / kesemutan":"demam","Mulut sakit":"lemas","Muntah - muntah":"muntah","Mual / enek":"mual","Sembelit":"sembelit","Sakit otot / persendian":"otot","Sulit bernafas":"otot","Hilang nafsu makan":"mual","Susah / sakit saat menelan":"muntah","Lainnya":"lainnya"]
+    @State var listIcon : [String:String] = ["Alergi":"alergi",
+                                             "Bengkak di area tangan/ kaki":"bengkak",
+                                             "Demam":"demam",
+                                             "Diare":"diare",
+                                             "Gatal / iritasi":"gatal",
+                                             "Hilang nafsu makan":"makan",
+                                             "Lemas":"lemas",
+                                             "Mati rasa / kesemutan":"kesemutan",
+                                             "Mual - mual":"mual",
+                                             "Mulut terasa sakit":"mulut",
+                                             "Muntah - muntah":"muntah",
+                                             "Sakit otot / persendian":"otot",
+                                             "Sembelit":"sembelit",
+                                             "Sulit bernafas":"otot",
+                                             "Sakit saat menelan":"nelan",
+                                             "Lainnya":"lainnya"]
     
     @State var listModel : [String:SymptompsType] = ["Alergi":SymptompsType.alergi,"Bengkak di area tangan/ kaki":SymptompsType.bengkak,"Diare":SymptompsType.diare,"Demam":SymptompsType.demam,"Gatal / iritasi":SymptompsType.gatal,"Lemas":SymptompsType.lemas,"Mati rasa / kesemutan":SymptompsType.matiRasa,"Mulut sakit":SymptompsType.mulut,"Muntah - muntah":SymptompsType.muntah,"Mual / enek":SymptompsType.mual,"Sembelit":SymptompsType.sembelit,"Sakit otot / persendian":SymptompsType.otot,"Sulit bernafas":SymptompsType.nafas,"Hilang nafsu makan":SymptompsType.makan,"Susah / sakit saat menelan":SymptompsType.telan,"Lainnya":SymptompsType.lainnya]
        
@@ -39,6 +69,7 @@ struct SymptompsAdd: View {
     @ObservedObject var recordModel : RecordModel
     
     @Binding var homeSheet : Bool
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var dateFormatter : DateFormatter{
         let formatter = DateFormatter()
@@ -57,13 +88,17 @@ struct SymptompsAdd: View {
                     ForEach(listSymptomps,id:\.self) { s in
                         NavigationLink(destination: addSymtompsDetail(title: self.listTitle[s] ?? "", status: "Pilih Kondisi", sympthoms: SymptompModel(type: self.listModel[s] ?? .lainnya), recordModel: self.recordModel, homeSheet: self.$homeSheet,cDate: self.now)){
                             SymptompsList(title: s, icon: self.listIcon[s] ?? "", width: 23, height: 23)
-                        }.buttonStyle(PlainButtonStyle())
-                        
+                            }.buttonStyle(PlainButtonStyle())
                     }
                 }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
                     .navigationBarTitle("\(self.now, formatter: self.dateFormatter)",displayMode: .inline).font(.system(size: 23)).buttonStyle(PlainButtonStyle())
+                    .navigationBarItems(leading: Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("Tutup").foregroundColor(.white)
+                        }).buttonStyle(PlainButtonStyle()))
                     .background(NavigationConfigurator { nc in
-                        nc.navigationBar.barTintColor = #colorLiteral(red: 0.5960784314, green: 0.3921568627, blue: 0.8862745098, alpha: 1)
+                        nc.navigationBar.barTintColor = UIColor(named: "Primary")
                         nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
                     })
                 
@@ -112,7 +147,10 @@ struct SymptompsList: View {
         ZStack{
             Rectangle().frame(height: 65).foregroundColor(.white)
             HStack{
-                profileIc(icon: icon, width: width, height: height, alignment: .leading).padding()
+                ZStack{
+                    Circle().foregroundColor(Color("Primary")).frame(width: 30, height: 30)
+                    profileIc(icon: icon, width: width, height: height, alignment: .leading).padding().contrast(-10).saturation(-10)
+                }
                 Text(title).bold().font(.system(size: 18))
                 Spacer()
                 //                Image("plus").padding(.trailing)
