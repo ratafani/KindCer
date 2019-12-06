@@ -45,7 +45,7 @@ struct SymptompsAdd: View {
                                            "Sulit bernafas",
                                            "Sakit saat menelan",
                                            "Lainnya"]
-   
+    
     @State var listIcon : [String:String] = ["Alergi":"alergi",
                                              "Bengkak di area tangan/ kaki":"bengkak",
                                              "Demam":"demam",
