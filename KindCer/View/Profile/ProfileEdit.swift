@@ -49,7 +49,7 @@ struct ProfileEdit: View {
                 }
             }
             ZStack{
-                if(userModel.photo.isEmpty){
+                if(img == nil){
                     
                     Image("photo1")
                         .resizable()

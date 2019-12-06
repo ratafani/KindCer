@@ -23,73 +23,82 @@ struct ProfilePage: View {
     @State var arr : [String] = ["as"]
     var body: some View {
         VStack{
-            ZStack{
-                Rectangle().frame(height: 50).foregroundColor(Color("Primary"))
-                Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10).padding(.init(top: 10, leading: 0, bottom: 20, trailing: 0))
-            }.padding(.init(top: 0, leading: 0, bottom: -30, trailing: 0))
             
-                VStack{
-                    ZStack {
+            
+            VStack{
+                ZStack {
+                    if(userModel.photo.isEmpty){
                         Rectangle().foregroundColor(Color("Primary"))
                         
-                        HStack {
-                            Spacer()
-                            VStack {
-                                Button(action: {
-                                    self.isSheet = true
-//                                    self.sheetType = 2
-                                    
-                                }) {
-                                    Text("Ubah").foregroundColor(.white).padding(4)
-                                        .background(Rectangle().stroke(Color.white, lineWidth: 4).cornerRadius(5))
-                                }.padding(16)
-                                Spacer()
-                            }
-                        }
-                        VStack{
-                            if(userModel.photo.isEmpty){
-
-                                Image("photo1")
-                                    .resizable()
-                                    .frame(width: 112, height: 112)
-                                    .scaledToFill()
-                                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
-
-                            }else{
-
-                                Image(uiImage: UIImage(data: self.userModel.photo) ?? UIImage())
-                                    .resizable()
-                                    .frame(width: 112, height: 112)
-                                    .scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
-                            }
-                            Text(userModel.user_name == "" ? "Belum ada nama":userModel.user_name).font(.headline).foregroundColor(.white).bold()
-                        }
-                    }.frame(height: 216)
-                    
-                    HStack{
-                        Text("Tambahkan Jenis Kanker").font(.headline).bold().padding(16)
-                        Spacer()
-                        Button(action: {
-                            
-                        }) {
-                            Text("Tambah").foregroundColor(Color("Primary"))
-                                
-                        }.padding(16)
-                    }
-                    if arr.isEmpty{
-                        Spacer()
-                        Image("EmptyRecord").padding(.bottom)
-                        Text("Masih Kosong").bold().font(.headline).padding(.bottom)
-                        Text("Summary baru bisa dilihat jika kamu sudah menambahkan catatan symptomps kamu.").multilineTextAlignment(.center).font(.subheadline).frame(width: 200)
-                        Spacer()
                     }else{
-                        List{
-                            Text("asdas")
-                            Text("asdas")
-                            Text("asdas")
+                        
+                        Image(uiImage: UIImage(data: self.userModel.photo) ?? UIImage())
+                            .resizable()
+                            .frame(height:240)
+                            .scaledToFit()
+                            .blur(radius: 5)
+                            .overlay(Rectangle().foregroundColor(.black).opacity(0.3))
+                    }
+                    
+                    
+                    VStack{
+                        if(userModel.photo.isEmpty){
+                            
+                            Image("photo1")
+                                .resizable()
+                                .frame(width: 112, height: 112)
+                                .scaledToFill()
+                                .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                            
+                        }else{
+                            
+                            Image(uiImage: UIImage(data: self.userModel.photo) ?? UIImage())
+                                .resizable()
+                                .frame(width: 112, height: 112)
+                                .scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
                         }
+                        Text(userModel.user_name == "" ? "Belum ada nama":userModel.user_name).font(.body).foregroundColor(.white).bold()
+                    }
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Button(action: {
+                                self.isSheet = true
+                                
+                            }) {
+                                Text("Ubah").foregroundColor(.white).padding(5)
+                                    .overlay(Rectangle().stroke(Color.white, lineWidth: 4).cornerRadius(5))
+                            }.padding(16)
+                            Spacer()
+                        }
+                        
+                    }
+                }.frame(height: 240)
+                
+                HStack{
+                    Text("Tambahkan Jenis Kanker").font(.headline).bold().padding(16)
+                    Spacer()
+                    Button(action: {
+                        
+                    }) {
+                        Text("Tambah").foregroundColor(Color("Primary"))
+                        
+                    }.padding(16)
+                }
+                if arr.isEmpty{
+                    Spacer()
+                    Image("EmptyRecord").padding(.bottom)
+                    Text("Masih Kosong").bold().font(.headline).padding(.bottom)
+                    Text("Summary baru bisa dilihat jika kamu sudah menambahkan catatan symptomps kamu.").multilineTextAlignment(.center).font(.subheadline).frame(width: 200)
+                    Spacer()
+                }else{
+                    List{
+                        Text("asdas")
+                        Text("asdas")
+                        Text("asdas")
                     }
                 }
+            }
             
             //        }
         }.sheet(isPresented: $isSheet) {
