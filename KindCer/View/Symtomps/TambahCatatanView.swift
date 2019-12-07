@@ -15,6 +15,8 @@ struct TambahCatatanView: View {
     @Binding var catatan : String
     @Binding var isSheet : Bool
     @State var tambah = ""
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         VStack{
             ZStack(alignment: .center) {
@@ -24,6 +26,14 @@ struct TambahCatatanView: View {
                     Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
                 }
                 HStack{
+                    Button(action: {
+                         self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Tutup").foregroundColor(.white).padding(4)
+                    }.padding(16)
+                    Spacer()
+                }
+                HStack{
                     Spacer()
                     Button(action: {
 
@@ -31,7 +41,7 @@ struct TambahCatatanView: View {
                         self.isSheet = false
                     }) {
                         Text("Simpan").foregroundColor(.white)
-                    }.padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
+                    }//.padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
                 }.padding(.horizontal)
             }.padding(.bottom,40)
             formLargeSizeTextField(title: "Tambah Catatan", icon: "pensil", width: 24, height: 24, textField: $catatan) .frame(height: 200)

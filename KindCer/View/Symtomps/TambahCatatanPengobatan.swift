@@ -13,6 +13,7 @@ struct TambahCatatanPengobatan: View {
     @Binding var catatan_obat : String
     @Binding var isSheet : Bool
     @ObservedObject private var keyboard = KeyboardResponder()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @State var title = "Tambah Obat"
     @State var mObat = ""
@@ -26,6 +27,14 @@ struct TambahCatatanPengobatan: View {
                     Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
                 }
                 HStack{
+                    Button(action: {
+                         self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Tutup").foregroundColor(.white).padding(4)
+                    }.padding(16)
+                    Spacer()
+                }
+                HStack{
                     Spacer()
                     Button(action: {
                         //                print("Ketik tambah catatan")
@@ -35,7 +44,7 @@ struct TambahCatatanPengobatan: View {
                         self.isSheet = false
                     }) {
                         Text("Simpan").foregroundColor(.white)
-                    }.padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
+                    }//.padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
                 }.padding(.horizontal)
             }.padding(.bottom,40)
             formLargeSizeTextField(title: "Nama Obat", icon: "obat", width: 24, height: 24, textField: $obat) .frame(height: 200)
