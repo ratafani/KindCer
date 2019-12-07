@@ -19,17 +19,18 @@ struct recordBody: View {
                 Spacer()
             }
             HStack{
-                Image(cariIcon()).frame(width: 50, height: 50).padding(.horizontal,20)
+                ZStack{
+                    Circle().foregroundColor(choseColor()).frame(width: 30, height: 30)
+                    Image(cariIcon()).frame(width: 50, height: 50).padding(.horizontal,20).contrast(-10).saturation(-10)
+                }
                 VStack(alignment: .leading){
-                    Text(record.type).bold().font(.headline).padding(.vertical,5)
-                    Text(record.penjelasan).foregroundColor(.gray)
-                    Text(record.obat).foregroundColor(Color("Primary")).padding(.vertical,5)
+                    HStack{
+                        Text("\(record.type)  -").bold().font(.headline)
+                        Text("\(record.kondisi)").bold().foregroundColor(choseColor()).font(.headline)
+                    }.padding(.top, 10)
+                    Text(record.penjelasan).foregroundColor(.gray).padding(.top, 10).padding(.bottom, 10)
                 }
                 Spacer()
-                ZStack{
-                    Rectangle().foregroundColor(choseColor()).frame(width: 70, height: 20).cornerRadius(15)
-                    Text(record.kondisi).foregroundColor(.white).font(.footnote)
-                }.padding()
             }
         }.padding(.vertical,3)
     }

@@ -30,123 +30,135 @@ struct HomeView: View {
     //    @State var a : RecordModel = RecordModel()
     
     var body: some View {
-        
-        return VStack {
-            HStack{
-//                VStack(alignment: .leading) {
-//
-//                    if hour > 4 && hour <= 10
-//                    {
-//                        Text("Selamat Pagi,") .font(.title).bold()
-//                    }
-//                    else if hour > 10 && hour <= 14
-//                    {
-//                        Text("Selamat Siang,") .font(.title).bold()
-//                    }
-//                    else if hour > 14 && hour <= 18
-//                    {
-//                        Text("Selamat Sore,") .font(.title).bold()
-//                    }
-//                    else if hour > 18 && hour <= 24
-//                    {
-//                        Text("Selamat Malam,") .font(.title).bold()
-//                    }
-//                    else
-//                    {
-//                        Text("Selamat Tidur") .font(.title).bold()
-//                    }
-//
-//                    Text(UserModel().user_name.isEmpty ? " ":UserModel().user_name).font(.title).bold()
-//                }
-                Spacer()
-                if (!profileModel.photo.isEmpty){
-                    Image(uiImage: UIImage(data: UserModel().photo)!).resizable().frame(width: 60, height: 60).scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
-                        self.isSheet = true
-                        self.homeSheet = HomeSheet.Profile
+        GeometryReader { geometry in
+            return VStack {
+                HStack{
+                    VStack(alignment: .leading) {
+                        Text("Jurnal Efek Samping") .font(.title).bold()
                     }
-                }else{
-                    Image("photo1").resizable().frame(width: 60, height: 60).scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
-                        self.isSheet = true
-                        self.homeSheet = HomeSheet.Profile
+                    Spacer()
+                    if (!UserModel().photo.isEmpty){
+                        Image(uiImage: UIImage(data: UserModel().photo)!).resizable().frame(width: 60, height: 60).scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
+                            self.isSheet = true
+                            self.homeSheet = HomeSheet.Profile
+                        }
+                    }else{
+                        Image("anonymous").resizable().frame(width: 60, height: 60).scaledToFit().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5).onTapGesture {
+                            self.isSheet = true
+                            self.homeSheet = HomeSheet.Profile
+                        }
                     }
-                }
-                
-                
-            }.padding(.horizontal,20).background(Color.clear)
-            Button(action: {
-                self.isSheet = true
-                self.homeSheet = HomeSheet.Summary
-            }) {
+                }.padding(.horizontal,20).background(Color.clear)
                 ZStack {
-                    Rectangle().foregroundColor(Color("Primary")).frame( height: 50)
+                    Rectangle().foregroundColor(.white).frame(height: geometry.frame(in: .global).height/12)
                     HStack {
-                        Image("summaryIcon").resizable().foregroundColor(.white).frame(width: 30, height: 30)
-                        Text("Lihat Rangkuman Saya").foregroundColor(.white)
+                        Button(action: {
+                            self.isSheet = true
+                            self.homeSheet = HomeSheet.Summary
+                        }) {
+                            ZStack
+                                {
+                                    
+                                    Rectangle().foregroundColor(Color(#colorLiteral(red: 0.9489468932, green: 0.9490606189, blue: 0.9489082694, alpha: 1)))
+                                        .frame(height: geometry.frame(in: .global).height/18) .cornerRadius(10)
+                                    HStack{
+                                        Image("summary")
+                                            .resizable()
+                                            .frame(width: geometry.frame(in: .global).height/30 ,height: geometry.frame(in: .global).height/30)
+                                        Text("Summary")
+                                            .fontWeight(.semibold)
+                                            .font(.body) .foregroundColor(.black)
+                                    }
+                            }
+                        }
                         Spacer()
+                        Button(action: {
+                            
+                        }) {
+                            ZStack{
+                                ZStack{
+                                    Rectangle().foregroundColor(Color(#colorLiteral(red: 0.9489468932, green: 0.9490606189, blue: 0.9489082694, alpha: 1)))
+                                        .frame(height: geometry.frame(in: .global).height/18) .cornerRadius(10)
+                                    HStack{
+                                        Image("jadwal")
+                                            .resizable() .foregroundColor(Color(#colorLiteral(red: 0.4743877649, green: 0.6851971149, blue: 0, alpha: 1)))
+                                            .frame(width: geometry.frame(in: .global).height/30 ,height: geometry.frame(in: .global).height/30)
+                                        Text("Jadwal").fontWeight(.semibold).font(.body) .foregroundColor(.black)
+                                    }
+                                }
+                            }
+                        }
                     }.padding(.horizontal)
                 }
-            }
-            CalendarView(dateModel: dateModel,recordModel: recordModel)
-            HStack{
-                Text("Gejala (\(recordModel.mData.count))").padding(.horizontal)
-                Spacer()
-                Button(action: {
-                    if self.dateModel.currentDate.timeIntervalSince1970 <= Date().timeIntervalSince1970{
-                        self.isSheet = true
-                        self.homeSheet = HomeSheet.Record
-                        
+                //            Button(action: {
+                //                       self.isSheet = true
+                //                       self.homeSheet = HomeSheet.Summary
+                //                   }) {
+                //                       ZStack {
+                //                           Rectangle().foregroundColor(Color("Primary")).frame( height: 50)
+                //                           HStack {
+                //                               Image("summaryIcon").resizable().foregroundColor(.white).frame(width: 30, height: 30)
+                //                               Text("Lihat Rangkuman Saya").foregroundColor(.white)
+                //                               Spacer()
+                //                           }.padding(.horizontal)
+                //                       }
+                //                   }
+                CalendarView(dateModel: self.dateModel,recordModel: self.recordModel)
+                HStack{
+                    Text("Gejala (\(self.recordModel.mData.count))").padding(.horizontal)
+                    Spacer()
+                    Button(action: {
+                        if self.dateModel.currentDate.timeIntervalSince1970 <= Date().timeIntervalSince1970{
+                            self.isSheet = true
+                            self.homeSheet = HomeSheet.Record
+                        }else{
+                            self.isAlarm = true
+                        }
+                    }) {
+                        Text("Tambah").foregroundColor(Color("Primary"))
+                    }.padding(.horizontal)
+                }.padding(.vertical,10)
+                ScrollView{
+                    if self.recordModel.mData.isEmpty{
+                        RecordIsEmptView(isSheet: self.$isSheet,isAlarm: self.$isAlarm, homeSheet: self.$homeSheet,tanggal: self.dateModel.currentDate,dateModel: self.dateModel)
+                        //                        .disabled(dateModel.currentDate.timeIntervalSince1970>Date().timeIntervalSince1970)
                     }else{
-                        self.isAlarm = true
-                    }
-                }) {
-                    Text("Tambah").foregroundColor(Color("Primary"))
-                }.padding(.horizontal)
-            }.padding(.vertical,10)
-            ScrollView{
-                
-                if recordModel.mData.isEmpty{
-                    
-                    RecordIsEmptView(isSheet: $isSheet,isAlarm: $isAlarm, homeSheet: $homeSheet,tanggal: dateModel.currentDate,dateModel: dateModel)
-                    //                        .disabled(dateModel.currentDate.timeIntervalSince1970>Date().timeIntervalSince1970)
-                    
-                    
-                }else{
-                    VStack{
-                        ForEach(recordModel.mData,id:\.id){ m in
-                            
-                            recordCard(record: m, recordModel: self.recordModel, isSheet: self.$isSheet, homeSheet: self.$homeSheet, theRecord: self.$record)
+                        VStack{
+                            ForEach(self.recordModel.mData,id:\.id){ m in
+                                recordCard(record: m, recordModel: self.recordModel, isSheet: self.$isSheet, homeSheet: self.$homeSheet, theRecord: self.$record)
+                            }
                         }
                     }
                 }
-            }
-        }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9466523528, green: 0.9410246611, blue: 0.9509779811, alpha: 1))).edgesIgnoringSafeArea(.all))
-            .sheet(isPresented: $isSheet) {
-                 
-                if self.homeSheet == HomeSheet.Profile{
-                    ProfilePage(userModel: self.profileModel, jadwal: JadwalModel())
-                }else if self.homeSheet == HomeSheet.Summary{
-                    //                    self.a = self.recordModel
-                    //                    self.a.readAllData()
-                    //                    self.recordModel.readAllData()
-                    if self.isSummary(){
-                        SummaryEmpty()
-                    }else{
-                        SummaryView(a: self.prepareSummary())
-                    }
+            }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9466523528, green: 0.9410246611, blue: 0.9509779811, alpha: 1))).edgesIgnoringSafeArea(.all))
+                .sheet(isPresented: self.$isSheet) {
                     
-                }else if self.homeSheet == HomeSheet.Record{
-                    SymptompsAdd( recordModel: self.recordModel,homeSheet : self.$isSheet,now: self.dateModel.currentDate)
-                }else{
-                    //                    SymtompsDetail2( recordModel: self.recordModel, record: self.record)
-                }
-        }.alert(isPresented: $isAlarm, content: {
-            Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
-        }).onAppear{
-       
-            //            self.recordModel.readData(date: self.dateModel.currentDate)
+                    if self.homeSheet == HomeSheet.Profile{
+                        ProfilePage(userModel: self.profileModel, jadwal: JadwalModel())
+                    }else if self.homeSheet == HomeSheet.Summary{
+                        //                    self.a = self.recordModel
+                        //                    self.a.readAllData()
+                        //                    self.recordModel.readAllData()
+                        if self.isSummary(){
+                            SummaryEmpty()
+                        }else{
+                            SummaryView(a: self.prepareSummary())
+                        }
+                        
+                    }else if self.homeSheet == HomeSheet.Record{
+                        SymptompsAdd( recordModel: self.recordModel,homeSheet : self.$isSheet,now: self.dateModel.currentDate)
+                    }else{
+                        //                    SymtompsDetail2( recordModel: self.recordModel, record: self.record)
+                    }
+            }.alert(isPresented: self.$isAlarm, content: {
+                Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
+            }).onAppear{
+                
+                //            self.recordModel.readData(date: self.dateModel.currentDate)
+            }
+            
         }
     }
-    
     func isSummary()->Bool{
         
         let a = RecordModel()

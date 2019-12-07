@@ -33,7 +33,7 @@ struct SummaryView: View {
                             Text("Tutup").foregroundColor(.white)
                         }
                         Spacer()
-                    }.padding(.horizontal,25)
+                    }.padding(.horizontal,35)
                 }
                 VStack{
                     CustomLineView(data: self.data, date: self.date , title: self.picked, legend: "in last 23 days").frame(width: geometry.frame(in: .global).width - 50, height: geometry.frame(in: .global).height / 3)

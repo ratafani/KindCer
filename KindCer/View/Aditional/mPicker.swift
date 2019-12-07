@@ -24,10 +24,21 @@ struct PickerForm: View {
     
     @Binding var kondisi : String
     @Binding var isSheet : Bool
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View{
         VStack{
-            headerModalPicker(title: title)
+            ZStack{
+                headerModalPicker(title: title)
+                HStack{
+                    Button(action: {
+                         self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Tutup").foregroundColor(.white).padding(4)
+                    }.padding(16)
+                    Spacer()
+                }
+            }
 //            ZStack(alignment: .center) {
 //                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
 //                Text("Kondisi \(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
