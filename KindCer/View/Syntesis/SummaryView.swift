@@ -17,6 +17,7 @@ struct SummaryView: View {
     @State var date = ["11 Nov","12 Nov"]
     @State var allDate : [String] = ["a","a"]
     @State var mData = [String:[RecordType]]()
+    @State var isSheet  = false
     @ObservedObject var a : RecordModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -33,6 +34,11 @@ struct SummaryView: View {
                             Text("Tutup").foregroundColor(.white)
                         }
                         Spacer()
+                        Button(action: {
+                            self.isSheet = true
+                        }) {
+                            Text("See PDF").foregroundColor(.white)
+                        }
                     }.padding(.horizontal,25)
                 }
                 VStack{
@@ -81,6 +87,8 @@ struct SummaryView: View {
                 self.picked = self.mTypeKey.first ?? ""
                 self.getData()
                 
+            }.sheet(isPresented: self.$isSheet) {
+                PDFView()
             }
             
             

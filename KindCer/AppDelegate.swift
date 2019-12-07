@@ -64,7 +64,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
+    class func getAppDelegate() -> AppDelegate {
+         return UIApplication.shared.delegate as! AppDelegate
+     }
+    
+    func getDocDir() -> String {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    }
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

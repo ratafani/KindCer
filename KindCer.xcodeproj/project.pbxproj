@@ -10,6 +10,16 @@
 		8B48E4B82383B4E000014BBB /* headerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B48E4B72383B4E000014BBB /* headerModal.swift */; };
 		8B7DCB942384EC8D00C733C5 /* SchedulePageEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */; };
 		8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE759E237E78D800B415A7 /* JadwalModel.swift */; };
+		F626A0CD2399FAA50045EC6D /* CancerTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */; };
+		F626A0CF239A03140045EC6D /* ProfileAddCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0CE239A03140045EC6D /* ProfileAddCType.swift */; };
+		F626A0D2239B63330045EC6D /* Webview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0D1239B63330045EC6D /* Webview.swift */; };
+		F626A102239B63AA0045EC6D /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = F626A0FF239B63A90045EC6D /* single_item.html */; };
+		F626A103239B63AA0045EC6D /* invoice.html in Resources */ = {isa = PBXBuildFile; fileRef = F626A100239B63AA0045EC6D /* invoice.html */; };
+		F626A104239B63AA0045EC6D /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = F626A101239B63AA0045EC6D /* last_item.html */; };
+		F626A106239B63D60045EC6D /* My CV.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F626A105239B63D60045EC6D /* My CV.pdf */; };
+		F626A109239B65F20045EC6D /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A108239B65F20045EC6D /* PDFView.swift */; };
+		F626A10B239B75310045EC6D /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F626A10A239B75310045EC6D /* Logo.png */; };
+		F626A10D239B7AB90045EC6D /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A10C239B7AB90045EC6D /* EmailView.swift */; };
 		F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516B61237E73100035E8E4 /* SchedulePage.swift */; };
 		F6516BB823822F120035E8E4 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB223822F110035E8E4 /* BoardingView.swift */; };
 		F6516BB923822F120035E8E4 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB323822F110035E8E4 /* PageController.swift */; };
@@ -94,6 +104,16 @@
 		8B48E4B72383B4E000014BBB /* headerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerModal.swift; sourceTree = "<group>"; };
 		8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePageEdit.swift; sourceTree = "<group>"; };
 		8BEE759E237E78D800B415A7 /* JadwalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JadwalModel.swift; sourceTree = "<group>"; };
+		F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancerTypeModel.swift; sourceTree = "<group>"; };
+		F626A0CE239A03140045EC6D /* ProfileAddCType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddCType.swift; sourceTree = "<group>"; };
+		F626A0D1239B63330045EC6D /* Webview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webview.swift; sourceTree = "<group>"; };
+		F626A0FF239B63A90045EC6D /* single_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = single_item.html; sourceTree = "<group>"; };
+		F626A100239B63AA0045EC6D /* invoice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoice.html; sourceTree = "<group>"; };
+		F626A101239B63AA0045EC6D /* last_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = last_item.html; sourceTree = "<group>"; };
+		F626A105239B63D60045EC6D /* My CV.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "My CV.pdf"; sourceTree = "<group>"; };
+		F626A108239B65F20045EC6D /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
+		F626A10A239B75310045EC6D /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = Assets.xcassets/KindCerLogoFix.imageset/Logo.png; sourceTree = "<group>"; };
+		F626A10C239B7AB90045EC6D /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		F6516B61237E73100035E8E4 /* SchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePage.swift; sourceTree = "<group>"; };
 		F6516BB223822F110035E8E4 /* BoardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
 		F6516BB323822F110035E8E4 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
@@ -188,6 +208,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F626A0D0239B631D0045EC6D /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				F626A0D1239B63330045EC6D /* Webview.swift */,
+				F626A10C239B7AB90045EC6D /* EmailView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		F626A107239B65D80045EC6D /* PDFView */ = {
+			isa = PBXGroup;
+			children = (
+				F626A108239B65F20045EC6D /* PDFView.swift */,
+			);
+			path = PDFView;
+			sourceTree = "<group>";
+		};
 		F6516B60237E72F00035E8E4 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +244,7 @@
 				F66D1CBB237D4AE800E864C5 /* Static.swift */,
 				8BEE759E237E78D800B415A7 /* JadwalModel.swift */,
 				F6516BC22385FBED0035E8E4 /* KeyboardModel.swift */,
+				F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +259,7 @@
 				F66D1C76237A5B6A00E864C5 /* ProfileList.swift */,
 				F66D1C77237A5B6A00E864C5 /* ProfilePage.swift */,
 				F6516BD123961F980035E8E4 /* ProfileEdit.swift */,
+				F626A0CE239A03140045EC6D /* ProfileAddCType.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -290,6 +329,11 @@
 		F677AFD82354157A000B39E4 /* KindCer */ = {
 			isa = PBXGroup;
 			children = (
+				F626A10A239B75310045EC6D /* Logo.png */,
+				F626A105239B63D60045EC6D /* My CV.pdf */,
+				F626A100239B63AA0045EC6D /* invoice.html */,
+				F626A101239B63AA0045EC6D /* last_item.html */,
+				F626A0FF239B63A90045EC6D /* single_item.html */,
 				F677AFD92354157A000B39E4 /* AppDelegate.swift */,
 				F677AFDB2354157A000B39E4 /* SceneDelegate.swift */,
 				F66D1C5C2379527000E864C5 /* Model */,
@@ -333,6 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				F677AFE02354157A000B39E4 /* ContentView.swift */,
+				F626A107239B65D80045EC6D /* PDFView */,
+				F626A0D0239B631D0045EC6D /* WebView */,
 				F6516B60237E72F00035E8E4 /* Schedule */,
 				F66D1C88237A924400E864C5 /* Syntesis */,
 				F6D9793623602ED100DC6673 /* Boarding */,
@@ -493,8 +539,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F677AFE92354157D000B39E4 /* LaunchScreen.storyboard in Resources */,
+				F626A106239B63D60045EC6D /* My CV.pdf in Resources */,
 				F677AFE62354157D000B39E4 /* Preview Assets.xcassets in Resources */,
 				F677AFE32354157D000B39E4 /* Assets.xcassets in Resources */,
+				F626A104239B63AA0045EC6D /* last_item.html in Resources */,
+				F626A10B239B75310045EC6D /* Logo.png in Resources */,
+				F626A103239B63AA0045EC6D /* invoice.html in Resources */,
+				F626A102239B63AA0045EC6D /* single_item.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F626A109239B65F20045EC6D /* PDFView.swift in Sources */,
 				F6D9791E235EAD6F00DC6673 /* HomeView.swift in Sources */,
 				F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */,
 				8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */,
@@ -530,11 +582,13 @@
 				F66D1CAB237BE33100E864C5 /* SymptompsAdd.swift in Sources */,
 				F6516BC32385FBEE0035E8E4 /* KeyboardModel.swift in Sources */,
 				F66D1CC0237D4D8B00E864C5 /* SymptompsView.swift in Sources */,
+				F626A0CD2399FAA50045EC6D /* CancerTypeModel.swift in Sources */,
 				F66D1CAA237BE33100E864C5 /* SymptompsPage.swift in Sources */,
 				F66D1C80237A5B6A00E864C5 /* ProfileCancerDetailView.swift in Sources */,
 				F66D1CB2237BE36000E864C5 /* mFormSet.swift in Sources */,
 				F677AFDA2354157A000B39E4 /* AppDelegate.swift in Sources */,
 				8B7DCB942384EC8D00C733C5 /* SchedulePageEdit.swift in Sources */,
+				F626A0D2239B63330045EC6D /* Webview.swift in Sources */,
 				F677AFDF2354157A000B39E4 /* KindCer.xcdatamodeld in Sources */,
 				F6516BBD23822F120035E8E4 /* OnboardingCard.swift in Sources */,
 				F6D97924235F355D00DC6673 /* recordCard.swift in Sources */,
@@ -561,7 +615,9 @@
 				F66D1C95237ABF1500E864C5 /* Line.swift in Sources */,
 				F6D9791C235EA0EA00DC6673 /* quizView.swift in Sources */,
 				F6D97920235EB03D00DC6673 /* homeTitle.swift in Sources */,
+				F626A10D239B7AB90045EC6D /* EmailView.swift in Sources */,
 				F677AFDC2354157A000B39E4 /* SceneDelegate.swift in Sources */,
+				F626A0CF239A03140045EC6D /* ProfileAddCType.swift in Sources */,
 				F66D1C5E2379527D00E864C5 /* dateModel.swift in Sources */,
 				F66D1C8F237ABE6500E864C5 /* customLineView.swift in Sources */,
 				F6516BBB23822F120035E8E4 /* PageView.swift in Sources */,
