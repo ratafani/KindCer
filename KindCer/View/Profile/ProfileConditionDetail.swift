@@ -31,7 +31,7 @@ struct ProfileConditionDetail: View {
                                  
                      }.padding(6)
                      
-                    Text(userModel.kondisi).padding(.horizontal,6)
+//                    Text(userModel.kondisi).padding(.horizontal,6)
                         .font(.system(size: 13))
                      
                      

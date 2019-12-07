@@ -14,7 +14,14 @@ struct ProfileEdit: View {
     @State var img : UIImage?
     @State var isSheet : Bool = false
     @State var sheetType : Int = 0
+    @State var tgl_lahir : Date = Date()
     @Binding var goback : Bool
+    var dateClosedRange: ClosedRange<Date> {
+        let min = Calendar.current.date(byAdding: .year, value: -100, to: Date())!
+        let max = Calendar.current.date(byAdding: .year, value: 0, to: Date())!
+        return min...max
+    }
+
     var body: some View {
         VStack {
             ZStack {
@@ -35,7 +42,7 @@ struct ProfileEdit: View {
 
                             let imageData = self.img!.jpegData(compressionQuality: 1.0)
                             if !(imageData==nil) {
-                                self.userModel.updateDataUser(photo: imageData ?? Data(), userName: self.theName)
+                                self.userModel.updateDataUser(photo: imageData ?? Data(), userName: self.theName, date: self.tgl_lahir)
                                 self.goback = false
                             }else{
                                 print("Something error")
@@ -85,7 +92,24 @@ struct ProfileEdit: View {
                 Spacer()
             }
             TextField("Nama Lengkap", text: $theName).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.horizontal)
+            
+            HStack {
+                Text("Tanggal Lahir").bold().padding(.leading)
+                Spacer()
+            }
+            DatePicker(
+                selection: self.$tgl_lahir,
+                in: self.dateClosedRange,
+                displayedComponents: .date,
+                label: { Text("Tanggal Diagnosis").foregroundColor(.clear) .font(.system(size: 15)) .opacity(0.5) }
+            ).labelsHidden().onAppear{
+                if self.userModel.tanggal_lahir != nil{
+                    self.tgl_lahir = self.userModel.tanggal_lahir
+                }
+                
+            }
             Spacer()
+            
         }.background(Color(#colorLiteral(red: 0.9725627303, green: 0.9667808414, blue: 0.9770069718, alpha: 1))).sheet(isPresented: $isSheet) {
             ImagePicker(isShown: self.$isSheet, uiImage: self.$img)
         }

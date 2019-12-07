@@ -25,7 +25,7 @@
         <attribute name="kontak_penting" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="Binary"/>
         <attribute name="posisi_kanker" optional="YES" attributeType="String"/>
-        <attribute name="tgl_diagnosis" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tanggal_lahir" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="user_name" optional="YES" attributeType="String"/>
     </entity>
     <elements>

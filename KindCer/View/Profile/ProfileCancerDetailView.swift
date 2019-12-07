@@ -29,7 +29,7 @@ struct ProfileCancerDetailView: View {
                             Text("Tipe Kanker")
                                 .font(.system(size: 14)).foregroundColor(.gray) .padding(.top, 6)
 
-                            Text(userModel.jenis_kanker)
+//                            Text(userModel.jenis_kanker)
                                 .font(.system(size: 15))  .padding(.vertical, 6)
                             
                         }.padding(4)
@@ -46,7 +46,7 @@ struct ProfileCancerDetailView: View {
                             Text("Posisi Kanker")
                                 .font(.system(size: 14)).foregroundColor(.gray).padding(.top, 6)
 
-                            Text(userModel.posisi_kanker) .font(.system(size: 15)) .padding(.vertical, 6)
+//                            Text(userModel.posisi_kanker) .font(.system(size: 15)) .padding(.vertical, 6)
                         }.padding(4)
                         Spacer()
                     }
@@ -63,7 +63,7 @@ struct ProfileCancerDetailView: View {
                             Text("Diagnosis")
                                 .font(.system(size: 14)).foregroundColor(.gray) .padding(.top, 2)
 
-                            Text("\(userModel.tgl_diagnosis, formatter: dateFormatter)") .font(.system(size: 14)).padding(.vertical, 6)
+//                            Text("\(userModel.tgl_diagnosis, formatter: dateFormatter)") .font(.system(size: 14)).padding(.vertical, 6)
                         }.padding(4)
                         Spacer()
                     }
@@ -78,7 +78,7 @@ struct ProfileCancerDetailView: View {
                             Text("Kontak Penting")
                                 .font(.system(size: 14)).foregroundColor(.gray).padding(.top, 6)
                             
-                            Text(userModel.kontak_penting) .font(.system(size: 15)).padding(.vertical, 6)
+//                            Text(userModel.kontak_penting) .font(.system(size: 15)).padding(.vertical, 6)
                         }.padding(4)
                         Spacer()
                     }
@@ -95,7 +95,7 @@ struct ProfileCancerDetailView: View {
                         Text("Kondisi Saya").font(.system(size: 18)) .fontWeight(.bold)
                         Spacer()
                     }.padding(6)
-                    Text(userModel.kondisi).padding(.horizontal,6)
+//                    Text(userModel.kondisi).padding(.horizontal,6)
                         .font(.system(size: 13))
                     Spacer()
                 }.padding(.horizontal).padding(.bottom).frame(height:200)

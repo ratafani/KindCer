@@ -19,10 +19,6 @@ struct WebView : UIViewRepresentable {
       
     func updateUIView(_ uiView: WKWebView, context: Context) {
 
-//        let fileURL = URL(fileURLWithPath: pdf!)
-//        //print(fileURL)
-//        uiView.loadFileURL(fileURL, allowingReadAccessTo: fileURL)
-        
         
         if let invoiceHTML = invoiceComposer.renderInvoice(invoiceNumber: "",
                                                            invoiceDate: "invoiceDate",
@@ -32,7 +28,7 @@ struct WebView : UIViewRepresentable {
             let fileURL = URL(fileURLWithPath: invoiceComposer.pathToInvoiceHTMLTemplate!)
             
             invoiceComposer.exportHTMLContentToPDF(HTMLContent: invoiceHTML)
-            if let filename = self.invoiceComposer.pdfFilename, let url = URL(string: filename) {
+            if let filename = self.invoiceComposer.pdfFilename, let _ = URL(string: filename) {
 //                let request = URLRequest(url: url)
                 uiView.loadHTMLString(invoiceHTML, baseURL: fileURL)
             }
@@ -80,7 +76,14 @@ class InvoiceComposer: NSObject {
             let img = Bundle.main.path(forResource: "Logo", ofType: "png")
             let fileURL = URL(fileURLWithPath: img!)
             HTMLContent = HTMLContent.replacingOccurrences(of: "#PHOTO#", with: "\(fileURL)")
-            HTMLContent = HTMLContent.replacingOccurrences(of: "#PASIEN_INFO#", with: "\(usermodel.user_name)<br>")
+                
+            
+            var pasienInfo = ""
+            pasienInfo = try String(contentsOfFile: pathToLastItemHTMLTemplate!)
+            pasienInfo = pasienInfo.replacingOccurrences(of: "#JENIS#", with: "\(usermodel.user_name)")
+            pasienInfo = pasienInfo.replacingOccurrences(of: "#TANGGAL#", with: "\(dateFormatter.string(from: usermodel.tanggal_lahir))")
+            
+            HTMLContent = HTMLContent.replacingOccurrences(of: "#PASIEN_INFO#", with: pasienInfo)
             // The invoice items will be added by using a loop.
             var jenis = ""
             for a in cancers.mData{
