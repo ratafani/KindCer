@@ -21,7 +21,7 @@ struct ProfileEdit: View {
         let max = Calendar.current.date(byAdding: .year, value: 0, to: Date())!
         return min...max
     }
-
+    
     var body: some View {
         VStack {
             ZStack {
@@ -39,7 +39,7 @@ struct ProfileEdit: View {
                     Spacer()
                     Button(action: {
                         if (self.img != nil){
-
+                            
                             let imageData = self.img!.jpegData(compressionQuality: 1.0)
                             if !(imageData==nil) {
                                 self.userModel.updateDataUser(photo: imageData ?? Data(), userName: self.theName, date: self.tgl_lahir)
@@ -103,9 +103,9 @@ struct ProfileEdit: View {
                 displayedComponents: .date,
                 label: { Text("Tanggal Diagnosis").foregroundColor(.clear) .font(.system(size: 15)) .opacity(0.5) }
             ).labelsHidden().onAppear{
-                if self.userModel.tanggal_lahir != nil{
-                    self.tgl_lahir = self.userModel.tanggal_lahir
-                }
+                
+                self.tgl_lahir = self.userModel.tanggal_lahir
+                
                 
             }
             Spacer()

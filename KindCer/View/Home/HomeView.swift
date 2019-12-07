@@ -64,7 +64,7 @@ struct HomeView: View {
                                     HStack{
                                         Image("summary")
                                             .resizable()
-                                            .frame(width: geometry.frame(in: .global).height/30 ,height: geometry.frame(in: .global).height/30)
+                                            .frame(width: geometry.frame(in: .global).height/40 ,height: geometry.frame(in: .global).height/40)
                                         Text("Summary")
                                             .fontWeight(.semibold)
                                             .font(.body) .foregroundColor(.black)
@@ -82,7 +82,7 @@ struct HomeView: View {
                                     HStack{
                                         Image("jadwal")
                                             .resizable() .foregroundColor(Color(#colorLiteral(red: 0.4743877649, green: 0.6851971149, blue: 0, alpha: 1)))
-                                            .frame(width: geometry.frame(in: .global).height/30 ,height: geometry.frame(in: .global).height/30)
+                                            .frame(width: geometry.frame(in: .global).height/40 ,height: geometry.frame(in: .global).height/40)
                                         Text("Jadwal").fontWeight(.semibold).font(.body) .foregroundColor(.black)
                                     }
                                 }

@@ -35,7 +35,8 @@ public struct CustomLineView: View {
    public var body: some View {
         GeometryReader{ geometry in
             VStack(alignment: .leading, spacing: 8) {
-                Text((self.data.date.first ?? "") + " - " + (self.data.date.last ?? "") )
+                Text(self.title ?? " ").font(.headline).bold()
+                Text((self.data.date.first ?? "") + " - " + (self.data.date.last ?? "") ).font(.subheadline)
                 ZStack{
                     GeometryReader{ reader in
                         Rectangle().foregroundColor(self.colorScheme == .dark ? Color.black : self.style.backgroundColor)

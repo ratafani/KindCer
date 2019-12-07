@@ -41,7 +41,7 @@ struct DateView:View {
                     Image("prevWeek")
                 }.buttonStyle(PlainButtonStyle())
                 
-                Text("\(dateModel.date), \(dateModel.month) \(dateModel.year)").bold()
+                Text("\(dateModel.date) \(dateModel.month) \(dateModel.year)").bold().foregroundColor(Color("Primary"))
                 Button(action: {
                     self.nextWeek()
                 }) {
