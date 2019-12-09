@@ -24,11 +24,6 @@ class JadwalModel : NSObject, ObservableObject{
     
     let objectWillChange = PassthroughSubject<JadwalModel,Never>()
     
-    //    var id : NSManagedObjectID
-    var tempat : String = ""
-    var tanggal : Date = Date()
-    var dokter : String = ""
-    var catatan : String = ""
     
     var data = [JadwalType]()
     

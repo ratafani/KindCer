@@ -15,6 +15,7 @@ struct WebView : UIViewRepresentable {
     @Binding var invoiceComposer: InvoiceComposer
     @Binding var htmlPdf : String
     @Binding var web : WKWebView
+    
     func makeUIView(context: Context) -> WKWebView  {
         let web = WKWebView()
         

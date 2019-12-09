@@ -14,6 +14,7 @@ enum HomeSheet{
     case Summary
     case Record
     case rDetail
+    case Jadwal
 }
 struct HomeView: View {
     
@@ -73,7 +74,8 @@ struct HomeView: View {
                         }
                         Spacer()
                         Button(action: {
-                            
+                            self.isSheet = true
+                            self.homeSheet = HomeSheet.Jadwal
                         }) {
                             ZStack{
                                 ZStack{
@@ -148,7 +150,7 @@ struct HomeView: View {
                     }else if self.homeSheet == HomeSheet.Record{
                         SymptompsAdd( recordModel: self.recordModel,homeSheet : self.$isSheet,now: self.dateModel.currentDate)
                     }else{
-                        //                    SymtompsDetail2( recordModel: self.recordModel, record: self.record)
+                        ScheduleMainView(userModel: self.profileModel, jadwal: JadwalModel())
                     }
             }.alert(isPresented: self.$isAlarm, content: {
                 Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))

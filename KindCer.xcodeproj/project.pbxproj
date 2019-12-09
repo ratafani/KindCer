@@ -12,6 +12,11 @@
 		8B7DCB942384EC8D00C733C5 /* SchedulePageEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */; };
 		8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE759E237E78D800B415A7 /* JadwalModel.swift */; };
 		F60508CB239DD55B0013156F /* ProfileEditCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60508CA239DD55B0013156F /* ProfileEditCType.swift */; };
+		F60508D3239DF71F0013156F /* ScheduleEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60508CC239DF71E0013156F /* ScheduleEmpty.swift */; };
+		F60508D4239DF71F0013156F /* ScheduleMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60508CD239DF71E0013156F /* ScheduleMainView.swift */; };
+		F60508D5239DF71F0013156F /* CatatanJadwal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60508CE239DF71E0013156F /* CatatanJadwal.swift */; };
+		F60508D6239DF71F0013156F /* CardRiwayatEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60508CF239DF71E0013156F /* CardRiwayatEmpty.swift */; };
+		F60508D9239DF71F0013156F /* CardRiwayat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60508D2239DF71F0013156F /* CardRiwayat.swift */; };
 		F626A0CD2399FAA50045EC6D /* CancerTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */; };
 		F626A0CF239A03140045EC6D /* ProfileAddCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0CE239A03140045EC6D /* ProfileAddCType.swift */; };
 		F626A0D2239B63330045EC6D /* Webview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0D1239B63330045EC6D /* Webview.swift */; };
@@ -108,6 +113,11 @@
 		8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePageEdit.swift; sourceTree = "<group>"; };
 		8BEE759E237E78D800B415A7 /* JadwalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JadwalModel.swift; sourceTree = "<group>"; };
 		F60508CA239DD55B0013156F /* ProfileEditCType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditCType.swift; sourceTree = "<group>"; };
+		F60508CC239DF71E0013156F /* ScheduleEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleEmpty.swift; sourceTree = "<group>"; };
+		F60508CD239DF71E0013156F /* ScheduleMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleMainView.swift; sourceTree = "<group>"; };
+		F60508CE239DF71E0013156F /* CatatanJadwal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatatanJadwal.swift; sourceTree = "<group>"; };
+		F60508CF239DF71E0013156F /* CardRiwayatEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRiwayatEmpty.swift; sourceTree = "<group>"; };
+		F60508D2239DF71F0013156F /* CardRiwayat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRiwayat.swift; sourceTree = "<group>"; };
 		F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancerTypeModel.swift; sourceTree = "<group>"; };
 		F626A0CE239A03140045EC6D /* ProfileAddCType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddCType.swift; sourceTree = "<group>"; };
 		F626A0D1239B63330045EC6D /* Webview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webview.swift; sourceTree = "<group>"; };
@@ -234,6 +244,11 @@
 			children = (
 				F6516B61237E73100035E8E4 /* SchedulePage.swift */,
 				8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */,
+				F60508D2239DF71F0013156F /* CardRiwayat.swift */,
+				F60508CF239DF71E0013156F /* CardRiwayatEmpty.swift */,
+				F60508CE239DF71E0013156F /* CatatanJadwal.swift */,
+				F60508CC239DF71E0013156F /* ScheduleEmpty.swift */,
+				F60508CD239DF71E0013156F /* ScheduleMainView.swift */,
 				8B63EA06239A269000605140 /* ScheduleDetail.swift */,
 			);
 			path = Schedule;
@@ -580,13 +595,17 @@
 				F6D9791E235EAD6F00DC6673 /* HomeView.swift in Sources */,
 				F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */,
 				8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */,
+				F60508D9239DF71F0013156F /* CardRiwayat.swift in Sources */,
 				F6516BC82386B5C00035E8E4 /* FormObat.swift in Sources */,
 				F6516BC12383807D0035E8E4 /* ImagePicker.swift in Sources */,
 				F6D9794D2361418C00DC6673 /* QuizCategoryCard.swift in Sources */,
 				F66D1CB3237BE36000E864C5 /* mPicker.swift in Sources */,
 				F6516BBA23822F120035E8E4 /* OnboardingCardView.swift in Sources */,
+				F60508D6239DF71F0013156F /* CardRiwayatEmpty.swift in Sources */,
 				F66D1CAB237BE33100E864C5 /* SymptompsAdd.swift in Sources */,
+				F60508D4239DF71F0013156F /* ScheduleMainView.swift in Sources */,
 				F6516BC32385FBEE0035E8E4 /* KeyboardModel.swift in Sources */,
+				F60508D5239DF71F0013156F /* CatatanJadwal.swift in Sources */,
 				F60508CB239DD55B0013156F /* ProfileEditCType.swift in Sources */,
 				F66D1CC0237D4D8B00E864C5 /* SymptompsView.swift in Sources */,
 				F626A0CD2399FAA50045EC6D /* CancerTypeModel.swift in Sources */,
@@ -605,6 +624,7 @@
 				F66D1C93237ABED400E864C5 /* CustomLegends.swift in Sources */,
 				F6D97918235D9A7200DC6673 /* QuizCard.swift in Sources */,
 				F66D1C7C237A5B6A00E864C5 /* ProfileList.swift in Sources */,
+				F60508D3239DF71F0013156F /* ScheduleEmpty.swift in Sources */,
 				F66D1CB6237C5BD100E864C5 /* SymptompsModel.swift in Sources */,
 				F66D1C81237A5B6A00E864C5 /* ProfileConditionDetail.swift in Sources */,
 				F66D1C5B23791A1600E864C5 /* CalendarView.swift in Sources */,
