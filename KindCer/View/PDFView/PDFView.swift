@@ -8,10 +8,13 @@
 
 import SwiftUI
 import MessageUI
+import WebKit
 
 struct PDFView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var invoiceComposer = InvoiceComposer()
+    @State var html : String = ""
+    @State var web : WKWebView = WKWebView()
     @State var showShareSheet = false
     var body: some View {
         ZStack {
@@ -26,13 +29,14 @@ struct PDFView: View {
                         }
                         Spacer()
                         Button(action: {
+                            self.invoiceComposer.exportHTMLContentToPDF(HTMLContent: self.html, wkView: self.web)
                             self.showShareSheet.toggle()
                         }) {
-                            Text("Email").foregroundColor(.white)
+                            Text("Share").foregroundColor(.white)
                         }
                     }.padding(.horizontal,25)
                 }
-                WebView(invoiceComposer: $invoiceComposer)
+                WebView(invoiceComposer: $invoiceComposer,htmlPdf: $html,web: $web)
             }
         }.sheet(isPresented: $showShareSheet) {
             

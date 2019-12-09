@@ -45,6 +45,8 @@ struct ProfileEdit: View {
                                 self.userModel.updateDataUser(photo: imageData ?? Data(), userName: self.theName, date: self.tgl_lahir)
                                 self.goback = false
                             }else{
+                                self.userModel.updateDataUser(photo: Data(), userName: self.theName, date: self.tgl_lahir)
+                                self.goback = false
                                 print("Something error")
                             }
                         }
@@ -97,22 +99,23 @@ struct ProfileEdit: View {
                 Text("Tanggal Lahir").bold().padding(.leading)
                 Spacer()
             }
-            DatePicker(
-                selection: self.$tgl_lahir,
-                in: self.dateClosedRange,
-                displayedComponents: .date,
-                label: { Text("Tanggal Diagnosis").foregroundColor(.clear) .font(.system(size: 15)) .opacity(0.5) }
-            ).labelsHidden().onAppear{
-                
-                self.tgl_lahir = self.userModel.tanggal_lahir
-                
-                
+            ZStack{
+                Rectangle().foregroundColor(Color.white).frame(height: 270)
+                DatePicker(
+                    selection: self.$tgl_lahir,
+                    in: self.dateClosedRange,
+                    displayedComponents: .date,
+                    label: { Text("Tanggal Diagnosis").foregroundColor(.clear) .font(.system(size: 15)) .opacity(0.5) }
+                ).labelsHidden().onAppear{
+                    self.tgl_lahir = self.userModel.tanggal_lahir
+                }
             }
+            
             Spacer()
             
         }.background(Color(#colorLiteral(red: 0.9725627303, green: 0.9667808414, blue: 0.9770069718, alpha: 1))).sheet(isPresented: $isSheet) {
             ImagePicker(isShown: self.$isSheet, uiImage: self.$img)
-        }
+        }.edgesIgnoringSafeArea(.all)
     }
 }
 

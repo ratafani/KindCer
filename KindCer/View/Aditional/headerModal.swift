@@ -14,10 +14,11 @@ struct headerModal: View {
     
     var body: some View {
         ZStack{
-            Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
+            Rectangle().foregroundColor(Color("Primary")).frame(height: 70)
             VStack{
                 Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
-                Text(title).font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+                Text(title).font(.system(size: 24)).bold().foregroundColor(.white)
+                
             }
         }//.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
@@ -63,6 +64,6 @@ struct headerModalWithButton: View {
 
 struct headerModal_Previews: PreviewProvider {
     static var previews: some View {
-        headerModalWithButton()
+        headerModal()
     }
 }

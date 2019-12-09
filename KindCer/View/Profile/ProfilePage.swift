@@ -14,6 +14,7 @@ struct ProfilePage: View {
     @ObservedObject var userModel: UserModel
     @ObservedObject var jadwal : JadwalModel
     @ObservedObject var typeModel : CancerModel = CancerModel()
+    @State var selectedType : CancerUserType = CancerUserType(id: StaticModel.id, name: "", tanngal: Date())
     
     @State var isEmpty = true
     @State var isSheet = false
@@ -22,6 +23,8 @@ struct ProfilePage: View {
     @State var image : UIImage? = UIImage()
     @State var jItem : JadwalType = JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
     @State var arr : [CancerUserType] = []
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         VStack{
             
@@ -58,17 +61,26 @@ struct ProfilePage: View {
                                 .frame(width: 112, height: 112)
                                 .scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
                         }
-                        Text(userModel.user_name == "" ? "Belum ada nama":userModel.user_name).font(.body).foregroundColor(.white).bold()
+                        Text(userModel.user_name == "" ? "Belum ada nama":userModel.user_name).font(.system(size: 24)).foregroundColor(.white).bold()
                     }
                     HStack {
+                        VStack {
+                            Button(action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }) {
+                                Text("X").bold().foregroundColor(Color.white).padding(5)
+                                    .background(Circle().foregroundColor(Color.white).opacity(0.3))
+                            }.padding(16)
+                            Spacer()
+                        }
                         Spacer()
                         VStack {
                             Button(action: {
                                 self.isSheet = true
                                 self.sheetType = 0
                             }) {
-                                Text("Ubah").foregroundColor(.white).padding(5)
-                                    .overlay(Rectangle().stroke(Color.white, lineWidth: 4).cornerRadius(5))
+                                Text("Ubah").bold().foregroundColor(Color("Primary")).padding(5)
+                                    .background(Rectangle().foregroundColor(Color.white).cornerRadius(5))
                             }.padding(16)
                             Spacer()
                         }
@@ -96,7 +108,7 @@ struct ProfilePage: View {
                     Spacer()
                     Image("EmptyRecord").resizable().frame(width: 150, height: 150).padding(.bottom)
                     Text("Masih Kosong").bold().font(.headline).padding(.bottom)
-                    Text("Summary baru bisa dilihat jika kamu sudah menambahkan catatan symptomps kamu.").multilineTextAlignment(.center).font(.subheadline).frame(width: 250)
+                    Text("Mulai lengkapi kondisi terkini kamu sekarang.").multilineTextAlignment(.center).font(.subheadline).frame(width: 250)
                     Spacer()
                     HStack{
                         Text("Tambahkan disini").font(.system(size: 25)).bold().padding(.leading,40)
@@ -113,7 +125,12 @@ struct ProfilePage: View {
                     ScrollView{
                         VStack{
                             ForEach(typeModel.mData, id: \.id){ data in
-                                cancerTypeView(cancer: data)
+                                cancerTypeView(cancer: data).onTapGesture {
+                                    self.isSheet = true
+                                    self.selectedType = data
+                                    self.sheetType = 2
+                                    
+                                }
                             }
                         }
                     }
@@ -125,8 +142,10 @@ struct ProfilePage: View {
             if self.sheetType == 0{
 
                 ProfileEdit(userModel: self.userModel, theName: self.userModel.user_name, img: UIImage(data: self.userModel.photo) ?? UIImage(), goback: self.$isSheet)
-            } else{
+            } else if self.sheetType == 1{
                 ProfileAddCType(typeModel: self.typeModel)
+            }else{
+                ProfileEditCType(typeModel: self.typeModel, cancer: self.selectedType)
             }
         }.background(Color("inActive")).edgesIgnoringSafeArea(.all)
     }

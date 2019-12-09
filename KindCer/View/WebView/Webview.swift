@@ -10,40 +10,44 @@ import SwiftUI
 import WebKit
 
 struct WebView : UIViewRepresentable {
-     
+    
     let pdf = Bundle.main.path(forResource: "My CV", ofType: "pdf")
     @Binding var invoiceComposer: InvoiceComposer
+    @Binding var htmlPdf : String
+    @Binding var web : WKWebView
     func makeUIView(context: Context) -> WKWebView  {
-        return WKWebView()
-    }
-      
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-
+        let web = WKWebView()
         
-        if let invoiceHTML = invoiceComposer.renderInvoice(invoiceNumber: "",
-                                                           invoiceDate: "invoiceDate",
-                                                           recipientInfo: "recipientInfo",
-                                                           totalAmount: "String") {
-//            print(invoiceHTML)
+        if let invoiceHTML = invoiceComposer.renderInvoice(invoiceNumber: "",invoiceDate: "invoiceDate",recipientInfo: "recipientInfo",totalAmount: "String") {
             let fileURL = URL(fileURLWithPath: invoiceComposer.pathToInvoiceHTMLTemplate!)
-            
-            invoiceComposer.exportHTMLContentToPDF(HTMLContent: invoiceHTML)
-            if let filename = self.invoiceComposer.pdfFilename, let _ = URL(string: filename) {
-//                let request = URLRequest(url: url)
-                uiView.loadHTMLString(invoiceHTML, baseURL: fileURL)
+            DispatchQueue.main.async{
+
+                
+                self.htmlPdf = invoiceHTML
             }
-        
+            web.loadHTMLString(invoiceHTML, baseURL: fileURL)
+            
             
         }
+        return web
     }
-    mutating func createInvoiceAsHTML() {
+    
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        DispatchQueue.main.async{
+
+            
+            self.web = uiView
+        }
         
     }
+    
+    
 }
 
 
 class InvoiceComposer: NSObject {
-
+    
     let pathToInvoiceHTMLTemplate = Bundle.main.path(forResource: "invoice", ofType: "html")
     
     let pathToSingleItemHTMLTemplate = Bundle.main.path(forResource: "single_item", ofType: "html")
@@ -73,15 +77,18 @@ class InvoiceComposer: NSObject {
             let efek = RecordModel()
             efek.readAllData()
             
-            let img = Bundle.main.path(forResource: "Logo", ofType: "png")
-            let fileURL = URL(fileURLWithPath: img!)
-            HTMLContent = HTMLContent.replacingOccurrences(of: "#PHOTO#", with: "\(fileURL)")
-                
+            //            let img = Bundle.main.path(forResource: "Logo", ofType: "png")
+            //            let fileURL = URL(fileURLWithPath: "")
+            //            HTMLContent = HTMLContent.replacingOccurrences(of: "#PHOTO#", with: "\(fileURL)")
+            
             
             var pasienInfo = ""
             pasienInfo = try String(contentsOfFile: pathToLastItemHTMLTemplate!)
             pasienInfo = pasienInfo.replacingOccurrences(of: "#JENIS#", with: "\(usermodel.user_name)")
             pasienInfo = pasienInfo.replacingOccurrences(of: "#TANGGAL#", with: "\(dateFormatter.string(from: usermodel.tanggal_lahir))")
+            
+            let photoURL = Bundle.main.path(forResource: "Logo", ofType: "png")
+            HTMLContent = HTMLContent.replacingOccurrences(of: "#PHOTO#", with: photoURL!)
             
             HTMLContent = HTMLContent.replacingOccurrences(of: "#PASIEN_INFO#", with: pasienInfo)
             // The invoice items will be added by using a loop.
@@ -98,8 +105,8 @@ class InvoiceComposer: NSObject {
                 var itemHTMLContent: String!
                 itemHTMLContent = try String(contentsOfFile: pathToLastItemHTMLTemplate!)
                 
-                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#JENIS#", with: " ")
-                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#TANGGAL#", with: " ")
+                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#JENIS#", with: " - ")
+                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#TANGGAL#", with: " - ")
                 jenis += itemHTMLContent
             }
             HTMLContent = HTMLContent.replacingOccurrences(of: "#JENIS#", with:jenis)
@@ -119,8 +126,8 @@ class InvoiceComposer: NSObject {
             HTMLContent = HTMLContent.replacingOccurrences(of: "#EFEK#", with:sType)
             // For all the items except for the last one we'll use the "single_item.html" template.
             // For the last one we'll use the "last_item.html" template.
-          
-    
+            
+            
             
             // The HTML code is ready.
             return HTMLContent
@@ -134,10 +141,11 @@ class InvoiceComposer: NSObject {
     }
     
     
-    func exportHTMLContentToPDF(HTMLContent: String) {
+    func exportHTMLContentToPDF(HTMLContent: String, wkView: WKWebView) {
         let printPageRenderer = CustomPrintPageRenderer()
         
-        let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+        let printFormatter = wkView.viewPrintFormatter()
+        
         printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
         
         let pdfData = drawPDFUsingPrintPageRenderer(printPageRenderer: printPageRenderer)
@@ -166,6 +174,6 @@ class InvoiceComposer: NSObject {
 }
 struct Webview_Previews: PreviewProvider {
     static var previews: some View {
-        WebView(invoiceComposer: .constant(InvoiceComposer()))
+        WebView(invoiceComposer: .constant(InvoiceComposer()), htmlPdf: .constant(""), web: .constant(WKWebView()))
     }
 }

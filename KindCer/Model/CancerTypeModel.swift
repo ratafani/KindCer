@@ -68,13 +68,33 @@ class CancerModel: NSObject,ObservableObject{
         
     }
     
-    func deleteData(data:NSManagedObject){
+    func updateData(data:NSManagedObjectID, name: String, date: Date){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let context = app.persistentContainer.viewContext
+        do{
+            let obj =  try context.existingObject(with: data)
+            obj.setValue(name, forKey: "name")
+            obj.setValue(date, forKey: "tanggal")
+            readData()
+        }catch{
+            
+        }
+        fetchData()
+    }
+    
+    func deleteData(data:NSManagedObjectID){
         let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.persistentContainer.viewContext
         
         mData = []
-        
-        context.delete(data)
+        do{
+            let obj =  try context.existingObject(with: data)
+             context.delete(obj)
+            readData()
+        }catch{
+            
+        }
+       
         
         fetchData()
     }

@@ -30,7 +30,11 @@ struct recordBody: View {
                     }.padding(.top, 10)
                     Text(record.penjelasan).foregroundColor(.gray).padding(.top, 10).padding(.bottom, 10)
                 }
+                
                 Spacer()
+                if record.kondisi == "Bahaya"{
+                    Image("Warning").resizable().frame(width: 80, height: 60).padding()
+                }
             }
         }.padding(.vertical,3)
     }

@@ -26,7 +26,7 @@ struct SummaryView: View {
         GeometryReader { geometry in
             VStack{
                 ZStack{
-                    headerModal(title: "Rangkuman").padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    headerModal(title: "Rangkuman")
                     HStack{
                         Button(action: {
                              self.presentationMode.wrappedValue.dismiss()
@@ -81,8 +81,8 @@ struct SummaryView: View {
                         
                     }.padding()
                     
-                }.background(Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)))
-            }.edgesIgnoringSafeArea(.all).onAppear{
+                }.background(Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1))).edgesIgnoringSafeArea(.all)
+            }.onAppear{
                 self.mTypeKey = self.a.allType()
                 self.picked = self.mTypeKey.first ?? ""
                 self.getData()

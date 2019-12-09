@@ -58,6 +58,8 @@ class JadwalModel : NSObject, ObservableObject{
         let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Jadwal")
+        let sorting = NSSortDescriptor(key: "tanggal",ascending: true)
+        fetchRequest.sortDescriptors = [sorting]
         
         data = []
         
