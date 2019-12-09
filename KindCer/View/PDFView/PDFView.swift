@@ -32,7 +32,7 @@ struct PDFView: View {
                             self.invoiceComposer.exportHTMLContentToPDF(HTMLContent: self.html, wkView: self.web)
                             self.showShareSheet.toggle()
                         }) {
-                            Text("Share").foregroundColor(.white)
+                            Text("Kirim").foregroundColor(.white)
                         }
                     }.padding(.horizontal,25)
                 }

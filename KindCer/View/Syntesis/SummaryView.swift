@@ -37,7 +37,7 @@ struct SummaryView: View {
                         Button(action: {
                             self.isSheet = true
                         }) {
-                            Text("See PDF").foregroundColor(.white)
+                            Text("Bagikan").foregroundColor(.white)
                         }
                     }.padding(.horizontal,25)
                 }

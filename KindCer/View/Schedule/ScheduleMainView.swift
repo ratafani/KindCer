@@ -20,6 +20,8 @@ struct ScheduleMainView: View {
     @State var image : UIImage? = UIImage()
     @State var jItem : JadwalType = JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         GeometryReader { geometry in
             VStack
@@ -29,45 +31,55 @@ struct ScheduleMainView: View {
                         VStack{
                             Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
                             Text("Jadwal").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
-//                            ZStack{
-//                                HStack {
-//                                    Spacer()
-//                                    Button("Simpan"){
-//                                       }.foregroundColor(.white).padding(.init(top: -21, leading: 0, bottom: 0, trailing: 15))
-//                                }
-//                            }
+                            //                            ZStack{
+                            //                                HStack {
+                            //                                    Spacer()
+                            //                                    Button("Simpan"){
+                            //                                       }.foregroundColor(.white).padding(.init(top: -21, leading: 0, bottom: 0, trailing: 15))
+                            //                                }
+                            //                            }
+                        }
+                        HStack{
+                            
+                            Button("Tutup"){
+                                self.presentationMode.wrappedValue.dismiss()
+                            }.foregroundColor(Color.white).padding(.horizontal)
+                            
+                            Spacer()
+                            
+                            Button("Tambah"){
+                                self.isSheet = true
+                            }.foregroundColor(Color.white).padding(.horizontal)
                         }
                     }
                     
                     ScrollView(.horizontal){
-                                         HStack{
-                                             if self.jadwal.data.isEmpty{
-                                                 ProfileCardStatusEmpty()
-                                             }else{
-                                                 ForEach(self.jadwal.data, id: \.id){ theData in
-                                                                                 ProfileCardStatus(jadwalModel: self.jadwal,jadwal: theData,homeSheet: self.$isSheet)              }
-                                             }
-                                             
-                                         }.padding(.vertical, 20)
-                                     }.padding(.leading)
+                        HStack{
+                            if self.jadwal.data.isEmpty{
+                                ProfileCardStatusEmpty()
+                            }else{
+                                ForEach(self.jadwal.fData, id: \.id){ theData in
+                                    ProfileCardStatus(jadwalModel: self.jadwal,jadwal: theData,homeSheet: self.$isSheet)
+                                }
+                            }
+                            
+                        }.padding(.vertical, 20)
+                    }.padding(.leading)
                     
                     HStack{
                         Text("Riwayat Berobat").bold().font(.system(size: 20)).padding(.horizontal)
                         
                         Spacer()
                         
-                        Button("Tambah"){
-                            
-                        }.foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).padding(.horizontal)
                     }.padding(.init(top: 10, leading: 0, bottom: 5, trailing: 0))
-                     
+                    
                     ScrollView
                         {
                             if self.isRiwayatEmpty(){
                                 CardRiwayatEmpty().frame(height: geometry.frame(in: .global).height/2)
                             }else{
                                 VStack {
-                                    ForEach(self.jadwal.data, id: \.id) { jad in
+                                    ForEach(self.jadwal.pData, id: \.id) { jad in
                                         CardRiwayat(jadwalModel: self.jadwal, jadwal: jad)
                                     }
                                 }
@@ -76,15 +88,22 @@ struct ScheduleMainView: View {
                     
                     
                     Spacer()
-                            
-                           
                     
                     
                     
-            } .background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9468348622, green: 0.936796844, blue: 0.9499147534, alpha: 1)))).edgesIgnoringSafeArea(.all).onAppear{
-                self.jadwal.readData()
-                print(self.isRiwayatEmpty())
-                print(self.jadwal.data)
+                    
+                    
+            } .background(Rectangle()
+                .foregroundColor(Color.init(#colorLiteral(red: 0.9468348622, green: 0.936796844, blue: 0.9499147534, alpha: 1))))
+                .edgesIgnoringSafeArea(.all)
+                .onAppear{
+                    self.jadwal.readData()
+                    
+                    print(self.isRiwayatEmpty())
+                    print(self.jadwal.data)
+            }
+            .sheet(isPresented: self.$isSheet) {
+                SchedulePage(isSheet: self.$isSheet, jadwal: self.jadwal)
             }
         }
         
@@ -95,7 +114,7 @@ struct ScheduleMainView: View {
         let arr = jadwal.data
         
         for a in arr{
-            if a.tanggal.timeIntervalSince1970 < Date().timeIntervalSince1970 {
+            if a.tanggal.timeIntervalSince1970 <= Date().timeIntervalSince1970 {
                 return false
             }
         }

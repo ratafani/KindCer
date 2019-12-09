@@ -103,7 +103,7 @@ struct ProfileCardStatus: View {
                 
                 //Rectangle dalam card
                 jadwalBar(jadwal: $jadwal)
-                Divider().padding(.horizontal)
+//                Divider().padding(.horizontal).frame( height: 200)
                 jadwalDetailBtm(jadwal: $jadwal)
                 //Icon hospital
 //                jadwalDetailBtm(jadwal: $jadwal)
@@ -171,12 +171,13 @@ struct jadwalDetailBtm:View {
     @Binding var jadwal : JadwalType
     var body: some View{
         HStack{
-            Image("hospitalDarkerPurple").padding(.init(top: 0, leading: 30, bottom: 10, trailing: 0))
-            Text(jadwal.tempat ).foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold().offset(y: -3).font(.system(size: 13))
-            Spacer()
-            Divider().padding(.init(top: -15, leading: 0, bottom: 0, trailing: 30))
+            
             Image("doctorDarkerPurple").padding(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
             Text(jadwal.dokter).foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold().offset(y: -3).font(.system(size: 13))
+            Spacer()
+            Divider().frame(height: 50)
+            Image("hospitalDarkerPurple").padding(.init(top: 0, leading: 30, bottom: 10, trailing: 0))
+            Text(jadwal.tempat ).foregroundColor(Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold().offset(y: -3).font(.system(size: 13))
             Spacer()
         }.padding()
     }

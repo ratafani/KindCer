@@ -26,6 +26,8 @@ class JadwalModel : NSObject, ObservableObject{
     
     
     var data = [JadwalType]()
+    var fData = [JadwalType]()
+    var pData = [JadwalType]()
     
     override init() {
         super.init()
@@ -68,17 +70,28 @@ class JadwalModel : NSObject, ObservableObject{
                 let catatan = r.value(forKey: "catatan") as! String
                 
                 let newJadwal = JadwalType(id: r.objectID, tempat: tempat, tanggal: tanggal, dokter: dokter, catatan: catatan)
-                
+                data.append(newJadwal)
                 if tanggal.timeIntervalSince1970 >= Date().timeIntervalSince1970{
-                    data.append(newJadwal)
+                    
                 }
             }
+            self.divideData()
             fetchData()
         } catch {
             
         }
     }
-    
+    func divideData(){
+        pData = []
+        fData = []
+        for a in self.data{
+            if a.tanggal.timeIntervalSince1970 <= Date().timeIntervalSince1970{
+                self.pData.append(a)
+            }else{
+                self.fData.append(a)
+            }
+        }
+    }
     func updateItem(id:NSManagedObjectID, key: String, value: Any){
         let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.persistentContainer.viewContext

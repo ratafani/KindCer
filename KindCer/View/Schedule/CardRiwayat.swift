@@ -16,61 +16,52 @@ struct CardRiwayat: View {
     var judul : String = "Kemoterapi"
     
     var dateFormatterDate: DateFormatter {
-          let formatter = DateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "dd"
-          return formatter
-      }
-
+        return formatter
+    }
+    
     
     var dateFormatterMonth: DateFormatter {
-          let formatter = DateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "MMM"
-          return formatter
-      }
+        return formatter
+    }
     
     var dateFormatterYear: DateFormatter {
-          let formatter = DateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy"
-          return formatter
-      }
+        return formatter
+    }
     
     var body: some View {
         
-        GeometryReader
+        HStack
             {
-                geometry in
-                
                 VStack
                     {
-                        ZStack
-                            {
-                                Rectangle().foregroundColor(.white)
-                                HStack
-                                    {
-                                               VStack
-                                                {
-                                                    Text("") .font(.system(size: 27)) .fontWeight(.bold)
-                                                    
-                                                    Text("\(self.jadwal.tanggal, formatter: self.dateFormatterMonth)") .font(.system(size: 13)) .foregroundColor(.gray) .fontWeight(.semibold)
-
-                                                    Text("\(self.jadwal.tanggal, formatter: self.dateFormatterYear)") .font(.system(size: 11)) .fontWeight(.bold)
-                                        }
-                                                
-                                        VStack (alignment: .leading)
-                                                {
-                                                    Text(self.judul).fontWeight(.semibold) .font(.headline).padding(.bottom, 4)
-                                                    Text("\(self.jadwal.tempat)" + " | " + "\(self.jadwal.dokter)") .fontWeight(.medium) .font(.footnote) .foregroundColor(.gray)
-                                                    .padding(.bottom, 4)
-                                        }.padding(.leading, 12)
-                                        
-                                        Spacer()
-                                }.padding()
-                                
-                        }
-                }
-                 
-        }
-       
+                        Text("\(self.jadwal.tanggal, formatter: self.dateFormatterDate)") .font(.system(size: 27)) .fontWeight(.bold)
+                        
+                        Text("\(self.jadwal.tanggal, formatter: self.dateFormatterMonth)") .font(.system(size: 14)) .foregroundColor(.gray) .fontWeight(.semibold)
+                        
+                        Text("\(self.jadwal.tanggal, formatter: self.dateFormatterYear)") .font(.system(size: 18)) .fontWeight(.bold)
+                }.padding(.vertical).padding(.leading)
+                
+                VStack (alignment: .leading)
+                {
+                    Text(self.judul).fontWeight(.semibold) .font(.headline).padding(.bottom, 4)
+                    Text("\(self.jadwal.tempat)" + " | " + "\(self.jadwal.dokter)") .fontWeight(.medium) .font(.footnote) .foregroundColor(.gray)
+                        .padding(.bottom, 4)
+                }.padding(.leading, 12).padding(.vertical)
+                
+                Spacer()
+        }.background(Rectangle().foregroundColor(.white)).padding(.bottom,10)
+        
+        
+        
+        
+        
+        
     }
 }
 
