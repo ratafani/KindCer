@@ -67,6 +67,6 @@ struct CardRiwayat: View {
 
 struct CardRiwayat_Previews: PreviewProvider {
     static var previews: some View {
-        CardRiwayat( jadwalModel: JadwalModel(), jadwal: JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "String", catatan: ""))
+        CardRiwayat( jadwalModel: JadwalModel(), jadwal: JadwalType(id: StaticModel.id, name: "", tempat: "", tanggal: Date(), dokter: "String", catatan: ""))
     }
 }
