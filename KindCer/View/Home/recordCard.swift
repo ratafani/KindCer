@@ -11,6 +11,8 @@ import SwiftUI
 
 struct recordBody: View {
     @Binding var record : RecordType
+    
+    let moderateDangerous = ["Alergi", "Demam", "Muntah", "Mulut", "Sembelit", "Susah Menelan", "Bengkak", "Bernafas"]
     var body: some View{
         ZStack {
             Rectangle().foregroundColor(.white)
@@ -32,11 +34,27 @@ struct recordBody: View {
                 }
                 
                 Spacer()
-                if record.kondisi == "Bahaya"{
+                if toDoctor(){
                     Image("Warning").resizable().frame(width: 80, height: 60).padding()
                 }
             }
         }.padding(.vertical,3)
+    }
+    
+    func toDoctor()->Bool{
+        if record.kondisi == "Bahaya"{
+            return true
+        }else if record.type == "Gatal / iritasi"{
+            return true
+        }else{
+            for a in moderateDangerous{
+                if record.type == a && record.kondisi == "Sedang"{
+                    return true
+                }
+            }
+        }
+        
+        return false
     }
     
     func choseColor()->Color{

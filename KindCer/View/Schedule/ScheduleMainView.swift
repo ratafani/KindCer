@@ -18,7 +18,7 @@ struct ScheduleMainView: View {
     @State var userName = ""
     @State var sheetType = 0
     @State var image : UIImage? = UIImage()
-    @State var jItem : JadwalType = JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
+    @State var jItem : JadwalType = JadwalType(id: StaticModel.id, name: "", tempat: "", tanggal: Date(), dokter: "", catatan: "")
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     

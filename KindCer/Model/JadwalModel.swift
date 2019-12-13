@@ -13,6 +13,7 @@ import SwiftUI
 
 struct JadwalType {
     var id : NSManagedObjectID
+    var name : String
     var tempat : String
     var tanggal : Date
     var dokter : String
@@ -43,6 +44,7 @@ class JadwalModel : NSObject, ObservableObject{
         let context = app.persistentContainer.viewContext
         let entity = NSEntityDescription.insertNewObject(forEntityName: "Jadwal", into: context)
         
+        entity.setValue(jadwal.name, forKey: "name")
         entity.setValue(jadwal.tanggal, forKey: "tanggal")
         entity.setValue(jadwal.tempat, forKey: "tempat")
         entity.setValue(jadwal.catatan, forKey: "catatan")
@@ -64,12 +66,13 @@ class JadwalModel : NSObject, ObservableObject{
             let result = try context.fetch(fetchRequest)
             
             for r in result as! [NSManagedObject] {
+                let name = r.value(forKey: "name") as! String
                 let tempat = r.value(forKey: "tempat") as! String
                 let dokter = r.value(forKey: "dokter") as! String
                 let tanggal = r.value(forKey: "tanggal") as! Date
                 let catatan = r.value(forKey: "catatan") as! String
                 
-                let newJadwal = JadwalType(id: r.objectID, tempat: tempat, tanggal: tanggal, dokter: dokter, catatan: catatan)
+                let newJadwal = JadwalType(id: r.objectID, name: name, tempat: tempat, tanggal: tanggal, dokter: dokter, catatan: catatan)
                 data.append(newJadwal)
                 if tanggal.timeIntervalSince1970 >= Date().timeIntervalSince1970{
                     

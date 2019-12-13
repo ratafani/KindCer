@@ -10,7 +10,8 @@ import SwiftUI
 
 struct ScheduleDetail: View {
     
-    @State var jadwal = JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
+    @State var jadwal = JadwalType(id: StaticModel.id, name: "", tempat: "", tanggal: Date(), dokter: "", catatan: "")
+//        JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
     
     var body: some View {
         VStack {
