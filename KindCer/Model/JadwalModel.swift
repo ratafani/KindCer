@@ -66,10 +66,6 @@ class JadwalModel : NSObject, ObservableObject{
             let result = try context.fetch(fetchRequest)
             
             for r in result as! [NSManagedObject] {
-                guard let mName = r.value(forKey: "name")else{
-                    return
-                }
-                self.user_name = mName as! String
                 let name = r.value(forKey: "name") as! String
                 let tempat = r.value(forKey: "tempat") as! String
                 let dokter = r.value(forKey: "dokter") as! String
