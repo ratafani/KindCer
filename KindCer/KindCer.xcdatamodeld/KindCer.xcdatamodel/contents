@@ -7,6 +7,7 @@
     <entity name="Jadwal" representedClassName="Jadwal" syncable="YES" codeGenerationType="class">
         <attribute name="catatan" optional="YES" attributeType="String"/>
         <attribute name="dokter" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="tanggal" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="tempat" optional="YES" attributeType="String"/>
     </entity>
@@ -29,9 +30,9 @@
         <attribute name="user_name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Jadwal" positionX="-63" positionY="144" width="128" height="28"/>
+        <element name="CancerType" positionX="-63" positionY="144" width="128" height="73"/>
+        <element name="Jadwal" positionX="-63" positionY="144" width="128" height="118"/>
         <element name="Record" positionX="-81.30078125" positionY="176.48828125" width="128" height="148"/>
         <element name="User" positionX="-45" positionY="0" width="128" height="148"/>
-        <element name="CancerType" positionX="-63" positionY="144" width="128" height="73"/>
     </elements>
 </model>

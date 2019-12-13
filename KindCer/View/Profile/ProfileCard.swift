@@ -83,7 +83,8 @@ struct ProfileCardStatus: View {
     @State var mStatus : CGFloat = 350.0
     @State var days : Int = 225
     @ObservedObject var jadwalModel : JadwalModel
-    @State var jadwal = JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
+    @State var jadwal = JadwalType(id: StaticModel.id, name: "", tempat: "", tanggal: Date(), dokter: "", catatan: "")
+    //JadwalType(id: StaticModel.id, tempat: "", tanggal: Date(), dokter: "", catatan: "")
     @State var isSheet = false
     @Binding var homeSheet : Bool
    
@@ -96,7 +97,7 @@ struct ProfileCardStatus: View {
                 ZStack{
                     Rectangle().frame(height: 50).foregroundColor(Color("Primary")).cornerRadius(10, antialiased: false)
                     HStack {
-                        Text("Kemoterapi").font(.system(size: 17)).foregroundColor(.white).bold().padding(.horizontal).offset(x: 18)
+                        Text(jadwal.name).font(.system(size: 17)).foregroundColor(.white).bold().padding(.horizontal).offset(x: 18)
                         Spacer()
                     }
                 }

@@ -315,7 +315,7 @@
 			path = Symtomps;
 			sourceTree = "<group>";
 		};
-		F66D1CAE237BE34800E864C5 /* Aditional */ = {
+		F66D1CAE237BE34800E864C5 /* Additional */ = {
 			isa = PBXGroup;
 			children = (
 				8B48E4B72383B4E000014BBB /* headerModal.swift */,
@@ -324,7 +324,7 @@
 				F66D1CB0237BE36000E864C5 /* mPicker.swift */,
 				F6516BC02383807D0035E8E4 /* ImagePicker.swift */,
 			);
-			path = Aditional;
+			path = Additional;
 			sourceTree = "<group>";
 		};
 		F677AFCD2354157A000B39E4 = {
@@ -407,7 +407,7 @@
 				F6D9793523601C6200DC6673 /* Quiz */,
 				F6D9793423601C5D00DC6673 /* Home */,
 				F66D1CA5237BE32800E864C5 /* Symtomps */,
-				F66D1CAE237BE34800E864C5 /* Aditional */,
+				F66D1CAE237BE34800E864C5 /* Additional */,
 				F6516BCF239611100035E8E4 /* TextFieldAlert.swift */,
 			);
 			path = View;
@@ -829,7 +829,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = 52RX5R54N7;
+				DEVELOPMENT_TEAM = MW3338A45T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -852,7 +852,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = 52RX5R54N7;
+				DEVELOPMENT_TEAM = MW3338A45T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

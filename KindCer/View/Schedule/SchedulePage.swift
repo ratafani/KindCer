@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SchedulePage: View {
     
+    @State var namaKemo : String = ""
     @State var tempatPengobatan : String = ""
     @State var dokter : String = ""
     @State var kemoSchedule : Date = Date()
@@ -45,6 +46,13 @@ struct SchedulePage: View {
                     }
                 }
                 Form{
+                    Section(header: HStack {
+                        Image("namaKemo").resizable().frame(width: 20, height: 20)
+                        Text("Jenis Kemoterapi").font(.headline)
+                    }) {
+                        
+                        TextField("Tulis jenis kemoterapi yang akan kamu jalankan", text: self.$namaKemo)
+                    }
                     Section(header:  HStack {
                     Image("diagnosis").resizable().frame(width: 20, height: 20)
                         Text("Tanggal Kemoterapi").font(.headline)
@@ -80,19 +88,20 @@ struct SchedulePage: View {
                     }
 
                 }.edgesIgnoringSafeArea(.all)
-            }.onAppear(){
-//                self.endEditing(true)
+            }.padding(.bottom, self.keyboard.currentHeight).onAppear(){
+                self.endEditing(true)
             }
         }
     }
     func addToCD(){
-        let newJadwal = JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
+        let newJadwal = JadwalType(id: StaticModel.id, name: namaKemo, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
+//            JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
         jadwal.saveData(jadwal: newJadwal)
     }
     
-//    private func endEditing(_ force: Bool){
-//        UIApplication.shared.endEditing()
-//    }
+    private func endEditing(_ force: Bool){
+        UIApplication.shared.endEditing()
+    }
 }
 
 struct catatanBox: View{
@@ -109,6 +118,12 @@ struct catatanBox: View{
                 }
             }
         }
+    }
+}
+
+extension UIApplication{
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProfileEdit: View {
     @ObservedObject var userModel: UserModel = UserModel()
+    @ObservedObject private var keyboard = KeyboardResponder()
     @State var theName : String = ""
     @State var img : UIImage?
     @State var isSheet : Bool = false
@@ -113,7 +114,7 @@ struct ProfileEdit: View {
             
             Spacer()
             
-        }.background(Color(#colorLiteral(red: 0.9725627303, green: 0.9667808414, blue: 0.9770069718, alpha: 1))).sheet(isPresented: $isSheet) {
+        }.padding(.bottom, keyboard.currentHeight).background(Color(#colorLiteral(red: 0.9725627303, green: 0.9667808414, blue: 0.9770069718, alpha: 1))).sheet(isPresented: $isSheet) {
             ImagePicker(isShown: self.$isSheet, uiImage: self.$img)
         }.edgesIgnoringSafeArea(.all)
     }
