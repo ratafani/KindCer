@@ -46,6 +46,8 @@ struct ProfilePage: View {
                     
                     
                     VStack{
+                        ZStack
+                            {
                         if(userModel.photo.isEmpty){
                             
                             Image("photo1")
@@ -61,6 +63,13 @@ struct ProfilePage: View {
                                 .frame(width: 112, height: 112)
                                 .scaledToFill().overlay(Circle().stroke(Color.white, lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color("Primary"), radius: 5)
                         }
+                                Button(action: {
+                                              self.isSheet = true
+                                            self.sheetType = 0
+                                           }) {
+                                               Image("edit").renderingMode(.original).offset(x:35,y:38).padding(40).shadow(color: Color("Primary"), radius: 2)
+                                           }
+                        }
                         Text(userModel.user_name == "" ? "Belum ada nama":userModel.user_name).font(.system(size: 24)).foregroundColor(.white).bold()
                     }
                     HStack {
@@ -74,16 +83,16 @@ struct ProfilePage: View {
                             Spacer()
                         }
                         Spacer()
-                        VStack {
-                            Button(action: {
-                                self.isSheet = true
-                                self.sheetType = 0
-                            }) {
-                                Text("Ubah").bold().foregroundColor(Color("Primary")).padding(5)
-                                    .background(Rectangle().foregroundColor(Color.white).cornerRadius(5))
-                            }.padding(16)
-                            Spacer()
-                        }
+//                        VStack {
+//                            Button(action: {
+//                                self.isSheet = true
+//                                self.sheetType = 0
+//                            }) {
+//                                Text("Ubah").bold().foregroundColor(Color("Primary")).padding(5)
+//                                    .background(Rectangle().foregroundColor(Color.white).cornerRadius(5))
+//                            }.padding(16)
+//                            Spacer()
+//                        }
                         
                     }
                     VStack{
@@ -93,34 +102,37 @@ struct ProfilePage: View {
                     
                 }.frame(height: 280)
                 
-                HStack{
-                    Text("Tambahkan Jenis Kanker").font(.headline).bold().padding(16)
-                    Spacer()
-                    Button(action: {
-                        self.sheetType = 1
-                        self.isSheet = true
-                    }) {
-                        Text("Tambah").foregroundColor(Color("Primary")).bold()
-                        
-                    }.padding(16)
-                }
+//                HStack{
+//                    Text("Tambahkan Jenis Kanker").font(.headline).bold().padding(16)
+//                    Spacer()
+//                    Button(action: {
+//                        self.sheetType = 1
+//                        self.isSheet = true
+//                    }) {
+//                        Text("Tambah").foregroundColor(Color("Primary")).bold()
+//
+//                    }.padding(16)
+//                }
                 if typeModel.mData.isEmpty{
-                    Spacer()
-                    Image("EmptyRecord").resizable().frame(width: 150, height: 150).padding(.bottom)
-                    Text("Masih Kosong").bold().font(.headline).padding(.bottom)
-                    Text("Mulai lengkapi kondisi terkini kamu sekarang.").multilineTextAlignment(.center).font(.subheadline).frame(width: 250)
-                    Spacer()
-                    HStack{
-                        Text("Tambahkan disini").font(.system(size: 25)).bold().padding(.leading,40)
-                        Spacer()
-                        Button(action: {
-                            self.sheetType = 1
-                            self.isSheet = true
-                        }) {
-                            Text("Tambah").foregroundColor(Color.white).padding(.vertical,10).padding(.horizontal).background(Rectangle().foregroundColor(Color("Primary")).cornerRadius(10))
-                            
-                        }.padding(.trailing,40)
-                    }.frame(height:100).background(Color.white)
+//                    Spacer()
+//                    Image("EmptyRecord").resizable().frame(width: 150, height: 150).padding(.bottom)
+//                    Text("Masih Kosong").bold().font(.headline).padding(.bottom)
+//                    Text("Mulai lengkapi kondisi terkini kamu sekarang.").multilineTextAlignment(.center).font(.subheadline).frame(width: 250)
+//                    Spacer()
+                    
+                    CardProfileEmpty()
+                    
+//                    HStack{
+//                        Text("Tambahkan disini").font(.system(size: 25)).bold().padding(.leading,40)
+//                        Spacer()
+//                        Button(action: {
+//                            self.sheetType = 1
+//                            self.isSheet = true
+//                        }) {
+//                            Text("Tambah").foregroundColor(Color.white).padding(.vertical,10).padding(.horizontal).background(Rectangle().foregroundColor(Color("Primary")).cornerRadius(10))
+//
+//                        }.padding(.trailing,40)
+//                    }.frame(height:100).background(Color.white)
                 }else{
                     ScrollView{
                         VStack{
@@ -172,6 +184,31 @@ struct cancerTypeView:View{
             }.frame( height: 100)
             Spacer()
             }.background(Color.white)
+    }
+}
+
+struct CardProfileEmpty: View {
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                   Rectangle().foregroundColor(.clear)
+                    //.frame(height: geometry.frame(in: .global).height/2)
+                   VStack {
+                       Image("EmptyRecord").resizable().foregroundColor(Color("Primary")).frame(width: 168, height: 157).padding(.top)
+                       Text("Masih Kosong").foregroundColor(Color.init(#colorLiteral(red: 0.5215227604, green: 0.3181272149, blue: 0.8401996493, alpha: 1))).bold().padding(.top,20)
+                       Text("Mulai lengkapi kondisi terkini kamu sekarang").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
+                       Button(action: {
+
+                       }) {
+                           ZStack {
+                               Rectangle().foregroundColor(Color("Primary")).frame(width: 300,height: 50).cornerRadius(15)
+                               Text("Tambahkan Kondisi").foregroundColor(Color.white)
+                           } .padding(.top, 20)
+                       }
+                   }.padding()
+               }
+            
+        }
     }
 }
 
