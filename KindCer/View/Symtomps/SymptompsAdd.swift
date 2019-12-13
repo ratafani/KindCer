@@ -63,9 +63,41 @@ struct SymptompsAdd: View {
                                              "Sakit saat menelan":"nelan",
                                              "Lainnya":"lainnya"]
     
-    @State var listModel : [String:SymptompsType] = ["Alergi":SymptompsType.alergi,"Bengkak di area tangan/ kaki":SymptompsType.bengkak,"Diare":SymptompsType.diare,"Demam":SymptompsType.demam,"Gatal / iritasi":SymptompsType.gatal,"Lemas":SymptompsType.lemas,"Mati rasa / kesemutan":SymptompsType.matiRasa,"Mulut sakit":SymptompsType.mulut,"Muntah - muntah":SymptompsType.muntah,"Mual / enek":SymptompsType.mual,"Sembelit":SymptompsType.sembelit,"Sakit otot / persendian":SymptompsType.otot,"Sulit bernafas":SymptompsType.nafas,"Hilang nafsu makan":SymptompsType.makan,"Susah / sakit saat menelan":SymptompsType.telan,"Lainnya":SymptompsType.lainnya]
+    @State var listModel : [String:SymptompsType] =
+        ["Alergi":SymptompsType.alergi,
+         "Bengkak di area tangan/ kaki":SymptompsType.bengkak,
+         "Diare":SymptompsType.diare,
+         "Demam":SymptompsType.demam,
+         "Gatal / iritasi":SymptompsType.gatal,
+         "Lemas":SymptompsType.lemas,
+         "Mati rasa / kesemutan":SymptompsType.matiRasa,
+         "Mulut terasa sakit":SymptompsType.mulut,
+         "Muntah - muntah":SymptompsType.muntah,
+         "Mual / enek":SymptompsType.mual,
+         "Sembelit":SymptompsType.sembelit,
+         "Sakit otot / persendian":SymptompsType.otot,
+         "Sulit bernafas":SymptompsType.nafas,
+         "Hilang nafsu makan":SymptompsType.makan,
+         "Sakit saat menelan":SymptompsType.telan,
+         "Lainnya":SymptompsType.lainnya]
        
-    @State var listTitle : [String:String] = ["Alergi":"Alergi","Bengkak di area tangan/ kaki":"Bengkak","Diare":"Diare","Demam":"Demam","Gatal / iritasi":"Gatal / iritasi","Lemas":"Lemas","Mati rasa / kesemutan":"Mati Rasa","Mulut sakit":"Mulut","Muntah - muntah":"Muntah","Mual - mual":"Mual - mual","Sembelit":"Buang Air Besar","Sakit otot / persendian":"Otot / Persendian","Sulit bernafas":"Bernafas","Hilang nafsu makan":"Nafsu Makan","Sakit saat menelan":"Susah Menelan","Lainnya":"lainnya"]
+    @State var listTitle : [String:String] =
+        ["Alergi":"Alergi",
+         "Bengkak di area tangan/ kaki":"Bengkak",
+         "Diare":"Diare",
+         "Demam":"Demam",
+         "Gatal / iritasi":"Gatal / iritasi",
+         "Lemas":"Lemas",
+         "Mati rasa / kesemutan":"Mati Rasa",
+         "Mulut terasa sakit":"Mulut",
+         "Muntah - muntah":"Muntah",
+         "Mual - mual":"Mual - mual",
+         "Sembelit":"Buang Air Besar",
+         "Sakit otot / persendian":"Otot / Persendian",
+         "Sulit bernafas":"Bernafas",
+         "Hilang nafsu makan":"Nafsu Makan",
+         "Sakit saat menelan":"Susah Menelan",
+         "Lainnya":"lainnya"]
     @ObservedObject var recordModel : RecordModel
     
     @Binding var homeSheet : Bool
