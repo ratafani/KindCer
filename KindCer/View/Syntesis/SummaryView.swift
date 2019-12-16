@@ -86,8 +86,11 @@ struct SummaryView: View {
                     
                 }.background(Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1))).edgesIgnoringSafeArea(.all)
             }.onAppear{
-                self.mTypeKey = self.a.allType()
+                
                 self.mTypeKey.append("All")
+                for ar in self.a.allType(){
+                    self.mTypeKey.append(ar)
+                }
                 self.picked = self.mTypeKey.first ?? ""
                 self.getData()
                 

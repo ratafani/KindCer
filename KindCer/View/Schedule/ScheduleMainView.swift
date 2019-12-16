@@ -98,9 +98,9 @@ struct ScheduleMainView: View {
                 .foregroundColor(Color.init(#colorLiteral(red: 0.9468348622, green: 0.936796844, blue: 0.9499147534, alpha: 1))))
                 .edgesIgnoringSafeArea(.all)
                 .onAppear{
-                    self.jadwal.readData()
                     
-                    print(self.isRiwayatEmpty())
+                    self.jadwal.readData()
+                    print("sada")
                     print(self.jadwal.data)
             }
             .sheet(isPresented: self.$isSheet) {
