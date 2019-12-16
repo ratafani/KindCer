@@ -26,6 +26,7 @@ struct HomeView: View {
     @ObservedObject var profileModel : UserModel = UserModel()
     @State var isSheet : Bool = false
     @State var isAlarm : Bool = false
+    @State var alarmType = 0
     @State var homeSheet : HomeSheet = .Profile
     let hour = Calendar.current.component(.hour, from: Date())
     //    @State var a : RecordModel = RecordModel()
@@ -92,19 +93,6 @@ struct HomeView: View {
                         }
                     }.padding(.horizontal)
                 }
-                //            Button(action: {
-                //                       self.isSheet = true
-                //                       self.homeSheet = HomeSheet.Summary
-                //                   }) {
-                //                       ZStack {
-                //                           Rectangle().foregroundColor(Color("Primary")).frame( height: 50)
-                //                           HStack {
-                //                               Image("summaryIcon").resizable().foregroundColor(.white).frame(width: 30, height: 30)
-                //                               Text("Lihat Rangkuman Saya").foregroundColor(.white)
-                //                               Spacer()
-                //                           }.padding(.horizontal)
-                //                       }
-                //                   }
                 CalendarView(dateModel: self.dateModel,recordModel: self.recordModel)
                 HStack{
                     Text("Gejala (\(self.recordModel.mData.count))").padding(.horizontal)
@@ -115,6 +103,7 @@ struct HomeView: View {
                             self.homeSheet = HomeSheet.Record
                         }else{
                             self.isAlarm = true
+                            self.alarmType = 0
                         }
                     }) {
                         Text("Tambah").foregroundColor(Color("Primary"))
@@ -122,13 +111,14 @@ struct HomeView: View {
                 }.padding(.vertical,10)
                 ScrollView{
                     if self.recordModel.mData.isEmpty{
-                        RecordIsEmptView(isSheet: self.$isSheet,isAlarm: self.$isAlarm, homeSheet: self.$homeSheet,tanggal: self.dateModel.currentDate,dateModel: self.dateModel)
+                        RecordIsEmptView(isSheet: self.$isSheet,isAlarm: self.$isAlarm,alarmType: self.$alarmType, homeSheet: self.$homeSheet,tanggal: self.dateModel.currentDate,dateModel: self.dateModel)
                         //                        .disabled(dateModel.currentDate.timeIntervalSince1970>Date().timeIntervalSince1970)
                     }else{
                         VStack{
                             ForEach(self.recordModel.mData,id:\.id){ m in
                                 recordCard(record: m, recordModel: self.recordModel, isSheet: self.$isSheet, homeSheet: self.$homeSheet, theRecord: self.$record)
                             }
+                            
                         }
                     }
                 }
@@ -153,7 +143,11 @@ struct HomeView: View {
                         ScheduleMainView(userModel: self.profileModel, jadwal: JadwalModel())
                     }
             }.alert(isPresented: self.$isAlarm, content: {
-                Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
+                if self.alarmType == 0{
+                    return Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
+                }else{
+                    return Alert(title: Text("BAHAYA!"), message: Text("Kamu harus segera menghubungi dokter"), dismissButton: .default(Text("Oke")))
+                }
             }).onAppear{
                 
                 //            self.recordModel.readData(date: self.dateModel.currentDate)

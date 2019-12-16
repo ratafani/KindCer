@@ -66,13 +66,16 @@ class JadwalModel : NSObject, ObservableObject{
             let result = try context.fetch(fetchRequest)
             
             for r in result as! [NSManagedObject] {
-                let name = r.value(forKey: "name") as! String
+                guard let name = r.value(forKey: "name") else{
+                    return
+                }
+                
                 let tempat = r.value(forKey: "tempat") as! String
                 let dokter = r.value(forKey: "dokter") as! String
                 let tanggal = r.value(forKey: "tanggal") as! Date
                 let catatan = r.value(forKey: "catatan") as! String
                 
-                let newJadwal = JadwalType(id: r.objectID, name: name, tempat: tempat, tanggal: tanggal, dokter: dokter, catatan: catatan)
+                let newJadwal = JadwalType(id: r.objectID, name: name as! String, tempat: tempat, tanggal: tanggal, dokter: dokter, catatan: catatan)
                 data.append(newJadwal)
                 if tanggal.timeIntervalSince1970 >= Date().timeIntervalSince1970{
                     

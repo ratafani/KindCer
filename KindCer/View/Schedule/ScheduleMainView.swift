@@ -56,6 +56,7 @@ struct ScheduleMainView: View {
                     ScrollView(.horizontal){
                         HStack{
                             if self.jadwal.data.isEmpty{
+                                
                                 ProfileCardStatusEmpty()
                             }else{
                                 ForEach(self.jadwal.fData, id: \.id){ theData in

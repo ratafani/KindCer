@@ -134,7 +134,7 @@ struct SymptompsAdd: View {
                         nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
                     })
                 
-            }
+            }.navigationViewStyle(StackNavigationViewStyle())
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
     }
 }

@@ -59,7 +59,6 @@ struct addSymtompsDetail: View {
     }
     
     var body: some View{
-        
         VStack {
             if !(title == "Lainnya"){
                 formLargeSizePath(title1: "Kondisi", title2: title, status: $kondisi, icon: "termometer", width: 15, height: 28).frame(height: 89).onTapGesture {
@@ -93,6 +92,8 @@ struct addSymtompsDetail: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("\(title)").font(.system(size: 18))
         .navigationBarItems(leading: btnBack, trailing: btnDone)
+    
+        
         
     }
 }

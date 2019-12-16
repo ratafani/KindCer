@@ -100,17 +100,17 @@ struct ProfilePage: View {
                     
                 }.frame(height: 280)
                 
-//                HStack{
-//                    Text("Tambahkan Jenis Kanker").font(.headline).bold().padding(16)
-//                    Spacer()
-//                    Button(action: {
-//                        self.sheetType = 1
-//                        self.isSheet = true
-//                    }) {
-//                        Text("Tambah").foregroundColor(Color("Primary")).bold()
-//
-//                    }.padding(16)
-//                }
+                HStack{
+                    Text("Tambahkan Jenis Kanker").font(.headline).bold().padding(16)
+                    Spacer()
+                    Button(action: {
+                        self.sheetType = 1
+                        self.isSheet = true
+                    }) {
+                        Text("Tambah").foregroundColor(Color("Primary")).bold()
+
+                    }.padding(16)
+                }
                 if typeModel.mData.isEmpty{
 //                    Spacer()
 //                    Image("EmptyRecord").resizable().frame(width: 150, height: 150).padding(.bottom)
