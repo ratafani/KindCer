@@ -134,11 +134,11 @@ struct jadwalBar: View{
         ZStack{
             VStack {
                 HStack {
-                    Text("Pengobatan Berikutnya:").font(.system(size: 15))
+                    Text("Pengobatan Berikutnya:").font(.system(size: 15)).offset(x: -8)
                     //                            Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
-                    Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold()
+                    Text("\(jadwal.tanggal, formatter: dateFormatter)").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).bold().offset(x: -8)
                     Spacer().font(.system(size: 15))
-                    Text("\(countingDays()) hari lagi").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1)))
+                    Text("\(countingDays()) hari lagi").foregroundColor(.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1))).offset(x: -8)
                 }.padding(.horizontal,25).padding(.top,10).font(.system(size: 15))
                 VStack{
                     ZStack(alignment: .leading){

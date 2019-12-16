@@ -70,15 +70,18 @@ struct ProfilePage: View {
                                                            Image("edit").renderingMode(.original).offset(x:35,y:38).padding(40).shadow(color: Color("Primary"), radius: 2)
                                                        }
                                     }
-                                    Text(self.userModel.user_name == "" ? "Belum ada nama":self.userModel.user_name).font(.system(size: 24)).foregroundColor(.white).bold()
+                                    Text(self.userModel.user_name == "" ? "Belum ada nama":self.userModel.user_name).font(.system(size: 24)).foregroundColor(.white).bold().gesture(TapGesture().onEnded({
+                                        self.isSheet = true
+                                        self.sheetType = 0
+                                        print("tapped")
+                                    }))
                                 }
                                 HStack {
                                     VStack {
                                         Button(action: {
                                             self.presentationMode.wrappedValue.dismiss()
                                         }) {
-                                            Text("X").bold().foregroundColor(Color.white).padding(5)
-                                                .background(Circle().foregroundColor(Color.white).opacity(0.3))
+                                            Image(systemName: "xmark.circle.fill").resizable().buttonStyle(PlainButtonStyle()).foregroundColor(.white) .frame(width: geometry.frame(in: .global).height/30 ,height: geometry.frame(in: .global).height/30)
                                         }.padding(16)
                                         Spacer()
                                     }
