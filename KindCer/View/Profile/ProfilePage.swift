@@ -118,7 +118,25 @@ struct ProfilePage: View {
 //                    Text("Mulai lengkapi kondisi terkini kamu sekarang.").multilineTextAlignment(.center).font(.subheadline).frame(width: 250)
 //                    Spacer()
                     
-                    CardProfileEmpty()
+                    ZStack {
+                           Rectangle().foregroundColor(.clear)
+                            //.frame(height: geometry.frame(in: .global).height/2)
+                           VStack {
+                               Image("EmptyRecord").resizable().foregroundColor(Color("Primary")).frame(width: 168, height: 157).padding(.top)
+                               Text("Masih Kosong").foregroundColor(Color.init(#colorLiteral(red: 0.5215227604, green: 0.3181272149, blue: 0.8401996493, alpha: 1))).bold().padding(.top,20)
+                               Text("Mulai lengkapi kondisi terkini kamu sekarang").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
+                               Button(action: {
+                                    self.sheetType = 1
+                                    self.isSheet = true
+                               }) {
+                                   ZStack {
+                                       Rectangle().foregroundColor(Color("Primary")).frame(width: 300,height: 50).cornerRadius(15)
+                                       Text("Tambahkan Kondisi").foregroundColor(Color.white)
+                                   } .padding(.top, 20)
+                               }
+                           }.padding()
+                       }
+
                     
 //                    HStack{
 //                        Text("Tambahkan disini").font(.system(size: 25)).bold().padding(.leading,40)
@@ -186,6 +204,8 @@ struct cancerTypeView:View{
 }
 
 struct CardProfileEmpty: View {
+    @State var sheetType = 0
+    @State var isSheet : Bool = false
     var body: some View {
         GeometryReader { geometry in
             ZStack {
