@@ -48,10 +48,10 @@ struct SchedulePage: View {
                 Form{
                     Section(header: HStack {
                         Image("namaKemo").resizable().frame(width: 20, height: 20)
-                        Text("Jenis Kemoterapi").font(.headline)
+                        Text("Jenis Treatment").font(.headline)
                     }) {
                         
-                        TextField("Tulis jenis kemoterapi yang akan kamu jalankan", text: self.$namaKemo)
+                        TextField("Tulis jenis treatment yang akan kamu jalankan", text: self.$namaKemo)
                     }
                     Section(header:  HStack {
                     Image("diagnosis").resizable().frame(width: 20, height: 20)
