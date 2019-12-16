@@ -124,7 +124,7 @@ struct ProfilePage: View {
                            VStack {
                                Image("EmptyRecord").resizable().foregroundColor(Color("Primary")).frame(width: 168, height: 157).padding(.top)
                                Text("Masih Kosong").foregroundColor(Color.init(#colorLiteral(red: 0.5215227604, green: 0.3181272149, blue: 0.8401996493, alpha: 1))).bold().padding(.top,20)
-                               Text("Mulai lengkapi kondisi terkini kamu sekarang").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
+                            Text("Mulai lengkapi kondisi terkini kamu sekarang").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60).padding(.top,10)
                                Button(action: {
                                     self.sheetType = 1
                                     self.isSheet = true

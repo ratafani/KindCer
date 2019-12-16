@@ -77,7 +77,23 @@ struct ScheduleMainView: View {
                     ScrollView
                         {
                             if self.isRiwayatEmpty(){
-                                CardRiwayatEmpty().frame(height: geometry.frame(in: .global).height/2)
+                                ZStack {
+                                             Rectangle().foregroundColor(.clear)
+                                              //.frame(height: geometry.frame(in: .global).height/2)
+                                             VStack {
+                                                 Image("EmptyRecord").resizable().foregroundColor(Color("Primary")).frame(width: 148, height: 137).padding(.top)
+                                                 Text("Belum ada riwayat pengobatanmu").foregroundColor(Color.init(#colorLiteral(red: 0.5215227604, green: 0.3181272149, blue: 0.8401996493, alpha: 1))).bold().padding(.bottom,10)
+                                                 Text("Kami akan mencatat riwayat pengobatan yang telah kamu lakukan di sini.").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
+                                                 Button(action: {
+                                                    self.isSheet =  true
+                                                 }) {
+                                                     ZStack {
+                                                         Rectangle().foregroundColor(Color("Primary")).frame(width: 300,height: 50).cornerRadius(15)
+                                                         Text("Tambahkan Jadwal").foregroundColor(Color.white)
+                                                     }
+                                                 }
+                                             }.padding()
+                                         }
                             }else{
                                 VStack {
                                     ForEach(self.jadwal.pData, id: \.id) { jad in
