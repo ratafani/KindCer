@@ -40,11 +40,13 @@ struct SchedulePageEdit: View {
                         HStack {
                             Spacer()
                             Button("Simpan"){
+                                self.jadwal.updateItem(id: self.jItem.id, key: "name", value: self.namaKemo)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "tanggal", value: self.kemoSchedule)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "tempat", value: self.tempatPengobatan)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "catatan", value: self.catatan)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "dokter", value: self.dokter)
                                 
+                                self.jItem.name = self.namaKemo
                                 self.jItem.tanggal = self.kemoSchedule
                                 self.jItem.tempat = self.tempatPengobatan
                                 self.jItem.catatan = self.catatan
