@@ -110,6 +110,7 @@ struct ProfilePage: View {
                                 Text("Tambahkan Jenis Kanker").font(.headline).bold().padding(16)
                                 Spacer()
                                 Button(action: {
+
                                     self.sheetType = 1
                                     self.isSheet = true
                                 }) {
