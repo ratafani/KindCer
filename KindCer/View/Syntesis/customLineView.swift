@@ -34,18 +34,17 @@ public struct CustomLineView: View {
     
    public var body: some View {
         GeometryReader{ geometry in
-            VStack(alignment: .leading, spacing: 8) {
-                Text(self.title ?? " ").font(.headline).bold()
+            VStack(alignment: .leading, spacing: 4) {
                 Text((self.data.date.first ?? "") + " - " + (self.data.date.last ?? "") ).font(.subheadline)
                 ZStack{
                     GeometryReader{ reader in
                         Rectangle().foregroundColor(self.colorScheme == .dark ? Color.black : self.style.backgroundColor)
-                        Line(data: self.data, frame: .constant(CGRect(x: 0, y: 0, width: reader.frame(in: .local).width - 30, height: reader.frame(in: .local).height)), touchLocation: self.$indicatorLocation,showIndicator: self.$hideHorizontalLines ,showBackground: true).offset(x: 30, y: 0)
+                        Line(data: self.data, frame: .constant(CGRect(x: 0, y: 0, width: reader.frame(in: .local).width - 30, height: reader.frame(in: .local).height-20)), touchLocation: self.$indicatorLocation,showIndicator: self.$hideHorizontalLines ,showBackground: true).offset(x: 30, y: 0)
                             .onAppear(){
                                 self.showLegend.toggle()
                             }
                         if(self.showLegend){
-                            CustomLegend(data: self.data, frame: .constant(CGRect(x: 0, y: 0, width: reader.frame(in: .local).width + 30, height: reader.frame(in: .local).height)), hideHorizontalLines: self.$hideHorizontalLines)
+                            CustomLegend(data: self.data, frame: .constant(CGRect(x: 0, y: 0, width: reader.frame(in: .local).width + 30, height: reader.frame(in: .local).height-20)), hideHorizontalLines: self.$hideHorizontalLines)
                                 .transition(.opacity)
                                 .animation(Animation.easeOut(duration: 0.4).delay(0.4))
                         }

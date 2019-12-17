@@ -29,7 +29,7 @@ class RecordModel : NSObject,ObservableObject{
     let objectWillChange = PassthroughSubject<RecordModel,Never>()
     
     var mData = [RecordType]()
-    
+    var isDangerous = false
     func fetchData(){
         objectWillChange.send(self)
     }
@@ -72,6 +72,9 @@ class RecordModel : NSObject,ObservableObject{
                         StaticModel.id = a.objectID
                         let rec = RecordType(id: a.objectID, type: a.value(forKey: "type") as! String, kondisi: a.value(forKey: "kondisi")as! String, catatan_record: a.value(forKey: "catatan_record")as! String, obat: a.value(forKey: "obat")as! String, catatan_obat: a.value(forKey: "catatan_obat")as! String, tanggal: a.value(forKey: "tanggal")as! Date,penjelasan: p ?? "")
                         mData.append(rec)
+                        if rec.kondisi == "Bahaya"{
+                            self.isDangerous = true
+                        }
                     }
                     
                 }

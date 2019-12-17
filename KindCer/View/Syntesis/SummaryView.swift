@@ -42,8 +42,11 @@ struct SummaryView: View {
                     }.padding(.horizontal,25)
                 }
                 VStack{
-                    CustomLineView(data: self.data, date: self.date , title: self.picked, legend: "in last 23 days").frame(width: geometry.frame(in: .global).width - 50, height: geometry.frame(in: .global).height / 3)
-                    
+                    if(self.picked != "All"){
+                        CustomLineView(data: self.data, date: self.date , title: self.picked, legend: "in last 23 days")
+                            .frame(width: geometry.frame(in: .global).width - 50, height: geometry.frame(in: .global).height / 3)
+                            .animation(.default)
+                    }
                     ScrollView(.horizontal, showsIndicators: false) {
                         
                         HStack {
@@ -83,7 +86,11 @@ struct SummaryView: View {
                     
                 }.background(Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1))).edgesIgnoringSafeArea(.all)
             }.onAppear{
-                self.mTypeKey = self.a.allType()
+                
+                self.mTypeKey.append("All")
+                for ar in self.a.allType(){
+                    self.mTypeKey.append(ar)
+                }
                 self.picked = self.mTypeKey.first ?? ""
                 self.getData()
                 
@@ -102,6 +109,28 @@ struct SummaryView: View {
         var dat = [String]()
         var data = [String:[RecordType]]()
         for an in a.mData{
+            if self.picked == "All"{
+                switch an.kondisi {
+                case "Ringan":
+                    d.append(32)
+                case "Sedang":
+                    d.append(64)
+                case "Bahaya":
+                    d.append(96)
+                default:
+                    d.append(32)
+                }
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd MMM"
+                t.append("\(dateFormatter.string(from: an.tanggal))")
+                dateFormatter.dateFormat = "dd MMM YYYY"
+                dat.append("\(dateFormatter.string(from: an.tanggal))")
+                if data["\(dateFormatter.string(from: an.tanggal))"] == nil{
+                    data["\(dateFormatter.string(from: an.tanggal))"] = [an]
+                }else{
+                    data["\(dateFormatter.string(from: an.tanggal))"]?.append(an)
+                }
+            }else
             if an.type == self.picked{
                 switch an.kondisi {
                 case "Ringan":
@@ -151,7 +180,11 @@ struct rangkumanDetail:View {
                 Image(cariIcon()).frame(width: 30, height: 30).contrast(-10).saturation(-10).background(Circle().foregroundColor(choseColor())).padding(.horizontal)
                 VStack(alignment: .leading){
                     Spacer()
-                    Text(mType.kondisi).foregroundColor(choseColor()).bold().font(.headline).padding(.bottom,5)
+                    HStack{
+                        Text(mType.type + " -").bold().font(.headline).padding(.bottom,5)
+                        Text(mType.kondisi).foregroundColor(choseColor()).bold().font(.headline).padding(.bottom,5)
+                    }
+                    
                     
                     Text(mType.penjelasan).font(.subheadline)
                     Spacer()

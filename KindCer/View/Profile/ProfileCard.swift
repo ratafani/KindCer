@@ -98,7 +98,7 @@ struct ProfileCardStatus: View {
                     Rectangle().frame(height: 50).foregroundColor(.white).cornerRadius(10, antialiased: false)
                     HStack {
 
-                        Text(jadwal.name).font(.system(size: 20)).bold().padding(.horizontal).offset(y: 3)
+                        Text(jadwal.name).font(.system(size: 17)).foregroundColor(.black).bold().padding(.horizontal).offset(x: 18)
 
                         Spacer()
                     }

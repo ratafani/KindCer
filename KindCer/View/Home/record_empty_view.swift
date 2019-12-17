@@ -11,6 +11,7 @@ import SwiftUI
 struct RecordIsEmptView: View {
     @Binding var isSheet : Bool
     @Binding var isAlarm : Bool
+    @Binding var alarmType : Int
     @Binding var homeSheet : HomeSheet
     @State var tanggal : Date = Date()
     @ObservedObject var dateModel : DateModel
@@ -30,6 +31,7 @@ struct RecordIsEmptView: View {
                         self.homeSheet = HomeSheet.Record
                     }else{
                         self.isAlarm = true
+                        self.alarmType = 0
                     }
                 }) {
                     ZStack {
