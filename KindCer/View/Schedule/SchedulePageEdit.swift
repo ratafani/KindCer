@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SchedulePageEdit: View {
     
+    @State var namaKemo : String = ""
     @State var tempatPengobatan : String = ""
     @State var dokter : String = ""
     @State var kemoSchedule : Date = Date()
@@ -39,11 +40,13 @@ struct SchedulePageEdit: View {
                         HStack {
                             Spacer()
                             Button("Simpan"){
+                                self.jadwal.updateItem(id: self.jItem.id, key: "name", value: self.namaKemo)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "tanggal", value: self.kemoSchedule)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "tempat", value: self.tempatPengobatan)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "catatan", value: self.catatan)
                                 self.jadwal.updateItem(id: self.jItem.id, key: "dokter", value: self.dokter)
                                 
+                                self.jItem.name = self.namaKemo
                                 self.jItem.tanggal = self.kemoSchedule
                                 self.jItem.tempat = self.tempatPengobatan
                                 self.jItem.catatan = self.catatan
@@ -56,6 +59,15 @@ struct SchedulePageEdit: View {
                 }
             }
             Form{
+                Section(header: HStack {
+                    Image("namaKemo").resizable().frame(width: 20, height: 20)
+                    Text("Jenis Treatment").font(.headline)
+                }) {
+                    
+                    TextField("Tulis jenis treatment yang akan kamu jalankan", text: self.$namaKemo).onAppear{
+                        self.namaKemo = self.jItem.name
+                    }
+                }
                 Section(header:  HStack {
                 Image("diagnosis").resizable().frame(width: 20, height: 20)
                     Text("Tanggal Kemoterapi").font(.headline)
@@ -93,7 +105,7 @@ struct SchedulePageEdit: View {
                     Image("condition").resizable().frame(width: 20, height: 20)
                     Text("Catatan").font(.headline)
                 }) {
-                    TextField("Tulis catatan kamu", text: self.$catatan).onTapGesture {
+                    TextField("Tulis catatan kamu", text: self.$catatan).onAppear{
                         self.catatan = self.jItem.catatan
                     }
                 }
