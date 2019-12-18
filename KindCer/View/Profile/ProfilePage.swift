@@ -33,12 +33,13 @@ struct ProfilePage: View {
                             ZStack{
                                 if(self.userModel.photo.isEmpty){
                                     Rectangle().foregroundColor(Color("Primary"))
+                                    .frame(height:geometry.frame(in: .global).height/3)
                                     
                                 }else{
                                     
                                     Image(uiImage: UIImage(data: self.userModel.photo) ?? UIImage())
                                         .resizable()
-                                        .frame(height:280)
+                                        .frame(height:geometry.frame(in: .global).height/3)
                                         .scaledToFit()
                                         .blur(radius: 5)
                                         .overlay(Rectangle().foregroundColor(.black).opacity(0.3))
@@ -109,6 +110,7 @@ struct ProfilePage: View {
                                 Text("Tambahkan Jenis Kanker").font(.headline).bold().padding(16)
                                 Spacer()
                                 Button(action: {
+
                                     self.sheetType = 1
                                     self.isSheet = true
                                 }) {
@@ -130,6 +132,7 @@ struct ProfilePage: View {
                                            Image("EmptyRecord").resizable().foregroundColor(Color("Primary")).frame(width: 168, height: 157).padding(.top)
                                            Text("Masih Kosong").foregroundColor(Color.init(#colorLiteral(red: 0.5215227604, green: 0.3181272149, blue: 0.8401996493, alpha: 1))).bold().padding(.top,20)
                                            Text("Mulai lengkapi kondisi terkini kamu sekarang").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
+                                            .frame(width: geometry.frame(in:.global).width / 1.3, height: geometry.frame(in:.global).height/12)
                                            Button(action: {
                                                 self.sheetType = 1
                                                 self.isSheet = true
@@ -137,7 +140,7 @@ struct ProfilePage: View {
                                                ZStack {
                                                    Rectangle().foregroundColor(Color("Primary")).frame(width: 300,height: 50).cornerRadius(15)
                                                    Text("Tambahkan Kondisi").foregroundColor(Color.white)
-                                               } .padding(.top, 20)
+                                               }
                                            }
                                        }.padding()
                                    }

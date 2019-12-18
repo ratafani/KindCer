@@ -100,8 +100,7 @@ struct jadwalBarDetail: View{
     
     func countingDays()->Int{
         let calendar = Calendar.current
-        
-        let components = calendar.dateComponents([.day], from: Date(), to: self.jadwal.tanggal)
+        let components = calendar.dateComponents ([.day], from: Date(), to: self.jadwal.tanggal)
         return components.day ?? 0
     }
     func calBar()->CGFloat{
