@@ -67,9 +67,10 @@ struct HomeView: View {
                                         Image("summary")
                                             .resizable()
                                             .frame(width: geometry.frame(in: .global).height/40 ,height: geometry.frame(in: .global).height/40)
-                                        Text("Summary")
+                                        Text("Rangkuman")
                                             .fontWeight(.semibold)
                                             .font(.body) .foregroundColor(.black)
+                                        .frame(width: geometry.frame(in: .global).height/9)
                                     }
                             }
                         }
