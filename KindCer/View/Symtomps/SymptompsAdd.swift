@@ -30,7 +30,7 @@ struct SymptompsAdd: View {
     @State var lainnya = SymptompsList(title: "Lainnya", icon: "lainnya", width: 23, height: 23)
     
     @State var listSymptomps : [String] = ["Alergi",
-                                           "Bengkak di area tangan/ kaki",
+                                           "Bengkak di area tangan / kaki",
                                            "Demam",
                                            "Diare",
                                            "Gatal / iritasi",
@@ -47,7 +47,7 @@ struct SymptompsAdd: View {
                                            "Lainnya"]
     
     @State var listIcon : [String:String] = ["Alergi":"alergi",
-                                             "Bengkak di area tangan/ kaki":"bengkak",
+                                             "Bengkak di area tangan / kaki":"bengkak",
                                              "Demam":"demam",
                                              "Diare":"diare",
                                              "Gatal / iritasi":"gatal",
@@ -65,7 +65,7 @@ struct SymptompsAdd: View {
     
     @State var listModel : [String:SymptompsType] =
         ["Alergi":SymptompsType.alergi,
-         "Bengkak di area tangan/ kaki":SymptompsType.bengkak,
+         "Bengkak di area tangan / kaki":SymptompsType.bengkak,
          "Diare":SymptompsType.diare,
          "Demam":SymptompsType.demam,
          "Gatal / iritasi":SymptompsType.gatal,
@@ -73,7 +73,7 @@ struct SymptompsAdd: View {
          "Mati rasa / kesemutan":SymptompsType.matiRasa,
          "Mulut terasa sakit":SymptompsType.mulut,
          "Muntah - muntah":SymptompsType.muntah,
-         "Mual / enek":SymptompsType.mual,
+         "Mual - mual":SymptompsType.mual,
          "Sembelit":SymptompsType.sembelit,
          "Sakit otot / persendian":SymptompsType.otot,
          "Sulit bernafas":SymptompsType.nafas,
@@ -83,7 +83,7 @@ struct SymptompsAdd: View {
        
     @State var listTitle : [String:String] =
         ["Alergi":"Alergi",
-         "Bengkak di area tangan/ kaki":"Bengkak",
+         "Bengkak di area tangan / kaki":"Bengkak",
          "Diare":"Diare",
          "Demam":"Demam",
          "Gatal / iritasi":"Gatal / iritasi",
@@ -97,7 +97,7 @@ struct SymptompsAdd: View {
          "Sulit bernafas":"Bernafas",
          "Hilang nafsu makan":"Nafsu Makan",
          "Sakit saat menelan":"Susah Menelan",
-         "Lainnya":"lainnya"]
+         "Lainnya":"Lainnya"]
     @ObservedObject var recordModel : RecordModel
     
     @Binding var homeSheet : Bool

@@ -149,7 +149,17 @@ class RecordModel : NSObject,ObservableObject{
             
         }
     }
-    
+    func deleteItem(id:NSManagedObjectID, tgl: Date){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let context = app.persistentContainer.viewContext
+        do{
+            let obj =  try context.existingObject(with: id)
+            context.delete(obj)
+            readData(date: tgl)
+        }catch{
+            
+        }
+    }
     func recordAtIndex(id: NSManagedObjectID)->RecordType{
         var a = RecordType(id: StaticModel.id, type: "String", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(), penjelasan: "")
         for r in mData{
