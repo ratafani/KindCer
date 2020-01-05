@@ -76,7 +76,7 @@ struct NewLoginView : View {
                  Image("onboard3text") .resizable() .aspectRatio(contentMode: .fit)
                     .frame(width: geometry.frame(in: .global).width/1.8, height: geometry.frame(in: .global).height/32)
                    
-                   Text("KindCer membantu kamu menghadapi\n efek samping kemoterapi!") .font(.system(size: 18)) .foregroundColor(.gray) .multilineTextAlignment(.center)
+                   Text("Relia membantu kamu menghadapi\n efek samping kemoterapi!") .font(.system(size: 18)) .foregroundColor(.gray) .multilineTextAlignment(.center)
                      .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/9)
                    
                  Image("onboard3") .resizable() .aspectRatio(contentMode: .fit) .frame(width: geometry.frame(in: .global).width/1.2, height: geometry.frame(in: .global).height/2.0)

@@ -72,14 +72,12 @@ class JadwalModel : NSObject, ObservableObject{
                 
                 let tempat = r.value(forKey: "tempat") as! String
                 let dokter = r.value(forKey: "dokter") as! String
-                let tanggal = r.value(forKey: "tanggal") as! Date
+                var tanggal = r.value(forKey: "tanggal") as! Date
                 let catatan = r.value(forKey: "catatan") as! String
-                
+                let calendar = Calendar.current
+                tanggal = calendar.startOfDay(for: tanggal)
                 let newJadwal = JadwalType(id: r.objectID, name: name as! String, tempat: tempat, tanggal: tanggal, dokter: dokter, catatan: catatan)
                 data.append(newJadwal)
-                if tanggal.timeIntervalSince1970 >= Date().timeIntervalSince1970{
-                    
-                }
             }
             self.divideData()
             fetchData()
@@ -90,8 +88,12 @@ class JadwalModel : NSObject, ObservableObject{
     func divideData(){
         pData = []
         fData = []
+        let calendar = Calendar.current
         for a in self.data{
-            if a.tanggal.timeIntervalSince1970 <= Date().timeIntervalSince1970{
+            let date1 = calendar.startOfDay(for: a.tanggal)
+            let date2 = calendar.startOfDay(for: Date())
+            if date1.timeIntervalSince1970 < date2.timeIntervalSince1970{
+                
                 self.pData.append(a)
             }else{
                 self.fData.append(a)

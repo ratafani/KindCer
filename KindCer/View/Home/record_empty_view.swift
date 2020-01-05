@@ -36,7 +36,7 @@ struct RecordIsEmptView: View {
                 }) {
                     ZStack {
                         Rectangle().foregroundColor(Color("Primary")).frame(width: 300,height: 50).cornerRadius(15)
-                        Text("Tambahkan Sekarang").foregroundColor(Color.white)
+                        Text("Tambahkan Gejala").foregroundColor(Color.white)
                     }
                 }
             }.padding()

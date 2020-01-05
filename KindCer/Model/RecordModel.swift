@@ -63,8 +63,10 @@ class RecordModel : NSObject,ObservableObject{
             if res.count>0{
                 
                 for a in res as! [NSManagedObject]{
-                    let ad = a.value(forKey: "tanggal")as! Date
+                    var ad = a.value(forKey: "tanggal")as! Date
                     //                    print("the date",(ad.timeIntervalSince1970 < date.timeIntervalSince1970), ad.timeIntervalSince1970,date.timeIntervalSince1970)
+                    let calendar = Calendar.current
+                    ad = calendar.startOfDay(for: ad)
                     
                     if ad.timeIntervalSince1970 <= date.timeIntervalSince1970 && ad.timeIntervalSince1970 > aDate.timeIntervalSince1970{
                         let p = a.value(forKey: "penjelasan") as? String
@@ -149,7 +151,17 @@ class RecordModel : NSObject,ObservableObject{
             
         }
     }
-    
+    func deleteItem(id:NSManagedObjectID, tgl: Date){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let context = app.persistentContainer.viewContext
+        do{
+            let obj =  try context.existingObject(with: id)
+            context.delete(obj)
+            readData(date: tgl)
+        }catch{
+            
+        }
+    }
     func recordAtIndex(id: NSManagedObjectID)->RecordType{
         var a = RecordType(id: StaticModel.id, type: "String", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(), penjelasan: "")
         for r in mData{
@@ -175,7 +187,7 @@ class RecordModel : NSObject,ObservableObject{
         
         for a in mData{
             if a.type == type{
-            d.append(a.tanggal)
+                d.append(a.tanggal)
             }
         }
         

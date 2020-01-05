@@ -67,9 +67,10 @@ struct HomeView: View {
                                         Image("summary")
                                             .resizable()
                                             .frame(width: geometry.frame(in: .global).height/40 ,height: geometry.frame(in: .global).height/40)
-                                        Text("Summary")
+                                        Text("Rangkuman")
                                             .fontWeight(.semibold)
                                             .font(.body) .foregroundColor(.black)
+                                            .frame(width: geometry.frame(in: .global).width/3.5)
                                     }
                             }
                         }
@@ -140,7 +141,8 @@ struct HomeView: View {
                     }else if self.homeSheet == HomeSheet.Record{
                         SymptompsAdd( recordModel: self.recordModel,homeSheet : self.$isSheet,now: self.dateModel.currentDate)
                     }else{
-                        ScheduleMainView(userModel: self.profileModel, jadwal: JadwalModel())
+//                        ScheduleMainView(userModel: self.profileModel, jadwal: JadwalModel())
+                        RiwayatPage()
                     }
             }.alert(isPresented: self.$isAlarm, content: {
                 if self.alarmType == 0{
@@ -148,10 +150,7 @@ struct HomeView: View {
                 }else{
                     return Alert(title: Text("BAHAYA!"), message: Text("Kamu harus segera menghubungi dokter"), dismissButton: .default(Text("Oke")))
                 }
-            }).onAppear{
-                
-                //            self.recordModel.readData(date: self.dateModel.currentDate)
-            }
+            })
             
         }
     }

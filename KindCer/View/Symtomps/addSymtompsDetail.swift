@@ -55,7 +55,7 @@ struct addSymtompsDetail: View {
             HStack {
                 Text("Simpan").foregroundColor(.white).font(.body)
             }
-        }.disabled(kondisi.isEmpty).opacity(kondisi.isEmpty ? 0.4:1)
+        }.disabled(kondisi.isEmpty && title != "Lainnya").opacity(kondisi.isEmpty && title != "Lainnya" ? 0.4:1)
     }
     
     var body: some View{

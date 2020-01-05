@@ -112,8 +112,8 @@ struct SchedulePageEdit: View {
                 
                 
                 Button(action: {
-                    self.dismiss()
                     self.jadwal.deleteItem(id: self.jItem.id)
+                    self.dismiss()
                 }) {
                     Text("Hapus").foregroundColor(.red)
                 }
@@ -128,9 +128,7 @@ struct SchedulePageEdit: View {
     }
     
     func dismiss(){
-        isSheet = false
-        
-        print(isSheet)
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

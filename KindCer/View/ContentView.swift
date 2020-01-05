@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @Environment(\.managedObjectContext) var moc 
+//    @Environment(\.managedObjectContext) var moc 
 //    @FetchRequest(fetchRequest: User.fetchRequest()) var mUser : FetchedResults<User>
     var body: some View {
         
