@@ -63,8 +63,10 @@ class RecordModel : NSObject,ObservableObject{
             if res.count>0{
                 
                 for a in res as! [NSManagedObject]{
-                    let ad = a.value(forKey: "tanggal")as! Date
+                    var ad = a.value(forKey: "tanggal")as! Date
                     //                    print("the date",(ad.timeIntervalSince1970 < date.timeIntervalSince1970), ad.timeIntervalSince1970,date.timeIntervalSince1970)
+                    let calendar = Calendar.current
+                    ad = calendar.startOfDay(for: ad)
                     
                     if ad.timeIntervalSince1970 <= date.timeIntervalSince1970 && ad.timeIntervalSince1970 > aDate.timeIntervalSince1970{
                         let p = a.value(forKey: "penjelasan") as? String
@@ -185,7 +187,7 @@ class RecordModel : NSObject,ObservableObject{
         
         for a in mData{
             if a.type == type{
-            d.append(a.tanggal)
+                d.append(a.tanggal)
             }
         }
         

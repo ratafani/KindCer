@@ -29,7 +29,7 @@ struct PageView<Page:View>: View {
                 if self.currentPage == 2
                 {
                     
-                    Text("Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan KindCer.") .font(.system(size: 11)) .foregroundColor(.gray) .multilineTextAlignment(.center) .frame(width: geometry.frame(in: .global).width/1.2, height: geometry.frame(in: .global).height/12.0)
+                    Text("Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan Relia.") .font(.system(size: 11)) .foregroundColor(.gray) .multilineTextAlignment(.center) .frame(width: geometry.frame(in: .global).width/1.2, height: geometry.frame(in: .global).height/12.0)
                     
                     
                     Button (action: {

@@ -44,7 +44,7 @@ struct SymptompsAdd: View {
                                            "Sembelit",
                                            "Sulit bernafas",
                                            "Sakit saat menelan",
-                                           "Lainnya"]
+                                           ]
     
     @State var listIcon : [String:String] = ["Alergi":"alergi",
                                              "Bengkak di area tangan / kaki":"bengkak",
@@ -61,7 +61,7 @@ struct SymptompsAdd: View {
                                              "Sembelit":"sembelit",
                                              "Sulit bernafas":"nafas",
                                              "Sakit saat menelan":"nelan",
-                                             "Lainnya":"lainnya"]
+                                             ]
     
     @State var listModel : [String:SymptompsType] =
         ["Alergi":SymptompsType.alergi,
@@ -79,7 +79,7 @@ struct SymptompsAdd: View {
          "Sulit bernafas":SymptompsType.nafas,
          "Hilang nafsu makan":SymptompsType.makan,
          "Sakit saat menelan":SymptompsType.telan,
-         "Lainnya":SymptompsType.lainnya]
+         ]
        
     @State var listTitle : [String:String] =
         ["Alergi":"Alergi",
@@ -97,7 +97,7 @@ struct SymptompsAdd: View {
          "Sulit bernafas":"Bernafas",
          "Hilang nafsu makan":"Nafsu Makan",
          "Sakit saat menelan":"Susah Menelan",
-         "Lainnya":"Lainnya"]
+         ]
     @ObservedObject var recordModel : RecordModel
     
     @Binding var homeSheet : Bool

@@ -48,7 +48,7 @@ class DateModel : NSObject,ObservableObject{
             .weekday
         ]
         let dateTimeComponents = userCalendar.dateComponents(requestedComponents, from: newDate)
-//        print(dateTimeComponents)
+        //        print(dateTimeComponents)
         let a = Calendar.current.monthSymbols
         let m = dateTimeComponents.month ?? 0
         self.currentDate = newDate

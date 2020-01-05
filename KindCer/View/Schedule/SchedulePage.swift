@@ -19,6 +19,7 @@ struct SchedulePage: View {
     
     @ObservedObject var jadwal : JadwalModel
     @ObservedObject private var keyboard = KeyboardResponder()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var dateClosedRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -39,7 +40,7 @@ struct SchedulePage: View {
                                 Spacer()
                                 Button("Simpan"){
                                     self.addToCD()
-                                    self.isSheet =  false
+                                    self.presentationMode.wrappedValue.dismiss()
                                 }.foregroundColor(.white).padding(.init(top: -21, leading: 0, bottom: 0, trailing: 15))
                             }
                         }
@@ -54,7 +55,7 @@ struct SchedulePage: View {
                         TextField("Tulis jenis treatment yang akan kamu jalankan", text: self.$namaKemo)
                     }
                     Section(header:  HStack {
-                    Image("diagnosis").resizable().frame(width: 20, height: 20)
+                        Image("diagnosis").resizable().frame(width: 20, height: 20)
                         Text("Tanggal Kemoterapi").font(.headline)
                     }) {
                         DatePicker(
@@ -86,7 +87,7 @@ struct SchedulePage: View {
                     }) {
                         TextField("Tulis catatan kamu", text: self.$catatan)
                     }
-
+                    
                 }.edgesIgnoringSafeArea(.all)
             }.padding(.bottom, self.keyboard.currentHeight).onAppear(){
                 self.endEditing(true)
@@ -95,7 +96,7 @@ struct SchedulePage: View {
     }
     func addToCD(){
         let newJadwal = JadwalType(id: StaticModel.id, name: namaKemo, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
-//            JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
+        //            JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
         jadwal.saveData(jadwal: newJadwal)
     }
     
