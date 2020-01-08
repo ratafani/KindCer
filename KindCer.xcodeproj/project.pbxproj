@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B33342D23C577E700A54B47 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B33342C23C577E700A54B47 /* Logo.png */; };
 		8B48E4B82383B4E000014BBB /* headerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B48E4B72383B4E000014BBB /* headerModal.swift */; };
 		8B63EA07239A269000605140 /* ScheduleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63EA06239A269000605140 /* ScheduleDetail.swift */; };
 		8B7DCB942384EC8D00C733C5 /* SchedulePageEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */; };
@@ -20,7 +21,6 @@
 		F606DA9C23C060B6000988ED /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606DA9B23C060B6000988ED /* TimePicker.swift */; };
 		F606DA9E23C07A1E000988ED /* ObatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606DA9D23C07A1E000988ED /* ObatCard.swift */; };
 		F606DAA023C2B98F000988ED /* ObatDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606DA9F23C2B98F000988ED /* ObatDetail.swift */; };
-		F60CD43F23AB79720064CCE7 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F60CD43E23AB79710064CCE7 /* Logo.png */; };
 		F626A0CD2399FAA50045EC6D /* CancerTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */; };
 		F626A0CF239A03140045EC6D /* ProfileAddCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0CE239A03140045EC6D /* ProfileAddCType.swift */; };
 		F626A0D2239B63330045EC6D /* Webview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0D1239B63330045EC6D /* Webview.swift */; };
@@ -114,6 +114,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B33342C23C577E700A54B47 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = "../../../../Dropbox (DeveloperAcademy-ID)/Apple/Final Challange/Asset/Logo.png"; sourceTree = "<group>"; };
 		8B48E4B72383B4E000014BBB /* headerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerModal.swift; sourceTree = "<group>"; };
 		8B63EA06239A269000605140 /* ScheduleDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetail.swift; sourceTree = "<group>"; };
 		8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePageEdit.swift; sourceTree = "<group>"; };
@@ -127,7 +128,6 @@
 		F606DA9B23C060B6000988ED /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		F606DA9D23C07A1E000988ED /* ObatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatCard.swift; sourceTree = "<group>"; };
 		F606DA9F23C2B98F000988ED /* ObatDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatDetail.swift; sourceTree = "<group>"; };
-		F60CD43E23AB79710064CCE7 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancerTypeModel.swift; sourceTree = "<group>"; };
 		F626A0CE239A03140045EC6D /* ProfileAddCType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddCType.swift; sourceTree = "<group>"; };
 		F626A0D1239B63330045EC6D /* Webview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webview.swift; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 		F677AFD82354157A000B39E4 /* KindCer */ = {
 			isa = PBXGroup;
 			children = (
-				F60CD43E23AB79710064CCE7 /* Logo.png */,
+				8B33342C23C577E700A54B47 /* Logo.png */,
 				F626A105239B63D60045EC6D /* My CV.pdf */,
 				F626A100239B63AA0045EC6D /* invoice.html */,
 				F626A101239B63AA0045EC6D /* last_item.html */,
@@ -597,8 +597,8 @@
 				F626A106239B63D60045EC6D /* My CV.pdf in Resources */,
 				F677AFE62354157D000B39E4 /* Preview Assets.xcassets in Resources */,
 				F677AFE32354157D000B39E4 /* Assets.xcassets in Resources */,
-				F60CD43F23AB79720064CCE7 /* Logo.png in Resources */,
 				F626A104239B63AA0045EC6D /* last_item.html in Resources */,
+				8B33342D23C577E700A54B47 /* Logo.png in Resources */,
 				F626A103239B63AA0045EC6D /* invoice.html in Resources */,
 				F626A102239B63AA0045EC6D /* single_item.html in Resources */,
 			);
@@ -869,7 +869,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = 52RX5R54N7;
+				DEVELOPMENT_TEAM = MW3338A45T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -892,7 +892,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
-				DEVELOPMENT_TEAM = 52RX5R54N7;
+				DEVELOPMENT_TEAM = MW3338A45T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KindCer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
