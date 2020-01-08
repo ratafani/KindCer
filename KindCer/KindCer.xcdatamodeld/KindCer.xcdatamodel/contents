@@ -22,6 +22,7 @@
     <entity name="ObatRiwayat" representedClassName="ObatRiwayat" syncable="YES" codeGenerationType="class">
         <attribute name="jam" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Record" representedClassName="Record" syncable="YES" codeGenerationType="class">
         <attribute name="catatan_obat" optional="YES" attributeType="String"/>
@@ -45,7 +46,7 @@
         <element name="CancerType" positionX="-63" positionY="144" width="128" height="73"/>
         <element name="Jadwal" positionX="-63" positionY="144" width="128" height="118"/>
         <element name="Obat" positionX="-63" positionY="144" width="128" height="133"/>
-        <element name="ObatRiwayat" positionX="-63" positionY="144" width="128" height="73"/>
+        <element name="ObatRiwayat" positionX="-63" positionY="144" width="128" height="88"/>
         <element name="Record" positionX="-81.30078125" positionY="176.48828125" width="128" height="148"/>
         <element name="User" positionX="-45" positionY="0" width="128" height="148"/>
     </elements>

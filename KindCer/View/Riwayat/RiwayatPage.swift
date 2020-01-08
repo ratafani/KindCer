@@ -44,7 +44,7 @@ struct RiwayatPage: View {
                     }
                 }
                 Picker("", selection: self.$pickerSelection) {
-                    Text("Treatment").tag("1")
+                    Text("Perawatan").tag("1")
                   Text("Obat Harian").tag("2")
                 }
                 .padding(.horizontal,10)

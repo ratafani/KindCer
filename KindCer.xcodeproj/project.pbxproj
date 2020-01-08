@@ -19,6 +19,7 @@
 		F60508D9239DF71F0013156F /* CardRiwayat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60508D2239DF71F0013156F /* CardRiwayat.swift */; };
 		F606DA9C23C060B6000988ED /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606DA9B23C060B6000988ED /* TimePicker.swift */; };
 		F606DA9E23C07A1E000988ED /* ObatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606DA9D23C07A1E000988ED /* ObatCard.swift */; };
+		F606DAA023C2B98F000988ED /* ObatDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606DA9F23C2B98F000988ED /* ObatDetail.swift */; };
 		F60CD43F23AB79720064CCE7 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F60CD43E23AB79710064CCE7 /* Logo.png */; };
 		F626A0CD2399FAA50045EC6D /* CancerTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */; };
 		F626A0CF239A03140045EC6D /* ProfileAddCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626A0CE239A03140045EC6D /* ProfileAddCType.swift */; };
@@ -125,6 +126,7 @@
 		F60508D2239DF71F0013156F /* CardRiwayat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRiwayat.swift; sourceTree = "<group>"; };
 		F606DA9B23C060B6000988ED /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		F606DA9D23C07A1E000988ED /* ObatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatCard.swift; sourceTree = "<group>"; };
+		F606DA9F23C2B98F000988ED /* ObatDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatDetail.swift; sourceTree = "<group>"; };
 		F60CD43E23AB79710064CCE7 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancerTypeModel.swift; sourceTree = "<group>"; };
 		F626A0CE239A03140045EC6D /* ProfileAddCType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddCType.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				F6F1132C23BD7336000A1958 /* ObatIsEmpty.swift */,
 				F6F1132E23BD743F000A1958 /* ObatAddNew.swift */,
 				F606DA9D23C07A1E000988ED /* ObatCard.swift */,
+				F606DA9F23C2B98F000988ED /* ObatDetail.swift */,
 			);
 			path = Obat;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				F66D1C7D237A5B6A00E864C5 /* ProfilePage.swift in Sources */,
 				F62C5CA423B44A7D00468D45 /* RiwayatPage.swift in Sources */,
 				F62C5CAC23B473FB00468D45 /* TreatmentCard.swift in Sources */,
+				F606DAA023C2B98F000988ED /* ObatDetail.swift in Sources */,
 				F6F1132F23BD743F000A1958 /* ObatAddNew.swift in Sources */,
 				F6D97926235FDE3B00DC6673 /* record_empty_view.swift in Sources */,
 			);
