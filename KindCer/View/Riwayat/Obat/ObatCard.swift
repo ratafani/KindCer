@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ObatCard: View {
     
-    @State var obat : ObatType = ObatType(id: StaticModel.id, name: "obat pusing", jadwal: Set(), jenis: "", aturan: "sesudah makan")
-    
+    @State var obat : ObatType = ObatType(id: StaticModel.id, name: "obat pusing", jadwal: [], jenis: "", aturan: "sesudah makan")
+    @ObservedObject var mObat : ObatModel
     var body: some View {
         ZStack{
             Rectangle().frame( height: 100).foregroundColor(.white).cornerRadius(10)
@@ -21,8 +21,7 @@ struct ObatCard: View {
                     ProgressCircle(value: getHowMany(),
                                    maxValue: Double(obat.jadwal.count),
                                    style: .line,
-                                   backgroundColor: Color("Primary"),
-                                   foregroundColor: .white,
+                                   foregroundColor: Color("Primary"),
                                    lineWidth: 5)
                     Text(getValue()).foregroundColor(Color("Primary")).bold()
                 }.frame(width: 60, height: 60)
@@ -37,7 +36,7 @@ struct ObatCard: View {
                     if isSelesai(){
                         Text("Selesai").bold().foregroundColor(Color("Primary")).font(.system(size: 22))
                     }else{
-                        Text("Jam Berikutnya").foregroundColor(.gray).font(.system(size: 15))
+                        Text("Jam Berikutnya").foregroundColor(.gray).font(.system(size: 12))
                         Text(getNextTime()).bold().foregroundColor(Color("Primary")).font(.system(size: 22))
                     }
                 }.padding(.horizontal)
@@ -47,22 +46,64 @@ struct ObatCard: View {
     }
     
     func isSelesai()->Bool{
-        return false
+        let arr = Array(obat.jadwal)
+        let date = Date()
+        let calendar = Calendar.current
+
+        let cHour = calendar.component(.hour, from: date)
+        let cMinute = calendar.component(.minute, from: date)
+
+        let mTime = cHour*100 + cMinute
+        for a in arr{
+            let string = a
+            if let number = Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
+                if mTime < number{
+                    return false
+                }
+            }
+        }
+        return true
     }
     func getNextTime()->String{
-        return "15:00"
+        let arr = Array(obat.jadwal)
+
+        var time = 0
+        
+        let date = Date()
+        let calendar = Calendar.current
+
+        let cHour = calendar.component(.hour, from: date)
+        let cMinute = calendar.component(.minute, from: date)
+
+        let mTime = cHour*100 + cMinute
+        var aTime = [Int]()
+        for a in arr{
+            if let number = Int(a.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
+                if (time < number) && (number >= mTime){
+                    aTime.append(number)
+                }
+            }
+        }
+        aTime = aTime.sorted()
+        time = aTime.first ?? 0
+        let h = time/100
+        let m = time%100
+        return "\(h):\(m==0 ? "00" : String(m))"
     }
+    
     func getValue()->String{
         
         return "\(Int(getHowMany()))/\(obat.jadwal.count)"
     }
     func getHowMany()->Double{
-        return 0.0
+        let data = mObat.getData(obat: obat.name)
+        
+        return Double(data.count)
     }
 }
 
 struct ObatCard_Previews: PreviewProvider {
     static var previews: some View {
-        ObatCard()
+        ObatCard(mObat: ObatModel())
     }
 }

@@ -13,7 +13,7 @@ import Combine
 struct ObatType {
     var id : NSManagedObjectID
     var name : String
-    var jadwal : Set<String>
+    var jadwal : [String]
     var jenis : String
     var aturan : String
     
@@ -22,6 +22,7 @@ struct ObatHistory{
     var id : NSManagedObjectID
     var name : String
     var time : Date
+    var status : String
 }
 
 class ObatModel : NSObject, ObservableObject{
@@ -65,12 +66,27 @@ class ObatModel : NSObject, ObservableObject{
                 let jadwalData = jadwal as! String
                 let setStringAsData = jadwalData.data(using: String.Encoding.utf16)
                 let listDate: Set<String> = try! JSONDecoder().decode(Set<String>.self, from: setStringAsData!)
+                
+                var arnum = [Int]()
+                for a in Array(listDate){
+                    if let number = Int(a.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
+                        arnum.append(number)
+                    }
+                }
+                
+                arnum = arnum.sorted()
+                
+                var sArr = [String]()
+                for n in arnum{
+                    sArr.append("\(n/100):\(n%100==0 ? "00":String(n%100))")
+                }
                 let obj = ObatType(id: r.objectID,
                                    name: name as! String,
-                                   jadwal: listDate,
+                                   jadwal: sArr,
                                    jenis: jenis as! String,
                                    aturan: aturan as! String
                                    )
+                
                 listObat.append(obj)
             }
             
@@ -84,6 +100,8 @@ class ObatModel : NSObject, ObservableObject{
         let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ObatRiwayat")
+        let sorting = NSSortDescriptor(key: "jam",ascending: true)
+        fetchRequest.sortDescriptors = [sorting]
         let calendar = Calendar.current
         data = []
         do {
@@ -96,9 +114,11 @@ class ObatModel : NSObject, ObservableObject{
                 guard let jam = r.value(forKey: "jam") else{
                     return
                 }
-                
+                guard let status = r.value(forKey: "status") else{
+                    return
+                }
                 let date = calendar.startOfDay(for: jam as! Date)
-                let obj = ObatHistory(id: r.objectID, name: name as! String, time: date)
+                let obj = ObatHistory(id: r.objectID, name: name as! String, time: date, status: status as! String)
                 data.append(obj)
             }
             
@@ -112,11 +132,11 @@ class ObatModel : NSObject, ObservableObject{
         let app = UIApplication.shared.delegate as! AppDelegate
         let context = app.persistentContainer.viewContext
         let entity = NSEntityDescription.insertNewObject(forEntityName: "Obat", into: context)
-        
+        let setJadwal = Set(obat.jadwal)
         entity.setValue(obat.name, forKey: "name")
         entity.setValue(obat.aturan, forKey: "aturan")
         entity.setValue(obat.jenis, forKey: "jenis")
-        entity.setValue(obat.jadwal.description, forKey: "jadwal")
+        entity.setValue(setJadwal.description, forKey: "jadwal")
         
         fetchData()
         readListObat()
@@ -130,10 +150,43 @@ class ObatModel : NSObject, ObservableObject{
         
         entity.setValue(obat.name, forKey: "name")
         entity.setValue(obat.time, forKey: "jam")
+        entity.setValue(obat.status, forKey: "status")
         
         fetchData()
         readListObat()
         readObatHariIni()
+    }
+    
+    func deleteItem(id:NSManagedObjectID){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        let context = app.persistentContainer.viewContext
+        do{
+            let obj =  try context.existingObject(with: id)
+            context.delete(obj)
+            fetchData()
+            readListObat()
+            readObatHariIni()
+        }catch{
+            
+        }
+    }
+    
+    func getData(obat:String)-> [ObatHistory]{
+        var mData = [ObatHistory]()
+        
+        let calendar = Calendar.current
+
+        
+        
+        for o in self.data{
+            if o.name == obat{
+                if calendar.isDateInToday(o.time){
+                    mData.append(o)
+                }
+            }
+        }
+        
+        return mData
     }
     
 }

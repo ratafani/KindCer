@@ -37,9 +37,9 @@ struct ObatAddNew: View {
                                     }.foregroundColor(.white).padding(.init(top: -21, leading: 15, bottom: 0, trailing: 0))
                                     Spacer()
                                     Button(action: {
-                                        let setString = Set(self.jadwalObat)
                                         
-                                        let mObat = ObatType(id: StaticModel.id, name: self.namaObat, jadwal: setString, jenis: self.macamJenisObat[self.jenisObat], aturan: self.macamAturanMinum[self.aturanMinum])
+                                        
+                                        let mObat = ObatType(id: StaticModel.id, name: self.namaObat, jadwal: self.jadwalObat, jenis: self.macamJenisObat[self.jenisObat], aturan: self.macamAturanMinum[self.aturanMinum])
                                         self.obatModel.saveListObat(obat: mObat)
                                         
                                         self.presentationMode.wrappedValue.dismiss()
@@ -76,7 +76,7 @@ struct ObatAddNew: View {
                                 Image("namaKemo").resizable().frame(width: 20, height: 20)
                                 Text("Jenis Obat").font(.headline)
                             }) {
-                                Picker(selection: $aturanMinum,label: Text("Pilih jenis obat")) {
+                                Picker(selection: $jenisObat,label: Text("Pilih jenis obat")) {
                                     ForEach(0 ..< macamJenisObat.count) {
                                         Text(self.macamJenisObat[$0])
                                     }
