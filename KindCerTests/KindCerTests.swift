@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import KindCer
+//@testable import KindCer
 
 class KindCerTests: XCTestCase {
 
