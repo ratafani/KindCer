@@ -94,9 +94,9 @@ struct ObatDetail: View {
         if arr.count <= i{
             return Color.white
         }else if arr[i].status == "skip"{
-            return Color.gray
+            return Color.red
         }else if arr[i].status == "drink"{
-            return Color("Primary")
+            return Color.green//Color("Primary")
         }else{
             return Color.white
         }
