@@ -50,7 +50,7 @@ class SymptompModel {
         case .matiRasa:
             question(aman: "", ringan: "Merasakan kesemutan", sedang: "Kesemutan sampai mati rasa", parah: "Mati rasa sampai mengganggu aktivitas")
         case .mulut:
-            question(aman: "", ringan: "Bisul yang tidak sakit", sedang: "Bisul yang sakit tetapi masih bisa makan ", parah: "Bisul yang sakit sampai tidak bisa makan")
+            question(aman: "", ringan: "Bisul yang tidak sakit", sedang: "Bisul yang sakit tetapi masih bisa makan", parah: "Bisul yang sakit sampai tidak bisa makan")
         case .muntah:
             question(aman: "", ringan: "Muntah sekali sehari", sedang: "Muntah 2-5 kali sehari", parah: "Muntah > 6 kali sehari")
         case .mual:

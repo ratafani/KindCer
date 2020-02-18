@@ -1,0 +1,231 @@
+/* 
+  EnglishScript.strings
+  KindCer
+
+  Created by Mauldy Putra on 08/02/20.
+  Copyright © 2020 Muhammad Tafani Rabbani. All rights reserved.
+*/
+
+//MARK: General
+"Tutup" = "Close"
+"Kembali" = "Back"
+"Tambah" = "Add"
+"Simpan" = "Save"
+"Selesai" = "Done"
+"lewati" = "Skip"
+"Hapus" = "Delete"
+"Ubah" = "Change"
+"Catatan" = "Notes"
+"Bagikan" = "Share"
+"Batal" = "Cancel"
+"Kondisi" = "Condition"
+
+// MARK: Efek Samping
+"Alergi" = "Allergic Reaction"
+"Bengkak di area tangan / kaki" = "Swelling (Edema) in Hands or Feet"
+"Demam" = "Fever / Chills"
+"Diare" = "Diarrhea"
+"Gatal / iritasi" = "Itching or Rash"
+"Hilang nafsu makan" = "Loss of Appetite (Anorexia)"
+"Lemas" = "Fatigue"
+"Mati rasa / kesemutan" = "Numbness or Tingling in Hands or Feet"
+"Mual - mual" = "Nausea"
+"Mulut terasa sakit" = "Sore Mouth"
+"Muntah - muntah" = "Vomitting"
+"Sakit otot / persendian" = "Muscle or Joint Pain"
+"Sembelit" = "Constipation"
+"Sulit bernafas" = "Shortness of Breath"
+"Sakit saat menelan" = "Pain or Difficulty With Swallowing"
+"Lainnya" = "Other"
+
+// Efek Samping Detail
+"Ringan" = "Mild"
+"Sedang" = "Moderate"
+"Bahaya" = "Severe"
+
+//alergi
+"Bintil-bintil merah pada kulit, tidak demam" = "Rash, no fever"
+"Bintil-bintil merah pada kulit, demam < 38°C" = "Rash, fever < 104°F"
+"Gatal - gatal, demam lebih 38°C" = "Hives, fever > 104°F"
+
+//bengkak
+"Bengkak di tangan atau kaki" = "Swelling in hands or feet"
+"Bengkak di bagian atas lengan atau kaki" = "Swelling extending up arm or leg"
+"Bengkak sampai sakit atau susah bernafas" = "Swelling with pain or trouble breathing"
+
+//diare
+"Tahi berpencar" = "Loose stools"
+"Tahi berair, lebih banyak dari biasanya" = "Watery stools, many more than normal"
+"Berdarah, atau sampai membuat pusing" = "Constant or bloody, or causing you to feel dizzy"
+
+//demam
+"Suhu badan 37°C - 38°C" = "Fever 98.6°F - 100.4°F"
+"Suhu badan 37°C - 40°C" = "Fever 100.4°F - 104°F"
+"Suhu badan > 40°C" = "Fever > 104°F"
+
+//gatal
+"Ruam kulit tersebar dengan kemerahan / gatal ringan" = "Scattered skin rash with redness/mild itching"
+"Ruam dengan luka" = "Generelized rash with sores"
+"Ruam dengan luka terbuka" = "Rash with open sores"
+
+//lemas
+"Bisa melakukan aktivitas tetapi dengan usaha yang lebih" = "Able to do normal activities with some effort"
+"Di tempat tidur kurang dari setengah hari" = "In bed less than half a day"
+"Di tempat tidur lebih dari setengah hari" = "In bed more than half a day"
+
+//Mati rasa
+"Merasakan kesemutan" = "Tingling sensation"
+"Kesemutan sampai mati rasa" = "Tingling, some numbness"
+"Mati rasa sampai mengganggu aktivitas" = "Numbness interfering with function"
+
+//mulut terasa sakit
+"Bisul yang tidak sakit" = "Soreness or painless ulcer"
+"Bisul yang sakit tetapi masih bisa makan" = "soreness or painful ulcer but can eat"
+"Bisul yang sakit sampai tidak bisa makan" = "Painful ulcer and cannot eat"
+
+//muntah-muntah
+"Muntah sekali sehari" = "Vomited once during the day"
+"Muntah 2-5 kali sehari" = "Vomited 2 to 5 times during the day"
+"Muntah > 6 kali sehari" = "Vomited 6 or more times during the day"
+
+//mual
+"Masih bisa makan / minum" = "Can eat"
+"Makan / minum kurang dari biasanya" = "Eating/drinking less than normal"
+"Tidak bisa makan / minum" = "Can't eat or drink"
+
+//sembelit
+"Tidak buang air besar selama 2 hari" = "No bowel movement for 2 days"
+"Tidak buang air besar selama 3 - 4 hari" = "No bowel movement for 3-4 days"
+"Tidak buang air besar selama 6 hari lebih atau perut bengkak" = "No bowel movement for more than 4 days or swollen abdomen"
+
+//sakit otot
+"Nyeri tapi tidak butuh obat" = "Sore but doesn't require medicine"
+"Butuh obat untuk rasa sakit" = "Requires medicine for pain"
+"Obat tidak menyembuhkan" = "Pain medicine doesn't help"
+
+//susah bernafas
+"Membutuhkan usaha" = "With exertion"
+"Membutuhkan usaha di aktivitas biasa" = "With normal level of activity"
+"pada saat tidur" = "At rest"
+
+//nafsu makan
+"Nafsu makan berkurang" = "Slighlty decrease appetite"
+"Tidak merasa lapar" = "Usually not hungry"
+"Apapun tidak terasa enak / tidak bisa makan sesuatu" = "Nothing looks good/unable to eat"
+
+//susah menelan
+"Terasa sakit tetapi masih bisa makan" = "Pain but can eat"
+"Terasa sakit dan perlu dukungan cairan agar bisa menelan" = "Pain requiring soft or liquid diet"
+"Tidak bisa makan sama sekali" = "Unable to eat at all"
+
+
+// MARK: On Boarding
+"Pahami Efek Samping Kemoterapi" = "Understand Chemotherapy Side Effects";
+"Ketahui semua efek samping dari kemoterapi dan berkonsultasi dengan mudah ke dokter kamu." = "Knowing all of the chemotheraphy side effects and consult it with your doctor easily.";
+"Pantau dan Catat Efek Samping Kemoterapi" = "Monitor and record chemotherapy side effect";
+"Relia dapat memudahkan kamu untuk memantau dan mencatat efek samping dari kemoterapi yang sedang kamu jalani." = "Relia can help you to monitor and record side effects of the chemotherapy that you are currently undergoing.";
+"Dengan mendaftar, kamu sudah setuju dengan kebijakan keamanan dan syarat dan ketentuan Relia." = "By registering, you already agree with Relia's terms and conditions.";
+"Mulai" = "Get Started";
+
+// MARK: Home
+"Jurnal Efek Samping" = "Side Effects Journal";
+"Rangkuman" = "Summary";
+"Jadwal" = "Schedule";
+"Gejala" = "Symptoms"
+"Tambahkan Gelaja" = "Add Symptom"
+
+"Belum ada catatan hari ini" = "No record today"
+"Kumpulkan catatan tindakan gejala sehari-hari kamu di sini." = "Collect your daily symptoms records here"
+
+//alert
+"Halo dari masa depan!" = "Hello from the future!"
+"Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya" = "You can't log into the future, please be patient!"
+"Oke" = "OK"
+"BAHAYA!" = "DANGER"
+"Kamu harus segera menghubungi dokter" = "You must contact your doctor"
+
+//MARK: Rangkuman
+"Rangkuman kamu kosong" = "Your summary is empty"
+"Kumpulkan catatan tindakan gejala sehari-hari kamu disini." = "Collect your daily symptoms record here."
+
+//MARK: Schedule
+"Perawatan" = "Treatment"
+"Obat Harian" = "Daily Medicine"
+"Tambah Jadwal" = "Add Schedule"
+
+//Treatment
+"Jadwal Akan Datang" = "Next Treatment"
+"Tambahkan Treatment" = "Add Treatment"
+"Kumpulkan jadwal kemoterapi kamu di sini." = "Collect your treatment schedule here."
+"Tulis jenis treatment yang kamu jalankan" = "Write you undergo treatment"
+"Tanggal Kemoterapi" = "Chemotherapy Date"
+"Tempat" = "Place"
+"Tulis tempat kamu berobat" = "Write your place to do treatment"
+"Dokter" = "Doctor"
+"Tulis dokter yang akan menangani kamu" = "Write you doctor's name"
+"Catatan" = "Notes"
+"Tulis catatan kamu" = "Write your notes here"
+"Belum ada catatan" = "No notes yet"
+"Ubah Jadwal Kemoterapi" = "Change Your Chemotherapy Schedule"
+"Jenis Treatment" = "Treatment Type"
+"Belum ada riwayat pengobatanmu" ="No treatment history of yours"
+"Kami akan mencatat riwayat pengobatan kamu lakukan di sini" = "We will record your treatment history here"
+"Catatan Jadwal" = "Schedule Notes"
+"Saran Dokter" = "Doctor's Advice"
+"Tulis saran doktermu di sini" = "Write your doctor's advices here"
+"Tambah Foto Pendukung" = "Add Supporting Photos"
+"Belum ada jadwal" = "No schedule yet"
+"Mulai kumpulkan jadwal kemoterapi atau jadwal kontrol kamu sekarang" = "Start collecting your chemotherapy schedule"
+"Tambahkan di sini" = "Add Here"
+"Kemo selanjutnya: " = "Next chemotheraphy: "
+"Nama Dokter" = "Doctor's Name"
+
+//Obat
+"Obat Harian" = "Daily Medicine"
+"Tambahkan Obat" = "Add Medicine"
+"Kumpulkan obat harian kamu di sini." = "Collect your daily medicine here."
+"Sesudah Makan" = "After eating"
+"Sebelum Makan" = "Before eating"
+"Kapsul" = "Pill"
+"Bubuk" = "Powder"
+"Tambah Obat" = "Add Medicine"
+"Tulis nama obat" = "Write the medicine"
+"Pilih aturan minum" = "How to consume"
+"Pilih jenis obat" = "Choose medicine type"
+"Jam Minum Obat" = "Hours of taking medicine"
+"Jam Berikutnya" = "Next hour"
+"Jenis" = "Type"
+"Sudah" = "Drink"
+"Riwayat Berobat" = "Medicine History"
+"Belum ada riwayat pengobatanmu" = "No medicine history"
+"Kami akan mencatat riwayat pengobatan yang telah kamu lakukan di sini." = "We will record your medicine history here"
+"Tambahkan Jadwal" = "Add Schedule"
+"Detail Jadwal" = "Schedule Detail"
+
+//MARK: Profile
+"Belum ada nama" = "No name yet"
+"Tambahkan Treatment" = "Add Treatment"
+"Kumpulkan jadwal kemoterapi kamu disini." = "Collect your chemotherapy schedule here."
+"Pengobatan Berikutnya:" = "Next Treatment:"
+"Tipe Kanker" = "Cancer Type"
+"Posisi Kanker" = "Cancer Position"
+"Kontak Penting" = "Important Contact"
+"Kondisi Saya" = "My Condition"
+"Kumpulkan catatan tindakan treatment kanker kamu sekarang disini." = "Collect your cancer treatment record here."
+"Tambahkan Jenis Kanker" = "Add Cancer Type"
+"Masih Kosong" = "Still Empty"
+"Mulai lengkapi kondisi terkini kamu sekarang" = "Your current condition now"
+"Tambahkan Kondisi" = "Add Condition"
+"Jenis Kanker" = "Cancer Type"
+"Tanggal Diagnosis" = "Diagnosis Date"
+"Ubah Profile" = "Change Profile"
+"Nama Lengkap" = "Full Name"
+"Tanggal Lahir" = "Birth of Date"
+
+//MARK: Symptoms add
+"Pilih Kondisi" = "Choose Condition"
+"Nama Obat" = "Medicine Name"
+"Tambah Catatan Pengobatan" = "Add Medicine Notes"
+"Tambah Catatan" = "Add Notes"
+"Ubah Gejala" = "Change Symptom"
+"Tidak ada catatan obat" = "No medicine notes"
