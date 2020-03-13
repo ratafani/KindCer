@@ -31,5 +31,6 @@ struct BoardingView: View {
 struct BoardingView_Previews: PreviewProvider {
     static var previews: some View {
         BoardingView()
+            .environment(\.locale, .init(identifier: "en"))
     }
 }

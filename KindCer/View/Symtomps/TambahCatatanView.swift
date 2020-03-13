@@ -43,7 +43,7 @@ struct TambahCatatanView: View {
                         Text("Simpan").foregroundColor(.white)
                     }//.padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
                 }.padding(.horizontal)
-            }.padding(.bottom,40)
+            }.padding(.bottom,40).offset(y: -1)
             formLargeSizeTextField(title: "Tambah Catatan", icon: "pensil", width: 24, height: 24, textField: $catatan) .frame(height: 200)
             
             Spacer()

@@ -146,7 +146,7 @@ struct HomeView: View {
                     }
             }.alert(isPresented: self.$isAlarm, content: {
                 if self.alarmType == 0{
-                    return Alert(title: Text("Hallo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
+                    return Alert(title: Text("Halo dari masa depan!"), message: Text("Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya"), dismissButton: .default(Text("Oke")))
                 }else{
                     return Alert(title: Text("BAHAYA!"), message: Text("Kamu harus segera menghubungi dokter"), dismissButton: .default(Text("Oke")))
                 }
