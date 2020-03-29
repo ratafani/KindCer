@@ -1,0 +1,232 @@
+/* 
+  BahasaScript.strings
+  KindCer
+
+  Created by Mauldy Putra on 18/02/20.
+  Copyright © 2020 Muhammad Tafani Rabbani. All rights reserved.
+*/
+
+//MARK: General
+"Tutup" = "Tutup";
+"Kembali" = "Kembali";
+"Tambah" = "Tambah";
+"Simpan" = "Simpan";
+"Selesai" = "Selesai";
+"lewati" = "lewati";
+"Hapus" = "Hapus";
+"Ubah" = "Ubah";
+"Catatan" = "Catatan";
+"Bagikan" = "Bagikan";
+"Batal" = "Batal";
+"Kondisi" = "Kondisi";
+
+// MARK: Efek Samping
+"Alergi" = "Alergi";
+"Bengkak di area tangan / kaki" = "Bengkak di area tangan / kaki";
+"Demam" = "Demam";
+"Diare" = "Diare";
+"Gatal / iritasi" = "Gatal / iritasi";
+"Hilang nafsu makan" = "Hilang nafsu makan";
+"Lemas" = "Lemas";
+"Mati rasa / kesemutan" = "Mati rasa / kesemutan";
+"Mual - mual" = "Mual - mual";
+"Mulut terasa sakit" = "Mulut terasa sakit";
+"Muntah - muntah" = "Muntah - muntah";
+"Sakit otot / persendian" = "Sakit otot / persendian";
+"Sembelit" = "Sembelit";
+"Sulit bernafas" = "Sulit bernafas";
+"Sakit saat menelan" = "Sakit saat menelan";
+"Lainnya" = "Lainnya";
+
+// Efek Samping Detail
+"Ringan" = "Ringan";
+"Sedang" = "Sedang";
+"Bahaya" = "Bahaya";
+
+//alergi
+"Bintil-bintil merah pada kulit, tidak demam" = "Bintil-bintil merah pada kulit, tidak demam";
+"Bintil-bintil merah pada kulit, demam < 38°C" = "Bintil-bintil merah pada kulit, demam < 38°C";
+"Gatal - gatal, demam lebih 38°C" = "Gatal - gatal, demam lebih 38°C";
+
+//bengkak
+"Bengkak di tangan atau kaki" = "Bengkak di tangan atau kaki";
+"Bengkak di bagian atas lengan atau kaki" = "Bengkak di bagian atas lengan atau kaki";
+"Bengkak sampai sakit atau susah bernafas" = "Bengkak sampai sakit atau susah bernafas";
+
+//diare
+"Tahi berpencar" = "Tahi berpencar";
+"Tahi berair, lebih banyak dari biasanya" = "Tahi berair, lebih banyak dari biasanya";
+"Berdarah, atau sampai membuat pusing" = "Berdarah, atau sampai membuat pusing";
+
+//demam
+"Suhu badan 37°C - 38°C" = "Suhu badan 37°C - 38°C";
+"Suhu badan 37°C - 40°C" = "Suhu badan 37°C - 40°C";
+"Suhu badan > 40°C" = "Suhu badan > 40°C";
+
+//gatal
+"Ruam kulit tersebar dengan kemerahan / gatal ringan" = "Ruam kulit tersebar dengan kemerahan / gatal ringan";
+"Ruam dengan luka" = "Ruam dengan luka";
+"Ruam dengan luka terbuka" = "Ruam dengan luka terbuka";
+
+//lemas
+"Bisa melakukan aktivitas tetapi dengan usaha yang lebih" = "Bisa melakukan aktivitas tetapi dengan usaha yang lebih";
+"Di tempat tidur kurang dari setengah hari" = "Di tempat tidur kurang dari setengah hari";
+"Di tempat tidur lebih dari setengah hari" = "Di tempat tidur lebih dari setengah hari";
+
+//Mati rasa
+"Merasakan kesemutan" = "Merasakan kesemutan";
+"Kesemutan sampai mati rasa" = "Kesemutan sampai mati rasa";
+"Mati rasa sampai mengganggu aktivitas" = "Mati rasa sampai mengganggu aktivitas";
+
+//mulut terasa sakit
+"Bisul yang tidak sakit" = "Bisul yang tidak sakit";
+"Bisul yang sakit tetapi masih bisa makan" = "Bisul yang sakit tetapi masih bisa makan";
+"Bisul yang sakit sampai tidak bisa makan" = "Bisul yang sakit sampai tidak bisa makan";
+
+//muntah-muntah
+"Muntah sekali sehari" = "Muntah sekali sehari";
+"Muntah 2-5 kali sehari" = "Muntah 2-5 kali sehari";
+"Muntah > 6 kali sehari" = "Muntah > 6 kali sehari";
+
+//mual
+"Masih bisa makan / minum" = "Masih bisa makan / minum";
+"Makan / minum kurang dari biasanya" = "Makan / minum kurang dari biasanya";
+"Tidak bisa makan / minum" = "Tidak bisa makan / minum";
+
+//sembelit
+"Tidak buang air besar selama 2 hari" = "Tidak buang air besar selama 2 hari";
+"Tidak buang air besar selama 3 - 4 hari" = "Tidak buang air besar selama 3 - 4 hari";
+"Tidak buang air besar selama 6 hari lebih atau perut bengkak" = "Tidak buang air besar selama 6 hari lebih atau perut bengkak";
+
+//sakit otot
+"Nyeri tapi tidak butuh obat" = "Nyeri tapi tidak butuh obat";
+"Butuh obat untuk rasa sakit" = "Butuh obat untuk rasa sakit";
+"Obat tidak menyembuhkan" = "Obat tidak menyembuhkan";
+
+//susah bernafas
+"Membutuhkan usaha" = "Membutuhkan usaha";
+"Membutuhkan usaha di aktivitas biasa" = "Membutuhkan usaha di aktivitas biasa";
+"Pada saat tidur" = "Pada saat tidur";
+
+//nafsu makan
+"Nafsu makan berkurang" = "Nafsu makan berkurang";
+"Tidak merasa lapar" = "Tidak merasa lapar";
+"Apapun tidak terasa enak / tidak bisa makan sesuatu" = "Apapun tidak terasa enak / tidak bisa makan sesuatu";
+
+//susah menelan
+"Terasa sakit tetapi masih bisa makan" = "Terasa sakit tetapi masih bisa makan";
+"Terasa sakit dan perlu dukungan cairan agar bisa menelan" = "Terasa sakit dan perlu dukungan cairan agar bisa menelan";
+"Tidak bisa makan sama sekali" = "Tidak bisa makan sama sekali";
+
+
+// MARK: On Boarding
+"Pahami\n Efek Samping Kemoterapi" = "Pahami\n Efek Samping Kemoterapi";
+"Ketahui semua efek samping dari\n kemoterapi dan berkonsultasi dengan\n mudah ke dokter kamu." = "Ketahui semua efek samping dari\n kemoterapi dan berkonsultasi dengan\n mudah ke dokter kamu.";
+"Pantau dan Catat\n Efek Samping Kemoterapi" = "Pantau dan Catat\n Efek Samping Kemoterapi";
+"Relia dapat memudahkan kamu untuk\n memantau dan mencatat efek samping\n dari kemoterapi yang sedang kamu\n jalani." = "Relia dapat memudahkan kamu untuk\n memantau dan mencatat efek samping\n dari kemoterapi yang sedang kamu\n jalani.";
+"Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan Relia." = "Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan Relia.";
+"Mulai" = "Mulai";
+
+// MARK: Home
+"Jurnal Efek Samping" = "Jurnal Efek Samping";
+"Rangkuman" = "Rangkuman";
+"Jadwal" = "Jadwal";
+"Gejala" = "Gejala";
+"Tambahkan Gelaja" = "Tambahkan Gelaja";
+
+"Belum ada catatan hari ini" = "Belum ada catatan hari ini";
+"Kumpulkan catatan tindakan gejala sehari-hari kamu di sini." = "Kumpulkan catatan tindakan gejala sehari-hari kamu di sini.";
+
+//alert
+"Halo dari masa depan!" = "Halo dari masa depan!";
+"Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya" = "Kamu tidak bisa memasukan data ke masa depan kamu, sabar ya";
+"Oke" = "Oke";
+"BAHAYA!" = "BAHAYA!";
+"Kamu harus segera menghubungi dokter" = "Kamu harus segera menghubungi dokter";
+
+//MARK: Rangkuman
+"Rangkuman kamu kosong" = "Rangkuman kamu kosong";
+"Kumpulkan catatan tindakan gejala sehari-hari kamu disini." = "Kumpulkan catatan tindakan gejala sehari-hari kamu disini.";
+
+//MARK: Schedule
+"Perawatan" = "Perawatan";
+"Obat Harian" = "Obat Harian";
+"Tambah Jadwal" = "Tambah Jadwal";
+
+//Treatment
+"Jadwal Akan Datang" = "Jadwal Akan Datang";
+"Tambahkan Treatment" = "Tambahkan Treatment";
+"Kumpulkan jadwal kemoterapi kamu di sini." = "Kumpulkan jadwal kemoterapi kamu di sini.";
+"Tulis jenis treatment yang kamu jalankan" = "Tulis jenis treatment yang kamu jalankan";
+"Tanggal Kemoterapi" = "Tanggal Kemoterapi";
+"Tempat" = "Tempat";
+"Tulis tempat kamu berobat" = "Tulis tempat kamu berobat";
+"Dokter" = "Dokter";
+"Tulis dokter yang akan menangani kamu" = "Tulis dokter yang akan menangani kamu";
+"Catatan" = "Catatan";
+"Tulis catatan kamu" = "Tulis catatan kamu";
+"Belum ada catatan" = "Belum ada catatan";
+"Ubah Jadwal Kemoterapi" = "Ubah Jadwal Kemoterapi";
+"Jenis Treatment" = "Jenis Treatment";
+"Belum ada riwayat pengobatanmu" ="Belum ada riwayat pengobatanmu";
+"Kami akan mencatat riwayat pengobatan kamu lakukan di sini" = "Kami akan mencatat riwayat pengobatan kamu lakukan di sini";
+"Catatan Jadwal" = "Catatan Jadwal";
+"Saran Dokter" = "Saran Dokter";
+"Tulis saran doktermu di sini" = "Tulis saran doktermu di sini";
+"Tambah Foto Pendukung" = "Tambah Foto Pendukung";
+"Belum ada jadwal" = "Belum ada jadwal";
+"Mulai kumpulkan jadwal kemoterapi atau jadwal kontrol kamu sekarang" = "Mulai kumpulkan jadwal kemoterapi atau jadwal kontrol kamu sekarang";
+"Tambahkan di sini" = "Tambahkan di sini";
+"Kemo selanjutnya: " = "Kemo selanjutnya: ";
+"Nama Dokter" = "Nama Dokter";
+
+//Obat
+"Obat Harian" = "Obat Harian";
+"Tambahkan Obat" = "Tambahkan Obat";
+"Kumpulkan obat harian kamu di sini." = "Kumpulkan obat harian kamu di sini.";
+"Sesudah Makan" = "Sesudah Makan";
+"Sebelum Makan" = "Sebelum Makan";
+"Kapsul" = "Kapsul";
+"Bubuk" = "Bubuk";
+"Tambah Obat" = "Tambah Obat";
+"Tulis nama obat" = "Tulis nama obat";
+"Pilih aturan minum" = "Pilih aturan minum";
+"Pilih jenis obat" = "Pilih jenis obat";
+"Jam Minum Obat" = "Jam Minum Obat";
+"Jam Berikutnya" = "Jam Berikutnya";
+"Jenis" = "Jenis";
+"Sudah" = "Sudah";
+"Riwayat Berobat" = "Riwayat Berobat";
+"Belum ada riwayat pengobatanmu" = "Belum ada riwayat pengobatanmu";
+"Kami akan mencatat riwayat pengobatan yang telah kamu lakukan di sini." = "Kami akan mencatat riwayat pengobatan yang telah kamu lakukan di sini.";
+"Tambahkan Jadwal" = "Tambahkan Jadwal";
+"Detail Jadwal" = "Detail Jadwal";
+
+//MARK: Profile
+"Belum ada nama" = "Belum ada nama";
+"Tambahkan Treatment" = "Tambahkan Treatment";
+"Kumpulkan jadwal kemoterapi kamu disini." = "Kumpulkan jadwal kemoterapi kamu disini.";
+"Pengobatan Berikutnya:" = "Pengobatan Berikutnya:";
+"Tipe Kanker" = "Tipe Kanker";
+"Posisi Kanker" = "Posisi Kanker";
+"Kontak Penting" = "Kontak Penting";
+"Kondisi Saya" = "Kondisi Saya";
+"Kumpulkan catatan tindakan treatment kanker kamu sekarang disini." = "Kumpulkan catatan tindakan treatment kanker kamu sekarang disini.";
+"Tambahkan Jenis Kanker" = "Tambahkan Jenis Kanker";
+"Masih Kosong" = "Masih Kosong";
+"Mulai lengkapi kondisi terkini kamu sekarang" = "Mulai lengkapi kondisi terkini kamu sekarang";
+"Tambahkan Kondisi" = "Tambahkan Kondisi"; 
+"Jenis Kanker" = "Jenis Kanker";
+"Tanggal Diagnosis" = "Tanggal Diagnosis";
+"Ubah Profile" = "Ubah Profile";
+"Nama Lengkap" = "Nama Lengkap";
+"Tanggal Lahir" = "Tanggal Lahir";
+
+//MARK: Symptoms add
+"Pilih Kondisi" = "Pilih Kondisi";
+"Nama Obat" = "Nama Obat";
+"Tambah Catatan Pengobatan" = "Tambah Catatan Pengobatan";
+"Tambah Catatan" = "Tambah Catatan";
+"Ubah Gejala" = "Ubah Gejala";
+"Tidak ada catatan obat" = "Tidak ada catatan obat";
+

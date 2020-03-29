@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CancerType" representedClassName="CancerType" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="tanggal" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Jadwal" representedClassName="Jadwal" syncable="YES" codeGenerationType="class">
+        <attribute name="catatan" optional="YES" attributeType="String"/>
+        <attribute name="dokter" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="tanggal" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tempat" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Obat" representedClassName="Obat" syncable="YES" codeGenerationType="class">
+        <attribute name="aturan" optional="YES" attributeType="String"/>
+        <attribute name="dosis" optional="YES" attributeType="String"/>
+        <attribute name="jadwal" optional="YES" attributeType="String"/>
+        <attribute name="jenis" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ObatRiwayat" representedClassName="ObatRiwayat" syncable="YES" codeGenerationType="class">
+        <attribute name="jam" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Record" representedClassName="Record" syncable="YES" codeGenerationType="class">
+        <attribute name="catatan_obat" optional="YES" attributeType="String"/>
+        <attribute name="catatan_record" optional="YES" attributeType="String"/>
+        <attribute name="kondisi" optional="YES" attributeType="String"/>
+        <attribute name="obat" optional="YES" attributeType="String"/>
+        <attribute name="penjelasan" optional="YES" attributeType="String"/>
+        <attribute name="tanggal" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="jenis_kanker" optional="YES" attributeType="String"/>
+        <attribute name="kondisi" optional="YES" attributeType="String"/>
+        <attribute name="kontak_penting" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Binary"/>
+        <attribute name="posisi_kanker" optional="YES" attributeType="String"/>
+        <attribute name="tanggal_lahir" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="user_name" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CancerType" positionX="-63" positionY="144" width="128" height="73"/>
+        <element name="Jadwal" positionX="-63" positionY="144" width="128" height="118"/>
+        <element name="Obat" positionX="-63" positionY="144" width="128" height="133"/>
+        <element name="ObatRiwayat" positionX="-63" positionY="144" width="128" height="88"/>
+        <element name="Record" positionX="-81.30078125" positionY="176.48828125" width="128" height="148"/>
+        <element name="User" positionX="-45" positionY="0" width="128" height="148"/>
+    </elements>
+</model>
