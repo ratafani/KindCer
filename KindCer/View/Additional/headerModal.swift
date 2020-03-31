@@ -13,11 +13,12 @@ struct headerModal: View {
     @State var title = "12121"
     
     var body: some View {
-        ZStack{
+        let a = NSLocalizedString(title,comment: "")
+        return ZStack{
             Rectangle().foregroundColor(Color("Primary")).frame(height: 70)
             VStack{
                 Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
-                Text(title).font(.system(size: 24)).bold().foregroundColor(.white)
+                Text(a).font(.system(size: 24)).bold().foregroundColor(.white)
                 
             }
         }//.padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))

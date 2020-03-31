@@ -56,7 +56,8 @@ struct SummaryView: View {
                                     self.getData()
                                     
                                 }) {
-                                    Text(sim).foregroundColor(.white).padding().background(Rectangle().foregroundColor(Color("Primary")).frame( height: 35).cornerRadius(5).opacity(sim == self.picked ? 1:0.4))
+                                    
+                                    Text(NSLocalizedString(sim,comment: "")).foregroundColor(.white).padding().background(Rectangle().foregroundColor(Color("Primary")).frame( height: 35).cornerRadius(5).opacity(sim == self.picked ? 1:0.4))
                                 }
                             }
                         }.padding(.horizontal)
@@ -173,7 +174,10 @@ struct rangkumanDetail:View {
     @State var mType : RecordType
     @State var width : CGFloat
     var body: some View{
-        ZStack{
+        let a = NSLocalizedString(mType.type,comment: "")
+        let b = NSLocalizedString(mType.kondisi,comment: "")
+        let c = NSLocalizedString(mType.penjelasan,comment: "")
+        return ZStack{
 
             Rectangle().foregroundColor(.white).frame(width:width,height: 100)
             HStack{
@@ -181,12 +185,12 @@ struct rangkumanDetail:View {
                 VStack(alignment: .leading){
                     Spacer()
                     HStack{
-                        Text(mType.type + " -").bold().font(.headline).padding(.bottom,5)
-                        Text(mType.kondisi).foregroundColor(choseColor()).bold().font(.headline).padding(.bottom,5)
+                        Text(a + " -").bold().font(.headline).padding(.bottom,5)
+                        Text(b).foregroundColor(choseColor()).bold().font(.headline).padding(.bottom,5)
                     }
                     
                     
-                    Text(mType.penjelasan).font(.subheadline)
+                    Text(c).font(.subheadline)
                     Spacer()
                 }
                 Spacer()

@@ -38,6 +38,17 @@
 "Sakit saat menelan" = "Pain or Difficulty With Swallowing";
 "Lainnya" = "Other";
 
+//
+"Bengkak" = "Swelling (Edema)";
+"Mati Rasa" = "Numbness";
+"Mulut" = "Sore Mouth";
+"Muntah" = "Vomitting";
+"Buang Air Besar" = "Constipation";
+"Otot / Persendian" = "Muscle or Joint Pain";
+"Bernafas" = "Breath";
+"Nafsu Makan" = "Loss of Appetite";
+"Susah Menelan" = "Swallowing";
+
 // Efek Samping Detail
 "Ringan" = "Mild";
 "Sedang" = "Moderate";
@@ -230,4 +241,14 @@
 "Tambah Catatan" = "Add Notes";
 "Ubah Gejala" = "Change Symptom";
 "Tidak ada catatan obat" = "No medicine notes";
+"Tidak ada catatan" = "No notes";
 "Pilih salah satu" = "Pick One";
+
+//days
+"Sen" = "Mon";
+"Sel" = "Tue";
+"Rab" = "Wed";
+"Kam" = "Thu";
+"Jum" = "Fri";
+"Sab" = "Sat";
+"Min" = "Sun";

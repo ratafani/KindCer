@@ -17,17 +17,21 @@ struct SymtompsDetail2: View {
     @State var theColor : Color = .red
     
     var body: some View {
+//        let mTitile = NSLocalizedString(title,
+//        comment: "Time to sell 1000 apps")
         
+        let a = NSLocalizedString(navBtn,comment: "")
+        let b = NSLocalizedString(record.type,comment: "")
         return VStack
             {
                 ZStack {
-                    headerModal(title: "Detail \(record.type)")
+                    headerModal(title: "Detail")
                     HStack {
                         Spacer()
                         Button(action: {
                             self.isSheet = true
                         }) {
-                            Text(navBtn).foregroundColor(.white)
+                            Text(a).foregroundColor(.white)
                         }
                     }.padding()
                 }

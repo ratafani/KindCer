@@ -50,6 +50,7 @@
 		F6516BCA2386B6300035E8E4 /* SymtompsDetail2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BC92386B6300035E8E4 /* SymtompsDetail2.swift */; };
 		F6516BD0239611100035E8E4 /* TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BCF239611100035E8E4 /* TextFieldAlert.swift */; };
 		F6516BD223961F980035E8E4 /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BD123961F980035E8E4 /* ProfileEdit.swift */; };
+		F6643F982432C91C00C3A426 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F6643F972432C91C00C3A426 /* Logo.png */; };
 		F66C6533242F6F710021CA92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F66C6535242F6F710021CA92 /* Localizable.strings */; };
 		F66D1C5B23791A1600E864C5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5A23791A1600E864C5 /* CalendarView.swift */; };
 		F66D1C5E2379527D00E864C5 /* dateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D1C5D2379527D00E864C5 /* dateModel.swift */; };
@@ -157,6 +158,7 @@
 		F6516BC92386B6300035E8E4 /* SymtompsDetail2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymtompsDetail2.swift; sourceTree = "<group>"; };
 		F6516BCF239611100035E8E4 /* TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlert.swift; sourceTree = "<group>"; };
 		F6516BD123961F980035E8E4 /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
+		F6643F972432C91C00C3A426 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = Assets.xcassets/AppIcon.appiconset/Logo.png; sourceTree = "<group>"; };
 		F66C6534242F6F710021CA92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F66C6536242F6F850021CA92 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F66D1C5A23791A1600E864C5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 		F677AFD82354157A000B39E4 /* KindCer */ = {
 			isa = PBXGroup;
 			children = (
+				F6643F972432C91C00C3A426 /* Logo.png */,
 				F626A105239B63D60045EC6D /* My CV.pdf */,
 				F626A100239B63AA0045EC6D /* invoice.html */,
 				F626A101239B63AA0045EC6D /* last_item.html */,
@@ -596,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F677AFE92354157D000B39E4 /* LaunchScreen.storyboard in Resources */,
+				F6643F982432C91C00C3A426 /* Logo.png in Resources */,
 				F626A106239B63D60045EC6D /* My CV.pdf in Resources */,
 				F677AFE62354157D000B39E4 /* Preview Assets.xcassets in Resources */,
 				F677AFE32354157D000B39E4 /* Assets.xcassets in Resources */,

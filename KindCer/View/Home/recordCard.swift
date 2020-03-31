@@ -33,10 +33,10 @@ struct recordBody: View {
                 }
                 VStack(alignment: .leading){
                     HStack{
-                        Text(type).bold().font(.headline)
-                        Text(kondisi).bold().foregroundColor(choseColor()).font(.headline)
+                        Text(type).bold().font(.system(size: 14))
+                        Text(kondisi).bold().foregroundColor(choseColor()).font(.system(size: 14))
                     }.padding(.top, 10)
-                    Text(penjelasan).foregroundColor(.gray).padding(.top, 10).padding(.bottom, 10)
+                    Text(penjelasan).foregroundColor(.gray).font(.system(size: 12)).padding(.top, 10).padding(.bottom, 10)
                 }
                 
                 Spacer()

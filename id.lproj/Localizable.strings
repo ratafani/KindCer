@@ -231,3 +231,12 @@
 "Ubah Gejala" = "Ubah Gejala";
 "Tidak ada catatan obat" = "Tidak ada catatan obat";
 "Pilih salah satu" = "Pick One";
+
+//days
+"Sen" = "Sen";
+"Sel" = "Sel";
+"Rab" = "Rab";
+"Kam" = "Kam";
+"Jum" = "Jum";
+"Sab" = "Sab";
+"Min" = "Min";

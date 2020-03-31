@@ -176,8 +176,7 @@ struct SymptompsList: View {
     @State var height: CGFloat = 0
     
     var body: some View {
-        let mTitile = NSLocalizedString(title,
-        comment: "Time to sell 1000 apps")
+        let mTitile = NSLocalizedString(title,comment: "")
         return ZStack{
             Rectangle().frame(height: 65).foregroundColor(.white)
             HStack{

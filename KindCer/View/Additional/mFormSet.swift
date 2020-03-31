@@ -18,7 +18,9 @@ struct formLargeSize: View{
     @State var height: CGFloat = 0
     
     var body: some View{
-        VStack {
+        let a = NSLocalizedString(title,comment: "")
+        let b = NSLocalizedString(status.isEmpty ? "Tidak ada catatan":status ,comment: "")
+        return VStack {
             ZStack{
                 Rectangle()
                     .foregroundColor(.white)
@@ -26,11 +28,11 @@ struct formLargeSize: View{
                     HStack{
                         setImage(icon: icon, width: width, height: height, alignment: .leading).padding(.horizontal, 20)
                         VStack(alignment: .leading){
-                            Text(title)
+                            Text(a)
                                 .bold()
                                 .padding(.bottom, 10)
                                 .font(.system(size: 18))
-                            Text(status.isEmpty ? "Tidak ada Catatan":status)
+                            Text(b)
                                 .opacity(0.5)
                                 .font(.system(size: 15))
                                 .padding(.bottom, 5)
@@ -56,6 +58,10 @@ struct formLargeSizePath: View{
     var body: some View{
         let mTitile = NSLocalizedString(title1,
         comment: "Time to sell 1000 apps")
+        let mTitile2 = NSLocalizedString(title2,
+        comment: "Time to sell 1000 apps")
+        let sts = NSLocalizedString(status,
+        comment: "Time to sell 1000 apps")
         return VStack {
             ZStack{
                 Rectangle()
@@ -69,13 +75,13 @@ struct formLargeSizePath: View{
                                     .bold()
                                     .padding(.bottom, 10)
                                     .font(.system(size: 18))
-                                Text(title2)
+                                Text(mTitile2)
                                     .bold()
                                     .padding(.bottom, 10)
                                     .font(.system(size: 18))
                                     .offset(x: -4)
                             }
-                            Text(status)
+                            Text(sts)
                                 .opacity(0.5)
                                 .font(.system(size: 15))
 //                                .padding(.bottom, 5)

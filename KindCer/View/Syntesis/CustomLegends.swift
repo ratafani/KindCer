@@ -30,9 +30,9 @@ struct CustomLegend: View {
                 HStack(alignment: .center){
                     ZStack {
                         Rectangle().foregroundColor(self.data.maxIdx >= height ? self.arrColor[height]:.clear).frame(width: 50, height: 25).cornerRadius(20)
-                        Text(self.arrCategory[height])
+                        Text(NSLocalizedString(self.arrCategory[height],comment: ""))
                             .foregroundColor(self.data.maxIdx >= height ? .white:.clear)
-                            .font(.caption)
+                            .font(.system(size: 10))
                     }.offset(x: -10, y: (self.frame.height-CGFloat(self.getYLegend()![height])*self.stepHeight)-(self.frame.height/2))
                      self.line(atHeight: CGFloat(self.getYLegend()![height]), width: self.frame.width)
                         .stroke(self.colorScheme == .dark ? Colors.LegendDarkColor : Colors.LegendColor, style: StrokeStyle(lineWidth: 1.5, lineCap: .round, dash: [5,height == 0 ? 0 : 10]))
