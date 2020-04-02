@@ -158,6 +158,7 @@
 		F6516BC92386B6300035E8E4 /* SymtompsDetail2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymtompsDetail2.swift; sourceTree = "<group>"; };
 		F6516BCF239611100035E8E4 /* TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlert.swift; sourceTree = "<group>"; };
 		F6516BD123961F980035E8E4 /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
+		F659C7D223FD2B8400F1FCFA /* Relia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Relia.entitlements; sourceTree = "<group>"; };
 		F66D1C5A23791A1600E864C5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F66D1C5D2379527D00E864C5 /* dateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateModel.swift; sourceTree = "<group>"; };
 		F66D1C76237A5B6A00E864C5 /* ProfileList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
@@ -397,6 +398,7 @@
 		F677AFD82354157A000B39E4 /* KindCer */ = {
 			isa = PBXGroup;
 			children = (
+				F659C7D223FD2B8400F1FCFA /* Relia.entitlements */,
 				F60CD43E23AB79710064CCE7 /* Logo.png */,
 				F626A105239B63D60045EC6D /* My CV.pdf */,
 				F626A100239B63AA0045EC6D /* invoice.html */,
@@ -866,6 +868,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KindCer/Relia.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"KindCer/Preview Content\"";
@@ -879,6 +882,7 @@
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ada.KindCer;
 				PRODUCT_NAME = Relia;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -888,6 +892,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KindCer/Relia.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -903,6 +908,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ada.Kindcer;
 				PRODUCT_NAME = Relia;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
