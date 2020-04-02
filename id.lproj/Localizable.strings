@@ -5,7 +5,13 @@
   Created by Mauldy Putra on 18/02/20.
   Copyright © 2020 Muhammad Tafani Rabbani. All rights reserved.
 */
-
+//Onboarding
+"Pahami\n Efek Samping Kemoterapi" ="Pahami\n Efek Samping Kemoterapi";
+"Ketahui semua efek samping dari\n kemoterapi dan berkonsultasi dengan\n mudah ke dokter kamu." = "Ketahui semua efek samping dari\n kemoterapi dan berkonsultasi dengan\n mudah ke dokter kamu.";
+"Pantau dan Catat\n Efek Samping Kemoterapi"="Pantau dan Catat\n Efek Samping Kemoterapi";
+"Relia dapat memudahkan kamu untuk\n memantau dan mencatat efek samping\n dari kemoterapi yang sedang kamu\n jalani."="Relia dapat memudahkan kamu untuk\n memantau dan mencatat efek samping\n dari kemoterapi yang sedang kamu\n jalani.";
+"Relia membantu kamu menghadapi\n efek samping kemoterapi!" = "Relia membantu kamu menghadapi\n efek samping kemoterapi!";
+"Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan Relia."="Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan Relia.";
 //MARK: General
 "Tutup" = "Tutup";
 "Kembali" = "Kembali";

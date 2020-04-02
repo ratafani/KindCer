@@ -69,7 +69,8 @@ struct HomeView: View {
                                             .frame(width: geometry.frame(in: .global).height/40 ,height: geometry.frame(in: .global).height/40)
                                         Text("Rangkuman")
                                             .fontWeight(.semibold)
-                                            .font(.body) .foregroundColor(.black)
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.black)
                                             .frame(width: geometry.frame(in: .global).width/3.5)
                                     }
                             }
@@ -87,7 +88,11 @@ struct HomeView: View {
                                         Image("jadwal")
                                             .resizable() .foregroundColor(Color(#colorLiteral(red: 0.4743877649, green: 0.6851971149, blue: 0, alpha: 1)))
                                             .frame(width: geometry.frame(in: .global).height/40 ,height: geometry.frame(in: .global).height/40)
-                                        Text("Jadwal").fontWeight(.semibold).font(.body) .foregroundColor(.black)
+                                        Text("Jadwal")
+                                            .fontWeight(.semibold)
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.black)
+                                        .frame(width: geometry.frame(in: .global).width/3.5)
                                     }
                                 }
                             }

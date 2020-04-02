@@ -13,7 +13,10 @@ struct OnboardingCardView: View {
     var card: OnboardingCard
     
     var body: some View {
-        GeometryReader { geometry in
+        let mTitile = NSLocalizedString(self.card.title,comment: "")
+        let mDesc = NSLocalizedString(self.card.description,comment: "")
+        
+        return GeometryReader { geometry in
             VStack
                 {
                     if self.card.title == "login"{
@@ -33,7 +36,7 @@ struct OnboardingCardView: View {
                         .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).width/1.5)
                     
  
-                    Text(self.card.title)
+                    Text(mTitile)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                         .font(.system(size: 23))
@@ -43,7 +46,7 @@ struct OnboardingCardView: View {
                         .frame(width: geometry.frame(in: .global).width/1.0, height: geometry.frame(in: .global).height/8)
                     
                     
-                    Text(self.card.description)
+                    Text(mDesc)
                         .font(.system(size: 16))
                         .fontWeight(.light)
                         .foregroundColor(.secondary)
