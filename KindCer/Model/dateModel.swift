@@ -15,7 +15,7 @@ class DateModel : NSObject,ObservableObject{
     let objectWillChange = PassthroughSubject<DateModel, Never>()
     
     var currentDate = Date()
-    var month = ""
+    var month = "taf"
     var date = ""
     var year = ""
     var dayWeek = 0
