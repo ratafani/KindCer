@@ -181,8 +181,10 @@ struct DayView:View {
     @Binding var date:Int
     @Binding var isPicked : Bool
     var body: some View{
-        VStack {
-            Text(day).font(.system(size: 14, design: .default)).bold().foregroundColor(isPicked ? Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1)):Color.black).padding(.bottom,15)
+        let mTitile = NSLocalizedString(day,
+        comment: "Time to sell 1000 apps")
+        return VStack {
+            Text(mTitile).font(.system(size: 14, design: .default)).bold().foregroundColor(isPicked ? Color.init(#colorLiteral(red: 0.5215686275, green: 0.3176470588, blue: 0.8392156863, alpha: 1)):Color.black).padding(.bottom,15)
             ZStack {
                 
                 Text("\(date)").font(.system(size: 20, design: .default)).foregroundColor(isPicked ? Color.white:Color.black).padding(.bottom,15)

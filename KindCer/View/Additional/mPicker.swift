@@ -13,9 +13,9 @@ struct PickerForm: View {
     
     @State var title = ""
     @State var aman = "Aman :"
-    @State var ringan = "Ringan :"
-    @State var sedang = "Sedang :"
-    @State var parah = "Bahaya :"
+    @State var ringan = "Ringan"
+    @State var sedang = "Sedang"
+    @State var parah = "Bahaya"
     @State var penjelasanAman : String = "1"
     @State var penjelasanRingan : String = "1"
     @State var penjelasanSedang : String = "1"
@@ -27,7 +27,22 @@ struct PickerForm: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View{
-        VStack{
+        let mRingan = NSLocalizedString(ringan,
+        comment: " ") + " :"
+        let mRinganPenjelasan = NSLocalizedString(penjelasanRingan,
+        comment: " ")
+        
+        let mSedang = NSLocalizedString(sedang,
+        comment: " ") + " :"
+        let mSedangPenjelasan = NSLocalizedString(penjelasanSedang,
+        comment: " ")
+        
+        let mParah = NSLocalizedString(parah,
+        comment: " ") + " :"
+        let mParahPenjelasan = NSLocalizedString(penjelasanParah,
+        comment: " ")
+        
+        return VStack{
             ZStack{
                 headerModalPicker(title: title)
                 HStack{
@@ -39,31 +54,27 @@ struct PickerForm: View {
                     Spacer()
                 }
             }
-//            ZStack(alignment: .center) {
-//                Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
-//                Text("Kondisi \(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
-//            }//.padding(.bottom,40)
             Spacer()
             Form{
                 Section(header: Text("Pilih salah satu"), content: {
                     HStack {
                         Circle().foregroundColor(Color.init(#colorLiteral(red: 0.06666666667, green: 0.5960784314, blue: 0.8941176471, alpha: 1))).frame(width: 24, height: 24)
-                        Text(ringan).bold().font(.system(size: 18))
-                        Text(penjelasanRingan).font(.system(size: 18))
+                        Text(mRingan).bold().font(.system(size: 18))
+                        Text(mRinganPenjelasan).font(.system(size: 18))
                     }.onTapGesture {
                         self.mChoose(id: 0)
                     }
                     HStack {
                         Circle().foregroundColor(Color.init(#colorLiteral(red: 0.8745098039, green: 0.6588235294, blue: 0.1764705882, alpha: 1))).frame(width: 24, height: 24)
-                        Text(sedang).bold().font(.system(size: 18))
-                        Text(penjelasanSedang).font(.system(size: 18))
+                        Text(mSedang).bold().font(.system(size: 18))
+                        Text(mSedangPenjelasan).font(.system(size: 18))
                     }.onTapGesture {
                         self.mChoose(id: 1)
                     }
                     HStack {
                         Circle().foregroundColor(Color.init(#colorLiteral(red: 0.7960784314, green: 0.1019607843, blue: 0.3450980392, alpha: 1))).frame(width: 24, height: 24)
-                        Text(parah).bold().font(.system(size: 18))
-                        Text(penjelasanParah).font(.system(size: 18))
+                        Text(mParah).bold().font(.system(size: 18))
+                        Text(mParahPenjelasan).font(.system(size: 18))
                     }.onTapGesture {
                         self.mChoose(id: 2)
                     }

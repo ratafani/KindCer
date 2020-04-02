@@ -15,6 +15,8 @@ struct ContentView: View {
     var body: some View {
         
         return HomeView(dateModel: DateModel(),recordModel: RecordModel(),profileModel: UserModel())
+        
+//        Text("Tutup")
     }
     
     
@@ -24,5 +26,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.locale, .init(identifier: "en"))
     }
 }

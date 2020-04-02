@@ -1,4 +1,4 @@
-/* 
+/*
   BahasaScript.strings
   KindCer
 
@@ -132,7 +132,7 @@
 "Rangkuman" = "Rangkuman";
 "Jadwal" = "Jadwal";
 "Gejala" = "Gejala";
-"Tambahkan Gelaja" = "Tambahkan Gelaja";
+"Tambahkan Gejala" = "Tambahkan Gelaja";
 
 "Belum ada catatan hari ini" = "Belum ada catatan hari ini";
 "Kumpulkan catatan tindakan gejala sehari-hari kamu di sini." = "Kumpulkan catatan tindakan gejala sehari-hari kamu di sini.";
@@ -181,6 +181,7 @@
 "Nama Dokter" = "Nama Dokter";
 
 //Obat
+"Obat" = "Obat";
 "Obat Harian" = "Obat Harian";
 "Tambahkan Obat" = "Tambahkan Obat";
 "Kumpulkan obat harian kamu di sini." = "Kumpulkan obat harian kamu di sini.";
@@ -229,4 +230,13 @@
 "Tambah Catatan" = "Tambah Catatan";
 "Ubah Gejala" = "Ubah Gejala";
 "Tidak ada catatan obat" = "Tidak ada catatan obat";
+"Pilih salah satu" = "Pick One";
 
+//days
+"Sen" = "Sen";
+"Sel" = "Sel";
+"Rab" = "Rab";
+"Kam" = "Kam";
+"Jum" = "Jum";
+"Sab" = "Sab";
+"Min" = "Min";

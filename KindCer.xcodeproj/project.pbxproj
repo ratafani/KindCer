@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B0223B323F989DA007F801C /* EnglishScript.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B0223B523F989DA007F801C /* EnglishScript.strings */; };
-		8B33342D23C577E700A54B47 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B33342C23C577E700A54B47 /* Logo.png */; };
 		8B48E4B82383B4E000014BBB /* headerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B48E4B72383B4E000014BBB /* headerModal.swift */; };
-		8B59092523FB7FA0004B5520 /* BahasaScript.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B59092423FB7FA0004B5520 /* BahasaScript.strings */; };
 		8B63EA07239A269000605140 /* ScheduleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63EA06239A269000605140 /* ScheduleDetail.swift */; };
 		8B7DCB942384EC8D00C733C5 /* SchedulePageEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */; };
 		8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEE759E237E78D800B415A7 /* JadwalModel.swift */; };
@@ -38,6 +35,7 @@
 		F62C5CAA23B4737C00468D45 /* TreatmentIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C5CA923B4737C00468D45 /* TreatmentIsEmpty.swift */; };
 		F62C5CAC23B473FB00468D45 /* TreatmentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C5CAB23B473FB00468D45 /* TreatmentCard.swift */; };
 		F62C5CAE23B475DE00468D45 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C5CAD23B475DE00468D45 /* ProgressCircle.swift */; };
+		F63D830D24363AC9006E8D0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F63D830B24363AC9006E8D0E /* Localizable.strings */; };
 		F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516B61237E73100035E8E4 /* SchedulePage.swift */; };
 		F6516BB823822F120035E8E4 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB223822F110035E8E4 /* BoardingView.swift */; };
 		F6516BB923822F120035E8E4 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6516BB323822F110035E8E4 /* PageController.swift */; };
@@ -93,6 +91,7 @@
 		F6D97920235EB03D00DC6673 /* homeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9791F235EB03D00DC6673 /* homeTitle.swift */; };
 		F6D97924235F355D00DC6673 /* recordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D97923235F355D00DC6673 /* recordCard.swift */; };
 		F6D97926235FDE3B00DC6673 /* record_empty_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D97925235FDE3B00DC6673 /* record_empty_view.swift */; };
+		F6DF7BD52436385800B3CC4A /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F6DF7BD42436385800B3CC4A /* Logo.png */; };
 		F6F1132D23BD7336000A1958 /* ObatIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1132C23BD7336000A1958 /* ObatIsEmpty.swift */; };
 		F6F1132F23BD743F000A1958 /* ObatAddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1132E23BD743F000A1958 /* ObatAddNew.swift */; };
 		F6FEA2DB23B9B0E20014FAA0 /* ObatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEA2DA23B9B0E20014FAA0 /* ObatModel.swift */; };
@@ -116,11 +115,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8B0223B623F989DC007F801C /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/EnglishScript.strings"; sourceTree = "<group>"; };
-		8B33342C23C577E700A54B47 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = "../../../../Dropbox (DeveloperAcademy-ID)/Apple/Final Challange/Asset/Logo.png"; sourceTree = "<group>"; };
-		8B3C465F23EE803600668159 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		8B48E4B72383B4E000014BBB /* headerModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerModal.swift; sourceTree = "<group>"; };
-		8B59092423FB7FA0004B5520 /* BahasaScript.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = BahasaScript.strings; sourceTree = "<group>"; };
 		8B63EA06239A269000605140 /* ScheduleDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetail.swift; sourceTree = "<group>"; };
 		8B7DCB932384EC8D00C733C5 /* SchedulePageEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePageEdit.swift; sourceTree = "<group>"; };
 		8BEE759E237E78D800B415A7 /* JadwalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JadwalModel.swift; sourceTree = "<group>"; };
@@ -148,6 +143,8 @@
 		F62C5CA923B4737C00468D45 /* TreatmentIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentIsEmpty.swift; sourceTree = "<group>"; };
 		F62C5CAB23B473FB00468D45 /* TreatmentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentCard.swift; sourceTree = "<group>"; };
 		F62C5CAD23B475DE00468D45 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
+		F63D830C24363AC9006E8D0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F63D830E24363AF0006E8D0E /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6516B61237E73100035E8E4 /* SchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePage.swift; sourceTree = "<group>"; };
 		F6516BB223822F110035E8E4 /* BoardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
 		F6516BB323822F110035E8E4 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
@@ -210,6 +207,7 @@
 		F6D9791F235EB03D00DC6673 /* homeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeTitle.swift; sourceTree = "<group>"; };
 		F6D97923235F355D00DC6673 /* recordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordCard.swift; sourceTree = "<group>"; };
 		F6D97925235FDE3B00DC6673 /* record_empty_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = record_empty_view.swift; sourceTree = "<group>"; };
+		F6DF7BD42436385800B3CC4A /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		F6F1132C23BD7336000A1958 /* ObatIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatIsEmpty.swift; sourceTree = "<group>"; };
 		F6F1132E23BD743F000A1958 /* ObatAddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatAddNew.swift; sourceTree = "<group>"; };
 		F6FEA2DA23B9B0E20014FAA0 /* ObatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatModel.swift; sourceTree = "<group>"; };
@@ -383,12 +381,12 @@
 		F677AFCD2354157A000B39E4 = {
 			isa = PBXGroup;
 			children = (
-				8B0223B523F989DA007F801C /* EnglishScript.strings */,
-				8B59092423FB7FA0004B5520 /* BahasaScript.strings */,
+				F63D830B24363AC9006E8D0E /* Localizable.strings */,
 				F677AFD82354157A000B39E4 /* KindCer */,
 				F677AFF22354157D000B39E4 /* KindCerTests */,
 				F677AFFD2354157D000B39E4 /* KindCerUITests */,
 				F677AFD72354157A000B39E4 /* Products */,
+				F6DF7BC82436357B00B3CC4A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -405,8 +403,8 @@
 		F677AFD82354157A000B39E4 /* KindCer */ = {
 			isa = PBXGroup;
 			children = (
+				F6DF7BD42436385800B3CC4A /* Logo.png */,
 				F659C7D223FD2B8400F1FCFA /* Relia.entitlements */,
-				F60CD43E23AB79710064CCE7 /* Logo.png */,
 				F626A105239B63D60045EC6D /* My CV.pdf */,
 				F626A100239B63AA0045EC6D /* invoice.html */,
 				F626A101239B63AA0045EC6D /* last_item.html */,
@@ -492,6 +490,13 @@
 				F6516BB623822F120035E8E4 /* PageViewController.swift */,
 			);
 			path = Boarding;
+			sourceTree = "<group>";
+		};
+		F6DF7BC82436357B00B3CC4A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -582,7 +587,7 @@
 			knownRegions = (
 				en,
 				Base,
-				"en-US",
+				id,
 			);
 			mainGroup = F677AFCD2354157A000B39E4;
 			packageReferences = (
@@ -603,14 +608,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6DF7BD52436385800B3CC4A /* Logo.png in Resources */,
 				F677AFE92354157D000B39E4 /* LaunchScreen.storyboard in Resources */,
 				F626A106239B63D60045EC6D /* My CV.pdf in Resources */,
-				8B0223B323F989DA007F801C /* EnglishScript.strings in Resources */,
 				F677AFE62354157D000B39E4 /* Preview Assets.xcassets in Resources */,
+				F63D830D24363AC9006E8D0E /* Localizable.strings in Resources */,
 				F677AFE32354157D000B39E4 /* Assets.xcassets in Resources */,
-				8B59092523FB7FA0004B5520 /* BahasaScript.strings in Resources */,
 				F626A104239B63AA0045EC6D /* last_item.html in Resources */,
-				8B33342D23C577E700A54B47 /* Logo.png in Resources */,
 				F626A103239B63AA0045EC6D /* invoice.html in Resources */,
 				F626A102239B63AA0045EC6D /* single_item.html in Resources */,
 			);
@@ -749,20 +753,19 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8B0223B523F989DA007F801C /* EnglishScript.strings */ = {
+		F63D830B24363AC9006E8D0E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8B0223B623F989DC007F801C /* en-US */,
+				F63D830C24363AC9006E8D0E /* en */,
+				F63D830E24363AF0006E8D0E /* id */,
 			);
-			name = EnglishScript.strings;
-			path = KindCer;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		F677AFE72354157D000B39E4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F677AFE82354157D000B39E4 /* Base */,
-				8B3C465F23EE803600668159 /* en-US */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

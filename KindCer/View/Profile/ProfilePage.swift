@@ -71,11 +71,20 @@ struct ProfilePage: View {
                                                            Image("edit").renderingMode(.original).offset(x:35,y:38).padding(40).shadow(color: Color("Primary"), radius: 2)
                                                        }
                                     }
-                                    Text(self.userModel.user_name == "" ? "Belum ada nama":self.userModel.user_name).font(.system(size: 24)).foregroundColor(.white).bold().gesture(TapGesture().onEnded({
-                                        self.isSheet = true
-                                        self.sheetType = 0
-                                        print("tapped")
-                                    }))
+                                    if self.userModel.user_name == "" {
+                                        Text("Belum ada nama").font(.system(size: 24)).foregroundColor(.white).bold().gesture(TapGesture().onEnded({
+                                            self.isSheet = true
+                                            self.sheetType = 0
+                                            print("tapped")
+                                        }))
+                                    }else{
+                                        Text(self.userModel.user_name).font(.system(size: 24)).foregroundColor(.white).bold().gesture(TapGesture().onEnded({
+                                            self.isSheet = true
+                                            self.sheetType = 0
+                                            print("tapped")
+                                        }))
+                                    }
+                                    
                                 }
                                 HStack {
                                     VStack {

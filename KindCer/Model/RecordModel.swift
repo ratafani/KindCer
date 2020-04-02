@@ -115,7 +115,7 @@ class RecordModel : NSObject,ObservableObject{
                 }
                 fetchData()
             }else{
-                print("kosong")
+                
             }
         }catch{
             

@@ -13,7 +13,9 @@ struct CardKondisi: View {
     @Binding var penjelasan : String
     @State var theColor : Color = .red
     var body: some View {
-        ZStack
+        let mkondisi = NSLocalizedString(kondisi, comment: "")
+        let mpenjelasan = NSLocalizedString(penjelasan, comment: "")
+        return ZStack
             {
                 Rectangle().foregroundColor(.white)
                 HStack
@@ -24,12 +26,12 @@ struct CardKondisi: View {
                                     .fontWeight(.semibold)
                                     .font(.system(size: 18))
                                 
-                                Text(kondisi)
+                                Text(mkondisi)
                                     .fontWeight(.semibold)
                                     .font(.system(size: 27))
                                     .foregroundColor(gantiWarna())
                                 
-                                Text(penjelasan)
+                                Text(mpenjelasan)
                                     .fontWeight(.semibold)
                                     .font(.system(size: 15))
                                     .padding(.top)

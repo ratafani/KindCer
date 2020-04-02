@@ -14,7 +14,13 @@ struct recordBody: View {
     
     let moderateDangerous = ["Alergi", "Demam", "Muntah", "Mulut", "Sembelit", "Susah Menelan", "Bengkak", "Bernafas"]
     var body: some View{
-        ZStack {
+        let type = NSLocalizedString(record.type,
+        comment: "") + " -"
+        let kondisi = NSLocalizedString(record.kondisi,
+        comment: "")
+        let penjelasan = NSLocalizedString(record.penjelasan,
+        comment: "")
+        return ZStack {
             Rectangle().foregroundColor(.white)
             HStack{
                 Rectangle().foregroundColor(choseColor()).frame(width: 4)
@@ -27,10 +33,10 @@ struct recordBody: View {
                 }
                 VStack(alignment: .leading){
                     HStack{
-                        Text("\(record.type)  -").bold().font(.headline)
-                        Text("\(record.kondisi)").bold().foregroundColor(choseColor()).font(.headline)
+                        Text(type).bold().font(.system(size: 14))
+                        Text(kondisi).bold().foregroundColor(choseColor()).font(.system(size: 14))
                     }.padding(.top, 10)
-                    Text(record.penjelasan).foregroundColor(.gray).padding(.top, 10).padding(.bottom, 10)
+                    Text(penjelasan).foregroundColor(.gray).font(.system(size: 12)).padding(.top, 10).padding(.bottom, 10)
                 }
                 
                 Spacer()

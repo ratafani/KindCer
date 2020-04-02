@@ -170,30 +170,24 @@ struct DateCard: View {
 
 struct SymptompsList: View {
     
-    @State var title = "1213"
+    @State var title = "Tutup"
     @State var icon = "demam"
     @State var width: CGFloat = 0
     @State var height: CGFloat = 0
     
     var body: some View {
-        ZStack{
+        let mTitile = NSLocalizedString(title,comment: "")
+        return ZStack{
             Rectangle().frame(height: 65).foregroundColor(.white)
             HStack{
                 ZStack{
                     Circle().foregroundColor(Color("Primary")).frame(width: 30, height: 30)
                     profileIc(icon: icon, width: width, height: height, alignment: .leading).padding().contrast(-10).saturation(-10)
                 }
-                Text(title).bold().font(.system(size: 18))
+                Text(mTitile).bold().font(.system(size: 18))
                 Spacer()
                 //                Image("plus").padding(.trailing)
             }
         }
     }
 }
-
-//
-//struct SymptompsAdd_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SymptompsAdd(recordModel: RecordModel())
-//    }
-//}
