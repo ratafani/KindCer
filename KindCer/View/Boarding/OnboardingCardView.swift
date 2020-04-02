@@ -22,7 +22,7 @@ struct OnboardingCardView: View {
                     
                     Image("logokindceronboard") .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).height/8)
+                        .frame(width: geometry.frame(in: .global).width/2, height: geometry.frame(in: .global).height/9)
                         .padding(.top, 80)
 
                     
@@ -70,7 +70,7 @@ struct NewLoginView : View {
                {
                    Image("logokindceronboard") .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: geometry.frame(in: .global).width/1.5, height: geometry.frame(in: .global).height/8)
+                    .frame(width: geometry.frame(in: .global).width/2.5, height: geometry.frame(in: .global).height/9.5)
                      .padding(.bottom, 8)
                    
                  Image("onboard3text") .resizable() .aspectRatio(contentMode: .fit)

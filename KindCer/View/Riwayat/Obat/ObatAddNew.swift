@@ -56,14 +56,14 @@ struct ObatAddNew: View {
                     Group {
                         Form{
                             Section(header: HStack {
-                                Image("namaKemo").resizable().frame(width: 20, height: 20)
+                                Image("obatNama").resizable().frame(width: 20, height: 20)
                                 Text("Nama Obat").font(.headline)
                             }) {
                                 
                                 TextField("Tulis nama obat", text: self.$namaObat)
                             }
                             Section(header: HStack {
-                                Image("namaKemo").resizable().frame(width: 20, height: 20)
+                                Image("obatMinum").resizable().frame(width: 20, height: 20)
                                 Text("Aturan Minum").font(.headline)
                             }) {
                                 Picker("Pilih aturan minum",selection: $aturanMinum) {
@@ -73,7 +73,7 @@ struct ObatAddNew: View {
                                 }
                             }
                             Section(header: HStack {
-                                Image("namaKemo").resizable().frame(width: 20, height: 20)
+                                Image("obatJenis").resizable().frame(width: 20, height: 20)
                                 Text("Jenis Obat").font(.headline)
                             }) {
                                 Picker(selection: $jenisObat,label: Text("Pilih jenis obat")) {
