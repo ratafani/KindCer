@@ -32,7 +32,9 @@ struct HomeView: View {
     //    @State var a : RecordModel = RecordModel()
     
     var body: some View {
-        GeometryReader { geometry in
+        
+        let gejala = NSLocalizedString("Gejala",comment: "")
+        return GeometryReader { geometry in
             return VStack {
                 HStack{
                     VStack(alignment: .leading) {
@@ -101,7 +103,7 @@ struct HomeView: View {
                 }
                 CalendarView(dateModel: self.dateModel,recordModel: self.recordModel)
                 HStack{
-                    Text("Gejala (\(self.recordModel.mData.count))").padding(.horizontal)
+                    Text("\(gejala) (\(self.recordModel.mData.count))").padding(.horizontal)
                     Spacer()
                     Button(action: {
                         if self.dateModel.currentDate.timeIntervalSince1970 <= Date().timeIntervalSince1970{

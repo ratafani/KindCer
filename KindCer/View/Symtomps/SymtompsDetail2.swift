@@ -21,7 +21,7 @@ struct SymtompsDetail2: View {
 //        comment: "Time to sell 1000 apps")
         
         let a = NSLocalizedString(navBtn,comment: "")
-        let b = NSLocalizedString(record.type,comment: "")
+//        let b = NSLocalizedString(record.type,comment: "")
         return VStack
             {
                 ZStack {
