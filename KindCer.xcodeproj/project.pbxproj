@@ -94,6 +94,12 @@
 		F6DF7BD52436385800B3CC4A /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F6DF7BD42436385800B3CC4A /* Logo.png */; };
 		F6F1132D23BD7336000A1958 /* ObatIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1132C23BD7336000A1958 /* ObatIsEmpty.swift */; };
 		F6F1132F23BD743F000A1958 /* ObatAddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1132E23BD743F000A1958 /* ObatAddNew.swift */; };
+		F6F12EBE243DDB9E00C468A9 /* CovidHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F12EBD243DDB9E00C468A9 /* CovidHomeView.swift */; };
+		F6F12EC0243DDDF300C468A9 /* CovidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F12EBF243DDDF300C468A9 /* CovidView.swift */; };
+		F6F12EC2243DDEF400C468A9 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F12EC1243DDEF400C468A9 /* SpinnerView.swift */; };
+		F6F12EC4243DE17900C468A9 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F12EC3243DE17900C468A9 /* LineView.swift */; };
+		F6F12EC6243EAECD00C468A9 /* CovidModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F12EC5243EAECD00C468A9 /* CovidModel.swift */; };
+		F6F12EC8243ECFA200C468A9 /* CovidSymptompsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F12EC7243ECFA100C468A9 /* CovidSymptompsView.swift */; };
 		F6FEA2DB23B9B0E20014FAA0 /* ObatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEA2DA23B9B0E20014FAA0 /* ObatModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -210,6 +216,12 @@
 		F6DF7BD42436385800B3CC4A /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		F6F1132C23BD7336000A1958 /* ObatIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatIsEmpty.swift; sourceTree = "<group>"; };
 		F6F1132E23BD743F000A1958 /* ObatAddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatAddNew.swift; sourceTree = "<group>"; };
+		F6F12EBD243DDB9E00C468A9 /* CovidHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidHomeView.swift; sourceTree = "<group>"; };
+		F6F12EBF243DDDF300C468A9 /* CovidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidView.swift; sourceTree = "<group>"; };
+		F6F12EC1243DDEF400C468A9 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		F6F12EC3243DE17900C468A9 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		F6F12EC5243EAECD00C468A9 /* CovidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidModel.swift; sourceTree = "<group>"; };
+		F6F12EC7243ECFA100C468A9 /* CovidSymptompsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSymptompsView.swift; sourceTree = "<group>"; };
 		F6FEA2DA23B9B0E20014FAA0 /* ObatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -314,6 +326,7 @@
 				F6516BC22385FBED0035E8E4 /* KeyboardModel.swift */,
 				F626A0CC2399FAA50045EC6D /* CancerTypeModel.swift */,
 				F6FEA2DA23B9B0E20014FAA0 /* ObatModel.swift */,
+				F6F12EC5243EAECD00C468A9 /* CovidModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,6 +387,7 @@
 				F6516BC02383807D0035E8E4 /* ImagePicker.swift */,
 				F62C5CAD23B475DE00468D45 /* ProgressCircle.swift */,
 				F606DA9B23C060B6000988ED /* TimePicker.swift */,
+				F6F12EC1243DDEF400C468A9 /* SpinnerView.swift */,
 			);
 			path = Additional;
 			sourceTree = "<group>";
@@ -452,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				F677AFE02354157A000B39E4 /* ContentView.swift */,
+				F6F12EBC243DDB8300C468A9 /* Covid */,
 				F6D9793623602ED100DC6673 /* Boarding */,
 				F6D9793423601C5D00DC6673 /* Home */,
 				F62C5CA023B44A2600468D45 /* Riwayat */,
@@ -497,6 +512,17 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		F6F12EBC243DDB8300C468A9 /* Covid */ = {
+			isa = PBXGroup;
+			children = (
+				F6F12EBD243DDB9E00C468A9 /* CovidHomeView.swift */,
+				F6F12EBF243DDDF300C468A9 /* CovidView.swift */,
+				F6F12EC3243DE17900C468A9 /* LineView.swift */,
+				F6F12EC7243ECFA100C468A9 /* CovidSymptompsView.swift */,
+			);
+			path = Covid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -646,7 +672,9 @@
 				F6D9791E235EAD6F00DC6673 /* HomeView.swift in Sources */,
 				F6516B62237E73100035E8E4 /* SchedulePage.swift in Sources */,
 				8BEE759F237E78D800B415A7 /* JadwalModel.swift in Sources */,
+				F6F12EC6243EAECD00C468A9 /* CovidModel.swift in Sources */,
 				F60508D9239DF71F0013156F /* CardRiwayat.swift in Sources */,
+				F6F12EC2243DDEF400C468A9 /* SpinnerView.swift in Sources */,
 				F6516BC82386B5C00035E8E4 /* FormObat.swift in Sources */,
 				F6516BC12383807D0035E8E4 /* ImagePicker.swift in Sources */,
 				F66D1CB3237BE36000E864C5 /* mPicker.swift in Sources */,
@@ -670,12 +698,16 @@
 				F6D97924235F355D00DC6673 /* recordCard.swift in Sources */,
 				F66D1CA3237BDEEF00E864C5 /* UserModel.swift in Sources */,
 				F6516BBF23824F180035E8E4 /* SummaryEmpty.swift in Sources */,
+				F6F12EC0243DDDF300C468A9 /* CovidView.swift in Sources */,
 				F6F1132D23BD7336000A1958 /* ObatIsEmpty.swift in Sources */,
+				F6F12EC4243DE17900C468A9 /* LineView.swift in Sources */,
 				F6516BBC23822F120035E8E4 /* PageViewController.swift in Sources */,
 				F62C5CA623B46E9C00468D45 /* TreatmentPage.swift in Sources */,
 				F66D1C93237ABED400E864C5 /* CustomLegends.swift in Sources */,
 				F606DA9E23C07A1E000988ED /* ObatCard.swift in Sources */,
 				F66D1C7C237A5B6A00E864C5 /* ProfileList.swift in Sources */,
+				F6F12EBE243DDB9E00C468A9 /* CovidHomeView.swift in Sources */,
+				F6F12EC8243ECFA200C468A9 /* CovidSymptompsView.swift in Sources */,
 				F60508D3239DF71F0013156F /* ScheduleEmpty.swift in Sources */,
 				F66D1CB6237C5BD100E864C5 /* SymptompsModel.swift in Sources */,
 				F66D1C81237A5B6A00E864C5 /* ProfileConditionDetail.swift in Sources */,
