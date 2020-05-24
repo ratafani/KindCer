@@ -11,7 +11,7 @@ import WebKit
 
 struct WebView : UIViewRepresentable {
     
-    let pdf = Bundle.main.path(forResource: "My CV", ofType: "pdf")
+    
     @Binding var invoiceComposer: InvoiceComposer
     @Binding var htmlPdf : String
     @Binding var web : WKWebView
@@ -97,8 +97,8 @@ class InvoiceComposer: NSObject {
             for a in cancers.mData{
                 var itemHTMLContent: String!
                 itemHTMLContent = try String(contentsOfFile: pathToLastItemHTMLTemplate!)
-                
-                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#JENIS#", with: a.name)
+                let mJenis = NSLocalizedString(a.name,comment: "")
+                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#JENIS#", with: mJenis)
                 itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#TANGGAL#", with: "\(dateFormatter.string(from: a.tanngal))")
                 jenis += itemHTMLContent
             }
@@ -117,10 +117,13 @@ class InvoiceComposer: NSObject {
             for a in efek.mData{
                 var itemHTMLContent: String!
                 itemHTMLContent = try String(contentsOfFile: pathToSingleItemHTMLTemplate!)
+                let mType = NSLocalizedString(a.type,comment: "")
+                let mCondition = NSLocalizedString(a.kondisi,comment: "")
+                let mExplain = NSLocalizedString(a.penjelasan,comment: "")
                 
-                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#TYPE#", with: a.type + "-" + a.kondisi)
+                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#TYPE#", with: mType + "-" + mCondition)
                 itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#DATE#", with: "\(dateFormatter.string(from: a.tanggal))")
-                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#DESC#", with: "\(a.penjelasan)")
+                itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#DESC#", with: "\(mExplain)")
                 sType += itemHTMLContent
             }
             print(sType)

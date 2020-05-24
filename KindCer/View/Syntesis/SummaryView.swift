@@ -63,7 +63,7 @@ struct SummaryView: View {
                         }.padding(.horizontal)
                         
                     }.padding(.horizontal)
-                }
+                }.animation(.linear)
                 ScrollView{
                     VStack{
                         ForEach(self.allDate, id: \.self) { sim in
@@ -85,7 +85,7 @@ struct SummaryView: View {
                         
                     }.padding()
                     
-                }.background(Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1))).edgesIgnoringSafeArea(.all)
+                }.background(Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1))).edgesIgnoringSafeArea(.all).animation(.linear)
             }.onAppear{
                 
                 self.mTypeKey.append("All")

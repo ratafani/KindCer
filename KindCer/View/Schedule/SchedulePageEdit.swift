@@ -35,9 +35,12 @@ struct SchedulePageEdit: View {
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
                 VStack{
                     Rectangle().foregroundColor(.white).opacity(0.5).frame(width: 50, height: 5).cornerRadius(10)
-                    Text("Ubah Jadwal Kemoterapi").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
+                    Text("Edit").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
                     ZStack{
                         HStack {
+                            Button("Cancel"){
+                                self.presentationMode.wrappedValue.dismiss()
+                            }.foregroundColor(.white).padding(.init(top: -20, leading: 15, bottom: 0, trailing: 0))
                             Spacer()
                             Button("Simpan"){
                                 self.jadwal.updateItem(id: self.jItem.id, key: "name", value: self.namaKemo)

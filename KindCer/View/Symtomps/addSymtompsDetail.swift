@@ -11,7 +11,7 @@ import SwiftUI
 struct addSymtompsDetail: View {
     
     @State var title = "demam"
-    @State var status = "Pilih suhu badan"
+    
     
     @State var isSheet : Bool = false
     @State var sheetId = 0
@@ -59,9 +59,10 @@ struct addSymtompsDetail: View {
     }
     
     var body: some View{
-        VStack {
+        let mTitle = NSLocalizedString(title,comment: "")
+        return VStack {
             if !(title == "Lainnya"){
-                formLargeSizePath(title1: "Kondisi", title2: title, status: $kondisi, icon: "termometer", width: 15, height: 28).frame(height: 89).onTapGesture {
+                formLargeSizePath(title1: "Kondisi", title2: mTitle, status: $kondisi, icon: "termometer", width: 15, height: 28).frame(height: 89).onTapGesture {
                     self.isSheet = true
                     self.sheetId = 0
                 }
@@ -82,7 +83,7 @@ struct addSymtompsDetail: View {
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9450980392, green: 0.937254902, blue: 0.9490196078, alpha: 1))).edgesIgnoringSafeArea(.all))
             .sheet(isPresented: $isSheet) {
                 if self.sheetId == 0{
-                    PickerForm(title: self.title, penjelasanAman: self.sympthoms.aman, penjelasanRingan: self.sympthoms.ringan, penjelasanSedang: self.sympthoms.sedang, penjelasanParah: self.sympthoms.parah,kondisi: self.$kondisi,isSheet: self.$isSheet)
+                    PickerForm(title: mTitle, penjelasanAman: self.sympthoms.aman, penjelasanRingan: self.sympthoms.ringan, penjelasanSedang: self.sympthoms.sedang, penjelasanParah: self.sympthoms.parah,kondisi: self.$kondisi,isSheet: self.$isSheet)
                 }else if self.sheetId == 1{
                     TambahCatatanView(catatan: self.$catatan,isSheet: self.$isSheet)
                 }else{
@@ -90,16 +91,10 @@ struct addSymtompsDetail: View {
                 }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarTitle("\(title)").font(.system(size: 18))
+        .navigationBarTitle(mTitle).font(.system(size: 18))
         .navigationBarItems(leading: btnBack, trailing: btnDone)
     
         
         
     }
 }
-
-//struct addSymtompsDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        addSymtompsDetail(recordModel: RecordModel())
-//    }
-//}

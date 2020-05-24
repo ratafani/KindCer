@@ -58,9 +58,3 @@ struct formObat: View{
         }
     }
 }
-
-//struct FormObat_Previews: PreviewProvider {
-//    static var previews: some View {
-//        formObat(status: "", obat: "")
-//    }
-//}

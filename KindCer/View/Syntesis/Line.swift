@@ -49,7 +49,7 @@ struct Line: View {
                 
                 .onAppear(){
                     self.showFull.toggle()
-            }.drawingGroup()
+            }
             if(self.showIndicator) {
                 IndicatorPoint()
                     .position(self.getClosestPointOnPath(touchLocation: self.touchLocation))
@@ -156,7 +156,7 @@ struct IndicatorPoint: View {
     var body: some View {
         ZStack{
             Circle()
-                .fill(Colors.IndicatorKnob)
+                .fill(Color("Primary"))
             Circle()
                 .stroke(Color.white, style: StrokeStyle(lineWidth: 4))
         }
@@ -174,7 +174,7 @@ struct IndicatorPoint_Previews: PreviewProvider {
 struct Line_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader{ geometry in
-            Line(data: TestData.data, frame: .constant(geometry.frame(in: .local)), touchLocation: .constant(CGPoint(x: 300, y: 12)), showIndicator: .constant(true))
+            Line(data: TestData.data, frame: .constant(geometry.frame(in: .local)), touchLocation: .constant(CGPoint(x: 100, y: 12)), showIndicator: .constant(true))
         }.frame(width: 320, height: 160)
     }
 }

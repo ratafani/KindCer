@@ -19,12 +19,16 @@ struct TambahCatatanPengobatan: View {
     @State var mObat = ""
     @State var catatan = ""
     var body: some View {
-        VStack{
+        let name = NSLocalizedString("Nama Obat",comment: "")
+        let mTitle = NSLocalizedString(title,comment: "")
+        let detail = NSLocalizedString("Tambah Catatan Pengobatan",comment: "")
+        
+        return VStack{
             ZStack(alignment: .center) {
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
                 VStack {
                     Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
-                    Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+                    Text(mTitle).font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
                 }
                 HStack{
                     Button(action: {
@@ -37,24 +41,22 @@ struct TambahCatatanPengobatan: View {
                 HStack{
                     Spacer()
                     Button(action: {
-                        //                print("Ketik tambah catatan")
-                        
-//                        self.obat = self.mObat
-//                        self.catatan_obat = self.catatan
                         self.isSheet = false
                     }) {
                         Text("Simpan").foregroundColor(.white)
-                    }//.padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
+                    }
                 }.padding(.horizontal)
-            }.padding(.bottom,40).offset(y: -1)
-            formLargeSizeTextField(title: "Nama Obat", icon: "obat", width: 24, height: 24, textField: $obat) .frame(height: 200)
+            }.offset(y: -1)
             
-            formLargeSizeTextField(title: "Tambah Catatan Pengobatan", icon: "pensil", width: 24, height: 24, textField: $catatan_obat) .frame(height: 200)
+            formLargeSizeTextField(title: name, icon: "obat", height: 24, textField: $obat) .frame(height: 200)
+            
+            formLargeSizeTextField(title: detail, icon: "pensil", width: 24, height: 24, textField: $catatan_obat) .frame(height: 200)
             
             Spacer()
         }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all)).padding(.bottom, keyboard.currentHeight).onTapGesture {
             self.endEditing(true)
         }
+        
     }
     
     private func endEditing(_ force: Bool){

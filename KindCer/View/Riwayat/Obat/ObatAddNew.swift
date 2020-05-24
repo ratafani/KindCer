@@ -7,21 +7,22 @@
 //
 
 import SwiftUI
-
-struct ObatAddNew: View {
+import UserNotifications
+struct ObatAddNew: View{
     
     @State var namaObat = ""
     @State var aturanMinum = 0
-    @State var macamAturanMinum = ["Sesudah Makan","Sebelum Makan"]
+    @State var macamAturanMinum = [NSLocalizedString("Sesudah Makan",comment: ""),NSLocalizedString("Sebelum Makan",comment: "")]
     @State var jenisObat = 0
-    @State var macamJenisObat = ["Tablet","Kapsul","Bubuk"]
+    @State var macamJenisObat = [NSLocalizedString("Tablet",comment: ""),NSLocalizedString("Kapsul",comment: ""),NSLocalizedString("Bubuk",comment: "")]
     @State var jadwalObat = [String]()
     @State var timePicked = false
     @ObservedObject var obatModel : ObatModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
-        NavigationView {
+        
+        return NavigationView {
             ZStack {
                 VStack {
                     ZStack{
@@ -37,11 +38,10 @@ struct ObatAddNew: View {
                                     }.foregroundColor(.white).padding(.init(top: -21, leading: 15, bottom: 0, trailing: 0))
                                     Spacer()
                                     Button(action: {
-                                        
-                                        
+//                                        self.getNotification(obat: "TestData", time: Date())
                                         let mObat = ObatType(id: StaticModel.id, name: self.namaObat, jadwal: self.jadwalObat, jenis: self.macamJenisObat[self.jenisObat], aturan: self.macamAturanMinum[self.aturanMinum])
                                         self.obatModel.saveListObat(obat: mObat)
-                                        
+//
                                         self.presentationMode.wrappedValue.dismiss()
                                     }) {
                                         Text("Simpan").opacity(isAbleToAdd() ? 0.3 : 1)
@@ -123,6 +123,8 @@ struct ObatAddNew: View {
         }
         return false
     }
+    
+    
 }
 
 
