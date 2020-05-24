@@ -75,7 +75,7 @@ struct ObatDetail: View {
                 }
                 VStack{
                     Button(action: {
-                        self.mObat.deleteItem(id: self.obat.id)
+                        self.mObat.deleteItem(obat: self.obat) 
                         self.isDetail = false
                     }) {
                         ZStack {

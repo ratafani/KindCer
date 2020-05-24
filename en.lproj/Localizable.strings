@@ -14,6 +14,7 @@
 "Dengan mendaftar, kamu sudah setuju dengan kebijakan\n keamanan dan syarat dan ketentuan Relia."="By registering, you have agreed with \n security policy and the terms and conditions of Relia";
 //MARK: General
 "Tutup" = "Close";
+"Kirim" = "Send";
 "Kembali" = "Back";
 "Tambah" = "Add";
 "Simpan" = "Save";
@@ -164,6 +165,7 @@
 //MARK: Rangkuman
 "Rangkuman kamu kosong" = "Your summary is empty";
 "Kumpulkan catatan tindakan gejala sehari-hari kamu disini." = "Collect your daily symptoms record here.";
+"Kumpulkan obat harian kamu disini." = "Gather your daily medicine here.";
 
 //MARK: Schedule
 "Perawatan" = "Treatment";
@@ -209,7 +211,9 @@
 "Tambah Obat" = "Add Medicine";
 "Tulis nama obat" = "Write the medicine";
 "Pilih aturan minum" = "How to consume";
+"Aturan Minum" = "How to consume";
 "Pilih jenis obat" = "Choose medicine type";
+"Jenis Obat" = "Choose medicine type";
 "Jam Minum Obat" = "Hours of taking medicine";
 "Jam Berikutnya" = "Next hour";
 "Jenis" = "Type";
@@ -219,6 +223,7 @@
 "Kami akan mencatat riwayat pengobatan yang telah kamu lakukan di sini." = "We will record your medicine history here";
 "Tambahkan Jadwal" = "Add Schedule";
 "Detail Jadwal" = "Schedule Detail";
+"Jam berapa obat di minum?" = "What time does the medicine take?";
 
 //MARK: Profile
 "Belum ada nama" = "No name yet";
@@ -258,4 +263,5 @@
 "Jum" = "Fri";
 "Sab" = "Sat";
 "Min" = "Sun";
+
 

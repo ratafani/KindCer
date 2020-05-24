@@ -34,7 +34,7 @@ struct headerModalPicker: View {
             Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
             VStack{
                 Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
-                Text("Kondisi \(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+                Text("Kondisi").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
             }
         }
     }

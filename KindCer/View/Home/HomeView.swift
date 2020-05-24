@@ -23,7 +23,7 @@ struct HomeView: View {
     @State var mSymptoms : [String] = []
     @ObservedObject var dateModel: DateModel
     @ObservedObject var recordModel: RecordModel
-    @ObservedObject var covidModel = CovidModel()
+    
     @State var record : RecordType = RecordType(id: StaticModel.id, type: "", kondisi: "", catatan_record: "", obat: "", catatan_obat: "", tanggal: Date(), penjelasan: "")
     @ObservedObject var profileModel : UserModel = UserModel()
     @State var isSheet : Bool = false
@@ -103,10 +103,6 @@ struct HomeView: View {
                         }
                     }.padding(.horizontal)
                 }
-                CovidHomeView().onTapGesture {
-                    self.isSheet = true
-                    self.homeSheet = HomeSheet.Covid
-                }
                 CalendarView(dateModel: self.dateModel,recordModel: self.recordModel)
                 HStack{
                     Text("\(gejala) (\(self.recordModel.mData.count))").padding(.horizontal)
@@ -153,8 +149,6 @@ struct HomeView: View {
                         
                     }else if self.homeSheet == HomeSheet.Record{
                         SymptompsAdd( recordModel: self.recordModel,homeSheet : self.$isSheet,now: self.dateModel.currentDate)
-                    }else if self.homeSheet == HomeSheet.Covid{
-                        CovidView(covidModel: self.covidModel,recordModel: self.recordModel)
                     }
                     else{
 //                        ScheduleMainView(userModel: self.profileModel, jadwal: JadwalModel())

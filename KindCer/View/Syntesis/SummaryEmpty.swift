@@ -16,14 +16,7 @@ struct SummaryEmpty: View {
                 Image("EmptyRecord").resizable().foregroundColor(Color("Primary")).frame(width: 168, height: 157).padding(.top)
                 Text("Rangkuman kamu kosong").foregroundColor(Color.init(#colorLiteral(red: 0.5215227604, green: 0.3181272149, blue: 0.8401996493, alpha: 1))).bold().padding(.bottom,10)
                 Text("Kumpulkan catatan tindakan gejala sehari-hari kamu disini.").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
-//                Button(action: {
-//                    
-//                }) {
-//                    ZStack {
-//                        Rectangle().foregroundColor(Color("Primary")).frame(width: 300,height: 50).cornerRadius(15)
-//                        Text("Tambahkan Sekarang").foregroundColor(Color.white)
-//                    }
-//                }
+
             }.padding()
         }
     }

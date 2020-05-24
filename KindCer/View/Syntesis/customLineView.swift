@@ -51,13 +51,13 @@ public struct CustomLineView: View {
                     }.frame(width: geometry.frame(in: .local).size.width, height: 200)
                     MagnifierRect(currentNumber: self.$currentDataNumber)
                         .opacity(self.opacity)
-                        .offset(x: self.dragLocation.x - geometry.frame(in: .local).size.width/2, y: 36)
+                        .offset(x: self.dragLocation.x - geometry.frame(in: .local).size.width/2, y: 0)
                 }
                 .frame(width: geometry.frame(in: .local).size.width, height: 200)
                 .gesture(DragGesture()
                     .onChanged({ value in
                         self.dragLocation = value.location
-                        self.indicatorLocation = CGPoint(x: max(value.location.x-30,0), y: 32)
+                        self.indicatorLocation = CGPoint(x: max(value.location.x-30,0), y: 0)
                         self.opacity = 1
                         self.closestPoint = self.getClosestDataPoint(toPoint: value.location, width: geometry.frame(in: .local).size.width-30, height: 200)
                         self.hideHorizontalLines = true
@@ -101,6 +101,7 @@ struct IndicatorCircle: View {
 struct MagnifierRect: View {
     @Binding var currentNumber:String
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     var body: some View {
         ZStack{
             Text(currentNumber)
@@ -111,11 +112,11 @@ struct MagnifierRect: View {
             if (self.colorScheme == .dark ){
                  RoundedRectangle(cornerRadius: 16)
                     .stroke(Color.white, lineWidth: self.colorScheme == .dark ? 2 : 0)
-                    .frame(width: 60, height: 260)
+                    .frame(width: 60, height: 800)
                     
             }else{
                  RoundedRectangle(cornerRadius: 16)
-                    .frame(width: 60, height: 280)
+                    .frame(width: 60, height: 260)
                     .foregroundColor(Color.white)
                     .shadow(color: Color("Primary"), radius: 12, x: 0, y: 6 )
                     .blendMode(.multiply)

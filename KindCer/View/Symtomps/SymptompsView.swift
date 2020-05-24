@@ -34,12 +34,6 @@ struct SymptompsView: View {
                         }
                     }.padding()
                 }
-//                CardKondisi(kondisi: recordModel.recordAtIndex(id: record.id).kondisi, penjelasan: recordModel.recordAtIndex(id: record.id).penjelasan,theColor: theColor)
-//                
-//                formLargeSize(title: "Catatan", status: recordModel.recordAtIndex(id: record.id).catatan_record, icon: "pensil", width: 25, height: 25) .frame(height: 200)
-//                
-//                formObat(title: "Obat", status: recordModel.recordAtIndex(id: record.id).catatan_obat, icon: "obat", width: 25, height: 25,obat: recordModel.recordAtIndex(id: record.id).obat)
-                
                 Spacer(minLength: 150)
                 
                 

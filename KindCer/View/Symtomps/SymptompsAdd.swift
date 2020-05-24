@@ -118,9 +118,12 @@ struct SymptompsAdd: View {
             NavigationView{
                 List{
                     ForEach(listSymptomps,id:\.self) { s in
-                        NavigationLink(destination: addSymtompsDetail(title: self.listTitle[s] ?? "", status: "Pilih Kondisi", sympthoms: SymptompModel(type: self.listModel[s] ?? .lainnya), recordModel: self.recordModel, homeSheet: self.$homeSheet,cDate: self.now)){
+                        NavigationLink(destination:
+                            addSymtompsDetail(title: self.listTitle[s] ?? "", sympthoms: SymptompModel(type: self.listModel[s] ?? .lainnya), recordModel: self.recordModel, homeSheet: self.$homeSheet,cDate: self.now)
+                        )
+                        {
                             SymptompsList(title: s, icon: self.listIcon[s] ?? "", width: 23, height: 23)
-                            }.buttonStyle(PlainButtonStyle())
+                        }.buttonStyle(PlainButtonStyle())
                     }
                 }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.9433087707, green: 0.9377009273, blue: 0.9476192594, alpha: 1))).edgesIgnoringSafeArea(.all))
                     .navigationBarTitle("\(self.now, formatter: self.dateFormatter)",displayMode: .inline).font(.system(size: 23)).buttonStyle(PlainButtonStyle())
@@ -151,21 +154,6 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
         }
     }
     
-}
-
-struct DateCard: View {
-    
-    @State var date: String = "Sabtu, 09 November 2019"
-    
-    var body: some View {
-        ZStack{
-            Rectangle().frame(width: 414, height: 70).foregroundColor(.white)
-            HStack {
-                Text(date).bold().padding(.leading).font(.system(size: 23))
-                Spacer()
-            }
-        }
-    }
 }
 
 struct SymptompsList: View {

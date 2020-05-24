@@ -110,7 +110,6 @@ struct LineGraph: Shape {
             p.addLine(to: CGPoint(x: 0, y: rect.height))
             p.closeSubpath()
         }
-        
         return graph
     }
 }
@@ -149,5 +148,50 @@ struct LineView_Previews2: PreviewProvider {
         ZStack {
             LineView( covidModel: CovidModel())
         }
+    }
+}
+
+
+struct LineViewCoba : View {
+    @Binding var frame: CGRect
+    @State var data = [1,1,1,1,1,4,5,5,5,5,100]
+    
+    var stepWidth: CGFloat {
+        return frame.size.width / CGFloat(data.count-1)
+    }
+    var stepHeight: CGFloat {
+        return frame.size.height / CGFloat(data.max()! + data.min()!)
+    }
+    var path: Path {
+        return Path.quadCurvedPathWithPoints(points: data, step: CGPoint(x: stepWidth, y: stepHeight))
+    }
+    var path2: Path{
+        return Path.quadClosedCurvedPathWithPoints(points: data, step: CGPoint(x: stepWidth, y: stepHeight))
+    }
+    var body: some View{
+        ZStack{
+            path
+            .stroke(LinearGradient(gradient: Gradient(colors: [Color("Primary"), Color("Primary")]), startPoint: .leading, endPoint: .trailing) ,style: StrokeStyle(lineWidth: 3))
+            .shadow(radius: 10)
+            .rotationEffect(.degrees(180), anchor: .center)
+            .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+            .animation(.easeOut(duration: 1))
+            path2
+            .fill(LinearGradient(gradient: Gradient(colors: [Color.init(#colorLiteral(red: 0.5960784314, green: 0.3921568627, blue: 0.8862745098, alpha: 0.3647527825)), .white]), startPoint: .bottom, endPoint: .top))
+            .shadow(radius: 10)
+            .rotationEffect(.degrees(180), anchor: .center)
+            .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+            .animation(.easeOut(duration: 1))
+        }
+            
+        
+    }
+}
+
+struct LineViewCoba_Preview: PreviewProvider {
+    static var previews: some View {
+        GeometryReader{ geometry in
+            LineViewCoba(frame: .constant(geometry.frame(in: .local)))
+        }.frame(width: 320, height: 160)
     }
 }

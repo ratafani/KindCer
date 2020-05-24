@@ -18,12 +18,14 @@ struct TambahCatatanView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
-        VStack{
+        let name = NSLocalizedString("Tambah Catatan",comment: "")
+        let mTitle = NSLocalizedString(title,comment: "")
+        return VStack{
             ZStack(alignment: .center) {
                 Rectangle().foregroundColor(Color("Primary")).frame( height: 60)
                 VStack {
                     Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
-                    Text("\(title)").font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
+                    Text(mTitle).font(.system(size: 24, design: .default)).bold().foregroundColor(.white)
                 }
                 HStack{
                     Button(action: {
@@ -43,8 +45,8 @@ struct TambahCatatanView: View {
                         Text("Simpan").foregroundColor(.white)
                     }//.padding(.init(top: 16, leading: 0, bottom: 0, trailing: 0))
                 }.padding(.horizontal)
-            }.padding(.bottom,40).offset(y: -1)
-            formLargeSizeTextField(title: "Tambah Catatan", icon: "pensil", width: 24, height: 24, textField: $catatan) .frame(height: 200)
+            }.offset(y: -1)
+            formLargeSizeTextField(title: name, icon: "pensil", width: 24, height: 24, textField: $catatan) .frame(height: 200)
             
             Spacer()
             

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct RiwayatPage: View {
     
@@ -22,7 +23,16 @@ struct RiwayatPage: View {
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "Primary") ?? UIColor.purple], for: .normal)
     }
     var body: some View {
-        GeometryReader{ geometry in
+        let center = UNUserNotificationCenter.current()
+        let options : UNAuthorizationOptions = [.alert,.sound,.badge]
+        center.requestAuthorization(options: options) { (granted, error) in
+            if let error = error{
+                print(error)
+            }else{
+                print("User is",granted)
+            }
+        }
+        return GeometryReader{ geometry in
             VStack{
                 ZStack{
                     Rectangle().foregroundColor(Color("Primary")).frame( height: 70)
@@ -40,12 +50,20 @@ struct RiwayatPage: View {
                         
                         Button("Bagikan"){
                             
-                        }.foregroundColor(Color.white).padding(.horizontal)
+                        }
+                        .disabled(true)
+                        .opacity(0.4)
+                        .foregroundColor(Color.white)
+                        .padding(.horizontal)
                     }
                 }
                 Picker("", selection: self.$pickerSelection) {
-                    Text("Perawatan").tag("1")
-                  Text("Obat Harian").tag("2")
+                    Text("Perawatan")
+                        .font(.system(size: 14))
+                        .tag("1")
+                    Text("Obat Harian")
+                        .font(.system(size: 14))
+                        .tag("2")
                 }
                 .padding(.horizontal,10)
                 .pickerStyle(SegmentedPickerStyle())
@@ -55,7 +73,7 @@ struct RiwayatPage: View {
                 }else{
                     ObatPage()
                 }
-            }.background(Color("inActive")).edgesIgnoringSafeArea(.all)
+            }.animation(.easeIn(duration: 0.4)).background(Color("inActive")).edgesIgnoringSafeArea(.all)
         }
     }
 }

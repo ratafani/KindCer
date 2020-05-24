@@ -34,17 +34,17 @@ struct ObatPage: View {
                     ObatIsEmpty()
                     Spacer()
                 }else{
-                    List{
-                        ForEach(self.obat.listObat, id: \.id){ theData in
-                            ObatCard(obat: theData,mObat: self.obat).onTapGesture {
-                                withAnimation{                                    self.theObat = theData
-                                    self.isDetail = true
+                    ScrollView{
+                        VStack{
+                            ForEach(self.obat.listObat, id: \.id){ theData in
+                                ObatCard(obat: theData,mObat: self.obat).onTapGesture {
+                                    withAnimation{                             self.theObat = theData
+                                        self.isDetail = true
+                                    }
                                 }
                             }
-                        }.onDelete { (index) in
-                            self.obat.deleteItem(id: self.obat.listObat[index.first!].id)
-                            
                         }
+                        
                     }
                 }
             }

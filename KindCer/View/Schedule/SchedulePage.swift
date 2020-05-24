@@ -105,7 +105,7 @@ struct SchedulePage: View {
     }
     func addToCD(){
         let newJadwal = JadwalType(id: StaticModel.id, name: namaKemo, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
-        //            JadwalType(id: StaticModel.id, tempat: tempatPengobatan, tanggal: kemoSchedule, dokter: dokter, catatan: catatan)
+
         jadwal.saveData(jadwal: newJadwal)
     }
     
@@ -141,3 +141,9 @@ extension UIApplication{
 
 
 
+
+struct SchedulePage_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}

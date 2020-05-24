@@ -21,7 +21,7 @@ struct CustomLegend: View {
     var stepHeight: CGFloat {
         return frame.size.height / CGFloat(data.points.max()! + data.points.min()!)
     }
-    @State var arrCategory : [String] = ["Aman","Ringan","Sedang","Bahaya"]
+    @State var arrCategory : [String] = ["Good","Ringan","Sedang","Bahaya"]
     var arrColor : [Color] = [.green,.blue,Color.init(#colorLiteral(red: 0.8745098039, green: 0.6588235294, blue: 0.1764705882, alpha: 1)),.red]
     var body: some View {
         
