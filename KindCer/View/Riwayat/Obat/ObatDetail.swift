@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ObatDetail: View {
+    @State var isSheet = false
     @Binding var obat : ObatType
     @ObservedObject var mObat : ObatModel
     
@@ -23,10 +24,14 @@ struct ObatDetail: View {
                 }.buttonStyle(PlainButtonStyle())
                 Spacer()
                 Button(action: {
-                    print(Array(self.obat.jadwal))
+//                    print(Array(self.obat.jadwal))
+                    self.isSheet.toggle()
                 }) {
                    Image(systemName: "pencil.circle.fill").resizable().foregroundColor(Color("Primary")).frame(width: 30, height: 30)
                 }.buttonStyle(PlainButtonStyle())
+                    .sheet(isPresented: $isSheet) { () -> View in
+                    ObatEdit(mObatType: ObatType(), obatModel: ObatModel())
+                }
             }
             Text(obat.name).bold().font(.system(size: 24))
             HStack{

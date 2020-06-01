@@ -36,24 +36,24 @@ struct SchedulePage: View {
                         Rectangle().foregroundColor(.white).opacity(0.3).frame(width: 50, height: 5).cornerRadius(10)
                         Text("Tambah Jadwal").font(.system(size: 18, design: .default)).bold().foregroundColor(.white)
                     }
-//                        ZStack{
+                    //                        ZStack{
                     HStack{
                         Button(action: {
-                             self.presentationMode.wrappedValue.dismiss()
+                            self.presentationMode.wrappedValue.dismiss()
                         }) {
                             Text("Tutup").foregroundColor(.white).padding(4)
                         }.padding(16)
                         Spacer()
                     }
-                            HStack {
-                                Spacer()
-                                Button("Simpan"){
-                                    self.addToCD()
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }.foregroundColor(.white).padding(.init(top: 0, leading: 0, bottom: 0, trailing: 15))
-                            }
-//                        }
-//                    }
+                    HStack {
+                        Spacer()
+                        Button("Simpan"){
+                            self.addToCD()
+                            self.presentationMode.wrappedValue.dismiss()
+                        }.foregroundColor(.white).padding(.init(top: 0, leading: 0, bottom: 0, trailing: 15))
+                    }
+                    //                        }
+                    //                    }
                 }
                 Form{
                     Section(header: HStack {
@@ -94,7 +94,7 @@ struct SchedulePage: View {
                         Image("condition").resizable().frame(width: 20, height: 20)
                         Text("Catatan").font(.headline)
                     }) {
-                        TextField("Tulis catatan kamu", text: self.$catatan)
+                        formLargeSizeTextField(textField: self.$catatan).frame(height: 200)
                     }
                     
                 }.edgesIgnoringSafeArea(.all)

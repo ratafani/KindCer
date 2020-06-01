@@ -108,7 +108,10 @@ struct SchedulePageEdit: View {
                     Image("condition").resizable().frame(width: 20, height: 20)
                     Text("Catatan").font(.headline)
                 }) {
-                    TextField("Tulis catatan kamu", text: self.$catatan).onAppear{
+//                    TextField("Tulis catatan kamu", text: self.$catatan).onAppear{
+//                        self.catatan = self.jItem.catatan
+//                    }
+                    formLargeSizeTextField(textField: self.$catatan).frame(height: 200).onAppear {
                         self.catatan = self.jItem.catatan
                     }
                 }
